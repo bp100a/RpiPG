@@ -3,7 +3,7 @@
 
 import time
 import math
-from Raspi_MotorHAT.Raspi_I2C import Raspi_I2C
+from rpihat.Raspi_I2C import Raspi_I2C
 
 # pylint:disable=C0103
 

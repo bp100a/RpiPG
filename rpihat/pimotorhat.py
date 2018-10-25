@@ -1,7 +1,7 @@
 """ Raspberry Pi Motor HAT"""
 #!/usr/bin/python
 import time
-from Raspi_MotorHAT.Raspi_PWM_Servo_Driver import PWM
+from rpihat.Raspi_PWM_Servo_Driver import PWM
 
 #pylint:disable=C0103
 

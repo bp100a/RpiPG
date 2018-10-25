@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from Raspi_MotorHAT import Raspi_MotorHAT, Raspi_DCMotor, Raspi_StepperMotor
+from rpihat import pimotorhat, Raspi_DCMotor, Raspi_StepperMotor
 
 import time
 import atexit
@@ -7,23 +7,23 @@ import threading
 import random
 
 # bottom hat is default address 0x6f
-bottomhat = Raspi_MotorHAT(addr=0x6f)
+bottomhat = pimotorhat(addr=0x6f)
 # top hat has A0 jumper closed, so its address 0x61
-tophat = Raspi_MotorHAT(addr=0x61)
+tophat = pimotorhat(addr=0x61)
 
 # create empty threads (these will hold the stepper 1, 2 & 3 threads)
 stepperThreads = [threading.Thread(), threading.Thread(), threading.Thread()]
 
 # recommended for auto-disabling motors on shutdown!
 def turnOffMotors():
-	tophat.getMotor(1).run(Raspi_MotorHAT.RELEASE)
-	tophat.getMotor(2).run(Raspi_MotorHAT.RELEASE)
-	tophat.getMotor(3).run(Raspi_MotorHAT.RELEASE)
-	tophat.getMotor(4).run(Raspi_MotorHAT.RELEASE)
-	bottomhat.getMotor(1).run(Raspi_MotorHAT.RELEASE)
-	bottomhat.getMotor(2).run(Raspi_MotorHAT.RELEASE)
-	bottomhat.getMotor(3).run(Raspi_MotorHAT.RELEASE)
-	bottomhat.getMotor(4).run(Raspi_MotorHAT.RELEASE)
+	tophat.getMotor(1).run(pimotorhat.RELEASE)
+	tophat.getMotor(2).run(pimotorhat.RELEASE)
+	tophat.getMotor(3).run(pimotorhat.RELEASE)
+	tophat.getMotor(4).run(pimotorhat.RELEASE)
+	bottomhat.getMotor(1).run(pimotorhat.RELEASE)
+	bottomhat.getMotor(2).run(pimotorhat.RELEASE)
+	bottomhat.getMotor(3).run(pimotorhat.RELEASE)
+	bottomhat.getMotor(4).run(pimotorhat.RELEASE)
 
 atexit.register(turnOffMotors)
 
@@ -40,10 +40,10 @@ myMotor = tophat.getMotor(3)
 # set the speed to start, from 0 (off) to 255 (max speed)
 myMotor.setSpeed(150)
 # turn on motor
-myMotor.run(Raspi_MotorHAT.FORWARD);
+myMotor.run(pimotorhat.FORWARD);
 
 
-stepstyles = [Raspi_MotorHAT.SINGLE, Raspi_MotorHAT.DOUBLE, Raspi_MotorHAT.INTERLEAVE]
+stepstyles = [pimotorhat.SINGLE, pimotorhat.DOUBLE, pimotorhat.INTERLEAVE]
 steppers = [myStepper1, myStepper2, myStepper3]
 
 def stepper_worker(stepper, numsteps, direction, style):
@@ -57,10 +57,10 @@ while (True):
 			randomdir = random.randint(0, 1)
 			print(("Stepper %d" % i), end=' ')
 			if (randomdir == 0):
-        	                dir = Raspi_MotorHAT.FORWARD
+        	                dir = pimotorhat.FORWARD
 	                        print(("forward"), end=' ')
 			else:
-	                        dir = Raspi_MotorHAT.BACKWARD
+	                        dir = pimotorhat.BACKWARD
 				print(("backward"), end=' ')
 			randomsteps = random.randint(10,50)
 			print(("%d steps" % randomsteps))

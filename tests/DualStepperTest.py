@@ -2,7 +2,7 @@
 import atexit
 import threading
 import random
-from Raspi_MotorHAT.Raspi_MotorHAT import Raspi_MotorHAT
+from rpihat.pimotorhat import Raspi_MotorHAT
 
 # create a default object, no changes to I2C address or frequency
 mh = Raspi_MotorHAT(0x6F)
