@@ -23,7 +23,7 @@ class Raspi_MotorHAT:
         self._frequency = freq		# default @1600Hz PWM freq
         self.motors = [Raspi_DCMotor(self, m) for m in range(4)]
         self.steppers = [Raspi_StepperMotor(self, 1), Raspi_StepperMotor(self, 2)]
-        self._pwm = PWM(addr, debug=False)
+        self._pwm = PWM(addr, debug=True)
         self._pwm.setPWMFreq(self._frequency)
 
     def setPin(self, pin, value):

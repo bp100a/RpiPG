@@ -49,7 +49,7 @@ class PWM:
         self.address = address
         self.debug = debug
         if self.debug:
-            print("Reseting PCA9685 MODE1 (without SLEEP) and MODE2")
+            print("Resetting PCA9685 MODE1 (without SLEEP) and MODE2")
         self.setAllPWM(0, 0)
         self.i2c.write8(self.__MODE2, self.__OUTDRV)
         self.i2c.write8(self.__MODE1, self.__ALLCALL)
