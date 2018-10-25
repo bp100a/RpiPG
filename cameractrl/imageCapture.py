@@ -1,7 +1,7 @@
 from time import sleep
+import signal, os, subprocess
 from datetime import datetime
 from sh import gphoto2 as gp
-import signal, os, subprocess
 
 # Kill the gphoto process that starts
 # whenever we turn on the camera or
@@ -48,7 +48,7 @@ class USBCameraController():
         gp(self.downloadCommand)
         gp(self.clearCommand)
 
-    def renameFiles(ID):
+    def renameFiles(self, ID):
         for filename in os.listdir("."):
             if len(filename) < 13:
                 if filename.endswith(".JPG"):
@@ -68,4 +68,4 @@ while True:
     usb_ctrl.shot_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     usb_ctrl.createSaveFolder()
     usb_ctrl.captureImages()
-    usb_ctrl.renameFiles(picID)
+    usb_ctrl.renameFiles(usb_ctrl.picID)
