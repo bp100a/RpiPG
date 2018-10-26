@@ -1,6 +1,8 @@
 """ Raspberry Pi Motor HAT"""
 #!/usr/bin/python
+import sys
 import time
+import traceback
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 
 #pylint:disable=C0103
@@ -156,7 +158,9 @@ class Raspi_StepperMotor:
                 pwm_b = self.MICROSTEP_CURVE[self.MICROSTEPS*4 - self.currentstep]
         except TypeError as te:
             print("Error indexing! self.currentstep ={0}, self.MICROSTEPS={1}".format(self.currentstep, self.MICROSTEPS))
-            
+            _,_, tb = sys.exec_info()
+            print traceback.format_list(traceback.extract_tb(tb)[-1:])[-1]
+
         # go to next 'step' and wrap around
         self.currentstep += self.MICROSTEPS * 4
         self.currentstep %= self.MICROSTEPS * 4
