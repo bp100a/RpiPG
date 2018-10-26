@@ -159,7 +159,7 @@ class Raspi_StepperMotor:
         except TypeError as te:
             print("Error indexing! self.currentstep ={0}, self.MICROSTEPS={1}".format(self.currentstep, self.MICROSTEPS))
             _,_, tb = sys.exec_info()
-            print traceback.format_list(traceback.extract_tb(tb)[-1:])[-1]
+            print(traceback.format_list(traceback.extract_tb(tb)[-1:])[-1])
 
         # go to next 'step' and wrap around
         self.currentstep += self.MICROSTEPS * 4
