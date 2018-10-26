@@ -3,7 +3,7 @@ import atexit
 from rpihat.pimotorhat import Raspi_MotorHAT
 
 # create a default object, no changes to I2C address or frequency
-mh = Raspi_MotorHAT(0x6F)
+mh = Raspi_MotorHAT(0x60)
 
 
 # recommended for auto-disabling motors on shutdown!
@@ -13,8 +13,8 @@ def turnOffMotors():
 	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
 	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
 
-atexit.register(turnOffMotors)
 
+atexit.register(turnOffMotors)
 myStepper = mh.getStepper(200, 1)  	# 200 steps/rev, motor port #1
 myStepper.setSpeed(30)  		# 30 RPM
 

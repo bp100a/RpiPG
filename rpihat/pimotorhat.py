@@ -218,6 +218,7 @@ class Raspi_StepperMotor:
                 lateststep = self.oneStep(dir, stepstyle)
                 time.sleep(s_per_s)
 
+
 class Raspi_DCMotor:
     """for DC motors?"""
     def __init__(self, controller, num):
