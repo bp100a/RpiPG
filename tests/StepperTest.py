@@ -3,7 +3,7 @@ import atexit
 from rpihat.pimotorhat import Raspi_MotorHAT
 
 # create a default object, no changes to I2C address or frequency
-mh = Raspi_MotorHAT(0x60)
+mh = Raspi_MotorHAT(0x6F)
 
 
 # recommended for auto-disabling motors on shutdown!
