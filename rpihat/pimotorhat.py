@@ -146,7 +146,7 @@ class Raspi_StepperMotor:
             pwm_a = pwm_b = 0
             if (self.currentstep >= 0) and (self.currentstep < self.MICROSTEPS):
                 pwm_a = self.MICROSTEP_CURVE[int(self.MICROSTEPS - self.currentstep)]
-                pwm_b = self.MICROSTEP_CURVE[self.currentstep]
+                pwm_b = self.MICROSTEP_CURVE[int(self.currentstep)]
             elif (self.currentstep >= self.MICROSTEPS) and (self.currentstep < self.MICROSTEPS*2):
                 pwm_a = self.MICROSTEP_CURVE[int(self.currentstep - self.MICROSTEPS)]
                 pwm_b = self.MICROSTEP_CURVE[int(self.MICROSTEPS*2 - self.currentstep)]
