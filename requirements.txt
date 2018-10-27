@@ -13,3 +13,4 @@ six==1.11.0
 smbus2==0.2.1
 typed-ast==1.1.0
 wrapt==1.10.11
+gpiozero==1.4.1
