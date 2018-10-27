@@ -71,7 +71,7 @@ class Raspi_StepperMotor:
         self.steppingcounter = 0
         self.currentstep = 0
 
-        num -= 1
+        num -= 1 # why this? tests below could be incremented ???
 
         if num == 0:
             self.PWMA = 8
@@ -214,6 +214,8 @@ class Raspi_StepperMotor:
 
         print(s_per_s, " sec per step")
 
+        # here's where we'll need to check stop limit
+        # switches, which may slow us down
         for _ in range(steps):
             lateststep = self.oneStep(direction, stepstyle)
             time.sleep(s_per_s)
