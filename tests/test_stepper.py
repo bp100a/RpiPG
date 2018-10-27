@@ -24,9 +24,10 @@ MY_STEPPER = MOTOR_HAT.getStepper(200, 2)  	# 200 steps/rev, motor port #1
 MY_STEPPER.setSpeed(30)  		# 30 RPM
 
 while True:
-    print("Hold position [10 sec]")
+    hold_time = 5
+    print("Hold position [{0} seconds]".format(hold_time))
     MY_STEPPER.hold()
-    time.sleep(10)
+    time.sleep(hold_time)
 
     # print("Single coil steps [hold]")
     # myStepper.step(100, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.SINGLE)
@@ -41,5 +42,5 @@ while True:
     # MY_STEPPER.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.INTERLEAVE)
 
     print("Microsteps")
-    MY_STEPPER.step(200, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.MICROSTEP)
-    MY_STEPPER.step(200, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.MICROSTEP)
+    MY_STEPPER.step(300, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.MICROSTEP)
+    MY_STEPPER.step(300, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.MICROSTEP)
