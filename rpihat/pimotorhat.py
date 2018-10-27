@@ -23,34 +23,26 @@ class Raspi_MotorHAT:
     def __init__(self, addr=0x60, freq=1600):
         self._i2caddr = addr        # default addr on HAT
         self._frequency = freq		# default @1600Hz PWM freq
-        self.motors = [Raspi_DCMotor(self, m) for m in range(4)]
         self.steppers = [Raspi_StepperMotor(self, 1), Raspi_StepperMotor(self, 2)]
         self._pwm = PWM(addr, debug=False)
         self._pwm.setPWMFreq(self._frequency)
 
-    def setPin(self, pin, value):
+    def setPin(self, pin: int, value: int) -> None:
         """set the pin"""
         if (pin < 0) or (pin > 15):
             raise NameError('PWM pin must be between 0 and 15 inclusive')
-#        if (value != 0) and (value != 1):
-        if value not in (0, 1):
-            raise NameError('Pin value must be 0 or 1!')
         if value == 0:
             self._pwm.setPWM(pin, 0, 4096)
-        if value == 1:
+        elif value == 1:
             self._pwm.setPWM(pin, 4096, 0)
+        else:
+            raise NameError('Pin value must be 0 or 1!')
 
-    def getStepper(self, steps, num):
+    def getStepper(self, steps: int, num: int) -> None:
         """get Stepper"""
         if (num < 1) or (num > 2):
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive {0}, steps={1}'.format(num, steps))
         return self.steppers[num-1]
-
-    def getMotor(self, num):
-        """get Motor"""
-        if (num < 1) or (num > 4):
-            raise NameError('MotorHAT Motor must be between 1 and 4 inclusive')
-        return self.motors[num-1]
 
 
 class Raspi_StepperMotor:
@@ -63,7 +55,7 @@ class Raspi_StepperMotor:
     # MICROSTEP_CURVE = [0, 25, 50, 74, 98, 120, 141, 162, 180,\
     #                    197, 212, 225, 236, 244, 250, 253, 255]
 
-    def __init__(self, controller: Raspi_MotorHAT, num, steps=200):
+    def __init__(self, controller: Raspi_MotorHAT, num: int, steps=200) -> None:
         self.MC = controller
         self.revsteps = steps
         self.motornum = num
@@ -71,16 +63,14 @@ class Raspi_StepperMotor:
         self.steppingcounter = 0
         self.currentstep = 0
 
-        num -= 1
-
-        if num == 0:
+        if num == 1:
             self.PWMA = 8
             self.AIN2 = 9
             self.AIN1 = 10
             self.PWMB = 13
             self.BIN2 = 12
             self.BIN1 = 11
-        elif num == 1:
+        elif num == 2:
             self.PWMA = 2
             self.AIN2 = 3
             self.AIN1 = 4
@@ -90,12 +80,12 @@ class Raspi_StepperMotor:
         else:
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive')
 
-    def setSpeed(self, rpm):
+    def setSpeed(self, rpm: int) -> None:
         """set speed of stepper"""
         self.sec_per_step = 60.0 / (self.revsteps * rpm)
         self.steppingcounter = 0
 
-    def oneStep(self, step_dir, style):
+    def oneStep(self, step_dir: int, style: int) -> None:
         """issue step"""
         pwm_a = pwm_b = 255
 
@@ -201,7 +191,7 @@ class Raspi_StepperMotor:
 
         return self.currentstep
 
-    def step(self, steps, direction, stepstyle):
+    def step(self, steps: int, direction: int, stepstyle: int) -> None:
         """step the motor"""
         s_per_s = self.sec_per_step
         lateststep = 0
@@ -224,57 +214,3 @@ class Raspi_StepperMotor:
             while lateststep not in(0, self.MICROSTEPS):
                 lateststep = self.oneStep(dir, stepstyle)
                 time.sleep(s_per_s)
-
-
-class Raspi_DCMotor:
-    """for DC motors?"""
-    def __init__(self, controller, num):
-        self.MC = controller
-        self.motornum = num
-        pwm = in1 = in2 = 0
-
-        if num == 0:
-            pwm = 8
-            in2 = 9
-            in1 = 10
-        elif num == 1:
-            pwm = 13
-            in2 = 12
-            in1 = 11
-        elif num == 2:
-            pwm = 2
-            in2 = 3
-            in1 = 4
-        elif num == 3:
-            pwm = 7
-            in2 = 6
-            in1 = 5
-        else:
-            raise NameError('MotorHAT Motor must be between 1 and 4 inclusive')
-
-        self.PWMpin = pwm
-        self.IN1pin = in1
-        self.IN2pin = in2
-
-    def run(self, command):
-        """run the motor"""
-        if not self.MC:
-            return
-        if command == Raspi_MotorHAT.FORWARD:
-            self.MC.setPin(self.IN2pin, 0)
-            self.MC.setPin(self.IN1pin, 1)
-        if command == Raspi_MotorHAT.BACKWARD:
-            self.MC.setPin(self.IN1pin, 0)
-            self.MC.setPin(self.IN2pin, 1)
-        if command == Raspi_MotorHAT.RELEASE:
-            self.MC.setPin(self.IN1pin, 0)
-            self.MC.setPin(self.IN2pin, 0)
-
-    def setSpeed(self, speed):
-        """set the motor speed"""
-        if speed < 0:
-            speed = 0
-        if speed > 255:
-            speed = 255
-
-        self.MC._pwm.setPWM(self.PWMpin, 0, speed*16) # pylint:disable=W0212
