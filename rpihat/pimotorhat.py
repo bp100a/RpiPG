@@ -52,16 +52,16 @@ class Raspi_MotorHAT:
 
     def release_motor(self, motor_num: int) -> None:
         """turns off coil energization of motors"""
-        if motor_num == 0:
+        if motor_num == 1:
             in2 = 9
             in1 = 10
-        elif motor_num == 1:
+        elif motor_num == 2:
             in2 = 12
             in1 = 11
-        elif motor_num == 2:
+        elif motor_num == 3:
             in2 = 3
             in1 = 4
-        elif motor_num == 3:
+        elif motor_num == 4:
             in2 = 6
             in1 = 5
 
