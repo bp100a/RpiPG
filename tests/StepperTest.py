@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import atexit
+import time
 from rpihat.pimotorhat import Raspi_MotorHAT
 
 # create a default object, no changes to I2C address or frequency
@@ -20,6 +21,10 @@ myStepper = mh.getStepper(200, 2)  	# 200 steps/rev, motor port #1
 myStepper.setSpeed(30)  		# 30 RPM
 
 while True:
+	print("Hold position [10 sec]")
+	myStepper.hold()
+	time.sleep(10)
+
 	print("Single coil steps [hold]")
 	myStepper.step(100, Raspi_MotorHAT.FORWARD,  Raspi_MotorHAT.SINGLE)
 	myStepper.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.SINGLE)

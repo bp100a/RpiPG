@@ -200,6 +200,9 @@ class Raspi_StepperMotor:
 
         return self.current_step
 
+    def hold(self) -> None:
+        latest_step = self.oneStep(direction=Raspi_MotorHAT.FORWARD, step_style=Raspi_MotorHAT.SINGLE)
+
     def step(self, steps: int, direction: int, step_style: int) -> None:
         """step the motor"""
         s_per_s = self.sec_per_step
