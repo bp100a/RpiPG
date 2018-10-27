@@ -9,10 +9,10 @@ mh = Raspi_MotorHAT(0x6F)
 
 # recommended for auto-disabling motors on shutdown!
 def turnOffMotors():
-	mh.getMotor(1).run(Raspi_MotorHAT.RELEASE)
-	mh.getMotor(2).run(Raspi_MotorHAT.RELEASE)
-	mh.getMotor(3).run(Raspi_MotorHAT.RELEASE)
-	mh.getMotor(4).run(Raspi_MotorHAT.RELEASE)
+	mh.release_motor(1)
+	mh.release_motor(2)
+	mh.release_motor(3)
+	mh.release_motor(4)
 
 
 atexit.register(turnOffMotors)

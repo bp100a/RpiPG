@@ -45,10 +45,28 @@ class Raspi_MotorHAT:
                             format(num, steps))
         return self.steppers[num-1]
 
-    def getMotor(self, num):
-        if (num < 1) or (num > 4):
-            raise NameError('MotorHAT Motor must be between 1 and 4 inclusive')
-        return self.motors[num - 1]
+    # def getMotor(self, num):
+    #     if (num < 1) or (num > 4):
+    #         raise NameError('MotorHAT Motor must be between 1 and 4 inclusive')
+    #     return self.motors[num - 1]
+
+    def release_motor(self, motor_num: int) -> None:
+        """turns off coil energization of motors"""
+        if motor_num == 0:
+            in2 = 9
+            in1 = 10
+        elif motor_num == 1:
+            in2 = 12
+            in1 = 11
+        elif motor_num == 2:
+            in2 = 3
+            in1 = 4
+        elif motor_num == 3:
+            in2 = 6
+            in1 = 5
+
+        self.setPin(in1, 0)
+        self.setPin(in2, 0)
 
 
 class Raspi_StepperMotor:
@@ -206,7 +224,8 @@ class Raspi_StepperMotor:
         return self.current_step
 
     def hold(self) -> None:
-        latest_step = self.oneStep(step_dir=Raspi_MotorHAT.FORWARD, style=Raspi_MotorHAT.SINGLE)
+        """use single step to hold current position"""
+        self.oneStep(step_dir=Raspi_MotorHAT.FORWARD, style=Raspi_MotorHAT.SINGLE)
 
     def step(self, steps: int, direction: int, step_style: int) -> None:
         """step the motor"""
