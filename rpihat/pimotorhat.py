@@ -45,6 +45,11 @@ class Raspi_MotorHAT:
                             format(num, steps))
         return self.steppers[num-1]
 
+    def getMotor(self, num):
+        if (num < 1) or (num > 4):
+            raise NameError('MotorHAT Motor must be between 1 and 4 inclusive')
+        return self.motors[num - 1]
+
 
 class Raspi_StepperMotor:
     """control stepper motor stepping"""
