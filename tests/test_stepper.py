@@ -32,14 +32,14 @@ while True:
     # myStepper.step(100, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.SINGLE)
     # myStepper.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.SINGLE)
     #
-    print("Double coil steps")
-    MY_STEPPER.step(100, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.DOUBLE)
-    MY_STEPPER.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.DOUBLE)
-
-    print("Interleaved coil steps")
-    MY_STEPPER.step(100, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.INTERLEAVE)
-    MY_STEPPER.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.INTERLEAVE)
+    # print("Double coil steps")
+    # MY_STEPPER.step(100, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.DOUBLE)
+    # MY_STEPPER.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.DOUBLE)
+    #
+    # print("Interleaved coil steps")
+    # MY_STEPPER.step(100, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.INTERLEAVE)
+    # MY_STEPPER.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.INTERLEAVE)
 
     print("Microsteps")
-    MY_STEPPER.step(100, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.MICROSTEP)
-    MY_STEPPER.step(100, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.MICROSTEP)
+    MY_STEPPER.step(200, Raspi_MotorHAT.FORWARD, Raspi_MotorHAT.MICROSTEP)
+    MY_STEPPER.step(200, Raspi_MotorHAT.BACKWARD, Raspi_MotorHAT.MICROSTEP)
