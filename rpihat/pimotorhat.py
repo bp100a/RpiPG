@@ -106,13 +106,13 @@ class Raspi_StepperMotor:
 
     def my_timer(self, sleep_time: float) -> None:
         """implement a sleep() timer but in a loop"""
-        sleep_time_nanoseconds = int(sleep_time * 10**9)
-        start_time_nanoseconds = time.time_ns()
-        current_time_nanoseconds = time.time_ns()
-        end_time_nanoseconds = start_time_nanoseconds + sleep_time_nanoseconds
-        while current_time_nanoseconds < end_time_nanoseconds:
-            time.sleep(0.0001) # yield some time to other processes
-            current_time_nanoseconds = time.time_ns()
+        sleep_time_microseconds = int(sleep_time * 10**6)
+        start_time_microseconds = time.time() * 10**6
+        current_time_microseconds = time.time_ns() * 10**6
+        end_time_microseconds = start_time_microseconds + sleep_time_microseconds
+        while current_time_microseconds < end_time_microseconds:
+            time.sleep(0.0002) # yield some time to other processes (100 us)
+            current_time_microseconds = time.time() * 10**6
         return
 
     def setSpeed(self, rpm: int) -> None:
