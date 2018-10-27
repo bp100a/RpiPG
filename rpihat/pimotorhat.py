@@ -38,7 +38,7 @@ class Raspi_MotorHAT:
         else:
             raise NameError('Pin value must be 0 or 1!')
 
-    def getStepper(self, steps: int, num: int) -> Raspi_StepperMotor:
+    def getStepper(self, steps: int, num: int):
         """get Stepper"""
         if (num < 1) or (num > 2):
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive {0}, steps={1}'.
