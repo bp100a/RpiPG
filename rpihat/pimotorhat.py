@@ -104,6 +104,17 @@ class Raspi_StepperMotor:
         else:
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive')
 
+    def my_timer(self, sleep_time: float) -> None:
+        """implement a sleep() timer but in a loop"""
+        sleep_time_nanoseconds = int(sleep_time * 10**9)
+        start_time_nanoseconds = time.time_ns()
+        current_time_nanoseconds = time.time_ns()
+        end_time_nanoseconds = start_time_nanoseconds + sleep_time_nanoseconds
+        while current_time_nanoseconds < end_time_nanoseconds:
+            time.sleep(0.0001) # yield some time to other processes
+            current_time_nanoseconds = time.time_ns()
+        return
+
     def setSpeed(self, rpm: int) -> None:
         """set speed of stepper"""
         self.sec_per_step = 60.0 / (self.revsteps * rpm)
@@ -242,7 +253,8 @@ class Raspi_StepperMotor:
 
         for _ in range(steps):
             latest_step = self.oneStep(direction, step_style)
-            time.sleep(s_per_s)
+            self.my_timer(s_per_s)
+#            time.sleep(s_per_s)
 
         if step_style == Raspi_MotorHAT.MICROSTEP:
             # this is an edge case, if we are in between full steps, lets just keep going
