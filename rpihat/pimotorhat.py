@@ -8,6 +8,44 @@ from rpihat.Raspi_PWM_Servo_Driver import PWM
 #pylint:disable=C0103
 
 
+class Raspi_MotorHAT:
+    """our motor HAT"""
+    FORWARD = 1
+    BACKWARD = 2
+    BRAKE = 3
+    RELEASE = 4
+
+    SINGLE = 1
+    DOUBLE = 2
+    INTERLEAVE = 3
+    MICROSTEP = 4
+
+    def __init__(self, addr=0x60, freq=1600):
+        self._i2caddr = addr        # default addr on HAT
+        self._frequency = freq		# default @1600Hz PWM freq
+        self.steppers = [Raspi_StepperMotor(self, 1), Raspi_StepperMotor(self, 2)]
+        self._pwm = PWM(addr, debug=False)
+        self._pwm.setPWMFreq(self._frequency)
+
+    def setPin(self, pin: int, value: int) -> None:
+        """set the pin"""
+        if (pin < 0) or (pin > 15):
+            raise NameError('PWM pin must be between 0 and 15 inclusive')
+        if value == 0:
+            self._pwm.setPWM(pin, 0, 4096)
+        elif value == 1:
+            self._pwm.setPWM(pin, 4096, 0)
+        else:
+            raise NameError('Pin value must be 0 or 1!')
+
+    def getStepper(self, steps: int, num: int) -> Raspi_StepperMotor:
+        """get Stepper"""
+        if (num < 1) or (num > 2):
+            raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive {0}, steps={1}'.
+                            format(num, steps))
+        return self.steppers[num-1]
+
+
 class Raspi_StepperMotor:
     """control stepper motor stepping"""
     MICROSTEPS = 8
@@ -185,41 +223,3 @@ class Raspi_StepperMotor:
             while latest_step not in(0, self.MICROSTEPS):
                 latest_step = self.oneStep(direction, step_style)
                 time.sleep(s_per_s)
-
-
-class Raspi_MotorHAT:
-    """our motor HAT"""
-    FORWARD = 1
-    BACKWARD = 2
-    BRAKE = 3
-    RELEASE = 4
-
-    SINGLE = 1
-    DOUBLE = 2
-    INTERLEAVE = 3
-    MICROSTEP = 4
-
-    def __init__(self, addr=0x60, freq=1600):
-        self._i2caddr = addr        # default addr on HAT
-        self._frequency = freq		# default @1600Hz PWM freq
-        self.steppers = [Raspi_StepperMotor(self, 1), Raspi_StepperMotor(self, 2)]
-        self._pwm = PWM(addr, debug=False)
-        self._pwm.setPWMFreq(self._frequency)
-
-    def setPin(self, pin: int, value: int) -> None:
-        """set the pin"""
-        if (pin < 0) or (pin > 15):
-            raise NameError('PWM pin must be between 0 and 15 inclusive')
-        if value == 0:
-            self._pwm.setPWM(pin, 0, 4096)
-        elif value == 1:
-            self._pwm.setPWM(pin, 4096, 0)
-        else:
-            raise NameError('Pin value must be 0 or 1!')
-
-    def getStepper(self, steps: int, num: int) -> Raspi_StepperMotor:
-        """get Stepper"""
-        if (num < 1) or (num > 2):
-            raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive {0}, steps={1}'.
-                            format(num, steps))
-        return self.steppers[num-1]
