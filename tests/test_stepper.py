@@ -10,7 +10,7 @@ CAMERA_STEPPER_MOTOR_NUM = 1
 MODEL_STEPPER_MOTOR_NUM = 2
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
-DEBUG=True
+DEBUG=False
 
 def yield_function(stepper_direction: int) -> bool:
     return False
