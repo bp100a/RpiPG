@@ -12,8 +12,8 @@ from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 
-CAMERA_STEPPER_MOTOR_NUM = 1
-MODEL_STEPPER_MOTOR_NUM = 2
+CAMERA_STEPPER_MOTOR_NUM = 2
+MODEL_STEPPER_MOTOR_NUM = 1
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
 CCW_MAX_SWITCH = limit_switch.LimitSwitch(4) # furthest CCW rotation allowed
