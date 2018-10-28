@@ -4,6 +4,7 @@
 import time
 import math
 from rpihat.Raspi_I2C import Raspi_I2C
+from rpihat.basis import PWMInterface
 
 # pylint:disable=C0103
 
@@ -12,7 +13,7 @@ from rpihat.Raspi_I2C import Raspi_I2C
 # ============================================================================
 
 
-class PWM:
+class PWM(PWMInterface):
     """Registers/etc."""
     __MODE1 = 0x00
     __MODE2 = 0x01
@@ -44,6 +45,7 @@ class PWM:
         cls.general_call_i2c.writeRaw8(0x06)        # SWRST
 
     def __init__(self, address=0x40, debug=False):
+
         self.i2c = Raspi_I2C(address)
         self.i2c.debug = debug
         self.address = address

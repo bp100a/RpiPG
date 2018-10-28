@@ -5,22 +5,19 @@ import time
 from rpihat.pimotorhat import Raspi_MotorHAT
 
 # create a default object, no changes to I2C address or frequency
-MOTOR_HAT = Raspi_MotorHAT(0x6F)
+MOTOR_HAT = Raspi_MotorHAT(addr=0x6F)
 
 
 # recommended for auto-disabling motors on shutdown!
 def turn_off_motors():
     """disable motors. This will be called 'at exit' so
     motors don't overheat when idle and energized"""
-    MOTOR_HAT.release_motor(1)
-    MOTOR_HAT.release_motor(2)
-    MOTOR_HAT.release_motor(3)
-    MOTOR_HAT.release_motor(4)
+    MOTOR_HAT.release_motors()
 
 
 atexit.register(turn_off_motors)
 # motor #1 -> M1 & M2, motor #2 -> M3 & M4
-MY_STEPPER = MOTOR_HAT.getStepper(200, 2)  	# 200 steps/rev, motor port #1
+MY_STEPPER = MOTOR_HAT.getStepper(2)  	# 200 steps/rev, motor port #1
 MY_STEPPER.setSpeed(30)  		# 30 RPM
 
 while True:
