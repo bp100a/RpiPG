@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/limit_switch.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/limit_switch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,14 +61,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="57" />
-          <entry key="py" value="7110" />
-          <entry key="txt" value="1215" />
+          <entry key="py" value="7113" />
+          <entry key="txt" value="1335" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1272" />
-          <entry key="Python" value="7110" />
+          <entry key="PLAIN_TEXT" value="1392" />
+          <entry key="Python" value="7113" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -122,16 +121,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
+            <state relative-caret-position="352">
+              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540765141364" expanded="true" signature="2259:2652" ph="..." />
-                <marker date="1540765141364" expanded="true" signature="2742:2799" ph="..." />
-                <marker date="1540765141364" expanded="true" signature="2882:2883" ph="..." />
+                <marker date="1540765895372" expanded="true" signature="2261:2654" ph="..." />
+                <marker date="1540765895372" expanded="true" signature="2744:2801" ph="..." />
+                <marker date="1540765895372" expanded="true" signature="2884:2885" ph="..." />
               </folding>
             </state>
           </provider>
@@ -171,11 +170,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="264">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <marker date="1540765580108" expanded="true" signature="179:251" ph="..." />
               </folding>
@@ -267,8 +266,8 @@
         <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
         <option value="$PROJECT_DIR$/rpihat/basis.py" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
   </component>
@@ -660,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540765152387</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="our optical switch appears normally closed, so it's '0' when triggered">
+      <created>1540765622209</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1540765622209</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView">
@@ -729,7 +735,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="debugging" />
     <MESSAGE value="oops! bad arguments" />
     <MESSAGE value="typo in argument list" />
     <MESSAGE value="remove debug" />
@@ -754,7 +759,8 @@
     <MESSAGE value="crazy speed - 120rpm!" />
     <MESSAGE value="no pull up, testing optical endstop" />
     <MESSAGE value="print out what endstop was triggered" />
-    <option name="LAST_COMMIT_MESSAGE" value="print out what endstop was triggered" />
+    <MESSAGE value="our optical switch appears normally closed, so it's '0' when triggered" />
+    <option name="LAST_COMMIT_MESSAGE" value="our optical switch appears normally closed, so it's '0' when triggered" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -849,9 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/basis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -882,19 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540765141364" expanded="true" signature="2259:2652" ph="..." />
-            <marker date="1540765141364" expanded="true" signature="2742:2799" ph="..." />
-            <marker date="1540765141364" expanded="true" signature="2882:2883" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/gpiozero/input_devices.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-288">
@@ -904,10 +894,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <marker date="1540765580108" expanded="true" signature="179:251" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+            <marker date="1540765895372" expanded="true" signature="2261:2654" ph="..." />
+            <marker date="1540765895372" expanded="true" signature="2744:2801" ph="..." />
+            <marker date="1540765895372" expanded="true" signature="2884:2885" ph="..." />
           </folding>
         </state>
       </provider>
