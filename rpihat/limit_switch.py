@@ -6,7 +6,7 @@ class LimitSwitch:
     switch = None
 
     def __init__(self, pin: int) -> None:
-        self.switch = Button(pin, pull_up=True, bounce_time=None)
+        self.switch = Button(pin, pull_up=False, bounce_time=None)
 
     def is_pressed(self) -> bool:
         return self.switch.is_pressed

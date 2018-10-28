@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,14 +61,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="57" />
-          <entry key="py" value="6834" />
-          <entry key="txt" value="1095" />
+          <entry key="py" value="6900" />
+          <entry key="txt" value="1144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1152" />
-          <entry key="Python" value="6834" />
+          <entry key="PLAIN_TEXT" value="1201" />
+          <entry key="Python" value="6900" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -121,16 +121,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            <state relative-caret-position="352">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540762124971" expanded="true" signature="2258:2651" ph="..." />
-                <marker date="1540762124971" expanded="true" signature="2741:2798" ph="..." />
-                <marker date="1540762124971" expanded="true" signature="2881:2882" ph="..." />
+                <marker date="1540762365112" expanded="true" signature="2259:2652" ph="..." />
+                <marker date="1540762365112" expanded="true" signature="2742:2799" ph="..." />
+                <marker date="1540762365112" expanded="true" signature="2882:2883" ph="..." />
               </folding>
             </state>
           </provider>
@@ -182,7 +182,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
@@ -611,7 +611,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540762053178</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="60 rpm!!">
+      <created>1540762132286</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1540762132286</updated>
+    </task>
+    <task id="LOCAL-00037" summary="more steps!&#10;CW first">
+      <created>1540762309277</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1540762309277</updated>
+    </task>
+    <task id="LOCAL-00038" summary="crazy speed - 120rpm!">
+      <created>1540762376014</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1540762376014</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView">
@@ -680,9 +701,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pass debugging into I2C" />
-    <MESSAGE value="fix hex format" />
-    <MESSAGE value="get true bus #" />
     <MESSAGE value="get test_stepper working again" />
     <MESSAGE value="some debugging" />
     <MESSAGE value="debugging" />
@@ -705,7 +723,10 @@
     <MESSAGE value="switches are in &quot;open&quot; state by default" />
     <MESSAGE value="clean up init" />
     <MESSAGE value="the need for speed -&gt; 45 rpm" />
-    <option name="LAST_COMMIT_MESSAGE" value="the need for speed -&gt; 45 rpm" />
+    <MESSAGE value="60 rpm!!" />
+    <MESSAGE value="more steps!&#10;CW first" />
+    <MESSAGE value="crazy speed - 120rpm!" />
+    <option name="LAST_COMMIT_MESSAGE" value="crazy speed - 120rpm!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -788,9 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_stepper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -822,16 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <marker date="1540754472106" expanded="true" signature="179:251" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -843,18 +851,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+    <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540762124971" expanded="true" signature="2258:2651" ph="..." />
-            <marker date="1540762124971" expanded="true" signature="2741:2798" ph="..." />
-            <marker date="1540762124971" expanded="true" signature="2881:2882" ph="..." />
+            <marker date="1540754472106" expanded="true" signature="179:251" ph="..." />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+            <marker date="1540762365112" expanded="true" signature="2259:2652" ph="..." />
+            <marker date="1540762365112" expanded="true" signature="2742:2799" ph="..." />
+            <marker date="1540762365112" expanded="true" signature="2882:2883" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>
