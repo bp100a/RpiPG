@@ -158,12 +158,13 @@ class Raspi_StepperMotor(StepperInterface):
                     self.current_step += self.MICROSTEPS / 2
                 else:
                     self.current_step -= self.MICROSTEPS / 2
-        else:
-            # go to next even step
-            if step_dir == Raspi_MotorHAT.FORWARD:
-                self.current_step += self.MICROSTEPS
             else:
-                self.current_step -= self.MICROSTEPS
+                # go to next even step
+                if step_dir == Raspi_MotorHAT.FORWARD:
+                    self.current_step += self.MICROSTEPS
+                else:
+                    self.current_step -= self.MICROSTEPS
+
         if style == Raspi_MotorHAT.DOUBLE:
             if not self.current_step / (self.MICROSTEPS / 2) % 2:
                 # we're at an even step, weird
@@ -177,6 +178,7 @@ class Raspi_StepperMotor(StepperInterface):
                     self.current_step += self.MICROSTEPS
                 else:
                     self.current_step -= self.MICROSTEPS
+
         if style == Raspi_MotorHAT.INTERLEAVE:
             if step_dir == Raspi_MotorHAT.FORWARD:
                 self.current_step += self.MICROSTEPS / 2

@@ -96,8 +96,8 @@ if __name__ == '__main__':
         CAMERA_STEPPER.hold()
         time.sleep(HOLD_TIME)
 
-        print("Microsteps")
-        print("CCW stepping")
-        CAMERA_STEPPER.step(300, STEP_CAMERA_CCW, Raspi_MotorHAT.MICROSTEP)
-        print("CW stepping")
-        CAMERA_STEPPER.step(300, STEP_CAMERA_CW, Raspi_MotorHAT.MICROSTEP)
+        print("Double Steps")
+        print("...CCW stepping")
+        CAMERA_STEPPER.step(300, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE)
+        print("...CW stepping")
+        CAMERA_STEPPER.step(300, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE)
