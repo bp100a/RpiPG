@@ -46,7 +46,8 @@ class PWM(PWMInterface):
 
     def __init__(self, address=0x40, debug=False):
 
-        self.i2c = Raspi_I2C(address, debug)
+        self.i2c = Raspi_I2C(address)
+        self.i2c.debug = debug
         self.address = address
         self.debug = debug
         if self.debug:
