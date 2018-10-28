@@ -141,6 +141,7 @@ class Raspi_I2C(object):
             if self.debug:
                 print(("I2C: Device 0x%02X returned 0x%02X from reg 0x%02X" %
                        (self.address, result & 0xFF, reg)))
+
             return result
         except IOError as err:
             self.errMsg(err)

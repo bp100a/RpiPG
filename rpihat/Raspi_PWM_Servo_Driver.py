@@ -58,6 +58,15 @@ class PWM(PWMInterface):
         time.sleep(0.005)                                       # wait for oscillator
 
         mode1 = self.i2c.readU8(self.__MODE1)
+        if self.__SLEEP is None:
+            print("__SLEEP is None?")
+        else:
+            print("__SLEEP = {0}".format(self.__SLEEP))
+
+        if mode1 is None:
+            print("mode1 is None ??")
+        else:
+            print("mode1 = {0}".format(mode1))
         mode1 = mode1 & ~self.__SLEEP                 # wake up (reset sleep)
         self.i2c.write8(self.__MODE1, mode1)
         time.sleep(0.005)                             # wait for oscillator
