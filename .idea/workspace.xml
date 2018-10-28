@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpihat/Raspi_I2C.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/Raspi_I2C.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/basis.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/basis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/pimotorhat.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/pimotorhat.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,14 +63,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="57" />
-          <entry key="py" value="5814" />
-          <entry key="txt" value="399" />
+          <entry key="py" value="6138" />
+          <entry key="txt" value="470" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="456" />
-          <entry key="Python" value="5814" />
+          <entry key="PLAIN_TEXT" value="527" />
+          <entry key="Python" value="6138" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -86,28 +83,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2354">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
+            <state relative-caret-position="462">
+              <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
               <folding>
                 <element signature="e#34#43#0" expanded="true" />
-                <marker date="1540746994375" expanded="true" signature="291:314" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="356:365" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="1434:1443" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="1597:1606" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="2455:2464" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="2641:2650" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="3006:3015" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="3417:3426" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="3737:3746" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="4132:4141" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="4605:4606" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="4605:4614" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="5041:5042" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="5555:5564" ph="..." />
-                <marker date="1540746994375" expanded="true" signature="6256:6265" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="291:314" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="356:365" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="1434:1443" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="1597:1606" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="2597:2606" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="2783:2792" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="3148:3157" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="3559:3568" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="3879:3888" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="4274:4283" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="4747:4748" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="4747:4756" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="5183:5184" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="5698:5707" ph="..." />
+                <marker date="1540747954511" expanded="true" signature="6399:6408" ph="..." />
               </folding>
             </state>
           </provider>
@@ -200,17 +197,17 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="777">
+              <caret line="77" column="47" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
               <folding>
                 <element signature="e#68#79#0" expanded="true" />
-                <marker date="1540746994390" expanded="true" signature="968:977" ph="..." />
-                <marker date="1540746994390" expanded="true" signature="1167:1175" ph="..." />
-                <marker date="1540746994390" expanded="true" signature="2732:2741" ph="..." />
-                <marker date="1540746994390" expanded="true" signature="3059:3068" ph="..." />
+                <marker date="1540747580843" expanded="true" signature="968:977" ph="..." />
+                <marker date="1540747580843" expanded="true" signature="1167:1175" ph="..." />
+                <marker date="1540747580843" expanded="true" signature="2756:2765" ph="..." />
+                <marker date="1540747580843" expanded="true" signature="3083:3092" ph="..." />
               </folding>
             </state>
           </provider>
@@ -240,6 +237,9 @@
       <find>MY_STEPPER</find>
       <find>.MC</find>
       <find>error access</find>
+      <find>def err</find>
+      <find>getPiI</find>
+      <find>.bus</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -258,9 +258,9 @@
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rpihat/basis.py" />
-        <option value="$PROJECT_DIR$/rpihat/Raspi_I2C.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" />
+        <option value="$PROJECT_DIR$/rpihat/Raspi_I2C.py" />
       </list>
     </option>
   </component>
@@ -414,7 +414,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540746474380</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="turn on debugging">
+      <created>1540747003683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1540747003683</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix setting of debug for I2C">
+      <created>1540747134259</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1540747134259</updated>
+    </task>
+    <task id="LOCAL-00009" summary="some additional prints">
+      <created>1540747414397</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1540747414397</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -435,7 +456,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32965165" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32965165" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993203" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -466,7 +487,10 @@
     <MESSAGE value="oops! missed time_ns() reference" />
     <MESSAGE value="created interfaces to prepare for dependency injection&#10;now have &quot;rig_runner&quot; to start things out." />
     <MESSAGE value="clean up class definition" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up class definition" />
+    <MESSAGE value="turn on debugging" />
+    <MESSAGE value="fix setting of debug for I2C" />
+    <MESSAGE value="some additional prints" />
+    <option name="LAST_COMMIT_MESSAGE" value="some additional prints" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -557,41 +581,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
+    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2354">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        <state relative-caret-position="777">
+          <caret line="77" column="47" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
           <folding>
-            <element signature="e#34#43#0" expanded="true" />
-            <marker date="1540746994375" expanded="true" signature="291:314" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="356:365" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="1434:1443" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="1597:1606" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="2455:2464" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="2641:2650" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="3006:3015" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="3417:3426" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="3737:3746" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="4132:4141" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="4605:4606" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="4605:4614" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="5041:5042" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="5555:5564" ph="..." />
-            <marker date="1540746994375" expanded="true" signature="6256:6265" ph="..." />
+            <element signature="e#68#79#0" expanded="true" />
+            <marker date="1540747580843" expanded="true" signature="968:977" ph="..." />
+            <marker date="1540747580843" expanded="true" signature="1167:1175" ph="..." />
+            <marker date="1540747580843" expanded="true" signature="2756:2765" ph="..." />
+            <marker date="1540747580843" expanded="true" signature="3083:3092" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py">
+    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="462">
+          <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
           <folding>
-            <element signature="e#68#79#0" expanded="true" />
-            <marker date="1540746994390" expanded="true" signature="968:977" ph="..." />
-            <marker date="1540746994390" expanded="true" signature="1167:1175" ph="..." />
-            <marker date="1540746994390" expanded="true" signature="2732:2741" ph="..." />
-            <marker date="1540746994390" expanded="true" signature="3059:3068" ph="..." />
+            <element signature="e#34#43#0" expanded="true" />
+            <marker date="1540747954511" expanded="true" signature="291:314" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="356:365" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="1434:1443" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="1597:1606" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="2597:2606" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="2783:2792" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="3148:3157" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="3559:3568" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="3879:3888" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="4274:4283" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="4747:4748" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="4747:4756" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="5183:5184" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="5698:5707" ph="..." />
+            <marker date="1540747954511" expanded="true" signature="6399:6408" ph="..." />
           </folding>
         </state>
       </provider>

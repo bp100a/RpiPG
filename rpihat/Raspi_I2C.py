@@ -47,6 +47,9 @@ class Raspi_I2C(object):
         # self.bus = smbus.SMBus(1); # Force I2C1 (512MB Pi's)
         self.bus = smbus.SMBus(busnum if busnum >= 0 else Raspi_I2C.getPiI2CBusNumber())
         self.debug = debug
+        if debug:
+            print("I2C.addr = {0x2}".format(self.address))
+            print("I2C.busnum = {0}".format(busnum))
 
     @staticmethod
     def reverseByteOrder(data):
