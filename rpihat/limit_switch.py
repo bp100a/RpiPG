@@ -9,4 +9,4 @@ class LimitSwitch:
         self.switch = Button(pin, pull_up=True, bounce_time=None)
 
     def is_pressed(self) -> bool:
-        return self.switch.is_pressed
+        return not self.switch.is_pressed
