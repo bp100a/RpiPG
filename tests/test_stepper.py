@@ -10,9 +10,11 @@ CAMERA_STEPPER_MOTOR_NUM = 1
 MODEL_STEPPER_MOTOR_NUM = 2
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
+DEBUG=True
 
 def yield_function(stepper_direction: int) -> bool:
     return False
+
 
 # create a default object, no changes to I2C address or frequency
 MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
@@ -20,7 +22,7 @@ MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
                            yield_func=yield_function,
                            addr=MOTOR_HAT_I2C_ADDR,
                            freq=MOTOR_HAT_I2C_FREQ,
-                           debug=True)
+                           debug=DEBUG)
 
 
 # recommended for auto-disabling motors on shutdown!
@@ -33,6 +35,8 @@ def turn_off_motors():
 atexit.register(turn_off_motors)
 # motor #1 -> M1 & M2, motor #2 -> M3 & M4
 MY_STEPPER = MOTOR_HAT.getStepper(2)  	# 200 steps/rev, motor port #1
+if DEBUG:
+    print("Set speed to 30 rpm")
 MY_STEPPER.setSpeed(30)  		# 30 RPM
 
 while True:
