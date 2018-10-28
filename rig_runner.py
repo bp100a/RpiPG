@@ -13,7 +13,7 @@ from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 
 CAMERA_STEPPER_MOTOR_NUM = 2
-CAMERA_STEPPER_MOTOR_SPEED = 45  # rpm
+CAMERA_STEPPER_MOTOR_SPEED = 60  # rpm
 MODEL_STEPPER_MOTOR_NUM = 1
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
