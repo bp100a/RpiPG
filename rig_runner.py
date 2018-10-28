@@ -29,7 +29,6 @@ def yield_function(direction: int) -> bool:
     For now just checking limit switches, eventually
     we need to process other input like a cancel
     request from a web app"""
-    return False
     if direction == Raspi_MotorHAT.FORWARD:
         return CCW_MAX_SWITCH.is_pressed()
 
