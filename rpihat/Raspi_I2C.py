@@ -49,7 +49,7 @@ class Raspi_I2C(object):
         self.debug = debug
         if debug:
             print("I2C.addr = 0x{:2x}".format(self.address))
-            print("I2C.busnum = {0}".format(busnum))
+            print("I2C.busnum = {0}".format(Raspi_I2C.getPiI2CBusNumber()))
 
     @staticmethod
     def reverseByteOrder(data):
