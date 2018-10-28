@@ -3,9 +3,24 @@
 import atexit
 import time
 from rpihat.pimotorhat import Raspi_MotorHAT
+from rpihat.Raspi_PWM_Servo_Driver import PWM
+from rpihat.pimotorhat import Raspi_StepperMotor
+
+CAMERA_STEPPER_MOTOR_NUM = 1
+MODEL_STEPPER_MOTOR_NUM = 2
+MOTOR_HAT_I2C_ADDR = 0x6F
+MOTOR_HAT_I2C_FREQ = 1600
+
+def yield_function(stepper_direction: int) -> bool:
+    return False
 
 # create a default object, no changes to I2C address or frequency
-MOTOR_HAT = Raspi_MotorHAT(addr=0x6F)
+MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
+                           pwm_class=PWM,
+                           yield_func=yield_function,
+                           addr=MOTOR_HAT_I2C_ADDR,
+                           freq=MOTOR_HAT_I2C_FREQ,
+                           debug=True)
 
 
 # recommended for auto-disabling motors on shutdown!
