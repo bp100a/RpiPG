@@ -13,6 +13,7 @@ from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 
 CAMERA_STEPPER_MOTOR_NUM = 2
+CAMERA_STEPPER_MOTOR_SPEED = 45  # rpm
 MODEL_STEPPER_MOTOR_NUM = 1
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
@@ -87,7 +88,7 @@ def cw_camera_home() -> int:
 if __name__ == '__main__':
     # okay time to run things
     CAMERA_STEPPER = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
-    CAMERA_STEPPER.setSpeed(30)
+    CAMERA_STEPPER.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
 
     if CCW_MAX_SWITCH.is_pressed():
         print("CCW switch pressed!")

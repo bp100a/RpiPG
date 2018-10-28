@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +47,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="1" />
-          <entry key="py" value="7" />
+          <entry key="py" value="8" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -56,20 +55,20 @@
         <counts>
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="7" />
+          <entry key="Python" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="57" />
-          <entry key="py" value="6767" />
-          <entry key="txt" value="949" />
+          <entry key="py" value="6787" />
+          <entry key="txt" value="1060" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1006" />
-          <entry key="Python" value="6767" />
+          <entry key="PLAIN_TEXT" value="1117" />
+          <entry key="Python" value="6787" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -82,6 +81,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+                <marker date="1540757611514" expanded="true" signature="982:991" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -112,13 +124,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="103" selection-start-line="103" selection-end-line="103" />
+            <state relative-caret-position="667">
+              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540756470940" expanded="true" signature="2236:2629" ph="..." />
-                <marker date="1540756470940" expanded="true" signature="2719:2776" ph="..." />
-                <marker date="1540756470940" expanded="true" signature="2859:2860" ph="..." />
+                <marker date="1540756518470" expanded="true" signature="2219:2612" ph="..." />
+                <marker date="1540756518470" expanded="true" signature="2702:2759" ph="..." />
+                <marker date="1540756518470" expanded="true" signature="2842:2843" ph="..." />
               </folding>
             </state>
           </provider>
@@ -242,6 +254,7 @@
         <option value="$PROJECT_DIR$/tests/test_stepper.py" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
+        <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
       </list>
     </option>
   </component>
@@ -570,7 +583,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540756233560</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="print out state of CW &amp; CCW switches">
+      <created>1540756482462</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1540756482462</updated>
+    </task>
+    <task id="LOCAL-00033" summary="switches are in &quot;open&quot; state by default">
+      <created>1540756537925</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1540756537925</updated>
+    </task>
+    <task id="LOCAL-00034" summary="clean up init">
+      <created>1540757634627</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1540757634627</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -639,9 +673,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="turn on debugging" />
-    <MESSAGE value="fix setting of debug for I2C" />
-    <MESSAGE value="some additional prints" />
     <MESSAGE value="some more debug statements" />
     <MESSAGE value="pass debugging into I2C" />
     <MESSAGE value="fix hex format" />
@@ -664,7 +695,10 @@
     <MESSAGE value="use forward/backward directly" />
     <MESSAGE value="back to CW/CCW &amp; micro" />
     <MESSAGE value="fixed a logic error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a logic error" />
+    <MESSAGE value="print out state of CW &amp; CCW switches" />
+    <MESSAGE value="switches are in &quot;open&quot; state by default" />
+    <MESSAGE value="clean up init" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up init" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -791,15 +825,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1540757611514" expanded="true" signature="982:991" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        <state relative-caret-position="667">
+          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540756470940" expanded="true" signature="2236:2629" ph="..." />
-            <marker date="1540756470940" expanded="true" signature="2719:2776" ph="..." />
-            <marker date="1540756470940" expanded="true" signature="2859:2860" ph="..." />
+            <marker date="1540756518470" expanded="true" signature="2219:2612" ph="..." />
+            <marker date="1540756518470" expanded="true" signature="2702:2759" ph="..." />
+            <marker date="1540756518470" expanded="true" signature="2842:2843" ph="..." />
           </folding>
         </state>
       </provider>
