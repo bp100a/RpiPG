@@ -16,8 +16,8 @@ CAMERA_STEPPER_MOTOR_NUM = 1
 MODEL_STEPPER_MOTOR_NUM = 2
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
-CCW_MAX_SWITCH = limit_switch.LimitSwitch(3) # furthest CCW rotation allowed
-CW_MAX_SWITCH = limit_switch.LimitSwitch(5) # furthest CW rotation allowed
+CCW_MAX_SWITCH = limit_switch.LimitSwitch(4) # furthest CCW rotation allowed
+CW_MAX_SWITCH = limit_switch.LimitSwitch(17) # furthest CW rotation allowed
 
 
 def yield_function(direction: int) -> bool:
