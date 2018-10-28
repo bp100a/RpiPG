@@ -32,8 +32,9 @@ class USBCameraController():
 
     def __init__(self):
         self.picID = "PiShots"
+        self.shot_date = datetime.now().strftime("%Y-%m-%d")
         self.folder_name = self.shot_date + self.picID
-        self.save_location = "/home/pi/Desktop/gphoto/images/" + self.folder_name
+        self.save_location = "/home/pi/images/" + self.folder_name
 
     def createSaveFolder(self):
         try:
@@ -64,7 +65,6 @@ usb_ctrl.killGphoto2Process()
 gp(usb_ctrl.clearCommand)
 
 while True:
-    usb_ctrl.shot_date = datetime.now().strftime("%Y-%m-%d")
     usb_ctrl.shot_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     usb_ctrl.createSaveFolder()
     usb_ctrl.captureImages()
