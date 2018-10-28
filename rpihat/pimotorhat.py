@@ -22,7 +22,7 @@ class Raspi_MotorHAT(MotorHatInterface):
 
     def __init__(self, stepper_class: StepperInterface,
                  pwm_class: PWMInterface,
-                 yield_func, addr=0x60, freq=1600, debug=False):
+                 yield_func, addr, freq, debug=False):
         super(Raspi_MotorHAT, self).__init__(stepper_class, pwm_class,
                                              yield_func, addr, freq, debug)
         self._i2caddr = addr        # default addr on HAT

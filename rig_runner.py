@@ -42,7 +42,7 @@ MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
                            yield_func=yield_function,
                            addr=MOTOR_HAT_I2C_ADDR,
                            freq=MOTOR_HAT_I2C_FREQ,
-                           debug=False)
+                           debug=True)
 
 
 # if somehow we exit, try to make sure the motors are

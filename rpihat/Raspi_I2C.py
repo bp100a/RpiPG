@@ -120,7 +120,6 @@ class Raspi_I2C(object):
             self.errMsg(err)
             return None
 
-
     def readU8(self, reg):
         """Read an unsigned byte from the I2C device"""
         try:

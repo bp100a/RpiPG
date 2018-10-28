@@ -50,7 +50,7 @@ class MotorHatInterface:
 
     def __init__(self, stepper_class: StepperInterface,
                  pwm_class: PWMInterface,
-                 yield_func, addr=0x60, freq=1600, debug=False):
+                 yield_func, addr, freq, debug=False):
         pass
 
     def setPin(self, pin: int, value: int) -> None:
