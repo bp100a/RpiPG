@@ -143,8 +143,6 @@ class Raspi_StepperMotor(StepperInterface):
 
     def setSpeed(self, rpm: int) -> None:
         """set speed of stepper"""
-        print ("setSpeed() rpm = {0}".format(rpm))
-        print("setSpeed() .revsteps = {0}".format(self.revsteps))
         self.sec_per_step = 60.0 / (self.revsteps * rpm)
         self.stepping_counter = 0
 

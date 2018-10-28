@@ -88,6 +88,8 @@ def cw_camera_home() -> int:
 if __name__ == '__main__':
     # okay time to run things
     CAMERA_STEPPER = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
+    CAMERA_STEPPER.setSpeed(30)
+
     while True:
         HOLD_TIME = 5
         print("Hold position [{0} seconds]".format(HOLD_TIME))
