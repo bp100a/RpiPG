@@ -5,6 +5,7 @@ import time
 from rpihat.pimotorhat import Raspi_MotorHAT
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor
+from rpihat import limit_switch  # our limit switches
 
 CAMERA_STEPPER_MOTOR_NUM = 1
 MODEL_STEPPER_MOTOR_NUM = 2
