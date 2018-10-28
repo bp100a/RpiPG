@@ -17,6 +17,8 @@ def yield_function(stepper_direction: int) -> bool:
     return False
 
 
+CCW_MAX_SWITCH = limit_switch.LimitSwitch(2) # testing pin usage
+
 # create a default object, no changes to I2C address or frequency
 MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
                            pwm_class=PWM,
