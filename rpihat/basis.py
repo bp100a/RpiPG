@@ -42,7 +42,7 @@ class StepperInterface:
     def hold(self) -> None:
         pass
 
-    def step(self, steps: int, direction: int, step_style: int) -> None:
+    def step(self, steps: int, direction: int, step_style: int) -> bool:
         pass
 
 

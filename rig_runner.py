@@ -109,6 +109,9 @@ if __name__ == '__main__':
         STEPS_TO_TAKE = 600
         print("Double Steps: {0} steps".format(STEPS_TO_TAKE))
         print("...CW stepping")
-        CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE)
+        if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE):
+            print("CW endstop triggered")
+
         print("...CCW stepping")
-        CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE)
+        if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
+            print ("CCW endstop triggered")

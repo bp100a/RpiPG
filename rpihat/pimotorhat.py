@@ -266,8 +266,8 @@ class Raspi_StepperMotor(StepperInterface):
         """use single step to hold current position"""
         self.oneStep(step_dir=Raspi_MotorHAT.FORWARD, style=Raspi_MotorHAT.SINGLE)
 
-    def step(self, steps: int, direction: int, step_style: int) -> None:
-        """step the motor"""
+    def step(self, steps: int, direction: int, step_style: int) -> bool:
+        """step the motor, returns True if interrupted"""
         s_per_s = self.sec_per_step
         latest_step = 0
 
@@ -291,11 +291,15 @@ class Raspi_StepperMotor(StepperInterface):
                     self.stepping_counter -= 1
 
                 if self.my_timer(s_per_s, direction):
-                    break
+                    return True
+        else:
+            return True
 
         if step_style == Raspi_MotorHAT.MICROSTEP:
             # this is an edge case, if we are in between full steps, lets just keep going
             # so we end on a full step
             while latest_step not in(0, self.MICROSTEPS):
                 latest_step = self.oneStep(direction, step_style)
-                time.sleep(s_per_s)
+                if self.my_timer(s_per_s, direction):
+                    return True
+        return False
