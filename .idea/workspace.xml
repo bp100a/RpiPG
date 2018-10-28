@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -61,14 +62,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="57" />
-          <entry key="py" value="6591" />
-          <entry key="txt" value="835" />
+          <entry key="py" value="6654" />
+          <entry key="txt" value="906" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="892" />
-          <entry key="Python" value="6591" />
+          <entry key="PLAIN_TEXT" value="963" />
+          <entry key="Python" value="6654" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -111,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_stepper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="572">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#56#69#0" expanded="true" />
@@ -125,12 +126,12 @@
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="557">
-              <caret line="98" column="70" selection-start-line="98" selection-start-column="70" selection-end-line="98" selection-end-column="70" />
+              <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540755343802" expanded="true" signature="2236:2629" ph="..." />
-                <marker date="1540755343802" expanded="true" signature="2719:2776" ph="..." />
-                <marker date="1540755343802" expanded="true" signature="2859:2860" ph="..." />
+                <marker date="1540755926376" expanded="true" signature="2236:2629" ph="..." />
+                <marker date="1540755926376" expanded="true" signature="2719:2776" ph="..." />
+                <marker date="1540755926376" expanded="true" signature="2859:2860" ph="..." />
               </folding>
             </state>
           </provider>
@@ -148,11 +149,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="282" column="37" selection-start-line="282" selection-start-column="37" selection-end-line="282" selection-end-column="37" />
+            <state relative-caret-position="-4598">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
               <folding>
                 <element signature="e#48#58#0" expanded="true" />
-                <marker date="1540753524120" expanded="true" signature="3695:4728" ph="..." />
+                <marker date="1540755560748" expanded="true" signature="3695:4728" ph="..." />
               </folding>
             </state>
           </provider>
@@ -239,6 +240,9 @@
       <find>def err</find>
       <find>getPiI</find>
       <find>.bus</find>
+      <find>rpm</find>
+      <find>setspeed</find>
+      <find>30</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -256,9 +260,9 @@
         <option value="$PROJECT_DIR$/rpihat/basis.py" />
         <option value="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" />
         <option value="$PROJECT_DIR$/rpihat/Raspi_I2C.py" />
-        <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
         <option value="$PROJECT_DIR$/tests/test_stepper.py" />
+        <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
@@ -553,7 +557,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540755262387</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="change to double steps">
+      <created>1540755350741</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1540755350741</updated>
+    </task>
+    <task id="LOCAL-00028" summary="set speed to 30 rpm">
+      <created>1540755569403</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1540755569403</updated>
+    </task>
+    <task id="LOCAL-00029" summary="use forward/backward directly">
+      <created>1540755787602</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1540755787602</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -622,9 +647,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- create our own &quot;sleep&quot; that can be used to check i/o" />
-    <MESSAGE value="- no nanosecond timer in Rpi" />
-    <MESSAGE value="oops! missed time_ns() reference" />
     <MESSAGE value="created interfaces to prepare for dependency injection&#10;now have &quot;rig_runner&quot; to start things out." />
     <MESSAGE value="clean up class definition" />
     <MESSAGE value="turn on debugging" />
@@ -647,7 +669,10 @@
     <MESSAGE value="turn off debugging" />
     <MESSAGE value="default yield" />
     <MESSAGE value="fix the motor # for Camera stepper" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the motor # for Camera stepper" />
+    <MESSAGE value="change to double steps" />
+    <MESSAGE value="set speed to 30 rpm" />
+    <MESSAGE value="use forward/backward directly" />
+    <option name="LAST_COMMIT_MESSAGE" value="use forward/backward directly" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -743,20 +768,9 @@
     <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="282" column="37" selection-start-line="282" selection-start-column="37" selection-end-line="282" selection-end-column="37" />
-          <folding>
-            <element signature="e#48#58#0" expanded="true" />
-            <marker date="1540753524120" expanded="true" signature="3695:4728" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_stepper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="572">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#56#69#0" expanded="true" />
@@ -765,15 +779,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4598">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+            <marker date="1540755560748" expanded="true" signature="3695:4728" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
-          <caret line="98" column="70" selection-start-line="98" selection-start-column="70" selection-end-line="98" selection-end-column="70" />
+          <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540755343802" expanded="true" signature="2236:2629" ph="..." />
-            <marker date="1540755343802" expanded="true" signature="2719:2776" ph="..." />
-            <marker date="1540755343802" expanded="true" signature="2859:2860" ph="..." />
+            <marker date="1540755926376" expanded="true" signature="2236:2629" ph="..." />
+            <marker date="1540755926376" expanded="true" signature="2719:2776" ph="..." />
+            <marker date="1540755926376" expanded="true" signature="2859:2860" ph="..." />
           </folding>
         </state>
       </provider>
