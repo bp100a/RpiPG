@@ -1,7 +1,7 @@
 from gpiozero import Button    # a GPIO library
 
 
-class LimitSwitch(None):
+class LimitSwitch:
     """object to wrap our input limit switches"""
     switch = None
 

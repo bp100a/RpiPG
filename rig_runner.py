@@ -8,7 +8,7 @@ Photogrammetry rig. Here we control:
 """
 import atexit
 import time
-from rpihat import limit_switch # our limit switches
+from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 
