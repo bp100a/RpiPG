@@ -95,5 +95,5 @@ if __name__ == '__main__':
         time.sleep(HOLD_TIME)
 
         print("Microsteps")
-        CAMERA_STEPPER.step(300, STEP_CAMERA_CCW, Raspi_MotorHAT.MICROSTEP)
-        CAMERA_STEPPER.step(300, STEP_CAMERA_CW, Raspi_MotorHAT.MICROSTEP)
+        CAMERA_STEPPER.step(300, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE)
+        CAMERA_STEPPER.step(300, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE)
