@@ -90,6 +90,16 @@ if __name__ == '__main__':
     CAMERA_STEPPER = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
     CAMERA_STEPPER.setSpeed(30)
 
+    if CCW_MAX_SWITCH.is_pressed():
+        print("CCW switch pressed!")
+    else:
+        print("CCW switch not pressed!")
+
+    if CW_MAX_SWITCH.is_pressed():
+        print("CW switch pressed!")
+    else:
+        print("CW switch not pressed!")
+
     while True:
         HOLD_TIME = 5
         print("Hold position [{0} seconds]".format(HOLD_TIME))

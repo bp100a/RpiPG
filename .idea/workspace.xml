@@ -48,7 +48,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="1" />
-          <entry key="py" value="6" />
+          <entry key="py" value="7" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -56,20 +56,20 @@
         <counts>
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="57" />
-          <entry key="py" value="6654" />
-          <entry key="txt" value="906" />
+          <entry key="py" value="6767" />
+          <entry key="txt" value="949" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="963" />
-          <entry key="Python" value="6654" />
+          <entry key="PLAIN_TEXT" value="1006" />
+          <entry key="Python" value="6767" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -109,39 +109,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_stepper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
-              <folding>
-                <element signature="e#56#69#0" expanded="true" />
-                <marker date="1540754695146" expanded="true" signature="451:471" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
+            <state relative-caret-position="579">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540755926376" expanded="true" signature="2236:2629" ph="..." />
-                <marker date="1540755926376" expanded="true" signature="2719:2776" ph="..." />
-                <marker date="1540755926376" expanded="true" signature="2859:2860" ph="..." />
+                <marker date="1540756470940" expanded="true" signature="2236:2629" ph="..." />
+                <marker date="1540756470940" expanded="true" signature="2719:2776" ph="..." />
+                <marker date="1540756470940" expanded="true" signature="2859:2860" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/gpiozero/devices.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="452" selection-start-line="452" selection-end-line="452" />
             </state>
           </provider>
         </entry>
@@ -149,11 +127,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4598">
-              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="2398">
+              <caret line="181" column="24" lean-forward="true" selection-start-line="181" selection-start-column="24" selection-end-line="181" selection-end-column="24" />
               <folding>
                 <element signature="e#48#58#0" expanded="true" />
-                <marker date="1540755560748" expanded="true" signature="3695:4728" ph="..." />
+                <marker date="1540756223897" expanded="true" signature="3695:4728" ph="..." />
               </folding>
             </state>
           </provider>
@@ -578,7 +556,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540755787602</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="back to CW/CCW &amp; micro">
+      <created>1540755940983</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1540755940983</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixed a logic error">
+      <created>1540756233560</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1540756233560</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView">
@@ -647,8 +639,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created interfaces to prepare for dependency injection&#10;now have &quot;rig_runner&quot; to start things out." />
-    <MESSAGE value="clean up class definition" />
     <MESSAGE value="turn on debugging" />
     <MESSAGE value="fix setting of debug for I2C" />
     <MESSAGE value="some additional prints" />
@@ -672,7 +662,9 @@
     <MESSAGE value="change to double steps" />
     <MESSAGE value="set speed to 30 rpm" />
     <MESSAGE value="use forward/backward directly" />
-    <option name="LAST_COMMIT_MESSAGE" value="use forward/backward directly" />
+    <MESSAGE value="back to CW/CCW &amp; micro" />
+    <MESSAGE value="fixed a logic error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a logic error" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -755,16 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <marker date="1540754472106" expanded="true" signature="179:251" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -779,26 +761,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Users/Harry/Downloads/Raspi_MotorHAT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-858">
+          <folding>
+            <element signature="e#19#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4598">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="2398">
+          <caret line="181" column="24" lean-forward="true" selection-start-line="181" selection-start-column="24" selection-end-line="181" selection-end-column="24" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
-            <marker date="1540755560748" expanded="true" signature="3695:4728" ph="..." />
+            <marker date="1540756223897" expanded="true" signature="3695:4728" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <marker date="1540754472106" expanded="true" signature="179:251" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
+        <state relative-caret-position="579">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540755926376" expanded="true" signature="2236:2629" ph="..." />
-            <marker date="1540755926376" expanded="true" signature="2719:2776" ph="..." />
-            <marker date="1540755926376" expanded="true" signature="2859:2860" ph="..." />
+            <marker date="1540756470940" expanded="true" signature="2236:2629" ph="..." />
+            <marker date="1540756470940" expanded="true" signature="2719:2776" ph="..." />
+            <marker date="1540756470940" expanded="true" signature="2859:2860" ph="..." />
           </folding>
         </state>
       </provider>
