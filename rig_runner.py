@@ -101,7 +101,7 @@ if __name__ == '__main__':
         print("CW switch not pressed!")
 
     while True:
-        HOLD_TIME = 5
+        HOLD_TIME = 1
         print("Hold position [{0} seconds]".format(HOLD_TIME))
         CAMERA_STEPPER.hold()
         time.sleep(HOLD_TIME)
