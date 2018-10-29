@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/deploy/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/page-faq.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/deploy/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/nginx.conf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,20 +67,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="conf" value="21" />
+          <entry key="conf" value="24" />
           <entry key="dummy" value="57" />
           <entry key="html" value="1861" />
           <entry key="py" value="7122" />
           <entry key="sh" value="49" />
-          <entry key="txt" value="1452" />
+          <entry key="txt" value="1521" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="49" />
-          <entry key="BuildoutCfg" value="21" />
+          <entry key="BuildoutCfg" value="24" />
           <entry key="HTML" value="1861" />
-          <entry key="PLAIN_TEXT" value="1509" />
+          <entry key="PLAIN_TEXT" value="1578" />
           <entry key="Python" value="7122" />
         </counts>
       </usages-collector>
@@ -138,7 +136,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -713,7 +715,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540766386870</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="added some web pages &amp; nginx.conf">
+      <created>1540841565815</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1540841565815</updated>
+    </task>
+    <task id="LOCAL-00048" summary="oops! missing home page">
+      <created>1540841724790</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1540841724790</updated>
+    </task>
+    <task id="LOCAL-00049" summary="syntax error">
+      <created>1540842043592</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1540842043592</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView">
@@ -729,12 +752,12 @@
     <frame x="1572" y="982" width="2021" height="1113" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.2417134" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.2417134" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39591837" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39591837" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993203" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -782,9 +805,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove limit switch" />
-    <MESSAGE value="move GPIO switch pins to avoid I2C" />
-    <MESSAGE value="turn off debugging" />
     <MESSAGE value="default yield" />
     <MESSAGE value="fix the motor # for Camera stepper" />
     <MESSAGE value="change to double steps" />
@@ -807,7 +827,10 @@
     <MESSAGE value="remove pullup" />
     <MESSAGE value="remove logical inversion" />
     <MESSAGE value="reduce hold time to 1 second" />
-    <option name="LAST_COMMIT_MESSAGE" value="reduce hold time to 1 second" />
+    <MESSAGE value="added some web pages &amp; nginx.conf" />
+    <MESSAGE value="oops! missing home page" />
+    <MESSAGE value="syntax error" />
+    <option name="LAST_COMMIT_MESSAGE" value="syntax error" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -994,7 +1017,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
