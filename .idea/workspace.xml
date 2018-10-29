@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/deploy/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/home-landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/home-landing.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,20 +67,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="conf" value="24" />
+          <entry key="conf" value="25" />
           <entry key="dummy" value="57" />
-          <entry key="html" value="1861" />
+          <entry key="html" value="1923" />
           <entry key="py" value="7122" />
           <entry key="sh" value="49" />
-          <entry key="txt" value="1521" />
+          <entry key="txt" value="1559" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="49" />
-          <entry key="BuildoutCfg" value="24" />
-          <entry key="HTML" value="1861" />
-          <entry key="PLAIN_TEXT" value="1578" />
+          <entry key="BuildoutCfg" value="25" />
+          <entry key="HTML" value="1923" />
+          <entry key="PLAIN_TEXT" value="1616" />
           <entry key="Python" value="7122" />
         </counts>
       </usages-collector>
@@ -107,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/home-landing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="242">
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -134,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="176">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -228,6 +228,7 @@
       <find>is_active</find>
       <find>Button</find>
       <find>How do I edit</find>
+      <find>PHOTOGR</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -250,10 +251,10 @@
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
-        <option value="$PROJECT_DIR$/website/home-landing.html" />
         <option value="$PROJECT_DIR$/deploy.sh" />
         <option value="$PROJECT_DIR$/website/page-faq.html" />
         <option value="$PROJECT_DIR$/website/deploy/nginx.conf" />
+        <option value="$PROJECT_DIR$/website/home-landing.html" />
       </list>
     </option>
   </component>
@@ -340,7 +341,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.page-faq.html">
+  <component name="RunManager" selected="JavaScript Debug.home-landing.html">
     <configuration name="home-landing.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/home-landing.html">
       <method v="2" />
     </configuration>
@@ -376,8 +377,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.page-faq.html" />
         <item itemvalue="JavaScript Debug.home-landing.html" />
+        <item itemvalue="JavaScript Debug.page-faq.html" />
         <item itemvalue="Python.rig_runner" />
       </list>
     </recent_temporary>
@@ -392,20 +393,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00001" summary="- using gpiozero library to access pins&#10;- include pin layout/numbering information">
-      <created>1540664807803</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1540664807803</updated>
-    </task>
-    <task id="LOCAL-00002" summary="- create our own &quot;sleep&quot; that can be used to check i/o">
-      <created>1540666706180</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1540666706180</updated>
     </task>
     <task id="LOCAL-00003" summary="- no nanosecond timer in Rpi">
       <created>1540667027413</created>
@@ -736,7 +723,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540842043592</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="missing another ;">
+      <created>1540842314677</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1540842314679</updated>
+    </task>
+    <task id="LOCAL-00051" summary="the website contents">
+      <created>1540842434161</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1540842434161</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -805,8 +806,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="default yield" />
-    <MESSAGE value="fix the motor # for Camera stepper" />
     <MESSAGE value="change to double steps" />
     <MESSAGE value="set speed to 30 rpm" />
     <MESSAGE value="use forward/backward directly" />
@@ -830,7 +829,9 @@
     <MESSAGE value="added some web pages &amp; nginx.conf" />
     <MESSAGE value="oops! missing home page" />
     <MESSAGE value="syntax error" />
-    <option name="LAST_COMMIT_MESSAGE" value="syntax error" />
+    <MESSAGE value="missing another ;" />
+    <MESSAGE value="the website contents" />
+    <option name="LAST_COMMIT_MESSAGE" value="the website contents" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -995,13 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Users/Harry/Downloads/themeforest-22129337-kolor-mobile-mobile-template/code/page-faq.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1018,8 +1012,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="176">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
         </state>
       </provider>
     </entry>
