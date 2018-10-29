@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/home-landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/home-landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,6 +48,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="conf" value="1" />
+          <entry key="css" value="1" />
           <entry key="html" value="4" />
           <entry key="png" value="1" />
           <entry key="py" value="9" />
@@ -59,6 +60,7 @@
         <counts>
           <entry key="Bash" value="1" />
           <entry key="BuildoutCfg" value="1" />
+          <entry key="CSS" value="1" />
           <entry key="HTML" value="4" />
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -69,18 +71,18 @@
         <counts>
           <entry key="conf" value="25" />
           <entry key="dummy" value="57" />
-          <entry key="html" value="1933" />
+          <entry key="html" value="2776" />
           <entry key="py" value="7122" />
           <entry key="sh" value="49" />
-          <entry key="txt" value="1572" />
+          <entry key="txt" value="1614" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="49" />
           <entry key="BuildoutCfg" value="25" />
-          <entry key="HTML" value="1933" />
-          <entry key="PLAIN_TEXT" value="1629" />
+          <entry key="HTML" value="2776" />
+          <entry key="PLAIN_TEXT" value="1671" />
           <entry key="Python" value="7122" />
         </counts>
       </usages-collector>
@@ -119,7 +121,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66" />
+            <state relative-caret-position="497">
+              <caret line="168" column="24" lean-forward="true" selection-start-line="168" selection-start-column="24" selection-end-line="168" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#form#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#form#2;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -186,11 +195,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -227,10 +231,14 @@
       <find>Button</find>
       <find>How do I edit</find>
       <find>PHOTOGR</find>
+      <find>set diffdr</find>
+      <find>myRange</find>
+      <find>rot</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>camera_stepper</replace>
+      <replace>cam</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -253,6 +261,7 @@
         <option value="$PROJECT_DIR$/website/page-faq.html" />
         <option value="$PROJECT_DIR$/website/deploy/nginx.conf" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
+        <option value="$PROJECT_DIR$/website/setup.html" />
       </list>
     </option>
   </component>
@@ -339,11 +348,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.home-landing.html">
+  <component name="RunManager" selected="JavaScript Debug.setup.html">
     <configuration name="home-landing.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/home-landing.html">
       <method v="2" />
     </configuration>
     <configuration name="page-faq.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/page-faq.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="setup.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/setup.html">
       <method v="2" />
     </configuration>
     <configuration name="rig_runner" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -372,9 +384,11 @@
       <item itemvalue="Python.rig_runner" />
       <item itemvalue="JavaScript Debug.home-landing.html" />
       <item itemvalue="JavaScript Debug.page-faq.html" />
+      <item itemvalue="JavaScript Debug.setup.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.setup.html" />
         <item itemvalue="JavaScript Debug.home-landing.html" />
         <item itemvalue="JavaScript Debug.page-faq.html" />
         <item itemvalue="Python.rig_runner" />
@@ -391,20 +405,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00004" summary="oops! missed time_ns() reference">
-      <created>1540667095815</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1540667095815</updated>
-    </task>
-    <task id="LOCAL-00005" summary="created interfaces to prepare for dependency injection&#10;now have &quot;rig_runner&quot; to start things out.">
-      <created>1540746052536</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1540746052536</updated>
     </task>
     <task id="LOCAL-00006" summary="clean up class definition">
       <created>1540746474380</created>
@@ -735,7 +735,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540843126134</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="added the setup page">
+      <created>1540843502699</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1540843502699</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added value to slider">
+      <created>1540844399920</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1540844399920</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TodoView">
@@ -804,8 +818,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="set speed to 30 rpm" />
-    <MESSAGE value="use forward/backward directly" />
     <MESSAGE value="back to CW/CCW &amp; micro" />
     <MESSAGE value="fixed a logic error" />
     <MESSAGE value="print out state of CW &amp; CCW switches" />
@@ -829,7 +841,9 @@
     <MESSAGE value="missing another ;" />
     <MESSAGE value="the website contents" />
     <MESSAGE value="a few changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="a few changes" />
+    <MESSAGE value="added the setup page" />
+    <MESSAGE value="added value to slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="added value to slider" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -1022,9 +1036,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/website/styles/framework.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="1214" column="1" selection-start-line="1214" selection-start-column="1" selection-end-line="1214" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66" />
+        <state relative-caret-position="497">
+          <caret line="168" column="24" lean-forward="true" selection-start-line="168" selection-start-column="24" selection-end-line="168" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#form#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#form#2;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

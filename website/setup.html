@@ -100,39 +100,67 @@
         </div>
         <div class="content-box shadow-large bg-white">
             <div class="top-25 bottom-15">
-               <h4>Range Sliders</h4>
+               <h4>Camera Pictures</h4>
                <p>
-                  Set different values just by draging your finger across the screen.
+                  Set number of camera declination and model rotation stops just by draging your finger across the screen.
+                    <span style="position:absolute; color:red; border:1px solid blue; min-width:100px;">
+                   <span id="total_value"></span>
+                    </span>
                </p>
-               <form class="range-slider bottom-15 range-slider-icons">
-                  <i class="fa fa-range-icon-1 fa-volume-down"></i>
-                  <i class="fa fa-range-icon-2 fa-volume-up"></i>
-                  <input class="ios-slider" type="range" value="50" />
-               </form>
-               <form class="range-slider bottom-15 ">
-                  <input class="classic-slider" type="range" value="50" />
-               </form>
                <form class="range-slider">
                     <span style="position:absolute; color:red; border:1px solid blue; min-width:100px;">
-                    <span id="myValue"></span>
+                        <span id="camera_value"></span>
                     </span>
+                  <input class="material-slider" type="range" id="camera_rotation" value="10" min="4" max="25"/>
                </form>
-                  <input class="material-slider" type="range" id="myRange" value="50" />
                     <script type="text/javascript" charset="utf-8">
-                        var myRange = document.querySelector('#myRange');
-                        var myValue = document.querySelector('#myValue');
-                        var myUnits = 'myUnits';
-                        var off = myRange.offsetWidth / (parseInt(myRange.max) - parseInt(myRange.min));
-                        var px =  ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetParent.offsetWidth / 2);
+                        var declination_stops = document.querySelector('#camera_rotation');
+                        var declination_value = document.querySelector('#camera_value');
+                        var total_value = document.querySelector('#total_value');
+                        var declination_label = 'pics per camera';
+                        var off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
+                        var px =  ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
 
-                          myValue.parentElement.style.left = px + 'px';
-                          myValue.parentElement.style.top = myRange.offsetHeight + 'px';
-                          myValue.innerHTML = myRange.value + ' ' + myUnits;
+                        declination_value.parentElement.style.left = px + 'px';
+                        declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
+                        declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
 
-                          myRange.oninput =function(){
-                            let px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetWidth / 2);
-                            myValue.innerHTML = myRange.value + ' ' + myUnits;
-                            myValue.parentElement.style.left = px + 'px';
+                        declination_stops.oninput =function(){
+                            let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetWidth / 2);
+                            declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
+                            declination_value.parentElement.style.left = px + 'px';
+
+                            // Calculate total # of pictures
+                            var total_pics = declination_stops.value * rotation_stops.value;
+                            total_value.innerHTML = total_pics + ' pictures'
+                        };
+                      </script>
+
+               <form class="range-slider">
+                    <span style="position:absolute; color:red; border:1px solid blue; min-width:100px;">
+                        <span id="rotation_value"></span>
+                    </span>
+                  <input class="material-slider" type="range" id="model_rotation" value="10" min="4" max="25"/>
+               </form>
+                    <script type="text/javascript" charset="utf-8">
+                        var rotation_stops = document.querySelector('#model_rotation');
+                        var rotation_value = document.querySelector('#rotation_value');
+                        var rotation_label = 'pics per model rotation';
+                        var off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
+                        var px =  ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
+
+                        rotation_value.parentElement.style.left = px + 'px';
+                        rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
+                        rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
+
+                        rotation_stops.oninput =function(){
+                            let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetWidth / 2);
+                            rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
+                            rotation_value.parentElement.style.left = px + 'px';
+
+                            // Calculate total # of pictures
+                            var total_pics = declination_stops.value * rotation_stops.value;
+                            total_value.innerHTML = total_pics + ' pictures'
                           };
                       </script>
             </div>
