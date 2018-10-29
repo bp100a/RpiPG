@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/home-landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/home-landing.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -48,7 +48,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="conf" value="1" />
-          <entry key="html" value="3" />
+          <entry key="html" value="4" />
           <entry key="png" value="1" />
           <entry key="py" value="9" />
           <entry key="sh" value="1" />
@@ -59,7 +59,7 @@
         <counts>
           <entry key="Bash" value="1" />
           <entry key="BuildoutCfg" value="1" />
-          <entry key="HTML" value="3" />
+          <entry key="HTML" value="4" />
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="9" />
@@ -69,18 +69,18 @@
         <counts>
           <entry key="conf" value="25" />
           <entry key="dummy" value="57" />
-          <entry key="html" value="1923" />
+          <entry key="html" value="1933" />
           <entry key="py" value="7122" />
           <entry key="sh" value="49" />
-          <entry key="txt" value="1559" />
+          <entry key="txt" value="1572" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="49" />
           <entry key="BuildoutCfg" value="25" />
-          <entry key="HTML" value="1923" />
-          <entry key="PLAIN_TEXT" value="1616" />
+          <entry key="HTML" value="1933" />
+          <entry key="PLAIN_TEXT" value="1629" />
           <entry key="Python" value="7122" />
         </counts>
       </usages-collector>
@@ -107,12 +107,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/home-landing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+            <state relative-caret-position="198">
+              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/setup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66" />
           </provider>
         </entry>
       </file>
@@ -175,15 +182,6 @@
               <folding>
                 <marker date="1540766318478" expanded="true" signature="179:252" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/gpiozero/input_devices.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="256" selection-start-line="256" selection-end-line="256" />
             </state>
           </provider>
         </entry>
@@ -321,8 +319,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\bp100\PycharmProjects\RpiPG" />
       <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website" />
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website\deploy" />
@@ -393,13 +391,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00003" summary="- no nanosecond timer in Rpi">
-      <created>1540667027413</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1540667027413</updated>
     </task>
     <task id="LOCAL-00004" summary="oops! missed time_ns() reference">
       <created>1540667095815</created>
@@ -737,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540842434161</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="a few changes">
+      <created>1540843126134</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1540843126134</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -806,7 +804,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change to double steps" />
     <MESSAGE value="set speed to 30 rpm" />
     <MESSAGE value="use forward/backward directly" />
     <MESSAGE value="back to CW/CCW &amp; micro" />
@@ -831,7 +828,8 @@
     <MESSAGE value="syntax error" />
     <MESSAGE value="missing another ;" />
     <MESSAGE value="the website contents" />
-    <option name="LAST_COMMIT_MESSAGE" value="the website contents" />
+    <MESSAGE value="a few changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="a few changes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -1019,9 +1017,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/home-landing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        <state relative-caret-position="198">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66" />
       </provider>
     </entry>
   </component>
