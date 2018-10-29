@@ -12,7 +12,6 @@
 
 <body>
 
-
 <div id="page-transitions" class="page-build">
     <div class="page-bg gradient-body-1"></div>
 
@@ -114,8 +113,28 @@
                   <input class="classic-slider" type="range" value="50" />
                </form>
                <form class="range-slider">
-                  <input class="material-slider" type="range" value="50" />
+                    <span style="position:absolute; color:red; border:1px solid blue; min-width:100px;">
+                    <span id="myValue"></span>
+                    </span>
                </form>
+                  <input class="material-slider" type="range" id="myRange" value="50" />
+                    <script type="text/javascript" charset="utf-8">
+                        var myRange = document.querySelector('#myRange');
+                        var myValue = document.querySelector('#myValue');
+                        var myUnits = 'myUnits';
+                        var off = myRange.offsetWidth / (parseInt(myRange.max) - parseInt(myRange.min));
+                        var px =  ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetParent.offsetWidth / 2);
+
+                          myValue.parentElement.style.left = px + 'px';
+                          myValue.parentElement.style.top = myRange.offsetHeight + 'px';
+                          myValue.innerHTML = myRange.value + ' ' + myUnits;
+
+                          myRange.oninput =function(){
+                            let px = ((myRange.valueAsNumber - parseInt(myRange.min)) * off) - (myValue.offsetWidth / 2);
+                            myValue.innerHTML = myRange.value + ' ' + myUnits;
+                            myValue.parentElement.style.left = px + 'px';
+                          };
+                      </script>
             </div>
         </div>
         <div class="content-box shadow-large bg-white">
