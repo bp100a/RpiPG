@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/rpihat/limit_switch.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/limit_switch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/deploy/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/page-faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,13 +49,19 @@
     <session id="1228776072">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="conf" value="1" />
+          <entry key="html" value="3" />
           <entry key="png" value="1" />
           <entry key="py" value="9" />
+          <entry key="sh" value="1" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Bash" value="1" />
+          <entry key="BuildoutCfg" value="1" />
+          <entry key="HTML" value="3" />
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="9" />
@@ -60,15 +69,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="conf" value="21" />
           <entry key="dummy" value="57" />
-          <entry key="py" value="7120" />
-          <entry key="txt" value="1386" />
+          <entry key="html" value="1861" />
+          <entry key="py" value="7122" />
+          <entry key="sh" value="49" />
+          <entry key="txt" value="1452" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1443" />
-          <entry key="Python" value="7120" />
+          <entry key="Bash" value="49" />
+          <entry key="BuildoutCfg" value="21" />
+          <entry key="HTML" value="1861" />
+          <entry key="PLAIN_TEXT" value="1509" />
+          <entry key="Python" value="7122" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -85,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <marker date="1540757611514" expanded="true" signature="982:991" ph="..." />
@@ -95,28 +110,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
+        <entry file="file://$PROJECT_DIR$/website/home-landing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1430">
-              <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-              <folding>
-                <element signature="e#34#43#0" expanded="true" />
-                <marker date="1540748231521" expanded="true" signature="291:314" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="356:365" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="1434:1443" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="1597:1606" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="2610:2619" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="2796:2805" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="3161:3170" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="3572:3581" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="3892:3901" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="4287:4296" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="4760:4761" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="4760:4769" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="5196:5197" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="5711:5720" ph="..." />
-                <marker date="1540748231521" expanded="true" signature="6412:6421" ph="..." />
-              </folding>
+            <state relative-caret-position="484">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/Users/Harry/Downloads/themeforest-22129337-kolor-mobile-mobile-template/code/page-faq.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/page-faq.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -124,59 +153,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            <state relative-caret-position="359">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540766039545" expanded="true" signature="2261:2654" ph="..." />
-                <marker date="1540766039545" expanded="true" signature="2744:2801" ph="..." />
-                <marker date="1540766039545" expanded="true" signature="2884:2885" ph="..." />
+                <marker date="1540766378447" expanded="true" signature="2261:2654" ph="..." />
+                <marker date="1540766378447" expanded="true" signature="2744:2801" ph="..." />
+                <marker date="1540766378447" expanded="true" signature="2884:2885" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
-              <folding>
-                <element signature="e#48#58#0" expanded="true" />
-                <marker date="1540765141343" expanded="true" signature="3695:4728" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpihat/basis.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
-              <folding>
-                <marker date="1540765047458" expanded="true" signature="146:460" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="192:211" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="257:276" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="303:322" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="671:690" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="1048:1438" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="1202:1221" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="1268:1287" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="1318:1337" ph="..." />
-                <marker date="1540765047458" expanded="true" signature="1385:1404" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+            <state relative-caret-position="242">
+              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
               <folding>
-                <marker date="1540766185005" expanded="true" signature="179:252" ph="..." />
+                <marker date="1540766318478" expanded="true" signature="179:252" ph="..." />
               </folding>
             </state>
           </provider>
@@ -194,22 +189,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
           <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
-              <folding>
-                <element signature="e#68#79#0" expanded="true" />
-                <marker date="1540748128128" expanded="true" signature="968:977" ph="..." />
-                <marker date="1540748128128" expanded="true" signature="1167:1175" ph="..." />
-                <marker date="1540748128128" expanded="true" signature="2749:2758" ph="..." />
-                <marker date="1540748128128" expanded="true" signature="3076:3085" ph="..." />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -246,6 +225,7 @@
       <find>is_pressed</find>
       <find>is_active</find>
       <find>Button</find>
+      <find>How do I edit</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -266,8 +246,12 @@
         <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
         <option value="$PROJECT_DIR$/rpihat/basis.py" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
+        <option value="$PROJECT_DIR$/website/home-landing.html" />
+        <option value="$PROJECT_DIR$/deploy.sh" />
+        <option value="$PROJECT_DIR$/website/page-faq.html" />
+        <option value="$PROJECT_DIR$/website/deploy/nginx.conf" />
       </list>
     </option>
   </component>
@@ -278,10 +262,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1513" />
-    <option name="y" value="742" />
-    <option name="width" value="1918" />
-    <option name="height" value="1310" />
+    <option name="x" value="1572" />
+    <option name="y" value="982" />
+    <option name="width" value="2021" />
+    <option name="height" value="1113" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -316,6 +300,11 @@
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -326,6 +315,16 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG" />
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website\deploy" />
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -339,7 +338,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.page-faq.html">
+    <configuration name="home-landing.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/home-landing.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="page-faq.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/page-faq.html">
+      <method v="2" />
+    </configuration>
     <configuration name="rig_runner" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RpiPG" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -362,8 +367,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.rig_runner" />
+      <item itemvalue="JavaScript Debug.home-landing.html" />
+      <item itemvalue="JavaScript Debug.page-faq.html" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.page-faq.html" />
+        <item itemvalue="JavaScript Debug.home-landing.html" />
         <item itemvalue="Python.rig_runner" />
       </list>
     </recent_temporary>
@@ -680,7 +692,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540766050165</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="remove pullup">
+      <created>1540766192597</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1540766192597</updated>
+    </task>
+    <task id="LOCAL-00045" summary="remove logical inversion">
+      <created>1540766327863</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1540766327863</updated>
+    </task>
+    <task id="LOCAL-00046" summary="reduce hold time to 1 second">
+      <created>1540766386870</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1540766386870</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TodoView">
@@ -693,15 +726,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1513" y="742" width="1918" height="1310" extended-state="0" />
+    <frame x="1572" y="982" width="2021" height="1113" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.25511304" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.2417134" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32965165" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39591837" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993203" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -749,9 +782,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove debug" />
-    <MESSAGE value="import limit_switch" />
-    <MESSAGE value="initialize a limit switch" />
     <MESSAGE value="remove limit switch" />
     <MESSAGE value="move GPIO switch pins to avoid I2C" />
     <MESSAGE value="turn off debugging" />
@@ -774,7 +804,10 @@
     <MESSAGE value="our optical switch appears normally closed, so it's '0' when triggered" />
     <MESSAGE value="wire up 2nd optical switch" />
     <MESSAGE value="oops! had gpio pin wrong" />
-    <option name="LAST_COMMIT_MESSAGE" value="oops! had gpio pin wrong" />
+    <MESSAGE value="remove pullup" />
+    <MESSAGE value="remove logical inversion" />
+    <MESSAGE value="reduce hold time to 1 second" />
+    <option name="LAST_COMMIT_MESSAGE" value="reduce hold time to 1 second" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -816,7 +849,7 @@
     <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1430">
-          <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
           <folding>
             <element signature="e#34#43#0" expanded="true" />
             <marker date="1540748231521" expanded="true" signature="291:314" ph="..." />
@@ -858,17 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1540757611514" expanded="true" signature="982:991" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/basis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -891,7 +913,7 @@
     <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
-          <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+          <caret line="296" selection-start-line="296" selection-end-line="296" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
             <marker date="1540765141343" expanded="true" signature="3695:4728" ph="..." />
@@ -906,31 +928,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540766039545" expanded="true" signature="2261:2654" ph="..." />
-            <marker date="1540766039545" expanded="true" signature="2744:2801" ph="..." />
-            <marker date="1540766039545" expanded="true" signature="2884:2885" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/pin_layout.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        <state relative-caret-position="242">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
           <folding>
-            <marker date="1540766185005" expanded="true" signature="179:252" ph="..." />
+            <marker date="1540766318478" expanded="true" signature="179:252" ph="..." />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+            <marker date="1540766378447" expanded="true" signature="2261:2654" ph="..." />
+            <marker date="1540766378447" expanded="true" signature="2744:2801" ph="..." />
+            <marker date="1540766378447" expanded="true" signature="2884:2885" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1540757611514" expanded="true" signature="982:991" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Users/Harry/Downloads/themeforest-22129337-kolor-mobile-mobile-template/code/page-faq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/page-faq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
