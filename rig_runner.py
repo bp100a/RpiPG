@@ -42,7 +42,9 @@ def clear_all_queues(queue: beanstalk.Connection) -> None:
         queue.watch(tube)
         while True:
             dummy = queue.reserve(timeout=0)
-            if dummy is None:
+            if dummy:
+                dummy.delete()
+            else:
                 break
 
 
@@ -72,8 +74,9 @@ def yield_function(direction: int) -> bool:
         if BEANSTALK:  # if we have a queue, check for user cancel
             job = BEANSTALK.reserve(timeout=0) # don't wait
             if job is not None:
-                BREAK_EXIT_REASON = 'Cancel received'
-                print ('Cancel received - {0}'.format(job.body))
+                job.delete()
+                print ('Cancel received')
+                BREAK_EXIT_REASON = 'Cancel'
                 return True
 
     except beanstalk.CommandFailed:
@@ -84,10 +87,10 @@ def yield_function(direction: int) -> bool:
         pass
 
     if direction == Raspi_MotorHAT.FORWARD:
-        BREAK_EXIT_REASON = 'CCW max switch'
+        BREAK_EXIT_REASON = 'CCW'
         return CCW_MAX_SWITCH.is_pressed()
 
-    BREAK_EXIT_REASON = "CW max switch"
+    BREAK_EXIT_REASON = "CW"
     return CW_MAX_SWITCH.is_pressed()
 
 # Create our motor hat controller object, it'll house two
