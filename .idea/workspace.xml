@@ -73,9 +73,9 @@
           <entry key="conf" value="25" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3126" />
-          <entry key="py" value="12042" />
+          <entry key="py" value="15900" />
           <entry key="sh" value="399" />
-          <entry key="txt" value="2119" />
+          <entry key="txt" value="2201" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -83,8 +83,8 @@
           <entry key="Bash" value="399" />
           <entry key="BuildoutCfg" value="25" />
           <entry key="HTML" value="3126" />
-          <entry key="PLAIN_TEXT" value="2187" />
-          <entry key="Python" value="12042" />
+          <entry key="PLAIN_TEXT" value="2269" />
+          <entry key="Python" value="15900" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -160,14 +160,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+            <state relative-caret-position="837">
+              <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1540917819917" expanded="true" signature="880:1021" ph="..." />
-                <marker date="1540917819917" expanded="true" signature="1332:1429" ph="..." />
-                <marker date="1540917819917" expanded="true" signature="1620:1791" ph="..." />
-                <marker date="1540917819917" expanded="true" signature="3710:4446" ph="..." />
+                <marker date="1540928124358" expanded="true" signature="880:1183" ph="..." />
+                <marker date="1540928124358" expanded="true" signature="1566:1664" ph="..." />
+                <marker date="1540928124358" expanded="true" signature="1855:2027" ph="..." />
+                <marker date="1540928124358" expanded="true" signature="2163:2284" ph="..." />
+                <marker date="1540928124358" expanded="true" signature="4202:4929" ph="..." />
               </folding>
             </state>
           </provider>
@@ -176,10 +177,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+            <state relative-caret-position="199">
+              <caret line="247" selection-start-line="247" selection-end-line="248" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
+                <marker date="1540935753048" expanded="true" signature="5062:5165" ph="..." />
+                <marker date="1540935753048" expanded="true" signature="5290:5838" ph="..." />
               </folding>
             </state>
           </provider>
@@ -188,11 +191,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2970">
-              <caret line="135" column="47" lean-forward="true" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
+            <state relative-caret-position="405">
+              <caret line="286" column="38" lean-forward="true" selection-start-line="286" selection-start-column="38" selection-end-line="286" selection-end-column="38" />
               <folding>
                 <element signature="e#48#58#0" expanded="true" />
-                <marker date="1540924185861" expanded="true" signature="3695:4728" ph="..." />
+                <marker date="1540934343909" expanded="true" signature="3695:4728" ph="..." />
               </folding>
             </state>
           </provider>
@@ -209,11 +212,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my_tim</find>
-      <find>softwareReset</find>
-      <find>yield</find>
       <find>stepping_counter</find>
-      <find>my_timer</find>
       <find>MY_STEPPER</find>
       <find>.MC</find>
       <find>error access</find>
@@ -239,11 +238,16 @@
       <find>jsonifyj</find>
       <find>jsonify</find>
       <find>BREAK_EXIT</find>
+      <find>get_status</find>
+      <find>CAMERA_STEPPER =</find>
+      <find>CAMERA</find>
+      <find>my_timer</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>camera_stepper</replace>
       <replace>cam</replace>
+      <replace>ROTATE</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -280,10 +284,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1162" />
-    <option name="y" value="752" />
+    <option name="x" value="1632" />
+    <option name="y" value="230" />
     <option name="width" value="2021" />
-    <option name="height" value="1113" />
+    <option name="height" value="1571" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -433,20 +437,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00022" summary="remove limit switch">
-      <created>1540754012026</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1540754012026</updated>
-    </task>
-    <task id="LOCAL-00023" summary="move GPIO switch pins to avoid I2C">
-      <created>1540754707471</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1540754707471</updated>
     </task>
     <task id="LOCAL-00024" summary="turn off debugging">
       <created>1540754912974</created>
@@ -777,7 +767,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540924477796</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="delete jobs from queue">
+      <created>1540925085729</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1540925085729</updated>
+    </task>
+    <task id="LOCAL-00072" summary="catch keyboard interrupt (is that good?)&#10;240 rpm">
+      <created>1540934363611</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1540934363611</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView">
@@ -790,7 +794,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1162" y="752" width="2021" height="1113" extended-state="0" />
+    <frame x="1632" y="230" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.2417134" />
@@ -799,7 +803,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39591837" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3989796" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
@@ -846,8 +850,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reduce hold time to 1 second" />
-    <MESSAGE value="added some web pages &amp; nginx.conf" />
     <MESSAGE value="oops! missing home page" />
     <MESSAGE value="syntax error" />
     <MESSAGE value="missing another ;" />
@@ -871,14 +873,16 @@
     <MESSAGE value="display reason for forced exit" />
     <MESSAGE value="use global" />
     <MESSAGE value="print out body of received cancel" />
-    <option name="LAST_COMMIT_MESSAGE" value="print out body of received cancel" />
+    <MESSAGE value="delete jobs from queue" />
+    <MESSAGE value="catch keyboard interrupt (is that good?)&#10;240 rpm" />
+    <option name="LAST_COMMIT_MESSAGE" value="catch keyboard interrupt (is that good?)&#10;240 rpm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restapi/rig_control.py</url>
-          <line>256</line>
+          <line>276</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -1078,37 +1082,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="135" column="47" lean-forward="true" selection-start-line="135" selection-start-column="47" selection-end-line="135" selection-end-column="47" />
+        <state relative-caret-position="837">
+          <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
           <folding>
-            <element signature="e#48#58#0" expanded="true" />
-            <marker date="1540924185861" expanded="true" signature="3695:4728" ph="..." />
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1540928124358" expanded="true" signature="880:1183" ph="..." />
+            <marker date="1540928124358" expanded="true" signature="1566:1664" ph="..." />
+            <marker date="1540928124358" expanded="true" signature="1855:2027" ph="..." />
+            <marker date="1540928124358" expanded="true" signature="2163:2284" ph="..." />
+            <marker date="1540928124358" expanded="true" signature="4202:4929" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
+    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="405">
+          <caret line="286" column="38" lean-forward="true" selection-start-line="286" selection-start-column="38" selection-end-line="286" selection-end-column="38" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1540917819917" expanded="true" signature="880:1021" ph="..." />
-            <marker date="1540917819917" expanded="true" signature="1332:1429" ph="..." />
-            <marker date="1540917819917" expanded="true" signature="1620:1791" ph="..." />
-            <marker date="1540917819917" expanded="true" signature="3710:4446" ph="..." />
+            <element signature="e#48#58#0" expanded="true" />
+            <marker date="1540934343909" expanded="true" signature="3695:4728" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+        <state relative-caret-position="199">
+          <caret line="247" selection-start-line="247" selection-end-line="248" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
+            <marker date="1540935753048" expanded="true" signature="5062:5165" ph="..." />
+            <marker date="1540935753048" expanded="true" signature="5290:5838" ph="..." />
           </folding>
         </state>
       </provider>

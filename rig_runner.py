@@ -137,11 +137,13 @@ def move_camera(step_dir: int, switch: limit_switch.LimitSwitch) -> int:
 
 def ccw_camera_home() -> int:
     """home the camera in the counter-clockwise direction"""
+    post_status(BEANSTALK, "CCW homing")
     return move_camera(STEP_CAMERA_CCW, CCW_MAX_SWITCH)
 
 
 def cw_camera_home() -> int:
     """home the camera in the clockwise direction"""
+    post_status(BEANSTALK, "CW homing")
     return move_camera(STEP_CAMERA_CW, CW_MAX_SWITCH)
 
 
@@ -151,6 +153,13 @@ def home_camera() -> int:
     span the extremes"""
     ccw_camera_home()
     return cw_camera_home()
+
+
+def post_status(queue: beanstalk.Connection, message: str) -> None:
+    """post a simple message to whomever is listening"""
+    queue.watch(STATUS_QUEUE)
+    status_json = json.dumps({'msg': str})
+    queue.put(status_json)
 
 
 def calculate_steps(declination: int, rotation: int, camera_stepper: Raspi_StepperMotor, rotate_stepper: Raspi_StepperMotor):
@@ -168,6 +177,7 @@ def calculate_steps(declination: int, rotation: int, camera_stepper: Raspi_Stepp
 
 
 def take_picture():
+    post_status(BEANSTALK, "taking picture")
     pass
 
 
@@ -203,10 +213,12 @@ if __name__ == '__main__':
         print("...CW stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE):
             print("forced exit - " + BREAK_EXIT_REASON)
+            break
 
         print("...CCW stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
             print ("forced exit - " + BREAK_EXIT_REASON)
+            break
 
     # This is the main loop, we poll for work from our
     # queue. We can either "home" the printer or "scan"
@@ -216,7 +228,7 @@ if __name__ == '__main__':
     while True:
         job = BEANSTALK.reserve(timeout=0)
         if job is None:
-            sleep(0.001) # sleep for 1 ms to share the computer
+            time.sleep(0.001) # sleep for 1 ms to share the computer
             continue
 
         # We got a job!
@@ -231,12 +243,15 @@ if __name__ == '__main__':
         MAX_PICTURES = 200
         if job_dict['task'] == 'scan':
             try:
+                post_status(BEANSTALK, "scan command received!")
                 declination_steps = int(job_dict['steps']['declination'])
                 rotation_steps = int(job_dict['steps']['rotation'])
                 total_pictures = declination_steps * rotation_steps
                 if total_pictures > MAX_PICTURES:
+                    post_status(BEANSTALK, "too many pictures, exceeded {0}".format(MAX_PICTURES))
                     continue
             except ValueError:
+                post_status(BEANSTALK, "error in scan input value")
                 continue
 
             # okay we have valid parameters, time to scan the object
@@ -257,6 +272,7 @@ if __name__ == '__main__':
                 if remaining_declination_steps < steps_per_declination:
                     steps_per_declination = remaining_declination_steps;
 
+                post_status(BEANSTALK, "rotating model")
                 for r in range(0, rotation_steps):
                     take_picture()
                     if ROTATE_STEPPER(steps_per_rotation, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
