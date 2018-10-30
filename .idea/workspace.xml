@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/home-landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/home-landing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,9 +72,9 @@
           <entry key="conf" value="25" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3126" />
-          <entry key="py" value="10748" />
+          <entry key="py" value="11216" />
           <entry key="sh" value="399" />
-          <entry key="txt" value="1750" />
+          <entry key="txt" value="1831" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -87,8 +82,8 @@
           <entry key="Bash" value="399" />
           <entry key="BuildoutCfg" value="25" />
           <entry key="HTML" value="3126" />
-          <entry key="PLAIN_TEXT" value="1818" />
-          <entry key="Python" value="10748" />
+          <entry key="PLAIN_TEXT" value="1899" />
+          <entry key="Python" value="11216" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -123,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+            <state relative-caret-position="299">
+              <caret line="135" column="31" lean-forward="true" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -190,17 +185,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="-1048">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540910006397" expanded="true" signature="1243:1384" ph="..." />
-                <marker date="1540910006397" expanded="true" signature="2998:3391" ph="..." />
-                <marker date="1540910006397" expanded="true" signature="3481:3538" ph="..." />
-                <marker date="1540910006397" expanded="true" signature="3621:3622" ph="..." />
+                <marker date="1540917218637" expanded="true" signature="1587:1731" ph="..." />
+                <marker date="1540917218637" expanded="true" signature="3346:3739" ph="..." />
+                <marker date="1540917218637" expanded="true" signature="3829:3886" ph="..." />
+                <marker date="1540917218637" expanded="true" signature="3969:3970" ph="..." />
               </folding>
             </state>
           </provider>
@@ -226,8 +221,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setpin</find>
-      <find>sleep</find>
       <find>time_ns</find>
       <find>my_tim</find>
       <find>softwareReset</find>
@@ -256,6 +249,8 @@
       <find>fields</find>
       <find>simplicit</find>
       <find>designed to</find>
+      <find>jsonifyj</find>
+      <find>jsonify</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -283,10 +278,10 @@
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
         <option value="$PROJECT_DIR$/restapi/iiServer.py" />
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
         <option value="$PROJECT_DIR$/website/setup.html" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
   </component>
@@ -297,8 +292,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="622" />
-    <option name="y" value="818" />
+    <option name="x" value="1093" />
+    <option name="y" value="1003" />
     <option name="width" value="2021" />
     <option name="height" value="1113" />
   </component>
@@ -426,20 +421,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00011" summary="pass debugging into I2C">
-      <created>1540748136786</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1540748136786</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fix hex format">
-      <created>1540748184898</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1540748184898</updated>
     </task>
     <task id="LOCAL-00013" summary="get true bus #">
       <created>1540748239454</created>
@@ -770,7 +751,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540906366636</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="updates to website, creating REST api site">
+      <created>1540916227092</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1540916227092</updated>
+    </task>
+    <task id="LOCAL-00061" summary="replace flask.jsonify with json.dumps()">
+      <created>1540916796456</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1540916796456</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TodoView">
@@ -783,7 +778,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="622" y="818" width="2021" height="1113" extended-state="0" />
+    <frame x="1093" y="1003" width="2021" height="1113" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.2417134" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
@@ -838,8 +834,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="the need for speed -&gt; 45 rpm" />
-    <MESSAGE value="60 rpm!!" />
     <MESSAGE value="more steps!&#10;CW first" />
     <MESSAGE value="crazy speed - 120rpm!" />
     <MESSAGE value="no pull up, testing optical endstop" />
@@ -863,7 +857,9 @@
     <MESSAGE value="fix beanstalk import name" />
     <MESSAGE value="fix conflicting variable name" />
     <MESSAGE value="fix typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix typo" />
+    <MESSAGE value="updates to website, creating REST api site" />
+    <MESSAGE value="replace flask.jsonify with json.dumps()" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace flask.jsonify with json.dumps()" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
@@ -1036,34 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1540910006312" expanded="true" signature="880:1021" ph="..." />
-            <marker date="1540910006312" expanded="true" signature="1332:1429" ph="..." />
-            <marker date="1540910006312" expanded="true" signature="1620:1791" ph="..." />
-            <marker date="1540910006312" expanded="true" signature="3710:4137" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540910006397" expanded="true" signature="1243:1384" ph="..." />
-            <marker date="1540910006397" expanded="true" signature="2998:3391" ph="..." />
-            <marker date="1540910006397" expanded="true" signature="3481:3538" ph="..." />
-            <marker date="1540910006397" expanded="true" signature="3621:3622" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
@@ -1080,13 +1048,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+        <state relative-caret-position="299">
+          <caret line="135" column="31" lean-forward="true" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#form#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#form#2;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1540910006312" expanded="true" signature="880:1021" ph="..." />
+            <marker date="1540910006312" expanded="true" signature="1332:1429" ph="..." />
+            <marker date="1540910006312" expanded="true" signature="1620:1791" ph="..." />
+            <marker date="1540910006312" expanded="true" signature="3710:4137" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1048">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+            <marker date="1540917218637" expanded="true" signature="1587:1731" ph="..." />
+            <marker date="1540917218637" expanded="true" signature="3346:3739" ph="..." />
+            <marker date="1540917218637" expanded="true" signature="3829:3886" ph="..." />
+            <marker date="1540917218637" expanded="true" signature="3969:3970" ph="..." />
           </folding>
         </state>
       </provider>

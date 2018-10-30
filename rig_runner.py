@@ -27,12 +27,23 @@ CANCEL_QUEUE = 'cancel'
 STATUS_QUEUE = 'status'
 TASK_QUEUE = 'work'
 
+
 def configure_beanstalk():
     """set up our beanstalk queue for inter-process
     messages"""
     queue = beanstalk.Connection(host='localhost', port=14711)
     queue.watch(CANCEL_QUEUE) # tube that'll contain cancel requests
     return queue
+
+
+def clear_all_queues(queue: beanstalk.Connection) -> None:
+    """clear out all the currently known tubes"""
+    for tube in [CANCEL_QUEUE, STATUS_QUEUE, TASK_QUEUE]:
+        queue.watch(tube)
+        while True:
+            dummy = queue.reserve(timeout=0)
+            if dummy is None:
+                break
 
 
 def post_status(status: str) -> None:
@@ -119,6 +130,8 @@ if __name__ == '__main__':
     CAMERA_STEPPER.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
 
     BEANSTALK = configure_beanstalk()
+    clear_all_queues(BEANSTALK)
+
     if CCW_MAX_SWITCH.is_pressed():
         print("CCW switch pressed!")
     else:
@@ -139,8 +152,8 @@ if __name__ == '__main__':
         print("Double Steps: {0} steps".format(STEPS_TO_TAKE))
         print("...CW stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE):
-            print("CW endstop triggered")
+            print("forced exit")
 
         print("...CCW stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
-            print ("CCW endstop triggered")
+            print ("forced exit")
