@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,9 +70,9 @@
           <entry key="conf" value="25" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3126" />
-          <entry key="py" value="11682" />
+          <entry key="py" value="11907" />
           <entry key="sh" value="399" />
-          <entry key="txt" value="2021" />
+          <entry key="txt" value="2076" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -82,8 +80,8 @@
           <entry key="Bash" value="399" />
           <entry key="BuildoutCfg" value="25" />
           <entry key="HTML" value="3126" />
-          <entry key="PLAIN_TEXT" value="2089" />
-          <entry key="Python" value="11682" />
+          <entry key="PLAIN_TEXT" value="2144" />
+          <entry key="Python" value="11907" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -159,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2535">
-              <caret line="139" column="37" lean-forward="true" selection-start-line="139" selection-start-column="37" selection-end-line="139" selection-end-column="37" />
+            <state relative-caret-position="-308">
+              <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <marker date="1540917819917" expanded="true" signature="880:1021" ph="..." />
@@ -175,20 +173,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="68" selection-start-line="68" selection-end-line="69" />
+            <state relative-caret-position="159">
+              <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -428,20 +417,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00018" summary="typo in argument list">
-      <created>1540753531853</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1540753531853</updated>
-    </task>
-    <task id="LOCAL-00019" summary="remove debug">
-      <created>1540753573836</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1540753573836</updated>
     </task>
     <task id="LOCAL-00020" summary="import limit_switch">
       <created>1540753657183</created>
@@ -772,7 +747,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540923112767</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="move the switch checking">
+      <created>1540923387362</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1540923387362</updated>
+    </task>
+    <task id="LOCAL-00068" summary="display reason for forced exit">
+      <created>1540924045744</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1540924045744</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TodoView">
@@ -841,8 +830,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wire up 2nd optical switch" />
-    <MESSAGE value="oops! had gpio pin wrong" />
     <MESSAGE value="remove pullup" />
     <MESSAGE value="remove logical inversion" />
     <MESSAGE value="reduce hold time to 1 second" />
@@ -866,7 +853,9 @@
     <MESSAGE value="catch exception" />
     <MESSAGE value="catch 2 exceptions, use finally" />
     <MESSAGE value="Deadline Soon exception can be safely ignored." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deadline Soon exception can be safely ignored." />
+    <MESSAGE value="move the switch checking" />
+    <MESSAGE value="display reason for forced exit" />
+    <option name="LAST_COMMIT_MESSAGE" value="display reason for forced exit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1077,10 +1066,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/beanstalkc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="175" column="29" lean-forward="true" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2535">
-          <caret line="139" column="37" lean-forward="true" selection-start-line="139" selection-start-column="37" selection-end-line="139" selection-end-column="37" />
+        <state relative-caret-position="-308">
+          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <marker date="1540917819917" expanded="true" signature="880:1021" ph="..." />
@@ -1091,17 +1087,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/beanstalkc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="175" column="29" lean-forward="true" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="68" selection-start-line="68" selection-end-line="69" />
+        <state relative-caret-position="159">
+          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
           </folding>

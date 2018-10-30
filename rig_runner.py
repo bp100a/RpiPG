@@ -66,6 +66,7 @@ def yield_function(direction: int) -> bool:
     For now just checking limit switches, eventually
     we need to process other input like a cancel
     request from a web app"""
+    global BREAK_EXIT_REASON
 
     try:
         if BEANSTALK:  # if we have a queue, check for user cancel

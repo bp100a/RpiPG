@@ -137,7 +137,7 @@ class Raspi_StepperMotor(StepperInterface):
                 if self.yield_function(direction):
                     return True
 
-            time.sleep(0.0002) # yield some time to other processes (100 us)
+            time.sleep(0.0002) # yield some time to other processes (200 us)
             current_time_microseconds = time.time() * 10**6
         return False
 
