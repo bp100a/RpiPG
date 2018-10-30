@@ -277,7 +277,7 @@ class Raspi_StepperMotor(StepperInterface):
             s_per_s /= self.MICROSTEPS
             steps *= self.MICROSTEPS
 
-        print(s_per_s, " sec per step")
+        # print(s_per_s, " sec per step")
 
         try:
             # before we start stepping, for safety check the yield function

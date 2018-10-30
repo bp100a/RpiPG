@@ -241,6 +241,7 @@ if __name__ == '__main__':
         if job_dict['task'] == 'home':
             declination_travel_steps = home_camera()
             is_homed = True
+            print("homing complete, travel steps = {0}".format(declination_travel_steps))
             continue
 
         MAX_PICTURES = 200
