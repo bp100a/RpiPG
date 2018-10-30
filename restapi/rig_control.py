@@ -31,8 +31,15 @@ def configure_beanstalk():
 def get_status(queue: beanstalk.Connection) -> str:
     """return the status of the rig"""
     queue.watch(STATUS_QUEUE)
-    status = queue.reserve(timeout=0) # don't wait
-    return status
+    job = queue.reserve(timeout=0) # don't wait
+    if job is None:
+        return None
+
+    # we have status, let's get it and pull the
+    # job out of the queue
+    status_json = job.body
+    job.delete()
+    return status_json
 
 
 def send_cancel(queue: beanstalk.Connection) -> None:
@@ -44,6 +51,9 @@ def send_cancel(queue: beanstalk.Connection) -> None:
 
 def send_home_command(queue: beanstalk.Connection) -> None:
     """send a home command to home the rig"""
+
+    clear_status_queue(queue)   # so we see what home command triggers
+
     queue.watch(TASK_QUEUE)
     task_body = jsonify({'task': 'home'})
     queue.put(task_body)
@@ -53,8 +63,18 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
     """this is it - time to scan. send the # of steps for each axis
     and return"""
     queue.watch(TASK_QUEUE)
-    task_body = jsonify({'task': 'scan'}, {'steps': {'declination': declination_steps, 'roation': rotation_steps}})
+    task_body = jsonify({'task': 'scan'}, {'steps': {'declination': declination_steps, 'rotation': rotation_steps}})
     queue.put(task_body)
+
+
+def clear_status_queue(queue: beanstalk.CommandFailed):
+    """empty the status queue of any messages"""
+    queue.watch(STATUS_QUEUE)
+    while True:
+        job = queue.reserve(timeout=0)
+        if job is None:
+            return
+        job.delete()
 
 
 @app.route("/spec/swagger.json")
@@ -149,7 +169,7 @@ def status():
         if status_json is None:
             return make_response(None, status.HTTP_204_NO_CONTENT)
         else:
-            return make_response(jsonify(status_json), status.HTTP_200_OK)
+            return make_response(status_json, status.HTTP_200_OK)
     except:
         return make_response("something really bad!", status.HTTP_500_INTERNAL_SERVER_ERROR)
 

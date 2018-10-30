@@ -279,20 +279,23 @@ class Raspi_StepperMotor(StepperInterface):
 
         print(s_per_s, " sec per step")
 
-        # before we start stepping, for safety check the yield function
-        # to see if there's a reason not to proceed (like we are at a limit
-        # switch
-        if not self.yield_function(direction):
-            for _ in range(steps):
-                latest_step = self.oneStep(direction, step_style)
-                if direction == Raspi_MotorHAT.FORWARD:
-                    self.stepping_counter += 1
-                else:
-                    self.stepping_counter -= 1
+        try:
+            # before we start stepping, for safety check the yield function
+            # to see if there's a reason not to proceed (like we are at a limit
+            # switch
+            if not self.yield_function(direction):
+                for _ in range(steps):
+                    latest_step = self.oneStep(direction, step_style)
+                    if direction == Raspi_MotorHAT.FORWARD:
+                        self.stepping_counter += 1
+                    else:
+                        self.stepping_counter -= 1
 
-                if self.my_timer(s_per_s, direction):
-                    return True
-        else:
+                    if self.my_timer(s_per_s, direction):
+                        return True
+            else:
+                return True
+        except KeyboardInterrupt: # if someone types control-c we should exit
             return True
 
         if step_style == Raspi_MotorHAT.MICROSTEP:

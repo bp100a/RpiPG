@@ -16,7 +16,7 @@ import beanstalkc as beanstalk
 
 
 CAMERA_STEPPER_MOTOR_NUM = 2
-CAMERA_STEPPER_MOTOR_SPEED = 120  # rpm
+CAMERA_STEPPER_MOTOR_SPEED = 240  # rpm
 MODEL_STEPPER_MOTOR_NUM = 1
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
@@ -93,6 +93,7 @@ def yield_function(direction: int) -> bool:
     BREAK_EXIT_REASON = "CW"
     return CW_MAX_SWITCH.is_pressed()
 
+
 # Create our motor hat controller object, it'll house two
 # stepper motor objects
 MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
@@ -115,9 +116,11 @@ atexit.register(turn_off_motors)
 
 STEP_CAMERA_CCW = Raspi_MotorHAT.FORWARD
 STEP_CAMERA_CW = Raspi_MotorHAT.BACKWARD
+STEP_MODEL_CCW = Raspi_MotorHAT.FORWARD
+STEP_MODEL_CW = Raspi_MotorHAT.BACKWARD
 
 
-def home_camera(step_dir: int, switch: limit_switch.LimitSwitch) -> int:
+def move_camera(step_dir: int, switch: limit_switch.LimitSwitch) -> int:
     """home the camera. This means moving in a direction and checking
     for that direction's limit switch"""
     camera_stepper = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
@@ -134,18 +137,47 @@ def home_camera(step_dir: int, switch: limit_switch.LimitSwitch) -> int:
 
 def ccw_camera_home() -> int:
     """home the camera in the counter-clockwise direction"""
-    return home_camera(STEP_CAMERA_CCW, CCW_MAX_SWITCH)
+    return move_camera(STEP_CAMERA_CCW, CCW_MAX_SWITCH)
 
 
 def cw_camera_home() -> int:
     """home the camera in the clockwise direction"""
-    return home_camera(STEP_CAMERA_CW, CW_MAX_SWITCH)
+    return move_camera(STEP_CAMERA_CW, CW_MAX_SWITCH)
+
+
+def home_camera() -> int:
+    """home the camera. This will move the camera to the two
+    extreme positions and return how many steps it took to
+    span the extremes"""
+    ccw_camera_home()
+    return cw_camera_home()
+
+
+def calculate_steps(declination: int, rotation: int, camera_stepper: Raspi_StepperMotor, rotate_stepper: Raspi_StepperMotor):
+    """
+    determine how many "steps" for each picture
+    :param declination: # of declination divisions
+    :param rotation: # of rotation divisions
+    :param camera_stepper - the Camera (declination) stepper motor
+    :param rotate_stepper - the model (rotation) stepper
+    :return: 
+    """
+    steps_per_declination = int(camera_stepper.current_step / declination)
+    steps_per_rotation = int(200 / rotation)
+    return steps_per_declination, steps_per_rotation
+
+
+def take_picture():
+    pass
 
 
 if __name__ == '__main__':
     # okay time to run things
     CAMERA_STEPPER = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
     CAMERA_STEPPER.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
+
+    ROTATE_STEPPER = MOTOR_HAT.getStepper(MODEL_STEPPER_MOTOR_NUM)
+    ROTATE_STEPPER.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
 
     BEANSTALK = configure_beanstalk()
     clear_all_queues(BEANSTALK)
@@ -175,3 +207,61 @@ if __name__ == '__main__':
         print("...CCW stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
             print ("forced exit - " + BREAK_EXIT_REASON)
+
+    # This is the main loop, we poll for work from our
+    # queue. We can either "home" the printer or "scan"
+    # an object.
+    BEANSTALK.watch(TASK_QUEUE)
+    is_homed = False
+    while True:
+        job = BEANSTALK.reserve(timeout=0)
+        if job is None:
+            sleep(0.001) # sleep for 1 ms to share the computer
+            continue
+
+        # We got a job!
+        job_dict = json.loads(job.body)
+        job.delete()
+        declination_travel_steps = 0
+        if job_dict['task'] == 'home':
+            declination_travel_steps = home_camera()
+            is_homed = True
+            continue
+
+        MAX_PICTURES = 200
+        if job_dict['task'] == 'scan':
+            try:
+                declination_steps = int(job_dict['steps']['declination'])
+                rotation_steps = int(job_dict['steps']['rotation'])
+                total_pictures = declination_steps * rotation_steps
+                if total_pictures > MAX_PICTURES:
+                    continue
+            except ValueError:
+                continue
+
+            # okay we have valid parameters, time to scan the object
+            steps_per_declination, steps_per_rotation = calculate_steps(declination_steps, rotation_steps, CAMERA_STEPPER, ROTATE_STEPPER)
+
+            # the camera & model are 'homed', so now we need to go through the motions
+            forced_exit = False
+            remaining_declination_steps = declination_travel_steps  # got this from homing the printer
+            for d in range(0, declination_steps):
+                if forced_exit:
+                    break
+                if CAMERA_STEPPER(steps_per_declination, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
+                    forced_exit = True
+                    break  # forced exit
+
+                # the declination motion may not be perfect fit so don't overstep
+                remaining_declination_steps -= steps_per_declination
+                if remaining_declination_steps < steps_per_declination:
+                    steps_per_declination = remaining_declination_steps;
+
+                for r in range(0, rotation_steps):
+                    take_picture()
+                    if ROTATE_STEPPER(steps_per_rotation, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
+                        forced_exit = True
+                        break # forced exit
+
+            is_homed = False # we just did a scan, we need to re-home
+            # done moving camera/model and taking pictures
