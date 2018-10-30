@@ -73,6 +73,7 @@ def yield_function(direction: int) -> bool:
             job = BEANSTALK.reserve(timeout=0) # don't wait
             if job is not None:
                 BREAK_EXIT_REASON = 'Cancel received'
+                print ('Cancel received - {0}'.format(job.body))
                 return True
 
     except beanstalk.CommandFailed:
