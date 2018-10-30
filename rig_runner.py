@@ -11,6 +11,7 @@ import time
 from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
+import beanstalkc3 as beanstalk
 
 CAMERA_STEPPER_MOTOR_NUM = 2
 CAMERA_STEPPER_MOTOR_SPEED = 120  # rpm
@@ -19,7 +20,14 @@ MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
 CCW_MAX_SWITCH = limit_switch.LimitSwitch(4)  # furthest CCW rotation allowed
 CW_MAX_SWITCH = limit_switch.LimitSwitch(18)  # furthest CW rotation allowed
-
+BEANSTALK = None
+CANCEL_QUEUE = 'cancel'
+def configure_beanstalk():
+    """set up our beanstalk queue for inter-process
+    messages"""
+    beanstalk = beanstalk.Connection(host='localhost', port=14711)
+    beanstalk.watch(CANCEL_QUEUE) # tube that'll contain cancel requests
+    return beanstalk
 
 def yield_function(direction: int) -> bool:
     """Called in timing loops to perform checks
@@ -30,6 +38,13 @@ def yield_function(direction: int) -> bool:
     For now just checking limit switches, eventually
     we need to process other input like a cancel
     request from a web app"""
+
+    if BEANSTALK: # if we have a queue, check for user cancel
+        BEANSTALK.watch(CANCEL_QUEUE)
+        job = BEANSTALK.reserver(timeout=0) # don't wait
+        if job is not None:
+            return True
+
     if direction == Raspi_MotorHAT.FORWARD:
         return CCW_MAX_SWITCH.is_pressed()
 
@@ -90,6 +105,7 @@ if __name__ == '__main__':
     CAMERA_STEPPER = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
     CAMERA_STEPPER.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
 
+    BEANSTALK = configure_beanstalk()
     if CCW_MAX_SWITCH.is_pressed():
         print("CCW switch pressed!")
     else:
