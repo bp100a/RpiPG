@@ -143,8 +143,16 @@ def status():
         schema:
           $ref: '#/definitions/Error'
     """
-    queue = configure_beanstalk()
-    status_json = get_status(queue)
+    try:
+        queue = configure_beanstalk()
+        status_json = get_status(queue)
+        if status_json is None:
+            return make_response(None, status.HTTP_204_NO_CONTENT)
+        else:
+            return make_response(jsonify(status_json), status.HTTP_200_OK)
+    except:
+        return make_response("something really bad!", status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 @app.route("/home", methods=['POST'])
 @cross_origin(origins='*')
