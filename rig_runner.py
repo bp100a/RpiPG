@@ -64,16 +64,19 @@ def yield_function(direction: int) -> bool:
     we need to process other input like a cancel
     request from a web app"""
 
-    if BEANSTALK:  # if we have a queue, check for user cancel
-        job = BEANSTALK.reserve(timeout=0) # don't wait
-        if job is not None:
-            return True
+    try:
+        if BEANSTALK:  # if we have a queue, check for user cancel
+            job = BEANSTALK.reserve(timeout=0) # don't wait
+            if job is not None:
+                return True
 
-    if direction == Raspi_MotorHAT.FORWARD:
-        return CCW_MAX_SWITCH.is_pressed()
+        if direction == Raspi_MotorHAT.FORWARD:
+            return CCW_MAX_SWITCH.is_pressed()
 
-    return CW_MAX_SWITCH.is_pressed()
-
+        return CW_MAX_SWITCH.is_pressed()
+    except beanstalk.CommandFailed as cf:
+        print("yield_function(): beanstalk CommandFail!")
+        return False
 
 # Create our motor hat controller object, it'll house two
 # stepper motor objects
