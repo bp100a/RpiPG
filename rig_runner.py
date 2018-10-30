@@ -8,11 +8,12 @@ Photogrammetry rig. Here we control:
 """
 import atexit
 import time
+import json
 from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 import beanstalkc as beanstalk
-from Flask import jsonify
+
 
 CAMERA_STEPPER_MOTOR_NUM = 2
 CAMERA_STEPPER_MOTOR_SPEED = 120  # rpm
@@ -23,6 +24,8 @@ CCW_MAX_SWITCH = limit_switch.LimitSwitch(4)  # furthest CCW rotation allowed
 CW_MAX_SWITCH = limit_switch.LimitSwitch(18)  # furthest CW rotation allowed
 BEANSTALK = None
 CANCEL_QUEUE = 'cancel'
+STATUS_QUEUE = 'status'
+TASK_QUEUE = 'work'
 
 def configure_beanstalk():
     """set up our beanstalk queue for inter-process
@@ -35,7 +38,7 @@ def configure_beanstalk():
 def post_status(status: str) -> None:
     """simple status string we send back"""
     if BEANSTALK:
-        json_status = jsonify({'msg': status})
+        json_status = json.dumps({'msg': status})
         BEANSTALK.watch(STATUS_QUEUE)
         BEANSTALK.put(json_status)
 
@@ -50,7 +53,7 @@ def yield_function(direction: int) -> bool:
     we need to process other input like a cancel
     request from a web app"""
 
-    if BEANSTALK: # if we have a queue, check for user cancel
+    if BEANSTALK:  # if we have a queue, check for user cancel
         job = BEANSTALK.reserve(timeout=0) # don't wait
         if job is not None:
             return True
