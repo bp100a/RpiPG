@@ -41,8 +41,7 @@ def yield_function(direction: int) -> bool:
     request from a web app"""
 
     if BEANSTALK: # if we have a queue, check for user cancel
-        BEANSTALK.watch(CANCEL_QUEUE)
-        job = BEANSTALK.reserver(timeout=0) # don't wait
+        job = BEANSTALK.reserve(timeout=0) # don't wait
         if job is not None:
             return True
 
