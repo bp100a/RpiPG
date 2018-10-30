@@ -77,7 +77,8 @@ def yield_function(direction: int) -> bool:
     except beanstalk.CommandFailed:
         print("yield_function(): beanstalk CommandFail!")
     except beanstalk.DeadlineSoon:
-        print("yield_function(): beanstalk Deadline Soon!")
+        # save to ignore since it just means there's something pending
+        pass
     finally:
         return False
 
