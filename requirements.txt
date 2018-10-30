@@ -18,4 +18,9 @@ RPi.GPIO==0.6.4
 spidev==3.3
 beanstalkc3==0.4.0
 pyyaml==3.13
+Flask==1.0.2
+Flask-JWT==0.3.2
+Flask-API==1.0
+Flask-Swagger==0.2.13
+Flask-CORS==3.0.6
 

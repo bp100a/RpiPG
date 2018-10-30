@@ -16,7 +16,7 @@
     <div class="page-bg gradient-body-1"></div>
 
 	<div class="header shadow-large header-light header-logo-app">
-		<a href="index.html" class="header-title">Input Elements</a>
+		<a href="index.html" class="header-title">Scanning Parameters</a>
 		<a href="#" class="back-button header-icon header-icon-1"><i class="fas fa-angle-left"></i></a>
 		<a data-menu="menu-contact" data-menu-type="menu-box-modal" href="#" class="header-icon header-icon-2"><i class="fas fa-envelope"></i></a>
 		<a data-menu="menu-1" data-menu-type="menu-sidebar-left-push" href="#" class="header-icon header-icon-3"><i class="fas fa-bars"></i></a>
@@ -28,8 +28,8 @@
         <div class="menu-scroll">
             <div class="menu-header">
                 <a class="menu-logo" href="index.html"></a>
-                <h1>Kolor</h1>
-                <p>Put a little color in your life</p>
+                <h1>Photogram</h1>
+                <p>Taking the life from your models</p>
             </div>
             <div class="menu-list icon-background-active">
                 <em class="menu-divider top-10">Navigation</em>
@@ -68,47 +68,16 @@
 	<div class="page-content header-clear-larger">
 
         <div class="content-box shadow-large bg-white">
-            <div class="top-25 bottom-20">
-                <h4>Input Elements</h4>
-                <p class="bottom-25">
-                    All sorts of input elements required to make your page
-                    awesome. We've created a set of unique items for you.
-                </p>
-            </div>
-        </div>
-        <div class="content-box shadow-large bg-white">
-            <div class="top-25 bottom-20">
-               <h4>Switches</h4>
-               <p>
-                  Designed to work as checkboxes, these are an awesome, native way of styling your elements.
-               </p>
-               <div class="switch-box bottom-20">
-                  <h5>iOS</h5>
-                  <div class="ios-switch">
-                     <input type="checkbox" name="ios-switch" class="ios-switch-checkbox" id="myonoffswitch" checked>
-                     <label class="ios-switch-label" for="myonoffswitch"></label>
-                  </div>
-               </div>
-               <div class="switch-box bottom-30">
-                  <h5>Material</h5>
-                  <div class="material-switch bottom-15">
-                     <input type="checkbox" name="material" class="material-checkbox" id="myonoffswitch3" checked>
-                     <label class="material-label" for="myonoffswitch3"></label>
-                  </div>
-               </div>
-            </div>
-        </div>
-        <div class="content-box shadow-large bg-white">
             <div class="top-25 bottom-15">
                <h4>Camera Pictures</h4>
                <p>
-                  Set number of camera declination and model rotation stops just by draging your finger across the screen.
-                    <span style="position:absolute; color:red; border:1px solid blue; min-width:100px;">
-                   <span id="total_value"></span>
+                  Adjust number of camera declination and model rotation steps just by dragging your finger across the screen.
+                    <br><span style="position:absolute; min-width:100px;">
+                   <span id="total_value" style="font-weight: bold;"></span>
                     </span>
                </p>
                <form class="range-slider">
-                    <span style="position:absolute; color:red; border:1px solid blue; min-width:100px;">
+                    <span style="position:absolute; color:red; min-width:100px;">
                         <span id="camera_value"></span>
                     </span>
                   <input class="material-slider" type="range" id="camera_rotation" value="10" min="4" max="25"/>
@@ -117,7 +86,7 @@
                         var declination_stops = document.querySelector('#camera_rotation');
                         var declination_value = document.querySelector('#camera_value');
                         var total_value = document.querySelector('#total_value');
-                        var declination_label = 'pics per camera';
+                        var declination_label = 'declination steps';
                         var off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
                         var px =  ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
 
@@ -132,12 +101,12 @@
 
                             // Calculate total # of pictures
                             var total_pics = declination_stops.value * rotation_stops.value;
-                            total_value.innerHTML = total_pics + ' pictures'
+                            total_value.innerHTML = ' ' + total_pics + ' pictures'
                         };
                       </script>
 
                <form class="range-slider">
-                    <span style="position:absolute; color:red; border:1px solid blue; min-width:100px;">
+                    <span style="position:absolute; color:red; min-width:100px;">
                         <span id="rotation_value"></span>
                     </span>
                   <input class="material-slider" type="range" id="model_rotation" value="10" min="4" max="25"/>
@@ -145,7 +114,7 @@
                     <script type="text/javascript" charset="utf-8">
                         var rotation_stops = document.querySelector('#model_rotation');
                         var rotation_value = document.querySelector('#rotation_value');
-                        var rotation_label = 'pics per model rotation';
+                        var rotation_label = 'rotation steps';
                         var off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
                         var px =  ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
 
@@ -160,184 +129,14 @@
 
                             // Calculate total # of pictures
                             var total_pics = declination_stops.value * rotation_stops.value;
-                            total_value.innerHTML = total_pics + ' pictures'
+                            total_value.innerHTML = ' ' + total_pics + ' pictures'
                           };
+
+                        rotation_stops.oninput() // call to initialize the total picture count
                       </script>
             </div>
+            <a href="#" class="button button-rounded button-green">Scan</a>
         </div>
-        <div class="content-box shadow-large bg-white">
-            <div class="top-25 bottom-30">
-               <h4>Checkboxes</h4>
-               <p class="bottom-15">Default Checkboxes, styled with FontAwesome</p>
-               <div class="one-half">
-                  <div class="checkboxes-demo">
-                     <div class="fac fac-checkbox fac-default"><span></span>
-                        <input id="box1-fac-checkbox" type="checkbox" value="1" checked="">
-                        <label for="box1-fac-checkbox">Simple</label>
-                     </div>
-                     <div class="fac fac-checkbox fac-blue"><span></span>
-                        <input id="box2-fac-checkbox" type="checkbox" value="1" checked="">
-                        <label for="box2-fac-checkbox">Primary</label>
-                     </div>
-                     <div class="fac fac-checkbox fac-green"><span></span>
-                        <input id="box3-fac-checkbox" type="checkbox" value="1" checked="">
-                        <label for="box3-fac-checkbox">Success</label>
-                     </div>
-                     <div class="fac fac-checkbox fac-orange"><span></span>
-                        <input id="box5-fac-checkbox" type="checkbox" value="1" checked="">
-                        <label for="box5-fac-checkbox">Warning</label>
-                     </div>
-                     <div class="fac fac-checkbox fac-red"><span></span>
-                        <input id="box6-fac-checkbox" type="checkbox" value="1" checked="">
-                        <label for="box6-fac-checkbox">Danger</label>
-                     </div>
-                  </div>
-               </div>
-               <div class="one-half last-column">
-                  <div class="checkboxes-demo">
-                     <div class="fac fac-checkbox-round fac-default"><span></span>
-                        <input id="box1-fac-checkbox-round" type="checkbox" value="1" checked="">
-                        <label for="box1-fac-checkbox-round">Simple</label>
-                     </div>
-                     <div class="fac fac-checkbox-round fac-blue"><span></span>
-                        <input id="box2-fac-checkbox-round" type="checkbox" value="1" checked="">
-                        <label for="box2-fac-checkbox-round">Primary</label>
-                     </div>
-                     <div class="fac fac-checkbox-round fac-green"><span></span>
-                        <input id="box3-fac-checkbox-round" type="checkbox" value="1" checked="">
-                        <label for="box3-fac-checkbox-round">Success</label>
-                     </div>
-                     <div class="fac fac-checkbox-round fac-orange"><span></span>
-                        <input id="box5-fac-checkbox-round" type="checkbox" value="1" checked="">
-                        <label for="box5-fac-checkbox-round">Warning</label>
-                     </div>
-                     <div class="fac fac-checkbox-round fac-red"><span></span>
-                        <input id="box6-fac-checkbox-round" type="checkbox" value="1" checked="">
-                        <label for="box6-fac-checkbox-round">Danger</label>
-                     </div>
-                  </div>
-               </div>
-               <div class="clear"></div>
-            </div>
-        </div>
-        <div class="content-box shadow-large bg-white">
-            <div class="top-25 bottom-30">
-               <h4>Radio Boxes</h4>
-               <p class="bottom-15">Default Radios, styled with FontAwesome</p>
-               <div class="one-half">
-                  <div class="checkboxes-demo">
-                     <div class="fac fac-radio fac-default"><span></span>
-                        <input id="box1-fac-radio" type="radio" name="rad" value="1">
-                        <label for="box1-fac-radio">Simple</label>
-                     </div>
-                     <div class="fac fac-radio fac-blue"><span></span>
-                        <input id="box2-fac-radio" type="radio" name="rad" value="1">
-                        <label for="box2-fac-radio">Primary</label>
-                     </div>
-                     <div class="fac fac-radio fac-green"><span></span>
-                        <input id="box3-fac-radio" type="radio" name="rad" value="1">
-                        <label for="box3-fac-radio">Success</label>
-                     </div>
-                     <div class="fac fac-radio fac-orange"><span></span>
-                        <input id="box5-fac-radio" type="radio" name="rad" value="1">
-                        <label for="box5-fac-radio">Warning</label>
-                     </div>
-                     <div class="fac fac-radio fac-red"><span></span>
-                        <input id="box6-fac-radio" type="radio" name="rad" value="1">
-                        <label for="box6-fac-radio">Danger</label>
-                     </div>
-                  </div>
-               </div>
-               <div class="one-half last-column">
-                  <div class="checkboxes-demo">
-                     <div class="fac fac-radio-full fac-default"><span></span>
-                        <input id="box1-fac-radio-full" type="radio" name="rad1" value="1">
-                        <label for="box1-fac-radio-full">Default</label>
-                     </div>
-                     <div class="fac fac-radio-full fac-blue"><span></span>
-                        <input id="box2-fac-radio-full" type="radio" name="rad1" value="1">
-                        <label for="box2-fac-radio-full">Primary</label>
-                     </div>
-                     <div class="fac fac-radio-full fac-green"><span></span>
-                        <input id="box3-fac-radio-full" type="radio" name="rad1" value="1">
-                        <label for="box3-fac-radio-full">Success</label>
-                     </div>
-                     <div class="fac fac-radio-full fac-orange"><span></span>
-                        <input id="box5-fac-radio-full" type="radio" name="rad1" value="1">
-                        <label for="box5-fac-radio-full">Warning</label>
-                     </div>
-                     <div class="fac fac-radio-full fac-red"><span></span>
-                        <input id="box6-fac-radio-full" type="radio" name="rad1" value="1">
-                        <label for="box6-fac-radio-full">Danger</label>
-                     </div>
-                  </div>
-               </div>
-               <div class="clear"></div>
-            </div>
-        </div>
-        <div class="content-box shadow-large bg-white">
-            <div class="top-25 bottom-30">
-               <h4>Fields Modern Style</h4>
-               <p class="bottom-15">
-                  Simple input fileds for text, passwords, numbers or dates, with placeholders and diferent style options.
-               </p>
-               <div class="select-box select-box-1">
-                  <strong>Required Field</strong>
-                  <em>Select an Option</em>
-                  <select>
-                     <option value="volvo">Mobile Operating System</option>
-                     <option value="saab">iOS</option>
-                     <option value="mercedes">Android</option>
-                     <option value="audi">Windows Mobile</option>
-                  </select>
-               </div>
-               <div class="input-simple-1 has-icon input-green bottom-30"><strong>Required Field</strong><em>Username</em><i class="fa fa-user"></i><input type="text" placeholder="Jonh Doe"></div>
-               <div class="input-simple-1 has-icon input-blue bottom-30"><strong>Required Field</strong><em>Email</em><i class="fa fa-envelope"></i><input type="text" placeholder="mail@domain.com"></div>
-               <div class="input-simple-1 has-icon input-red bottom-30"><strong>Required Field</strong><em>Password</em><i class="fa fa-lock"></i><input type="password" placeholder="Enter your password"></div>
-               <div class="input-simple-1 textarea has-icon bottom-30"><strong>Required Field</strong><i class="fa fa-edit"></i><em>Enter your Message</em> <textarea class="textarea-simple-1" placeholder="Expanding Text Area"></textarea></div>
-               <div class="clear"></div>
-            </div>
-        </div>
-        <div class="content-box shadow-large bg-white">
-            <div class="top-25 bottom-30">
-               <h4>Fields Classic Style</h4>
-               <p>
-                  Simple input fileds for text, passwords, numbers or dates, with placeholders and diferent style options.
-               </p>
-               <div class="input-simple-2 has-icon input-green bottom-15"><i class="fa fa-user"></i><input type="text" placeholder="Name"></div>
-               <div class="input-simple-2 has-icon input-blue bottom-15"><i class="fa fa-envelope"></i><input type="text" placeholder="Email"></div>
-               <div class="input-simple-2 has-icon input-red bottom-15"><i class="fa fa-lock"></i><input type="password" placeholder="Password"></div>
-               <div class="select-box select-box-2 bottom-15">
-                  <select>
-                     <option value="volvo">Mobile Operating System</option>
-                     <option value="saab">iOS</option>
-                     <option value="mercedes">Android</option>
-                     <option value="audi">Windows Mobile</option>
-                  </select>
-               </div>
-               <div class="input-simple-2 textarea has-icon"><i class="fa fa-edit"></i><textarea class="textarea-simple-2" placeholder="Expanding Text Area"></textarea></div>
-               <div class="clear"></div>
-            </div>
-        </div>
-
-
-        <div class="footer footer-detached shadow-large footer-light">
-			<a href="#" class="footer-logo"></a>
-			<strong>Built with <i class="fas fa-heart color-red-light"></i> by Elites</strong>
-			<p class="footer-text">
-				Simplicity and power packed into a beautiful, feature filled, fast, mobile template.
-			</p>
-			<div class="footer-socials">
-				<a href="#"><i class="icon-shadow facebook-bg fab fa-facebook-f font-16"></i></a>
-				<a href="#"><i class="icon-shadow twitter-bg fab fa-twitter font-16"></i></a>
-				<a href="#"><i class="icon-shadow google-bg fab fa-google-plus-g font-16"></i></a>
-				<a href="#" data-menu-type="menu-box-bottom" data-menu="menu-share"><i class="icon-shadow instagram-bg fas fa-share-alt font-14"></i></a>
-				<a href="#" data-menu-type="menu-box-bottom" data-menu="menu-phone"><i class="icon-shadow bg-green-dark fas fa-phone font-16"></i></a>
-			</div>
-            <p class="footer-links"><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a> | <a href="#" class="back-to-top"> Back to Top</a></p>
-			<p class="footer-copyright">&copy; Enabled <span class="copyright-year"></span>. All rights reserved.</p>
-		</div>
-	</div>
 
     <div id="menu-contact" data-menu-height="460" class="menu menu-box-modal bg-white shadow-large">
         <div class="menu-scroll">

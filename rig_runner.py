@@ -12,6 +12,7 @@ from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 import beanstalkc as beanstalk
+from Flask import jsonify
 
 CAMERA_STEPPER_MOTOR_NUM = 2
 CAMERA_STEPPER_MOTOR_SPEED = 120  # rpm
@@ -29,6 +30,15 @@ def configure_beanstalk():
     queue = beanstalk.Connection(host='localhost', port=14711)
     queue.watch(CANCEL_QUEUE) # tube that'll contain cancel requests
     return queue
+
+
+def post_status(status: str) -> None:
+    """simple status string we send back"""
+    if BEANSTALK:
+        json_status = jsonify({'msg': status})
+        BEANSTALK.watch(STATUS_QUEUE)
+        BEANSTALK.put(json_status)
+
 
 def yield_function(direction: int) -> bool:
     """Called in timing loops to perform checks
