@@ -22,12 +22,13 @@ CCW_MAX_SWITCH = limit_switch.LimitSwitch(4)  # furthest CCW rotation allowed
 CW_MAX_SWITCH = limit_switch.LimitSwitch(18)  # furthest CW rotation allowed
 BEANSTALK = None
 CANCEL_QUEUE = 'cancel'
+
 def configure_beanstalk():
     """set up our beanstalk queue for inter-process
     messages"""
-    beanstalk = beanstalk.Connection(host='localhost', port=14711)
-    beanstalk.watch(CANCEL_QUEUE) # tube that'll contain cancel requests
-    return beanstalk
+    queue = beanstalk.Connection(host='localhost', port=14711)
+    queue.watch(CANCEL_QUEUE) # tube that'll contain cancel requests
+    return queue
 
 def yield_function(direction: int) -> bool:
     """Called in timing loops to perform checks
