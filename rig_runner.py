@@ -54,6 +54,9 @@ def post_status(status: str) -> None:
         BEANSTALK.put(json_status)
 
 
+BREAK_EXIT_REASON = None
+
+
 def yield_function(direction: int) -> bool:
     """Called in timing loops to perform checks
     to see if we need to breakout. We need the direction
@@ -68,18 +71,21 @@ def yield_function(direction: int) -> bool:
         if BEANSTALK:  # if we have a queue, check for user cancel
             job = BEANSTALK.reserve(timeout=0) # don't wait
             if job is not None:
+                BREAK_EXIT_REASON = 'Cancel received'
                 return True
 
     except beanstalk.CommandFailed:
         print("yield_function(): beanstalk CommandFail!")
-        return False
+        pass
     except beanstalk.DeadlineSoon:
         # save to ignore since it just means there's something pending
         pass
 
     if direction == Raspi_MotorHAT.FORWARD:
+        BREAK_EXIT_REASON = 'CCW max switch'
         return CCW_MAX_SWITCH.is_pressed()
 
+    BREAK_EXIT_REASON = "CW max switch"
     return CW_MAX_SWITCH.is_pressed()
 
 # Create our motor hat controller object, it'll house two
@@ -159,8 +165,8 @@ if __name__ == '__main__':
         print("Double Steps: {0} steps".format(STEPS_TO_TAKE))
         print("...CW stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE):
-            print("forced exit")
+            print("forced exit - " + BREAK_EXIT_REASON)
 
         print("...CCW stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
-            print ("forced exit")
+            print ("forced exit - " + BREAK_EXIT_REASON)
