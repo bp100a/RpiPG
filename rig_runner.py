@@ -152,7 +152,7 @@ def home_camera() -> int:
     extreme positions and return how many steps it took to
     span the extremes"""
     ccw_camera_home()
-    return cw_camera_home()
+    return abs(cw_camera_home())
 
 
 def post_status(queue: beanstalk.Connection, message: str) -> None:
@@ -267,7 +267,7 @@ if __name__ == '__main__':
             for d in range(0, declination_steps):
                 if forced_exit:
                     break
-                if CAMERA_STEPPER(steps_per_declination, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
+                if CAMERA_STEPPER.step(steps_per_declination, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
                     forced_exit = True
                     break  # forced exit
 
@@ -279,7 +279,7 @@ if __name__ == '__main__':
                 post_status(BEANSTALK, "rotating model")
                 for r in range(0, rotation_steps):
                     take_picture()
-                    if ROTATE_STEPPER(steps_per_rotation, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
+                    if ROTATE_STEPPER.step(steps_per_rotation, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
                         forced_exit = True
                         break # forced exit
 

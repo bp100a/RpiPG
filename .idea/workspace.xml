@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -72,9 +73,9 @@
           <entry key="conf" value="25" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3126" />
-          <entry key="py" value="16031" />
+          <entry key="py" value="16110" />
           <entry key="sh" value="399" />
-          <entry key="txt" value="2262" />
+          <entry key="txt" value="2363" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -82,8 +83,8 @@
           <entry key="Bash" value="399" />
           <entry key="BuildoutCfg" value="25" />
           <entry key="HTML" value="3126" />
-          <entry key="PLAIN_TEXT" value="2330" />
-          <entry key="Python" value="16031" />
+          <entry key="PLAIN_TEXT" value="2431" />
+          <entry key="Python" value="16110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -176,12 +177,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="771">
-              <caret line="161" selection-start-line="161" selection-end-line="161" />
+            <state relative-caret-position="925">
+              <caret line="286" column="58" lean-forward="true" selection-start-line="286" selection-start-column="58" selection-end-line="286" selection-end-column="58" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1540936134701" expanded="true" signature="5062:5169" ph="..." />
-                <marker date="1540936134701" expanded="true" signature="5294:5842" ph="..." />
+                <marker date="1540936828780" expanded="true" signature="5090:5197" ph="..." />
+                <marker date="1540936828780" expanded="true" signature="5322:5870" ph="..." />
               </folding>
             </state>
           </provider>
@@ -190,11 +191,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="286" column="38" lean-forward="true" selection-start-line="286" selection-start-column="38" selection-end-line="286" selection-end-column="38" />
+            <state relative-caret-position="427">
+              <caret line="281" selection-start-line="281" selection-end-line="281" />
               <folding>
                 <element signature="e#48#58#0" expanded="true" />
-                <marker date="1540934343909" expanded="true" signature="3695:4728" ph="..." />
+                <marker date="1540936439638" expanded="true" signature="3695:4728" ph="..." />
               </folding>
             </state>
           </provider>
@@ -436,27 +437,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00026" summary="fix the motor # for Camera stepper">
-      <created>1540755262387</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1540755262387</updated>
-    </task>
-    <task id="LOCAL-00027" summary="change to double steps">
-      <created>1540755350741</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1540755350741</updated>
-    </task>
-    <task id="LOCAL-00028" summary="set speed to 30 rpm">
-      <created>1540755569403</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1540755569403</updated>
     </task>
     <task id="LOCAL-00029" summary="use forward/backward directly">
       <created>1540755787602</created>
@@ -780,7 +760,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540935860199</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="oops operating on type not variable!">
+      <created>1540936145466</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1540936145466</updated>
+    </task>
+    <task id="LOCAL-00076" summary="forgot to specify stepper style">
+      <created>1540936264426</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1540936264426</updated>
+    </task>
+    <task id="LOCAL-00077" summary="print out # of steps for homing">
+      <created>1540936451338</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1540936451338</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TodoView">
@@ -849,9 +850,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="missing another ;" />
-    <MESSAGE value="the website contents" />
-    <MESSAGE value="a few changes" />
     <MESSAGE value="added the setup page" />
     <MESSAGE value="added value to slider" />
     <MESSAGE value="playing with sliders" />
@@ -874,7 +872,10 @@
     <MESSAGE value="catch keyboard interrupt (is that good?)&#10;240 rpm" />
     <MESSAGE value="fall through to main loop" />
     <MESSAGE value="some pretty print statements" />
-    <option name="LAST_COMMIT_MESSAGE" value="some pretty print statements" />
+    <MESSAGE value="oops operating on type not variable!" />
+    <MESSAGE value="forgot to specify stepper style" />
+    <MESSAGE value="print out # of steps for homing" />
+    <option name="LAST_COMMIT_MESSAGE" value="print out # of steps for homing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1098,23 +1099,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="286" column="38" lean-forward="true" selection-start-line="286" selection-start-column="38" selection-end-line="286" selection-end-column="38" />
+        <state relative-caret-position="427">
+          <caret line="281" selection-start-line="281" selection-end-line="281" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
-            <marker date="1540934343909" expanded="true" signature="3695:4728" ph="..." />
+            <marker date="1540936439638" expanded="true" signature="3695:4728" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="161" selection-start-line="161" selection-end-line="161" />
+        <state relative-caret-position="925">
+          <caret line="286" column="58" lean-forward="true" selection-start-line="286" selection-start-column="58" selection-end-line="286" selection-end-column="58" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
-            <marker date="1540936134701" expanded="true" signature="5062:5169" ph="..." />
-            <marker date="1540936134701" expanded="true" signature="5294:5842" ph="..." />
+            <marker date="1540936828780" expanded="true" signature="5090:5197" ph="..." />
+            <marker date="1540936828780" expanded="true" signature="5322:5870" ph="..." />
           </folding>
         </state>
       </provider>
