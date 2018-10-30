@@ -70,17 +70,17 @@ def yield_function(direction: int) -> bool:
             if job is not None:
                 return True
 
-        if direction == Raspi_MotorHAT.FORWARD:
-            return CCW_MAX_SWITCH.is_pressed()
-
-        return CW_MAX_SWITCH.is_pressed()
     except beanstalk.CommandFailed:
         print("yield_function(): beanstalk CommandFail!")
+        return False
     except beanstalk.DeadlineSoon:
         # save to ignore since it just means there's something pending
         pass
-    finally:
-        return False
+
+    if direction == Raspi_MotorHAT.FORWARD:
+        return CCW_MAX_SWITCH.is_pressed()
+
+    return CW_MAX_SWITCH.is_pressed()
 
 # Create our motor hat controller object, it'll house two
 # stepper motor objects

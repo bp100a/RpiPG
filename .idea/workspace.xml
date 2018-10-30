@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +51,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="4" />
           <entry key="png" value="1" />
-          <entry key="py" value="12" />
+          <entry key="py" value="13" />
           <entry key="sh" value="1" />
           <entry key="txt" value="3" />
         </counts>
@@ -65,7 +64,7 @@
           <entry key="HTML" value="4" />
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="12" />
+          <entry key="Python" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -73,9 +72,9 @@
           <entry key="conf" value="25" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3126" />
-          <entry key="py" value="11483" />
+          <entry key="py" value="11682" />
           <entry key="sh" value="399" />
-          <entry key="txt" value="1925" />
+          <entry key="txt" value="2021" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -83,8 +82,8 @@
           <entry key="Bash" value="399" />
           <entry key="BuildoutCfg" value="25" />
           <entry key="HTML" value="3126" />
-          <entry key="PLAIN_TEXT" value="1993" />
-          <entry key="Python" value="11483" />
+          <entry key="PLAIN_TEXT" value="2089" />
+          <entry key="Python" value="11682" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project" />
@@ -176,8 +175,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="22">
+              <caret line="68" selection-start-line="68" selection-end-line="69" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -429,27 +428,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00015" summary="some debugging">
-      <created>1540753154177</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1540753154177</updated>
-    </task>
-    <task id="LOCAL-00016" summary="debugging">
-      <created>1540753348268</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1540753348268</updated>
-    </task>
-    <task id="LOCAL-00017" summary="oops! bad arguments">
-      <created>1540753472990</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1540753472991</updated>
     </task>
     <task id="LOCAL-00018" summary="typo in argument list">
       <created>1540753531853</created>
@@ -773,7 +751,28 @@
       <option name="project" value="LOCAL" />
       <updated>1540917833922</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="catch exception">
+      <created>1540922376529</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1540922376529</updated>
+    </task>
+    <task id="LOCAL-00065" summary="catch 2 exceptions, use finally">
+      <created>1540922460735</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1540922460735</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Deadline Soon exception can be safely ignored.">
+      <created>1540923112767</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1540923112767</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView">
@@ -842,9 +841,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="no pull up, testing optical endstop" />
-    <MESSAGE value="print out what endstop was triggered" />
-    <MESSAGE value="our optical switch appears normally closed, so it's '0' when triggered" />
     <MESSAGE value="wire up 2nd optical switch" />
     <MESSAGE value="oops! had gpio pin wrong" />
     <MESSAGE value="remove pullup" />
@@ -867,7 +863,10 @@
     <MESSAGE value="replace flask.jsonify with json.dumps()" />
     <MESSAGE value="empty beanstalk queue on startup" />
     <MESSAGE value="status now returns no content &amp; other legit responses" />
-    <option name="LAST_COMMIT_MESSAGE" value="status now returns no content &amp; other legit responses" />
+    <MESSAGE value="catch exception" />
+    <MESSAGE value="catch 2 exceptions, use finally" />
+    <MESSAGE value="Deadline Soon exception can be safely ignored." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deadline Soon exception can be safely ignored." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1092,10 +1091,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/beanstalkc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="175" column="29" lean-forward="true" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="22">
+          <caret line="68" selection-start-line="68" selection-end-line="69" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
           </folding>
