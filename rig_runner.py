@@ -74,8 +74,11 @@ def yield_function(direction: int) -> bool:
             return CCW_MAX_SWITCH.is_pressed()
 
         return CW_MAX_SWITCH.is_pressed()
-    except beanstalk.CommandFailed as cf:
+    except beanstalk.CommandFailed:
         print("yield_function(): beanstalk CommandFail!")
+    except beanstalk.DeadlineSoon:
+        print("yield_function(): beanstalk Deadline Soon!")
+    finally:
         return False
 
 # Create our motor hat controller object, it'll house two
