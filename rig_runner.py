@@ -223,6 +223,9 @@ if __name__ == '__main__':
     # This is the main loop, we poll for work from our
     # queue. We can either "home" the printer or "scan"
     # an object.
+    print("\n**********************")
+    print("\n** waiting for jobs **")
+    print("\n**********************\n")
     BEANSTALK.watch(TASK_QUEUE)
     is_homed = False
     while True:
