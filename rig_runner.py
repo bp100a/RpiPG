@@ -158,7 +158,7 @@ def home_camera() -> int:
 def post_status(queue: beanstalk.Connection, message: str) -> None:
     """post a simple message to whomever is listening"""
     queue.watch(STATUS_QUEUE)
-    status_json = json.dumps({'msg': str})
+    status_json = json.dumps({'msg': message})
     queue.put(status_json)
 
 
