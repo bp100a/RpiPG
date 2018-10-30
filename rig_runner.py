@@ -126,7 +126,7 @@ def move_camera(step_dir: int, switch: limit_switch.LimitSwitch) -> int:
     camera_stepper = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
     starting_stepper_pos = camera_stepper.stepping_counter
     while not switch.is_pressed():
-        camera_stepper.step(1000, step_dir)
+        camera_stepper.step(1000, step_dir, Raspi_MotorHAT.DOUBLE)
 
     traveled_steps = camera_stepper.stepping_counter - starting_stepper_pos
     if step_dir == STEP_CAMERA_CCW:
