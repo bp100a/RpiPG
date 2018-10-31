@@ -6,6 +6,7 @@ from flask_cors import CORS, cross_origin
 from flask_swagger import swagger
 from waitress import serve
 import beanstalkc as beanstalk
+import json
 
 app = Flask(__name__)
 app.debug = True
@@ -54,7 +55,7 @@ def send_home_command(queue: beanstalk.Connection) -> None:
     clear_status_queue(queue)   # so we see what home command triggers
 
     queue.watch(TASK_QUEUE)
-    task_body = jsonify({'task': 'home'})
+    task_body = json.dumps({'task': 'home'})
     queue.put(task_body)
 
 
@@ -62,7 +63,7 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
     """this is it - time to scan. send the # of steps for each axis
     and return"""
     queue.watch(TASK_QUEUE)
-    task_body = jsonify({'task': 'scan'}, {'steps': {'declination': declination_steps, 'rotation': rotation_steps}})
+    task_body = json.dumps({'task': 'scan'}, {'steps': {'declination': declination_steps, 'rotation': rotation_steps}})
     queue.put(task_body)
 
 
@@ -195,8 +196,11 @@ def home():
           $ref: '#/definitions/Error'
     """
     # okay home the rig and return
-    send_home_command(configure_beanstalk())
-    return make_response(jsonify({'msg': 'everything is okay'}), status.HTTP_200_OK)
+    try:
+        send_home_command(configure_beanstalk())
+        return make_response(jsonify({'msg': 'everything is okay'}), status.HTTP_200_OK)
+    except Exception as e:
+        return make_response("failed to home -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @app.route("/scan", methods=['POST'])
