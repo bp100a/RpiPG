@@ -169,7 +169,7 @@ def rig_status():
             return make_response(None, status.HTTP_204_NO_CONTENT)
         else:
             return make_response(status_json, status.HTTP_200_OK)
-    except as e:
+    except Exception as e:
         return make_response("something really bad! {0}".format(e.__str__), status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
