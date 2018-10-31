@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/homerig.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/homerig.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/deploy/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/nginx.conf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,20 +69,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="conf" value="317" />
+          <entry key="conf" value="320" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3258" />
           <entry key="py" value="16192" />
           <entry key="sh" value="399" />
-          <entry key="txt" value="2435" />
+          <entry key="txt" value="2458" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="399" />
-          <entry key="BuildoutCfg" value="317" />
+          <entry key="BuildoutCfg" value="320" />
           <entry key="HTML" value="3258" />
-          <entry key="PLAIN_TEXT" value="2503" />
+          <entry key="PLAIN_TEXT" value="2526" />
           <entry key="Python" value="16192" />
         </counts>
       </usages-collector>
@@ -115,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/homerig.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="506">
+              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -133,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="440">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -279,9 +278,9 @@
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/website/setup.html" />
-        <option value="$PROJECT_DIR$/website/deploy/nginx.conf" />
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/website/homerig.html" />
+        <option value="$PROJECT_DIR$/website/deploy/nginx.conf" />
       </list>
     </option>
   </component>
@@ -292,8 +291,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="406" />
-    <option name="y" value="591" />
+    <option name="x" value="1415" />
+    <option name="y" value="459" />
     <option name="width" value="2021" />
     <option name="height" value="1571" />
   </component>
@@ -427,13 +426,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00031" summary="fixed a logic error">
-      <created>1540756233560</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1540756233560</updated>
     </task>
     <task id="LOCAL-00032" summary="print out state of CW &amp; CCW switches">
       <created>1540756482462</created>
@@ -771,7 +763,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540998934095</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="hard coded Rpi address">
+      <created>1540999548909</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1540999548909</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TodoView">
@@ -784,7 +783,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="406" y="591" width="2021" height="1571" extended-state="0" />
+    <frame x="1415" y="459" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
@@ -840,7 +839,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="playing with sliders" />
     <MESSAGE value="added beanstalk queue" />
     <MESSAGE value="fix beanstalk import name" />
     <MESSAGE value="fix conflicting variable name" />
@@ -865,7 +863,8 @@
     <MESSAGE value="print out # of steps for homing" />
     <MESSAGE value="fix up stepper motor call" />
     <MESSAGE value="simple 'home rig' page makes rest call to server" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple 'home rig' page makes rest call to server" />
+    <MESSAGE value="hard coded Rpi address" />
+    <option name="LAST_COMMIT_MESSAGE" value="hard coded Rpi address" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1032,13 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -1076,8 +1068,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/homerig.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="506">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
