@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restapi/rig_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restapi/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/startup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update.sh" beforeDir="false" afterPath="$PROJECT_DIR$/update.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
-    </list>
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,16 +71,16 @@
           <entry key="dummy" value="68" />
           <entry key="html" value="3258" />
           <entry key="py" value="16228" />
-          <entry key="sh" value="1836" />
-          <entry key="txt" value="2578" />
+          <entry key="sh" value="1848" />
+          <entry key="txt" value="2597" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="1836" />
+          <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="3258" />
-          <entry key="PLAIN_TEXT" value="2646" />
+          <entry key="PLAIN_TEXT" value="2665" />
           <entry key="Python" value="16228" />
         </counts>
       </usages-collector>
@@ -151,11 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="276" column="6" selection-start-line="276" selection-start-column="6" selection-end-line="276" selection-end-column="6" />
+            <state relative-caret-position="331">
+              <caret line="253" column="25" lean-forward="true" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <marker date="1541008458511" expanded="true" signature="886:1189" ph="..." />
@@ -164,11 +158,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+            <state relative-caret-position="44">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -269,8 +263,8 @@
         <option value="$PROJECT_DIR$/update.sh" />
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
         <option value="$PROJECT_DIR$/restapi/__init__.py" />
-        <option value="$PROJECT_DIR$/restapi/startup.sh" />
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
+        <option value="$PROJECT_DIR$/restapi/startup.sh" />
       </list>
     </option>
   </component>
@@ -422,20 +416,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00036" summary="60 rpm!!">
-      <created>1540762132286</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1540762132286</updated>
-    </task>
-    <task id="LOCAL-00037" summary="more steps!&#10;CW first">
-      <created>1540762309277</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1540762309277</updated>
     </task>
     <task id="LOCAL-00038" summary="crazy speed - 120rpm!">
       <created>1540762376014</created>
@@ -766,7 +746,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541005762338</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="setup for gunicorn">
+      <created>1541008466989</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1541008466989</updated>
+    </task>
+    <task id="LOCAL-00086" summary="setup for gunicorn">
+      <created>1541008747129</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1541008747129</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TodoView">
@@ -835,7 +829,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix typo" />
     <MESSAGE value="updates to website, creating REST api site" />
     <MESSAGE value="replace flask.jsonify with json.dumps()" />
     <MESSAGE value="empty beanstalk queue on startup" />
@@ -860,7 +853,8 @@
     <MESSAGE value="fix nginx configuration" />
     <MESSAGE value="relocation location directive" />
     <MESSAGE value="some helper scripts and deployment tracking" />
-    <option name="LAST_COMMIT_MESSAGE" value="some helper scripts and deployment tracking" />
+    <MESSAGE value="setup for gunicorn" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup for gunicorn" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1077,21 +1071,21 @@
     <entry file="file://$PROJECT_DIR$/restapi/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="276" column="6" selection-start-line="276" selection-start-column="6" selection-end-line="276" selection-end-column="6" />
+        <state relative-caret-position="331">
+          <caret line="253" column="25" lean-forward="true" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <marker date="1541008458511" expanded="true" signature="886:1189" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
