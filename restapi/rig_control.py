@@ -163,6 +163,8 @@ def rig_status():
           $ref: '#/definitions/Error'
     """
     try:
+        return make_response("dummy responses", status.HTTP_200_OK)
+
         queue = configure_beanstalk()
         status_json = get_status(queue)
         if status_json is None:

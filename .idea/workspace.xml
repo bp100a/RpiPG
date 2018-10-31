@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="" />
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/restapi/rig_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,9 +72,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3258" />
-          <entry key="py" value="16366" />
+          <entry key="py" value="16397" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="2658" />
+          <entry key="txt" value="2731" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -80,8 +82,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="3258" />
-          <entry key="PLAIN_TEXT" value="2726" />
-          <entry key="Python" value="16366" />
+          <entry key="PLAIN_TEXT" value="2799" />
+          <entry key="Python" value="16397" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -148,11 +150,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
+            <state relative-caret-position="455">
+              <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1541010186096" expanded="true" signature="886:1189" ph="..." />
+                <marker date="1541010451819" expanded="true" signature="886:1189" ph="..." />
               </folding>
             </state>
           </provider>
@@ -416,20 +418,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00044" summary="remove pullup">
-      <created>1540766192597</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1540766192597</updated>
-    </task>
-    <task id="LOCAL-00045" summary="remove logical inversion">
-      <created>1540766327863</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1540766327863</updated>
     </task>
     <task id="LOCAL-00046" summary="reduce hold time to 1 second">
       <created>1540766386870</created>
@@ -760,7 +748,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541010191957</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="204 returns empty string not None!!">
+      <created>1541010246325</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010246325</updated>
+    </task>
+    <task id="LOCAL-00094" summary="return 'no status' string for 204">
+      <created>1541010312168</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010312168</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TodoView">
@@ -829,8 +831,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="status now returns no content &amp; other legit responses" />
-    <MESSAGE value="catch exception" />
     <MESSAGE value="catch 2 exceptions, use finally" />
     <MESSAGE value="Deadline Soon exception can be safely ignored." />
     <MESSAGE value="move the switch checking" />
@@ -854,14 +854,16 @@
     <MESSAGE value="update requirements" />
     <MESSAGE value="fix conflicting names" />
     <MESSAGE value="print out exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="print out exception" />
+    <MESSAGE value="204 returns empty string not None!!" />
+    <MESSAGE value="return 'no status' string for 204" />
+    <option name="LAST_COMMIT_MESSAGE" value="return 'no status' string for 204" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restapi/rig_control.py</url>
-          <line>198</line>
+          <line>196</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1080,11 +1082,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
+        <state relative-caret-position="455">
+          <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541010186096" expanded="true" signature="886:1189" ph="..." />
+            <marker date="1541010451819" expanded="true" signature="886:1189" ph="..." />
           </folding>
         </state>
       </provider>
