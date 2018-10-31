@@ -31,15 +31,20 @@ def configure_beanstalk():
 def get_status(queue: beanstalk.Connection) -> str:
     """return the status of the rig"""
     queue.watch(STATUS_QUEUE)
-    job = queue.reserve(timeout=0) # don't wait
-    if job is None:
+    try:
+        job = queue.reserve(timeout=0) # don't wait
+        if job is None:
+            return None
+        # we have status, let's get it and pull the
+        # job out of the queue
+        status_json = jsonify(job.body)
+        job.delete()
+        return status_json
+    except beanstalk.DeadlineSoon:
+        return None
+    except beanstalk.CommandFailed:
         return None
 
-    # we have status, let's get it and pull the
-    # job out of the queue
-    status_json = jsonify(job.body)
-    job.delete()
-    return status_json
 
 
 def send_cancel(queue: beanstalk.Connection) -> int:
@@ -71,10 +76,15 @@ def clear_status_queue(queue: beanstalk.CommandFailed):
     """empty the status queue of any messages"""
     queue.watch(STATUS_QUEUE)
     while True:
-        job = queue.reserve(timeout=0)
-        if job is None:
-            return
-        job.delete()
+        try:
+            job = queue.reserve(timeout=0)
+            if job is None:
+                return
+            job.delete()
+        except beanstalk.CommandFailed:
+            pass
+        except beanstalk.DeadlineSoon:
+            pass
 
 
 @app.route("/spec/swagger.json")
