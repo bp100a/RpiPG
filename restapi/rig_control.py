@@ -42,29 +42,29 @@ def get_status(queue: beanstalk.Connection) -> str:
     return status_json
 
 
-def send_cancel(queue: beanstalk.Connection) -> None:
+def send_cancel(queue: beanstalk.Connection) -> int:
     """send a cancel to the rig software to stop whatever is
     happening"""
     queue.watch(CANCEL_QUEUE)
-    queue.put('STOP!') # anything will do
+    return queue.put('STOP!') # anything will do
 
 
-def send_home_command(queue: beanstalk.Connection) -> None:
+def send_home_command(queue: beanstalk.Connection) -> int:
     """send a home command to home the rig"""
 
     clear_status_queue(queue)   # so we see what home command triggers
 
     queue.watch(TASK_QUEUE)
     task_body = json.dumps({'task': 'home'})
-    queue.put(task_body)
+    return queue.put(task_body)
 
 
-def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotation_steps: int) -> None:
+def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotation_steps: int) -> int:
     """this is it - time to scan. send the # of steps for each axis
     and return"""
     queue.watch(TASK_QUEUE)
     task_body = json.dumps({'task': 'scan'}, {'steps': {'declination': declination_steps, 'rotation': rotation_steps}})
-    queue.put(task_body)
+    return queue.put(task_body)
 
 
 def clear_status_queue(queue: beanstalk.CommandFailed):
@@ -197,8 +197,8 @@ def home():
     """
     # okay home the rig and return
     try:
-        send_home_command(configure_beanstalk())
-        return make_response(jsonify({'msg': 'everything is okay'}), status.HTTP_200_OK)
+        job_id= send_home_command(configure_beanstalk())
+        return make_response(jsonify({'msg': 'home command forwarded to controller #{0}'.format(job_id)}), status.HTTP_200_OK)
     except Exception as e:
         return make_response("failed to home -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -251,7 +251,6 @@ def scan():
 
     if not request.json:
         return make_response(jsonify({'msg': 'No JSON'}), status.HTTP_400_BAD_REQUEST)
-
     try:
         declination_steps = request.json['declination_steps']
         rotation_steps = request.json['rotation_steps']
@@ -267,7 +266,8 @@ def scan():
     try:
         # okay, kick off the scanning
         queue = configure_beanstalk()
-        send_scan_command(queue, declination_steps, rotation_steps)
+        job_id = send_scan_command(queue, declination_steps, rotation_steps)
+        return make_response(jsonify({'msg': 'scan started #{0}'.format(job_id)}), status.HTTP_200_OK)
     except Exception as e:
         return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}), status.HTTP_500_INTERNAL_SERVER_ERROR)
 

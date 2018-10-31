@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="" />
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restapi/rig_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +52,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="5" />
           <entry key="png" value="1" />
-          <entry key="py" value="17" />
+          <entry key="py" value="18" />
           <entry key="sh" value="5" />
           <entry key="txt" value="4" />
         </counts>
@@ -62,7 +65,7 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="17" />
+          <entry key="Python" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -70,9 +73,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3258" />
-          <entry key="py" value="16514" />
+          <entry key="py" value="16798" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="2813" />
+          <entry key="txt" value="2891" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -80,8 +83,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="3258" />
-          <entry key="PLAIN_TEXT" value="2881" />
-          <entry key="Python" value="16514" />
+          <entry key="PLAIN_TEXT" value="2959" />
+          <entry key="Python" value="16798" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -148,11 +151,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="170" selection-start-line="170" selection-end-line="170" />
+            <state relative-caret-position="306">
+              <caret line="253" selection-start-line="253" selection-end-line="253" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1541019074393" expanded="true" signature="886:1198" ph="..." />
+                <marker date="1541024221174" expanded="true" signature="898:1210" ph="..." />
               </folding>
             </state>
           </provider>
@@ -163,6 +166,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
               <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rig_runner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="232" column="23" selection-start-line="232" selection-start-column="23" selection-end-line="232" selection-end-column="23" />
+              <folding>
+                <element signature="e#321#334#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,7 +212,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getPiI</find>
       <find>.bus</find>
       <find>rpm</find>
       <find>setspeed</find>
@@ -227,6 +241,7 @@
       <find>json</find>
       <find>json.</find>
       <find>get_status</find>
+      <find>home</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -416,20 +431,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00052" summary="a few changes">
-      <created>1540843126134</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1540843126134</updated>
-    </task>
-    <task id="LOCAL-00053" summary="added the setup page">
-      <created>1540843502699</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1540843502699</updated>
     </task>
     <task id="LOCAL-00054" summary="added value to slider">
       <created>1540844399920</created>
@@ -760,7 +761,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541019085812</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="add GET method to home command">
+      <created>1541019209882</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1541019209882</updated>
+    </task>
+    <task id="LOCAL-00102" summary="make dict into string, not flask jsonify object!">
+      <created>1541020091345</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1541020091345</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TodoView">
@@ -829,8 +844,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="print out body of received cancel" />
-    <MESSAGE value="delete jobs from queue" />
     <MESSAGE value="catch keyboard interrupt (is that good?)&#10;240 rpm" />
     <MESSAGE value="fall through to main loop" />
     <MESSAGE value="some pretty print statements" />
@@ -854,16 +867,13 @@
     <MESSAGE value="move it" />
     <MESSAGE value="send back 204" />
     <MESSAGE value="make sure status_json is really json" />
-    <option name="LAST_COMMIT_MESSAGE" value="make sure status_json is really json" />
+    <MESSAGE value="add GET method to home command" />
+    <MESSAGE value="make dict into string, not flask jsonify object!" />
+    <option name="LAST_COMMIT_MESSAGE" value="make dict into string, not flask jsonify object!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restapi/rig_control.py</url>
-          <line>196</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/website/homerig.html</url>
           <line>12</line>
@@ -919,6 +929,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
+          <folding>
+            <marker date="1540765047458" expanded="true" signature="146:460" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="192:211" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="257:276" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="303:322" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="671:690" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="1048:1438" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="1202:1221" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="1268:1287" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="1318:1337" ph="..." />
+            <marker date="1540765047458" expanded="true" signature="1385:1404" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -936,6 +958,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <marker date="1540766318478" expanded="true" signature="179:252" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -978,16 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4950">
-          <caret line="231" column="35" selection-start-line="231" selection-start-column="35" selection-end-line="231" selection-end-column="35" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,13 +1093,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="232" column="23" selection-start-line="232" selection-start-column="23" selection-end-line="232" selection-end-column="23" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="170" selection-start-line="170" selection-end-line="170" />
+        <state relative-caret-position="306">
+          <caret line="253" selection-start-line="253" selection-end-line="253" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541019074393" expanded="true" signature="886:1198" ph="..." />
+            <marker date="1541024221174" expanded="true" signature="898:1210" ph="..." />
           </folding>
         </state>
       </provider>
