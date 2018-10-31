@@ -165,10 +165,11 @@ def rig_status():
     try:
         queue = configure_beanstalk()
         status_json = get_status(queue)
-        return make_response("dummy responses", status.HTTP_200_OK)
         if status_json is None:
+            return make_response("204 dummy responses", status.HTTP_200_OK)
             return make_response("no status", status.HTTP_204_NO_CONTENT)
         else:
+            return make_response("200 dummy responses", status.HTTP_200_OK)
             return make_response("got status", status.HTTP_200_OK)
     except Exception as e:
         return make_response("something really bad -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
