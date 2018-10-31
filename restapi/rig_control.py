@@ -166,13 +166,11 @@ def rig_status():
         queue = configure_beanstalk()
         status_json = get_status(queue)
         if status_json is None:
-            return make_response("", status.HTTP_204_NO_CONTENT)
+            return make_response("no status", status.HTTP_204_NO_CONTENT)
         else:
             return make_response(status_json, status.HTTP_200_OK)
     except Exception as e:
         return make_response("something really bad -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    return make_response("should never get here", status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @app.route("/home", methods=['POST'])
 @cross_origin(origins='*')
