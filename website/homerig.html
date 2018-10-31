@@ -14,7 +14,7 @@
          $.ajax({
              type: "POST",
              dataType: "json",
-             url: "http://192.168.1.22:8081/home",
+             url: "http://" + location.hostname + "/home",
              success: function(data){
                 alert(data);
              }

@@ -72,9 +72,9 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
     return queue.put(task_body)
 
 
-def clear_status_queue(queue: beanstalk.CommandFailed):
-    """empty the status queue of any messages"""
-    queue.watch(STATUS_QUEUE)
+def clear_tube(queue: beanstalk.Connection, tube: str):
+    """ flush all messages tubes to the rig"""
+    queue.watch(tube)
     while True:
         try:
             job = queue.reserve(timeout=0)
@@ -85,6 +85,19 @@ def clear_status_queue(queue: beanstalk.CommandFailed):
             pass
         except beanstalk.DeadlineSoon:
             pass
+
+
+def clear_status_queue(queue: beanstalk.Connection):
+    """empty the status queue of any messages"""
+    clear_tube(queue, tube=STATUS_QUEUE)
+
+
+def send_cancel_request(queue: beanstalk.Connection) -> int:
+    clear_status_queue(queue)   # so we see what home command triggers
+
+    queue.watch(CANCEL_QUEUE)
+    task_body = json.dumps({'task': 'cancel'})
+    return queue.put(task_body)
 
 
 @app.route("/spec/swagger.json")
@@ -207,10 +220,39 @@ def home():
     """
     # okay home the rig and return
     try:
-        job_id= send_home_command(configure_beanstalk())
+        job_id = send_home_command(configure_beanstalk())
         return make_response(jsonify({'msg': 'home command forwarded to controller #{0}'.format(job_id)}), status.HTTP_200_OK)
     except Exception as e:
         return make_response("failed to home -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@app.route("/cancel", methods=['POST', 'GET'])
+@cross_origin(origins='*')
+def home():
+    """
+    Cancel
+    Cancels whatever operation the rig is performing
+    ---
+    tags:
+      - admin
+    description: "cancel all operations currently being processed"
+    operationId: cancel-rig
+    produces:
+      - application/json
+    responses:
+      200:
+        description: "cancel issued, queues cleared"
+      500:
+        description: "error processing cancel request"
+        schema:
+          $ref: '#/definitions/Error'
+    """
+    # okay home the rig and return
+    try:
+        job_id = send_cancel_request(configure_beanstalk())
+        return make_response(jsonify({'msg': 'cancel issued, queues cleared #{0}'.format(job_id)}), status.HTTP_200_OK)
+    except Exception as e:
+        return make_response("error processing cancel request -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @app.route("/scan", methods=['POST'])
@@ -281,11 +323,9 @@ def scan():
     except Exception as e:
         return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}), status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    return make_response(jsonify({'msg': 'Not Implemented'}), status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 
 # okay, if we are the main thing then start
 # listening for requests!
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081)
-    # serve(app, listen='*:8081')
+    # serve(app, listen='*:8081') # waitress implementation
