@@ -144,7 +144,7 @@ def hello():
 
 @app.route("/status", methods=['GET'])
 @cross_origin(origins='*')
-def status():
+def rig_status():
     """
     status
     ---
