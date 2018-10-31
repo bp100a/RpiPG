@@ -23,4 +23,5 @@ Flask-JWT==0.3.2
 Flask-API==1.0
 Flask-Swagger==0.2.13
 Flask-CORS==3.0.6
+gphoto2-cffi==0.4.2
 
