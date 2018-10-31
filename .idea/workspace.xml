@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restapi/rig_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
-    </list>
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,9 +70,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3258" />
-          <entry key="py" value="16271" />
+          <entry key="py" value="16366" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="2639" />
+          <entry key="txt" value="2658" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -83,8 +80,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="3258" />
-          <entry key="PLAIN_TEXT" value="2707" />
-          <entry key="Python" value="16271" />
+          <entry key="PLAIN_TEXT" value="2726" />
+          <entry key="Python" value="16366" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -151,11 +148,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="172" column="73" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
+            <state relative-caret-position="625">
+              <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1541009954699" expanded="true" signature="886:1189" ph="..." />
+                <marker date="1541010186096" expanded="true" signature="886:1189" ph="..." />
               </folding>
             </state>
           </provider>
@@ -419,34 +416,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00040" summary="print out what endstop was triggered">
-      <created>1540765152387</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1540765152387</updated>
-    </task>
-    <task id="LOCAL-00041" summary="our optical switch appears normally closed, so it's '0' when triggered">
-      <created>1540765622209</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1540765622209</updated>
-    </task>
-    <task id="LOCAL-00042" summary="wire up 2nd optical switch">
-      <created>1540765907017</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1540765907017</updated>
-    </task>
-    <task id="LOCAL-00043" summary="oops! had gpio pin wrong">
-      <created>1540766050165</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1540766050165</updated>
     </task>
     <task id="LOCAL-00044" summary="remove pullup">
       <created>1540766192597</created>
@@ -763,7 +732,35 @@
       <option name="project" value="LOCAL" />
       <updated>1541009823459</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="print out exception">
+      <created>1541009962170</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1541009962171</updated>
+    </task>
+    <task id="LOCAL-00090" summary="print out exception">
+      <created>1541010001602</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010001603</updated>
+    </task>
+    <task id="LOCAL-00091" summary="print out exception">
+      <created>1541010074869</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010074869</updated>
+    </task>
+    <task id="LOCAL-00092" summary="print out exception">
+      <created>1541010191957</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010191957</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TodoView">
@@ -832,7 +829,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="empty beanstalk queue on startup" />
     <MESSAGE value="status now returns no content &amp; other legit responses" />
     <MESSAGE value="catch exception" />
     <MESSAGE value="catch 2 exceptions, use finally" />
@@ -857,14 +853,15 @@
     <MESSAGE value="setup for gunicorn" />
     <MESSAGE value="update requirements" />
     <MESSAGE value="fix conflicting names" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix conflicting names" />
+    <MESSAGE value="print out exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="print out exception" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restapi/rig_control.py</url>
-          <line>197</line>
+          <line>198</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1083,11 +1080,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="172" column="73" selection-start-line="172" selection-start-column="73" selection-end-line="172" selection-end-column="73" />
+        <state relative-caret-position="625">
+          <caret line="174" column="48" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541009954699" expanded="true" signature="886:1189" ph="..." />
+            <marker date="1541010186096" expanded="true" signature="886:1189" ph="..." />
           </folding>
         </state>
       </provider>
