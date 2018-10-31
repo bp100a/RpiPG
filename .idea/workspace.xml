@@ -70,9 +70,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3258" />
-          <entry key="py" value="16453" />
+          <entry key="py" value="16514" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="2760" />
+          <entry key="txt" value="2813" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -80,8 +80,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="3258" />
-          <entry key="PLAIN_TEXT" value="2828" />
-          <entry key="Python" value="16453" />
+          <entry key="PLAIN_TEXT" value="2881" />
+          <entry key="Python" value="16514" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -139,30 +139,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="153" column="25" lean-forward="true" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1541010657633" expanded="true" signature="886:1189" ph="..." />
-              </folding>
+            <state relative-caret-position="132">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="170" selection-start-line="170" selection-end-line="170" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <marker date="1541019074393" expanded="true" signature="886:1198" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -197,8 +197,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>error access</find>
-      <find>def err</find>
       <find>getPiI</find>
       <find>.bus</find>
       <find>rpm</find>
@@ -220,13 +218,15 @@
       <find>jsonifyj</find>
       <find>jsonify</find>
       <find>BREAK_EXIT</find>
-      <find>get_status</find>
       <find>CAMERA_STEPPER =</find>
       <find>CAMERA</find>
       <find>my_timer</find>
       <find>is_gun</find>
       <find>iiServer</find>
       <find>status.</find>
+      <find>json</find>
+      <find>json.</find>
+      <find>get_status</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -416,27 +416,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00049" summary="syntax error">
-      <created>1540842043592</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1540842043592</updated>
-    </task>
-    <task id="LOCAL-00050" summary="missing another ;">
-      <created>1540842314677</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1540842314679</updated>
-    </task>
-    <task id="LOCAL-00051" summary="the website contents">
-      <created>1540842434161</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1540842434161</updated>
     </task>
     <task id="LOCAL-00052" summary="a few changes">
       <created>1540843126134</created>
@@ -760,7 +739,28 @@
       <option name="project" value="LOCAL" />
       <updated>1541010663371</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="move it">
+      <created>1541010991173</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010991173</updated>
+    </task>
+    <task id="LOCAL-00099" summary="send back 204">
+      <created>1541011042496</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1541011042496</updated>
+    </task>
+    <task id="LOCAL-00100" summary="make sure status_json is really json">
+      <created>1541019085812</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1541019085812</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TodoView">
@@ -829,8 +829,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="display reason for forced exit" />
-    <MESSAGE value="use global" />
     <MESSAGE value="print out body of received cancel" />
     <MESSAGE value="delete jobs from queue" />
     <MESSAGE value="catch keyboard interrupt (is that good?)&#10;240 rpm" />
@@ -854,14 +852,16 @@
     <MESSAGE value="fake status" />
     <MESSAGE value="dummy it up" />
     <MESSAGE value="move it" />
-    <option name="LAST_COMMIT_MESSAGE" value="move it" />
+    <MESSAGE value="send back 204" />
+    <MESSAGE value="make sure status_json is really json" />
+    <option name="LAST_COMMIT_MESSAGE" value="make sure status_json is really json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restapi/rig_control.py</url>
-          <line>197</line>
+          <line>196</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1047,13 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="579">
@@ -1071,21 +1064,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="153" column="25" lean-forward="true" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541010657633" expanded="true" signature="886:1189" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="170" selection-start-line="170" selection-end-line="170" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1541019074393" expanded="true" signature="886:1198" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

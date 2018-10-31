@@ -172,7 +172,8 @@ def rig_status():
     except Exception as e:
         return make_response("something really bad -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-@app.route("/home", methods=['POST'])
+
+@app.route("/home", methods=['POST', 'GET'])
 @cross_origin(origins='*')
 def home():
     """
