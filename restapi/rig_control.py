@@ -10,8 +10,7 @@ import beanstalkc as beanstalk
 app = Flask(__name__)
 app.debug = True
 app.config['SECRET_KEY'] = 'photogrammetry'
-
-is_gunicorn = False
+CORS(app, resources=r'/*')
 
 __version__ = '0.0.1' #our version string PEP 440
 

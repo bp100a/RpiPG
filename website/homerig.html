@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<button id="ajax">home rig</button>
+
+<script type="text/javascript">
+    $('#ajax').click(function(){
+        alert('ajax');
+         $.ajax({
+             type: "POST",
+             dataType: "json",
+             url: "http://localhost:8081/home",
+             success: function(data){
+                alert(data);
+             }
+         });
+    });
+
+</script>
+</body>
+</html>

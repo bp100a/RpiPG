@@ -72,6 +72,7 @@ def yield_function(direction: int) -> bool:
 
     try:
         if BEANSTALK:  # if we have a queue, check for user cancel
+            BEANSTALK.watch(CANCEL_QUEUE)
             job = BEANSTALK.reserve(timeout=0) # don't wait
             if job is not None:
                 job.delete()
@@ -226,9 +227,9 @@ if __name__ == '__main__':
     print("\n**********************")
     print("\n** waiting for jobs **")
     print("\n**********************\n")
-    BEANSTALK.watch(TASK_QUEUE)
     is_homed = False
     while True:
+        BEANSTALK.watch(TASK_QUEUE)
         job = BEANSTALK.reserve(timeout=0)
         if job is None:
             time.sleep(0.001) # sleep for 1 ms to share the computer

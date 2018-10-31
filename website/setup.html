@@ -11,7 +11,33 @@
 </head>
 
 <body>
-
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.13.0/jquery.min.js"></script>
+  <script>
+    (function() {
+      var status = $('.status'),
+        poll = function() {
+          $.ajax({
+            url: 'http://localhost/api/status',
+            dataType: 'json',
+            type: 'get',
+            success: function(data) { // check if available
+              status.text('Offline!');
+              if ( data.live ) { // get and check data value
+                status.text(data.info); // get and print data string
+                clearInterval(pollInterval); // optional: stop poll function
+              }
+            },
+            error: function() { // error logging
+              console.log('Error!');
+            }
+          });
+        },
+        pollInterval = setInterval(function() { // run function every 2000 ms
+          poll();
+          }, 2000);
+        poll(); // also run function on init
+    })();
+  </script>
 <div id="page-transitions" class="page-build">
     <div class="page-bg gradient-body-1"></div>
 
