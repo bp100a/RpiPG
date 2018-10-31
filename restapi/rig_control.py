@@ -166,7 +166,6 @@ def rig_status():
         queue = configure_beanstalk()
         status_json = get_status(queue)
         if status_json is None:
-            return make_response("204 dummy responses", status.HTTP_200_OK)
             return make_response("no status", status.HTTP_204_NO_CONTENT)
         else:
             return make_response("200 dummy responses", status.HTTP_200_OK)

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/restapi/rig_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
-    </list>
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,9 +70,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="3258" />
-          <entry key="py" value="16397" />
+          <entry key="py" value="16453" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="2731" />
+          <entry key="txt" value="2760" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -82,8 +80,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="3258" />
-          <entry key="PLAIN_TEXT" value="2799" />
-          <entry key="Python" value="16397" />
+          <entry key="PLAIN_TEXT" value="2828" />
+          <entry key="Python" value="16453" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -147,20 +145,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
+            <state relative-caret-position="15">
+              <caret line="153" column="25" lean-forward="true" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1541010451819" expanded="true" signature="886:1189" ph="..." />
+                <marker date="1541010657633" expanded="true" signature="886:1189" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
@@ -418,27 +416,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00046" summary="reduce hold time to 1 second">
-      <created>1540766386870</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1540766386870</updated>
-    </task>
-    <task id="LOCAL-00047" summary="added some web pages &amp; nginx.conf">
-      <created>1540841565815</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1540841565815</updated>
-    </task>
-    <task id="LOCAL-00048" summary="oops! missing home page">
-      <created>1540841724790</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1540841724790</updated>
     </task>
     <task id="LOCAL-00049" summary="syntax error">
       <created>1540842043592</created>
@@ -762,7 +739,28 @@
       <option name="project" value="LOCAL" />
       <updated>1541010312168</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="fake status">
+      <created>1541010457975</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010457975</updated>
+    </task>
+    <task id="LOCAL-00096" summary="dummy it up">
+      <created>1541010545600</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010545600</updated>
+    </task>
+    <task id="LOCAL-00097" summary="move it">
+      <created>1541010663371</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1541010663371</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TodoView">
@@ -831,9 +829,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="catch 2 exceptions, use finally" />
-    <MESSAGE value="Deadline Soon exception can be safely ignored." />
-    <MESSAGE value="move the switch checking" />
     <MESSAGE value="display reason for forced exit" />
     <MESSAGE value="use global" />
     <MESSAGE value="print out body of received cancel" />
@@ -856,14 +851,17 @@
     <MESSAGE value="print out exception" />
     <MESSAGE value="204 returns empty string not None!!" />
     <MESSAGE value="return 'no status' string for 204" />
-    <option name="LAST_COMMIT_MESSAGE" value="return 'no status' string for 204" />
+    <MESSAGE value="fake status" />
+    <MESSAGE value="dummy it up" />
+    <MESSAGE value="move it" />
+    <option name="LAST_COMMIT_MESSAGE" value="move it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restapi/rig_control.py</url>
-          <line>196</line>
+          <line>197</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1073,21 +1071,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="153" column="25" lean-forward="true" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1541010657633" expanded="true" signature="886:1189" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541010451819" expanded="true" signature="886:1189" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
