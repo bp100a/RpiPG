@@ -273,4 +273,5 @@ def scan():
 # okay, if we are the main thing then start
 # listening for requests!
 if __name__ == '__main__':
-    serve(app, listen='*:8081')
+    app.run(host='0.0.0.0', port=8081)
+    # serve(app, listen='*:8081')

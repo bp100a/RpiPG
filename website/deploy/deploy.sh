@@ -12,9 +12,9 @@ sudo cp ~/RpiPG/deploy/nginx.conf /etc/nginx
 # Now setup our python environment and install everything
 source ~/RpiPG/venv/Scripts/activate
 sudo apt-get install python-gphoto2cffi     # install Gphoto2 api
-sudo apt-get install gunicorn               # install app server
 sudo apt-get install libiff-dev             # to build gphoto2-cffi
 pip3 install -r ~/RpiPG/requirements.txt
+pip3 install gunicorn
 
 # Time to startup the app. There are three pieces:
 #    1) rig_runner.py (controls the rig)
