@@ -275,6 +275,9 @@ if __name__ == '__main__':
             except ValueError:
                 post_status(BEANSTALK, "error in scan input value")
                 continue
+            except KeyError:
+                post_status(BEANSTALK, "error with input JSON")
+                print("/scan JSON failed! : {0}".format(json.dumps(job_dict)))
 
             # okay we have valid parameters, time to scan the object
             steps_per_declination, steps_per_rotation = calculate_steps(declination_steps, rotation_steps, CAMERA_STEPPER, ROTATE_STEPPER)
