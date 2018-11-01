@@ -256,6 +256,7 @@ if __name__ == '__main__':
         MAX_PICTURES = 200
         if job_dict['task'] == 'scan':
             try:
+                print ('scan command received')
                 post_status(BEANSTALK, "scan command received!")
                 declination_steps = int(job_dict['steps']['declination'])
                 rotation_steps = int(job_dict['steps']['rotation'])
@@ -279,9 +280,11 @@ if __name__ == '__main__':
                 post_status(BEANSTALK, "error with input JSON")
                 print("/scan JSON failed! : {0}".format(json.dumps(job_dict)))
 
+            print('...calculating steps for {0} pictures'.format(total_pictures))
             # okay we have valid parameters, time to scan the object
             steps_per_declination, steps_per_rotation = calculate_steps(declination_steps, rotation_steps, CAMERA_STEPPER, ROTATE_STEPPER)
 
+            print('... {0} declination, {1} rotation steps'.format(steps_per_declination, steps_per_rotation))
             # the camera & model are 'homed', so now we need to go through the motions
             forced_exit = False
             remaining_declination_steps = declination_travel_steps  # got this from homing the printer

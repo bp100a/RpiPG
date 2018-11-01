@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -74,9 +75,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="5160" />
-          <entry key="py" value="18468" />
+          <entry key="py" value="18650" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="3439" />
+          <entry key="txt" value="3520" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -84,8 +85,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="5160" />
-          <entry key="PLAIN_TEXT" value="3507" />
-          <entry key="Python" value="18468" />
+          <entry key="PLAIN_TEXT" value="3588" />
+          <entry key="Python" value="18650" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -164,12 +165,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+            <state relative-caret-position="286">
+              <caret line="63" column="29" lean-forward="true" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1541114245612" expanded="true" signature="898:1362" ph="..." />
-                <marker date="1541114245612" expanded="true" signature="3011:3195" ph="..." />
+                <marker date="1541115096535" expanded="true" signature="898:1362" ph="..." />
+                <marker date="1541115096535" expanded="true" signature="3011:3195" ph="..." />
               </folding>
             </state>
           </provider>
@@ -187,8 +188,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="815">
-              <caret line="279" column="78" lean-forward="true" selection-start-line="279" selection-start-column="78" selection-end-line="279" selection-end-column="78" />
+            <state relative-caret-position="361">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -208,7 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>is_active</find>
       <find>Button</find>
       <find>How do I edit</find>
       <find>PHOTOGR</find>
@@ -238,6 +238,7 @@
       <find>center</find>
       <find>scan</find>
       <find>Scan</find>
+      <find>Cancel rec</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -434,27 +435,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00071" summary="delete jobs from queue">
-      <created>1540925085729</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1540925085729</updated>
-    </task>
-    <task id="LOCAL-00072" summary="catch keyboard interrupt (is that good?)&#10;240 rpm">
-      <created>1540934363611</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1540934363611</updated>
-    </task>
-    <task id="LOCAL-00073" summary="fall through to main loop">
-      <created>1540935788500</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1540935788500</updated>
     </task>
     <task id="LOCAL-00074" summary="some pretty print statements">
       <created>1540935860199</created>
@@ -778,7 +758,28 @@
       <option name="project" value="LOCAL" />
       <updated>1541114257293</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="print out keyerror infor on scan">
+      <created>1541114483073</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1541114483073</updated>
+    </task>
+    <task id="LOCAL-00121" summary="fix scan dictionary">
+      <created>1541114687672</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1541114687672</updated>
+    </task>
+    <task id="LOCAL-00122" summary="fix dictionary we send">
+      <created>1541115109008</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1541115109008</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TodoView">
@@ -847,9 +848,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="204 returns empty string not None!!" />
-    <MESSAGE value="return 'no status' string for 204" />
-    <MESSAGE value="fake status" />
     <MESSAGE value="dummy it up" />
     <MESSAGE value="move it" />
     <MESSAGE value="send back 204" />
@@ -872,7 +870,10 @@
     <MESSAGE value="fix JSON we are sending scan POST" />
     <MESSAGE value="catch some more exceptions on /scan json processing" />
     <MESSAGE value="change name of endpoint function home -&gt; home_rig()" />
-    <option name="LAST_COMMIT_MESSAGE" value="change name of endpoint function home -&gt; home_rig()" />
+    <MESSAGE value="print out keyerror infor on scan" />
+    <MESSAGE value="fix scan dictionary" />
+    <MESSAGE value="fix dictionary we send" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix dictionary we send" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1131,20 +1132,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+        <state relative-caret-position="286">
+          <caret line="63" column="29" lean-forward="true" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541114245612" expanded="true" signature="898:1362" ph="..." />
-            <marker date="1541114245612" expanded="true" signature="3011:3195" ph="..." />
+            <marker date="1541115096535" expanded="true" signature="898:1362" ph="..." />
+            <marker date="1541115096535" expanded="true" signature="3011:3195" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="279" column="78" lean-forward="true" selection-start-line="279" selection-start-column="78" selection-end-line="279" selection-end-column="78" />
+        <state relative-caret-position="361">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
           </folding>
