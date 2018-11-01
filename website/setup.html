@@ -11,33 +11,6 @@
 </head>
 
 <body>
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.13.0/jquery.min.js"></script>
-  <script>
-    (function() {
-      var status = $('.status'),
-        poll = function() {
-          $.ajax({
-            url: 'http://localhost/api/status',
-            dataType: 'json',
-            type: 'get',
-            success: function(data) { // check if available
-              status.text('Offline!');
-              if ( data.live ) { // get and check data value
-                status.text(data.info); // get and print data string
-                clearInterval(pollInterval); // optional: stop poll function
-              }
-            },
-            error: function() { // error logging
-              console.log('Error!');
-            }
-          });
-        },
-        pollInterval = setInterval(function() { // run function every 2000 ms
-          poll();
-          }, 2000);
-        poll(); // also run function on init
-    })();
-  </script>
 <div id="page-transitions" class="page-build">
     <div class="page-bg gradient-body-1"></div>
 
@@ -108,61 +81,23 @@
                     </span>
                   <input class="material-slider" type="range" id="camera_rotation" value="10" min="4" max="25"/>
                </form>
-                    <script type="text/javascript" charset="utf-8">
-                        var declination_stops = document.querySelector('#camera_rotation');
-                        var declination_value = document.querySelector('#camera_value');
-                        var total_value = document.querySelector('#total_value');
-                        var declination_label = 'declination steps';
-                        var off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
-                        var px =  ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
-
-                        declination_value.parentElement.style.left = px + 'px';
-                        declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
-                        declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
-
-                        declination_stops.oninput =function(){
-                            let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetWidth / 2);
-                            declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
-                            declination_value.parentElement.style.left = px + 'px';
-
-                            // Calculate total # of pictures
-                            var total_pics = declination_stops.value * rotation_stops.value;
-                            total_value.innerHTML = ' ' + total_pics + ' pictures'
-                        };
-                      </script>
-
                <form class="range-slider">
                     <span style="position:absolute; color:red; min-width:100px;">
                         <span id="rotation_value"></span>
                     </span>
                   <input class="material-slider" type="range" id="model_rotation" value="10" min="4" max="25"/>
                </form>
-                    <script type="text/javascript" charset="utf-8">
-                        var rotation_stops = document.querySelector('#model_rotation');
-                        var rotation_value = document.querySelector('#rotation_value');
-                        var rotation_label = 'rotation steps';
-                        var off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
-                        var px =  ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
-
-                        rotation_value.parentElement.style.left = px + 'px';
-                        rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
-                        rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
-
-                        rotation_stops.oninput =function(){
-                            let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetWidth / 2);
-                            rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
-                            rotation_value.parentElement.style.left = px + 'px';
-
-                            // Calculate total # of pictures
-                            var total_pics = declination_stops.value * rotation_stops.value;
-                            total_value.innerHTML = ' ' + total_pics + ' pictures'
-                          };
-
-                        rotation_stops.oninput() // call to initialize the total picture count
-                      </script>
             </div>
             <a href="#" class="button button-rounded button-green">Scan</a>
         </div>
+
+        <div class="content-box shadow-large bg-white">
+            <div class="top-25 bottom-30">
+                <h4>Camera angles</h4>
+                <div id="slider">Set Angle</div>
+            </div>
+        </div>
+    </div>
 
     <div id="menu-contact" data-menu-height="460" class="menu menu-box-modal bg-white shadow-large">
         <div class="menu-scroll">
@@ -307,10 +242,87 @@
     </div>
 	<a href="#" class="back-to-top-badge back-to-top-small shadow-large bg-blue-dark"><i class="fa fa-angle-up"></i>Back to Top</a>
 </div>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/plugins.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        (function() {
+          var status = $('.status'),
+            poll = function() {
+              $.ajax({
+                url: 'http://localhost/api/status',
+                dataType: 'json',
+                type: 'get',
+                success: function(data) { // check if available
+                  status.text('Offline!');
+                  if ( data.live ) { // get and check data value
+                    status.text(data.info); // get and print data string
+                    clearInterval(pollInterval); // optional: stop poll function
+                  }
+                },
+                error: function() { // error logging
+                  console.log('Error!');
+                }
+              });
+            },
+            pollInterval = setInterval(function() { // run function every 2000 ms
+              poll();
+              }, 2000);
+            poll(); // also run function on init
+        })();
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $("#slider").roundSlider({
+                value: 45,
+            });
+        });
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        var declination_stops = document.querySelector('#camera_rotation');
+        var declination_value = document.querySelector('#camera_value');
+        var total_value = document.querySelector('#total_value');
+        var declination_label = 'declination steps';
+        var off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
+        var px =  ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
 
+        declination_value.parentElement.style.left = px + 'px';
+        declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
+        declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
 
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<script type="text/javascript" src="scripts/plugins.js"></script>
-<script type="text/javascript" src="scripts/custom.js"></script>
+        declination_stops.oninput =function(){
+            let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetWidth / 2);
+            declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
+            declination_value.parentElement.style.left = px + 'px';
 
+            // Calculate total # of pictures
+            var total_pics = declination_stops.value * rotation_stops.value;
+            total_value.innerHTML = ' ' + total_pics + ' pictures'
+        };
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        var rotation_stops = document.querySelector('#model_rotation');
+        var rotation_value = document.querySelector('#rotation_value');
+        var rotation_label = 'rotation steps';
+        var off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
+        var px =  ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
+
+        rotation_value.parentElement.style.left = px + 'px';
+        rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
+        rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
+
+        rotation_stops.oninput =function(){
+            let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetWidth / 2);
+            rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
+            rotation_value.parentElement.style.left = px + 'px';
+
+            // Calculate total # of pictures
+            var total_pics = declination_stops.value * rotation_stops.value;
+            total_value.innerHTML = ' ' + total_pics + ' pictures'
+          };
+
+        rotation_stops.oninput() // call to initialize the total picture count
+    </script>
 </body>
