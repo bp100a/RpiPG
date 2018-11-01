@@ -307,6 +307,7 @@ def scan():
 
     if not request.json:
         return make_response(jsonify({'msg': 'No JSON'}), status.HTTP_400_BAD_REQUEST)
+
     try:
         declination_steps = int(request.json['declination_steps'])
         rotation_steps = int(request.json['rotation_steps'])
