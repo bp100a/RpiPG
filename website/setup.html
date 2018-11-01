@@ -352,7 +352,7 @@
                  type: "POST",
                  dataType: "json",
                  contentType: "application/json; charset=utf-8",
-                 data: {"declination_steps": declination_value, "rotation_steps": rotation_value, "start": declination_start, "stop": declination_stop},
+                 data: JSON.stringify({"declination_steps": declination_value, "rotation_steps": rotation_value, "start": declination_start, "stop": declination_stop}),
                  url: "http://" + location.hostname + "/api/scan",
                  success: function(data){
                  }
