@@ -48,12 +48,12 @@ def clear_all_queues(queue: beanstalk.Connection) -> None:
                 break
 
 
-def post_status(status: str) -> None:
+def post_status(queue: beanstalk.Connection, status: str) -> None:
     """simple status string we send back"""
-    if BEANSTALK:
+    if queue:
         json_status = json.dumps({'msg': status})
-        BEANSTALK.watch(STATUS_QUEUE)
-        BEANSTALK.put(json_status)
+        queue.watch(STATUS_QUEUE)
+        queue.put(json_status)
 
 
 BREAK_EXIT_REASON = None
