@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restapi/rig_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,9 +74,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="5160" />
-          <entry key="py" value="18220" />
+          <entry key="py" value="18342" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="3334" />
+          <entry key="txt" value="3388" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -84,8 +84,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="5160" />
-          <entry key="PLAIN_TEXT" value="3402" />
-          <entry key="Python" value="18220" />
+          <entry key="PLAIN_TEXT" value="3456" />
+          <entry key="Python" value="18342" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -164,12 +164,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="310" column="28" selection-start-line="310" selection-start-column="28" selection-end-line="310" selection-end-column="28" />
+            <state relative-caret-position="858">
+              <caret line="78" column="4" lean-forward="true" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1541105951238" expanded="true" signature="898:1362" ph="..." />
-                <marker date="1541105951238" expanded="true" signature="3011:3195" ph="..." />
+                <marker date="1541114142200" expanded="true" signature="898:1362" ph="..." />
+                <marker date="1541114142200" expanded="true" signature="3011:3195" ph="..." />
               </folding>
             </state>
           </provider>
@@ -273,9 +273,9 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/website/homerig.html" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
-        <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/website/setup.html" />
+        <option value="$PROJECT_DIR$/restapi/rig_control.py" />
       </list>
     </option>
   </component>
@@ -434,13 +434,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00068" summary="display reason for forced exit">
-      <created>1540924045744</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1540924045744</updated>
     </task>
     <task id="LOCAL-00069" summary="use global">
       <created>1540924250049</created>
@@ -778,7 +771,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541106468130</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="catch some more exceptions on /scan json processing">
+      <created>1541113780496</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1541113780496</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TodoView">
@@ -847,7 +847,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix conflicting names" />
     <MESSAGE value="print out exception" />
     <MESSAGE value="204 returns empty string not None!!" />
     <MESSAGE value="return 'no status' string for 204" />
@@ -872,7 +871,8 @@
     <MESSAGE value="add model rotation into the mix" />
     <MESSAGE value="added start/stop for scan data" />
     <MESSAGE value="fix JSON we are sending scan POST" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix JSON we are sending scan POST" />
+    <MESSAGE value="catch some more exceptions on /scan json processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="catch some more exceptions on /scan json processing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1141,12 +1141,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="310" column="28" selection-start-line="310" selection-start-column="28" selection-end-line="310" selection-end-column="28" />
+        <state relative-caret-position="858">
+          <caret line="78" column="4" lean-forward="true" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541105951238" expanded="true" signature="898:1362" ph="..." />
-            <marker date="1541105951238" expanded="true" signature="3011:3195" ph="..." />
+            <marker date="1541114142200" expanded="true" signature="898:1362" ph="..." />
+            <marker date="1541114142200" expanded="true" signature="3011:3195" ph="..." />
           </folding>
         </state>
       </provider>

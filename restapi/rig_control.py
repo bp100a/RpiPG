@@ -203,7 +203,7 @@ def rig_status():
 
 @app.route("/home", methods=['POST', 'GET'])
 @cross_origin(origins='*')
-def home():
+def home_rig():
     """
     home
     homes the photogrammetry rig and prepares for scan
