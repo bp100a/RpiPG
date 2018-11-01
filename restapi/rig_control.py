@@ -71,7 +71,7 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
     task_body = json.dumps({'task': 'scan',
                             'steps': {'declination': declination_steps,
                                       'rotation': rotation_steps},
-                            'offset': {'start': start, 'stop': stop}
+                            'offsets': {'start': start, 'stop': stop}
                             })
     return queue.put(task_body)
 
