@@ -68,8 +68,8 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
     """this is it - time to scan. send the # of steps for each axis
     and return"""
     queue.watch(TASK_QUEUE)
-    task_body = json.dumps({'task': 'scan'},
-                           {'steps': {'declination': declination_steps,
+    task_body = json.dumps({'task': 'scan',
+                            'steps': {'declination': declination_steps,
                                       'rotation': rotation_steps},
                             'offset': {'start': start, 'stop': stop}
                             })
