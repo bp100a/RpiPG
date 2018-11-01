@@ -33,17 +33,6 @@
                     <em class="font-11 color-white opacity-60">Creating 3D models, a hundred scans at a time</em>
                 </div>
                 <a name="homerig"></a>
-                <script>
-                    $('#home').click(function(){
-                         $.ajax({
-                             type: "POST",
-                             dataType: "json",
-                             url: "http://" + location.hostname + "/api/home",
-                             success: function(data){
-                             }
-                         });
-                    });
-                </script>
                 <div class="landing-icons">
                     <a href="#homerig" id="home">
                         <i class="gradient-sky-light shadow-icon-large fa fa-home"></i>
@@ -76,5 +65,16 @@
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
+<script>
+    $('#home').click(function(){
+         $.ajax({
+             type: "POST",
+             dataType: "json",
+             url: "http://" + location.hostname + "/api/home",
+             success: function(data){
+             }
+         });
+    });
+</script>
 
 </body>

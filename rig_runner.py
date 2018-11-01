@@ -211,15 +211,23 @@ if __name__ == '__main__':
 
         STEPS_TO_TAKE = 600
         print("Double Steps: {0} steps".format(STEPS_TO_TAKE))
-        print("...CW stepping")
+        print("...CW camera stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE):
             print("forced exit - " + BREAK_EXIT_REASON)
             break
 
-        print("...CCW stepping")
+        print("...CCW camera stepping")
         if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
             print ("forced exit - " + BREAK_EXIT_REASON)
             break
+
+        print("...CCW model stepping")
+        if ROTATE_STEPPER.step(STEPS_TO_TAKE, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
+            print ("forced exit - " + BREAK_EXIT_REASON)
+
+        print("...CW model stepping")
+        if ROTATE_STEPPER.step(STEPS_TO_TAKE, STEP_MODEL_CW, Raspi_MotorHAT.DOUBLE):
+            print ("forced exit - " + BREAK_EXIT_REASON)
 
     # This is the main loop, we poll for work from our
     # queue. We can either "home" the printer or "scan"

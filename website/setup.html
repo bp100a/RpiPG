@@ -340,4 +340,15 @@
 
         rotation_stops.oninput() // call to initialize the total picture count
     </script>
+    <script>
+        $('#home').click(function(){
+             $.ajax({
+                 type: "POST",
+                 dataType: "json",
+                 url: "http://" + location.hostname + "/api/scan",
+                 success: function(data){
+                 }
+             });
+        });
+    </script>
 </body>
