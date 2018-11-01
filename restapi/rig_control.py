@@ -308,18 +308,21 @@ def scan():
     if not request.json:
         return make_response(jsonify({'msg': 'No JSON'}), status.HTTP_400_BAD_REQUEST)
     try:
-        declination_steps = request.json['declination_steps']
-        rotation_steps = request.json['rotation_steps']
-        start = request.json['start']
-        stop = request.json['stop']
+        declination_steps = int(request.json['declination_steps'])
+        rotation_steps = int(request.json['rotation_steps'])
+        start = int(request.json['start'])
+        stop = int(request.json['stop'])
     except KeyError as e:
         return make_response(jsonify({'msg': 'No JSON'}), status.HTTP_400_BAD_REQUEST)
+    except ValueError as ve:
+        return make_response(jsonify({'msg': 'ValueError {0}'.format(ve.__str__())}), status.HTTP_400_BAD_REQUEST)
 
     MAX_PICTURES = 200
     # Calculate total picture count, cannot exceed 'MAX_PICTURES'
     total_picture_count = declination_steps * rotation_steps
     if total_picture_count > MAX_PICTURES:
-        return make_response(jsonify({'msg': 'exceeded max pictures of {0}'.format(MAX_PICTURES)}), status.HTTP_400_BAD_REQUEST)
+        return make_response(jsonify({'msg': 'exceeded max pictures of {0}'.format(MAX_PICTURES)}),
+                             status.HTTP_400_BAD_REQUEST)
 
     try:
         # okay, kick off the scanning
@@ -327,7 +330,8 @@ def scan():
         job_id = send_scan_command(queue, declination_steps, rotation_steps, start, stop)
         return make_response(jsonify({'msg': 'scan started #{0}'.format(job_id)}), status.HTTP_200_OK)
     except Exception as e:
-        return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}), status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}),
+                             status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 # okay, if we are the main thing then start
