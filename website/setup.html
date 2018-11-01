@@ -88,14 +88,14 @@
                   <input class="material-slider" type="range" id="model_rotation" value="10" min="4" max="25"/>
                </form>
             </div>
-            <a href="#" class="button button-rounded button-green">Scan</a>
-        </div>
-
-        <div class="content-box shadow-large bg-white">
             <div class="top-25 bottom-30">
                 <h4>Camera angles</h4>
                 <div id="slider">Set Angle</div>
             </div>
+            <a href="#" class="button button-rounded button-green">Scan</a>
+        </div>
+
+        <div class="content-box shadow-large bg-white">
         </div>
     </div>
 
@@ -274,9 +274,23 @@
         })();
     </script>
     <script type="text/javascript" charset="utf-8">
+        window.formatter = function (e) {
+            return '*' + e.value;
+        }
         $(document).ready(function () {
+            var start_angle = 90;
+            var end_angle = 235;
+            // Range is always 0-100, so the steps
+            // is (end-start) / 100
+            var steps = (end_angle - start_angle) / 100;
             $("#slider").roundSlider({
-                startAngle: "90", endAngle: "270", value: "0, 100", sliderType: "range"
+                startAngle: start_angle,
+                endAngle: end_angle,
+                value: "0, 100",
+                sliderType: "range",
+                tooltipFormat: function (e) {
+                    return parseInt(90 - (e.value * steps)) + String.fromCharCode(176);
+                }
             });
         });
     </script>

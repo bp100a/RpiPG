@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/website/roundslider/roundslider.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/roundslider/roundslider.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
@@ -52,7 +50,8 @@
         <counts>
           <entry key="conf" value="1" />
           <entry key="css" value="6" />
-          <entry key="html" value="9" />
+          <entry key="html" value="10" />
+          <entry key="js" value="1" />
           <entry key="png" value="1" />
           <entry key="py" value="18" />
           <entry key="sh" value="5" />
@@ -64,8 +63,9 @@
           <entry key="Bash" value="5" />
           <entry key="BuildoutCfg" value="1" />
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="10" />
           <entry key="Image" value="1" />
+          <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="18" />
         </counts>
@@ -74,18 +74,18 @@
         <counts>
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
-          <entry key="html" value="3647" />
+          <entry key="html" value="4155" />
           <entry key="py" value="17547" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="3056" />
+          <entry key="txt" value="3120" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
-          <entry key="HTML" value="3647" />
-          <entry key="PLAIN_TEXT" value="3124" />
+          <entry key="HTML" value="4155" />
+          <entry key="PLAIN_TEXT" value="3188" />
           <entry key="Python" value="17547" />
         </counts>
       </usages-collector>
@@ -117,8 +117,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="103" selection-start-line="103" selection-end-line="103" />
+            <state relative-caret-position="696">
+              <caret line="291" column="60" selection-start-line="291" selection-start-column="60" selection-end-line="291" selection-end-column="60" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -127,10 +127,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/Users/Harry/Downloads/themeforest-22129337-kolor-mobile-mobile-template/code/component-inputs.html">
+        <entry file="file://D:/Users/Harry/Downloads/roundSlider-master/roundSlider-master/demo/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="886">
-              <caret line="248" column="46" selection-start-line="248" selection-start-column="46" selection-end-line="248" selection-end-column="46" />
+            <state relative-caret-position="176">
+              <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -287,8 +287,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1201" />
-    <option name="y" value="336" />
+    <option name="x" value="1683" />
+    <option name="y" value="318" />
     <option name="width" value="2021" />
     <option name="height" value="1571" />
   </component>
@@ -347,7 +347,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/Users/Harry/Downloads/themeforest-22129337-kolor-mobile-mobile-template/code/component-inputs.html" />
+    <property name="last_opened_file_path" value="D:/Users/Harry/Downloads/roundSlider-master/roundSlider-master/demo/demo.html" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -435,20 +435,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00059" summary="fix typo">
-      <created>1540906366636</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1540906366636</updated>
-    </task>
-    <task id="LOCAL-00060" summary="updates to website, creating REST api site">
-      <created>1540916227092</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1540916227092</updated>
     </task>
     <task id="LOCAL-00061" summary="replace flask.jsonify with json.dumps()">
       <created>1540916796456</created>
@@ -779,7 +765,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541028739134</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="restructured javascript, found open &lt;div&gt;">
+      <created>1541091326400</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1541091326400</updated>
+    </task>
+    <task id="LOCAL-00109" summary="round slider">
+      <created>1541092755637</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1541092755637</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TodoView">
@@ -792,16 +792,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1201" y="336" width="2021" height="1571" extended-state="0" />
+    <frame x="1683" y="318" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39591837" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
@@ -848,8 +848,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="print out # of steps for homing" />
-    <MESSAGE value="fix up stepper motor call" />
     <MESSAGE value="simple 'home rig' page makes rest call to server" />
     <MESSAGE value="hard coded Rpi address" />
     <MESSAGE value="fix nginx configuration" />
@@ -873,7 +871,9 @@
     <MESSAGE value="fix up URL for home" />
     <MESSAGE value="add the /api prefix!!" />
     <MESSAGE value="home button now posts to server" />
-    <option name="LAST_COMMIT_MESSAGE" value="home button now posts to server" />
+    <MESSAGE value="restructured javascript, found open &lt;div&gt;" />
+    <MESSAGE value="round slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="round slider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1126,10 +1126,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Users/Harry/Downloads/roundSlider-master/roundSlider-master/demo/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/roundslider/roundslider.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        <state relative-caret-position="696">
+          <caret line="291" column="60" selection-start-line="291" selection-start-column="60" selection-end-line="291" selection-end-column="60" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
