@@ -73,10 +73,10 @@ def yield_function(direction: int) -> bool:
     try:
         if BEANSTALK:  # if we have a queue, check for user cancel
             BEANSTALK.watch(CANCEL_QUEUE)
-            job = BEANSTALK.reserve(timeout=0) # don't wait
-            if job is not None:
-                body = job.body
-                job.delete()
+            cancel_job = BEANSTALK.reserve(timeout=0) # don't wait
+            if cancel_job is not None:
+                body = cancel_job.body
+                cancel_job.delete()
                 print ('Cancel received: {0}'.format(body))
                 BREAK_EXIT_REASON = 'Cancel'
                 return True
