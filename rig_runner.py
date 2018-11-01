@@ -259,10 +259,19 @@ if __name__ == '__main__':
                 post_status(BEANSTALK, "scan command received!")
                 declination_steps = int(job_dict['steps']['declination'])
                 rotation_steps = int(job_dict['steps']['rotation'])
+                start = int(job_dict['offsets']['start'])
+                stop = int(job_dict['offsets']['stop'])
+
                 total_pictures = declination_steps * rotation_steps
                 if total_pictures > MAX_PICTURES:
                     post_status(BEANSTALK, "too many pictures, exceeded {0}".format(MAX_PICTURES))
                     continue
+
+                # okay here's what the inputs mean:
+                # declination_steps - # of divisions of camera travel (declination)
+                # rotation_steps - # of divisions in single rotation of model
+                # start/stop : starting/ending offsets from homed positions.
+                #
             except ValueError:
                 post_status(BEANSTALK, "error in scan input value")
                 continue

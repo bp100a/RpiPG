@@ -92,7 +92,7 @@
                 <h4>Camera angles</h4>
                 <div id="slider" class="center-item">Set Angle</div>
             </div>
-            <a href="#" class="button button-rounded button-green">Scan</a>
+            <button id="scan" class="button button-rounded button-green">Scan</button>
         </div>
 
         <div class="content-box shadow-large bg-white">
@@ -341,10 +341,18 @@
         rotation_stops.oninput() // call to initialize the total picture count
     </script>
     <script>
-        $('#home').click(function(){
+        $('#scan').click(function(){
+            let declination_value = document.querySelector("#camera_rotation").value;
+            let rotation_value = document.querySelector("#model_rotation").value;
+            let declination_values = $("#slider").roundSlider("getValue").split(',');
+            let declination_stop = declination_values[0];
+            let declination_start = declination_values[1];
+            alert("declination= " + declination_value + "\nrotation=" + rotation_value + "\nstart/stop =" + declination_start + ', ' + declination_stop);
              $.ajax({
                  type: "POST",
                  dataType: "json",
+                 contentType: "application/json; charset=utf-8",
+                 data: {"declination_steps": declination_value, "rotation_steps": rotation_value, "start": declination_start, "stop": declination_stop},
                  url: "http://" + location.hostname + "/api/scan",
                  success: function(data){
                  }
