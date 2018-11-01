@@ -50,7 +50,7 @@ def get_status(queue: beanstalk.Connection) -> str:
 def send_cancel(queue: beanstalk.Connection) -> int:
     """send a cancel to the rig software to stop whatever is
     happening"""
-    queue.watch(CANCEL_QUEUE)
+    queue.use(CANCEL_QUEUE)
     return queue.put('STOP!') # anything will do
 
 
@@ -59,7 +59,7 @@ def send_home_command(queue: beanstalk.Connection) -> int:
 
     clear_status_queue(queue)   # so we see what home command triggers
 
-    queue.watch(TASK_QUEUE)
+    queue.use(TASK_QUEUE)
     task_body = json.dumps({'task': 'home'})
     return queue.put(task_body)
 
@@ -67,7 +67,7 @@ def send_home_command(queue: beanstalk.Connection) -> int:
 def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotation_steps: int, start: int, stop: int) -> int:
     """this is it - time to scan. send the # of steps for each axis
     and return"""
-    queue.watch(TASK_QUEUE)
+    queue.use(TASK_QUEUE)
     task_body = json.dumps({'task': 'scan',
                             'steps': {'declination': declination_steps,
                                       'rotation': rotation_steps},
@@ -78,7 +78,7 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
 
 def clear_tube(queue: beanstalk.Connection, tube: str):
     """ flush all messages tubes to the rig"""
-    queue.watch(tube)
+    queue.use(tube)
     while True:
         try:
             job = queue.reserve(timeout=0)
@@ -99,7 +99,7 @@ def clear_status_queue(queue: beanstalk.Connection):
 def send_cancel_request(queue: beanstalk.Connection) -> int:
     clear_status_queue(queue)   # so we see what home command triggers
 
-    queue.watch(CANCEL_QUEUE)
+    queue.use(CANCEL_QUEUE)
     task_body = json.dumps({'task': 'cancel'})
     return queue.put(task_body)
 

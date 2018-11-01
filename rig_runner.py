@@ -39,7 +39,7 @@ def configure_beanstalk():
 def clear_all_queues(queue: beanstalk.Connection) -> None:
     """clear out all the currently known tubes"""
     for tube in [CANCEL_QUEUE, STATUS_QUEUE, TASK_QUEUE]:
-        queue.watch(tube)
+        queue.use(tube)
         while True:
             dummy = queue.reserve(timeout=0)
             if dummy:
@@ -52,7 +52,7 @@ def post_status(queue: beanstalk.Connection, status: str) -> None:
     """simple status string we send back"""
     if queue:
         json_status = json.dumps({'msg': status})
-        queue.watch(STATUS_QUEUE)
+        queue.use(STATUS_QUEUE)
         queue.put(json_status)
 
 
@@ -159,7 +159,7 @@ def home_camera() -> int:
 
 def post_status(queue: beanstalk.Connection, message: str) -> None:
     """post a simple message to whomever is listening"""
-    queue.watch(STATUS_QUEUE)
+    queue.use(STATUS_QUEUE)
     status_json = json.dumps({'msg': message})
     queue.put(status_json)
 
