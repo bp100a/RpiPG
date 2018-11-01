@@ -75,8 +75,9 @@ def yield_function(direction: int) -> bool:
             BEANSTALK.watch(CANCEL_QUEUE)
             job = BEANSTALK.reserve(timeout=0) # don't wait
             if job is not None:
+                body = job.body
                 job.delete()
-                print ('Cancel received')
+                print ('Cancel received: {0}'.format(body))
                 BREAK_EXIT_REASON = 'Cancel'
                 return True
 
