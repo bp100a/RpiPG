@@ -224,6 +224,7 @@ if __name__ == '__main__':
     print("\n** waiting for jobs **")
     print("\n**********************\n")
     is_homed = False
+    declination_travel_steps = 0
     while True:
         BEANSTALK.watch(TASK_QUEUE)
         job = BEANSTALK.reserve(timeout=0)
@@ -234,7 +235,6 @@ if __name__ == '__main__':
         # We got a job!
         job_dict = json.loads(job.body)
         job.delete()
-        declination_travel_steps = 0
         if job_dict['task'] == 'home':
             declination_travel_steps = home_camera()
             is_homed = True

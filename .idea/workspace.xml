@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/test_rig_runner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +14,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/RpiPG$rig_runner.coverage" NAME="rig_runner Coverage Results" MODIFIED="1540745332334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_offsets.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_offsets Coverage Results" MODIFIED="1541164550739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_no_offset.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset Coverage Results" MODIFIED="1541165557232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_end_offsets.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets Coverage Results" MODIFIED="1541164602089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/RpiPG$rig_control.coverage" NAME="rig_control Coverage Results" MODIFIED="1540998772392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/restapi" />
     <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps Coverage Results" MODIFIED="1541164480282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -80,9 +78,9 @@
           <entry key="conf" value="324" />
           <entry key="dummy" value="68" />
           <entry key="html" value="5160" />
-          <entry key="py" value="20283" />
+          <entry key="py" value="20441" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="3691" />
+          <entry key="txt" value="3759" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -90,8 +88,8 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="HTML" value="5160" />
-          <entry key="PLAIN_TEXT" value="3759" />
-          <entry key="Python" value="20283" />
+          <entry key="PLAIN_TEXT" value="3827" />
+          <entry key="Python" value="20441" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -181,11 +179,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="1380">
+              <caret line="283" lean-forward="true" selection-start-line="283" selection-end-line="283" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -202,14 +200,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+            <state relative-caret-position="506">
+              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <marker date="1541164705504" expanded="true" signature="73:79" ph="..." />
+                <marker date="1541165548610" expanded="true" signature="73:79" ph="..." />
               </folding>
             </state>
           </provider>
@@ -227,7 +225,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fields</find>
       <find>simplicit</find>
       <find>designed to</find>
       <find>jsonifyj</find>
@@ -257,6 +254,7 @@
       <find>.watch</find>
       <find>.use</find>
       <find>calculate_</find>
+      <find>calculate</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -295,8 +293,8 @@
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/util.py" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
   </component>
@@ -393,10 +391,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets">
-    <configuration name="home-landing.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/home-landing.html">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset">
     <configuration name="setup.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/setup.html">
       <method v="2" />
     </configuration>
@@ -412,6 +407,21 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_rig_runner.TestRigRunner.test_calculate_steps&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="RpiPG" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_rig_runner.TestRigRunner.test_calculate_steps_no_offset&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -446,19 +456,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.home-landing.html" />
       <item itemvalue="JavaScript Debug.setup.html" />
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps" />
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_offsets" />
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" />
+      <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_offsets" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps" />
         <item itemvalue="JavaScript Debug.setup.html" />
-        <item itemvalue="JavaScript Debug.home-landing.html" />
       </list>
     </recent_temporary>
   </component>
@@ -472,20 +482,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00079" summary="simple 'home rig' page makes rest call to server">
-      <created>1540998934094</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1540998934095</updated>
-    </task>
-    <task id="LOCAL-00080" summary="hard coded Rpi address">
-      <created>1540999548909</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1540999548909</updated>
     </task>
     <task id="LOCAL-00081" summary="fix nginx configuration">
       <created>1540999811493</created>
@@ -816,7 +812,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541116447922</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="create new step calculator that includes the offset">
+      <created>1541165064434</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1541165064434</updated>
+    </task>
+    <task id="LOCAL-00129" summary="print out values">
+      <created>1541165687736</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1541165687736</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -844,6 +854,9 @@
     <history-entry file="Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_end_offsets - 2018.11.02 at 09h 16m 42s.xml">
       <configuration name="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_no_offset - 2018.11.02 at 09h 32m 29s.xml">
+      <configuration name="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -858,13 +871,13 @@
     <frame x="643" y="500" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39568844" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39568844" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
@@ -911,8 +924,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="make dict into string, not flask jsonify object!" />
-    <MESSAGE value="return job_id when things are queued/dequeued" />
     <MESSAGE value="put try/except around .reserve calls" />
     <MESSAGE value="fix up URL for home" />
     <MESSAGE value="add the /api prefix!!" />
@@ -936,7 +947,9 @@
     <MESSAGE value="disambiguate job variable" />
     <MESSAGE value="post_status() screwing up!" />
     <MESSAGE value=".use instead of .watch for queue inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value=".use instead of .watch for queue inputs" />
+    <MESSAGE value="create new step calculator that includes the offset" />
+    <MESSAGE value="print out values" />
+    <option name="LAST_COMMIT_MESSAGE" value="print out values" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -946,6 +959,11 @@
           <line>12</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_rig_runner.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1205,16 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1224,11 +1232,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+        <state relative-caret-position="506">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1541164705504" expanded="true" signature="73:79" ph="..." />
+            <marker date="1541165548610" expanded="true" signature="73:79" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="283" lean-forward="true" selection-start-line="283" selection-end-line="283" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
           </folding>
         </state>
       </provider>
