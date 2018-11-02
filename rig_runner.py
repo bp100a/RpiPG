@@ -13,6 +13,7 @@ from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 import beanstalkc as beanstalk
+from util import calculate_steps
 
 
 CAMERA_STEPPER_MOTOR_NUM = 2
@@ -164,20 +165,6 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
     queue.put(status_json)
 
 
-def calculate_steps(declination: int, rotation: int, camera_stepper: Raspi_StepperMotor, rotate_stepper: Raspi_StepperMotor):
-    """
-    determine how many "steps" for each picture
-    :param declination: # of declination divisions
-    :param rotation: # of rotation divisions
-    :param camera_stepper - the Camera (declination) stepper motor
-    :param rotate_stepper - the model (rotation) stepper
-    :return: 
-    """
-    steps_per_declination = int(camera_stepper.current_step / declination)
-    steps_per_rotation = int(200 / rotation)
-    return steps_per_declination, steps_per_rotation
-
-
 def take_picture():
     post_status(BEANSTALK, "taking picture")
     pass
@@ -283,7 +270,15 @@ if __name__ == '__main__':
 
             print('...calculating steps for {0} pictures'.format(total_pictures))
             # okay we have valid parameters, time to scan the object
-            steps_per_declination, steps_per_rotation = calculate_steps(declination_steps, rotation_steps, CAMERA_STEPPER, ROTATE_STEPPER)
+            ROTATION_TRAVEL_STEPS = 200
+            steps_per_declination,\
+            steps_per_rotation,\
+            declination_start = calculate_steps(declination_steps,
+                                                rotation_steps,
+                                                declination_travel_steps,
+                                                ROTATION_TRAVEL_STEPS,
+                                                start,
+                                                stop)
 
             print('... {0} declination, {1} rotation steps'.format(steps_per_declination, steps_per_rotation))
             # the camera & model are 'homed', so now we need to go through the motions
