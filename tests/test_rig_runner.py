@@ -18,6 +18,21 @@ class TestRigRunner(TestCase):
         assert(steps_per_rotation == int(200/7))
         assert(declination_start == 0)
 
+    def test_calculate_steps_no_offset(self):
+
+        steps_per_declination, \
+            steps_per_rotation, \
+            declination_start = util.calculate_steps(declination=9,
+                                                     rotation=8,
+                                                     declination_travel=3474,
+                                                     rotation_travel=200,
+                                                     start_pos=0,
+                                                     end_pos=100)
+
+        assert(steps_per_declination == int(3474/9) )
+        assert(steps_per_rotation == int(200/8))
+        assert(declination_start == 0)
+
     def test_calculate_steps_with_start_offsets(self):
 
         steps_per_declination, \

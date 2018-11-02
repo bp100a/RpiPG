@@ -270,6 +270,8 @@ if __name__ == '__main__':
 
             print('...calculating steps for {0} pictures'.format(total_pictures))
             # okay we have valid parameters, time to scan the object
+            print('declination_steps={0}\nrotation_steps={1}\ntravel={2}\nstart={3}\nstop={4}'.
+                  format(declination_steps, rotation_steps, declination_travel_steps, start, stop))
             ROTATION_TRAVEL_STEPS = 200
             steps_per_declination,\
             steps_per_rotation,\
