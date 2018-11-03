@@ -193,35 +193,6 @@ if __name__ == '__main__':
     else:
         print("CW switch not pressed!")
 
-    while True:
-        HOLD_TIME = 1
-        print("Hold position [{0} seconds]".format(HOLD_TIME))
-        CAMERA_STEPPER.hold()
-        time.sleep(HOLD_TIME)
-
-        STEPS_TO_TAKE = 600
-        print("Double Steps: {0} steps".format(STEPS_TO_TAKE))
-        print("...CW camera stepping")
-        if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CW, Raspi_MotorHAT.DOUBLE):
-            print("forced exit - " + BREAK_EXIT_REASON)
-            break
-
-        print("...CCW camera stepping")
-        if CAMERA_STEPPER.step(STEPS_TO_TAKE, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
-            print ("forced exit - " + BREAK_EXIT_REASON)
-            break
-
-        print("...CCW model stepping")
-        if ROTATE_STEPPER.step(STEPS_TO_TAKE, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
-            print ("forced exit - " + BREAK_EXIT_REASON)
-
-        print("...CW model stepping")
-        if ROTATE_STEPPER.step(STEPS_TO_TAKE, STEP_MODEL_CW, Raspi_MotorHAT.DOUBLE):
-            print ("forced exit - " + BREAK_EXIT_REASON)
-
-    # This is the main loop, we poll for work from our
-    # queue. We can either "home" the printer or "scan"
-    # an object.
     print("\n**********************")
     print("\n** waiting for jobs **")
     print("\n**********************\n")
@@ -324,4 +295,3 @@ if __name__ == '__main__':
                     steps_per_declination = remaining_declination_steps;
 
             is_homed = False # we just did a scan, we need to re-home
-            # done moving camera/model and taking pictures
