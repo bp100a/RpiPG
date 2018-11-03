@@ -17,8 +17,8 @@ def calculate_steps(declination: int,
     [0->100] in the camera angle slider.
     """
 
-    declination_start = (declination_travel / 100) * start_pos
-    declination_end = (declination_travel / 100) * end_pos
+    declination_start = int((declination_travel / 100) * start_pos)
+    declination_end = int((declination_travel / 100) * end_pos)
     steps_per_declination = int((declination_end - declination_start) / declination)
     steps_per_rotation = int(rotation_travel / rotation)
     return steps_per_declination, steps_per_rotation, declination_start
