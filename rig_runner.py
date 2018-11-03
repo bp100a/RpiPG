@@ -168,7 +168,7 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
 def take_picture(picture_number: int, num_pictures_taken: int) -> None:
     """take the picture"""
     post_status(BEANSTALK, "taking picture")
-    print('   taking picture #{0}/{1}'.format(picture_number, num_pictures_taken))
+    print('   taking picture #{0}/{1}'.format(picture_number+1, num_pictures_taken))
     time.sleep(2)
 
 
@@ -222,8 +222,8 @@ if __name__ == '__main__':
                 post_status(BEANSTALK, "scan command received!")
                 declination_divisions = int(job_dict['steps']['declination'])
                 rotation_divisions = int(job_dict['steps']['rotation'])
-                start = int(job_dict['offsets']['start'])
-                stop = int(job_dict['offsets']['stop'])
+                start = int(100 - job_dict['offsets']['start'])
+                stop = int(100 - job_dict['offsets']['stop'])
 
                 total_pictures_to_take = declination_divisions * rotation_divisions
                 if total_pictures_to_take > MAX_PICTURES:
@@ -294,4 +294,5 @@ if __name__ == '__main__':
                 if remaining_declination_steps < steps_per_declination:
                     steps_per_declination = remaining_declination_steps;
 
-            is_homed = False # we just did a scan, we need to re-home
+            is_homed = False  # we just did a scan, we need to re-home
+            turn_off_motors()  # so we don't overheat while idle

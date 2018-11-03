@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -80,9 +81,9 @@
           <entry key="dummy" value="68" />
           <entry key="html" value="5616" />
           <entry key="js" value="2" />
-          <entry key="py" value="20973" />
+          <entry key="py" value="21145" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="3881" />
+          <entry key="txt" value="3968" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -92,8 +93,8 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="5616" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="3949" />
-          <entry key="Python" value="20973" />
+          <entry key="PLAIN_TEXT" value="4036" />
+          <entry key="Python" value="21145" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -186,8 +187,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="881">
-              <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
+            <state relative-caret-position="323">
+              <caret line="224" selection-start-line="224" selection-end-line="224" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -231,7 +232,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jsonifyj</find>
       <find>jsonify</find>
       <find>BREAK_EXIT</find>
       <find>CAMERA_STEPPER =</find>
@@ -261,6 +261,7 @@
       <find>calculate</find>
       <find>take_picture</find>
       <find>take_p</find>
+      <find>release</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -313,8 +314,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1354" />
-    <option name="y" value="447" />
+    <option name="x" value="1264" />
+    <option name="y" value="469" />
     <option name="width" value="2021" />
     <option name="height" value="1571" />
   </component>
@@ -503,27 +504,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00084" summary="some helper scripts and deployment tracking">
-      <created>1541005762337</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1541005762338</updated>
-    </task>
-    <task id="LOCAL-00085" summary="setup for gunicorn">
-      <created>1541008466989</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1541008466989</updated>
-    </task>
-    <task id="LOCAL-00086" summary="setup for gunicorn">
-      <created>1541008747129</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1541008747129</updated>
     </task>
     <task id="LOCAL-00087" summary="update requirements">
       <created>1541009072580</created>
@@ -847,7 +827,28 @@
       <option name="project" value="LOCAL" />
       <updated>1541269503236</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="fix declination starting offset&#10;rotate then declinate">
+      <created>1541281311616</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1541281311616</updated>
+    </task>
+    <task id="LOCAL-00134" summary="fix declination starting offset&#10;rotate then declinate">
+      <created>1541281403678</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1541281403678</updated>
+    </task>
+    <task id="LOCAL-00135" summary="remove old debug code">
+      <created>1541281573761</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1541281573761</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -892,7 +893,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1354" y="447" width="2021" height="1571" extended-state="0" />
+    <frame x="1264" y="469" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
@@ -948,8 +949,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="home button now posts to server" />
-    <MESSAGE value="restructured javascript, found open &lt;div&gt;" />
     <MESSAGE value="round slider" />
     <MESSAGE value="angle selection has appropriate stops &amp; range" />
     <MESSAGE value="enlarge the circle" />
@@ -973,7 +972,9 @@
     <MESSAGE value="don't initialize travel steps every pass in loop! need to persist after homing" />
     <MESSAGE value="reverse start/stop" />
     <MESSAGE value="reverse stop switches" />
-    <option name="LAST_COMMIT_MESSAGE" value="reverse stop switches" />
+    <MESSAGE value="fix declination starting offset&#10;rotate then declinate" />
+    <MESSAGE value="remove old debug code" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove old debug code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1281,8 +1282,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="881">
-          <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
+        <state relative-caret-position="323">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
           </folding>
