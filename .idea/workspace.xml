@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/website/scripts/ticker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/styles/ticker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,9 +80,9 @@
           <entry key="dummy" value="68" />
           <entry key="html" value="5616" />
           <entry key="js" value="2" />
-          <entry key="py" value="20699" />
+          <entry key="py" value="20973" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="3857" />
+          <entry key="txt" value="3881" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -96,8 +92,8 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="5616" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="3925" />
-          <entry key="Python" value="20699" />
+          <entry key="PLAIN_TEXT" value="3949" />
+          <entry key="Python" value="20973" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -164,7 +160,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="726">
@@ -187,11 +183,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="241" selection-start-line="241" selection-end-line="241" />
+            <state relative-caret-position="881">
+              <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -235,7 +231,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>designed to</find>
       <find>jsonifyj</find>
       <find>jsonify</find>
       <find>BREAK_EXIT</find>
@@ -265,6 +260,7 @@
       <find>calculate_</find>
       <find>calculate</find>
       <find>take_picture</find>
+      <find>take_p</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -303,10 +299,10 @@
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/website/styles/ticker.css" />
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
   </component>
@@ -317,8 +313,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="643" />
-    <option name="y" value="500" />
+    <option name="x" value="1354" />
+    <option name="y" value="447" />
     <option name="width" value="2021" />
     <option name="height" value="1571" />
   </component>
@@ -507,13 +503,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00083" summary="relocation location directive">
-      <created>1541000025479</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1541000025479</updated>
     </task>
     <task id="LOCAL-00084" summary="some helper scripts and deployment tracking">
       <created>1541005762337</created>
@@ -851,7 +840,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541166267595</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="reverse stop switches">
+      <created>1541269503236</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1541269503236</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -896,7 +892,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="643" y="500" width="2021" height="1571" extended-state="0" />
+    <frame x="1354" y="447" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
@@ -952,7 +948,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add the /api prefix!!" />
     <MESSAGE value="home button now posts to server" />
     <MESSAGE value="restructured javascript, found open &lt;div&gt;" />
     <MESSAGE value="round slider" />
@@ -977,7 +972,8 @@
     <MESSAGE value="print out values" />
     <MESSAGE value="don't initialize travel steps every pass in loop! need to persist after homing" />
     <MESSAGE value="reverse start/stop" />
-    <option name="LAST_COMMIT_MESSAGE" value="reverse start/stop" />
+    <MESSAGE value="reverse stop switches" />
+    <option name="LAST_COMMIT_MESSAGE" value="reverse stop switches" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1252,16 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="241" selection-start-line="241" selection-end-line="241" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/styles/ticker.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1290,6 +1276,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="881">
+          <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

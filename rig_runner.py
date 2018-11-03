@@ -168,7 +168,7 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
 def take_picture(picture_number: int, num_pictures_taken: int) -> None:
     """take the picture"""
     post_status(BEANSTALK, "taking picture")
-    print('taking picture #{0}/{1}'.format(picture_number, num_pictures_taken))
+    print('   taking picture #{0}/{1}'.format(picture_number, num_pictures_taken))
     time.sleep(2)
 
 
@@ -298,8 +298,10 @@ if __name__ == '__main__':
             total_pictures_taken = 0
 
             # move camera to starting position for pictures
-            if declination_start > 0 and CAMERA_STEPPER.step(declination_start, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
-                forced_exit = True
+            if declination_start > 0:
+                print('move to declination start {0}'.format(declination_start) )
+                if CAMERA_STEPPER.step(declination_start, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
+                    forced_exit = True
 
             for d in range(0, declination_divisions):
                 if forced_exit:
