@@ -21,8 +21,8 @@ CAMERA_STEPPER_MOTOR_SPEED = 240  # rpm
 MODEL_STEPPER_MOTOR_NUM = 1
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
-CCW_MAX_SWITCH = limit_switch.LimitSwitch(4)  # furthest CCW rotation allowed
-CW_MAX_SWITCH = limit_switch.LimitSwitch(18)  # furthest CW rotation allowed
+CCW_MAX_SWITCH = limit_switch.LimitSwitch(18)  # furthest CCW rotation allowed
+CW_MAX_SWITCH = limit_switch.LimitSwitch(4)  # furthest CW rotation allowed
 BEANSTALK = None
 CANCEL_QUEUE = 'cancel'
 STATUS_QUEUE = 'status'
@@ -165,9 +165,10 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
     queue.put(status_json)
 
 
-def take_picture():
+def take_picture(num_pictures_taken: int) -> None:
     post_status(BEANSTALK, "taking picture")
-    pass
+    print('taking picture #{0}'.format(num_pictures_taken))
+    time.sleep(2)
 
 
 if __name__ == '__main__':
@@ -224,7 +225,7 @@ if __name__ == '__main__':
     print("\n** waiting for jobs **")
     print("\n**********************\n")
     is_homed = False
-    declination_travel_steps = 0
+    declination_travel_steps = 0 # number of steps between min/max endstops
     while True:
         BEANSTALK.watch(TASK_QUEUE)
         job = BEANSTALK.reserve(timeout=0)
@@ -246,13 +247,13 @@ if __name__ == '__main__':
             try:
                 print ('scan command received')
                 post_status(BEANSTALK, "scan command received!")
-                declination_steps = int(job_dict['steps']['declination'])
-                rotation_steps = int(job_dict['steps']['rotation'])
+                declination_divisions = int(job_dict['steps']['declination'])
+                rotation_divisions = int(job_dict['steps']['rotation'])
                 start = int(job_dict['offsets']['start'])
                 stop = int(job_dict['offsets']['stop'])
 
-                total_pictures = declination_steps * rotation_steps
-                if total_pictures > MAX_PICTURES:
+                total_pictures_to_take = declination_divisions * rotation_divisions
+                if total_pictures_to_take > MAX_PICTURES:
                     post_status(BEANSTALK, "too many pictures, exceeded {0}".format(MAX_PICTURES))
                     continue
 
@@ -268,15 +269,15 @@ if __name__ == '__main__':
                 post_status(BEANSTALK, "error with input JSON")
                 print("/scan JSON failed! : {0}".format(json.dumps(job_dict)))
 
-            print('...calculating steps for {0} pictures'.format(total_pictures))
+            print('...calculating steps for {0} pictures'.format(total_pictures_to_take))
             # okay we have valid parameters, time to scan the object
-            print('declination_steps={0}\nrotation_steps={1}\ntravel={2}\nstart={3}\nstop={4}'.
-                  format(declination_steps, rotation_steps, declination_travel_steps, start, stop))
+            print('declination_divisions={0}\nrotation_divisions={1}\ntravel={2}\nstart={3}\nstop={4}'.
+                  format(declination_divisions, rotation_divisions, declination_travel_steps, start, stop))
             ROTATION_TRAVEL_STEPS = 200
             steps_per_declination,\
             steps_per_rotation,\
-            declination_start = calculate_steps(declination_steps,
-                                                rotation_steps,
+            declination_start = calculate_steps(declination_divisions,
+                                                rotation_divisions,
                                                 declination_travel_steps,
                                                 ROTATION_TRAVEL_STEPS,
                                                 start,
@@ -286,7 +287,8 @@ if __name__ == '__main__':
             # the camera & model are 'homed', so now we need to go through the motions
             forced_exit = False
             remaining_declination_steps = declination_travel_steps  # got this from homing the printer
-            for d in range(0, declination_steps):
+            total_pictures_taken = 0
+            for d in range(0, declination_divisions):
                 if forced_exit:
                     break
                 if CAMERA_STEPPER.step(steps_per_declination, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
@@ -299,8 +301,9 @@ if __name__ == '__main__':
                     steps_per_declination = remaining_declination_steps;
 
                 post_status(BEANSTALK, "rotating model")
-                for r in range(0, rotation_steps):
-                    take_picture()
+                for r in range(0, rotation_divisions):
+                    total_pictures_taken += 1
+                    take_picture(total_pictures_taken)
                     if ROTATE_STEPPER.step(steps_per_rotation, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
                         forced_exit = True
                         break # forced exit

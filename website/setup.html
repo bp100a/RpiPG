@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="styles/ticker.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -93,6 +95,16 @@
                 <div id="slider" class="center-item">Set Angle</div>
             </div>
             <button id="scan" class="button button-rounded button-green">Scan</button>
+            <div>
+                <ol id="sample" class="ticker">
+                    <li>Please make certain the rig is homed prior to scanning</li>
+                    <li>Ensure an USB thumbdrive is inserted for the pictures</li>
+                    <li>Please clear out any obstructions that may interfere with the rotation</li>
+                    <li>Make sure that the model is properly framed in the camera</li>
+                    <li>Be patient, it can take 10-15 minutes to home and scan a model</li>
+                </ol>
+                <p></p>
+            </div>
         </div>
 
         <div class="content-box shadow-large bg-white">
@@ -245,7 +257,7 @@
     <script type="text/javascript" src="scripts/jquery.js"></script>
     <script type="text/javascript" src="scripts/plugins.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="scripts/ticker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"></script>
     <script type="text/javascript" charset="utf-8">
         (function() {
