@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,11 +82,11 @@
           <entry key="conf" value="324" />
           <entry key="css" value="8" />
           <entry key="dummy" value="68" />
-          <entry key="html" value="5618" />
+          <entry key="html" value="5683" />
           <entry key="js" value="2" />
           <entry key="py" value="21728" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="4132" />
+          <entry key="txt" value="4206" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -94,9 +94,9 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="5618" />
+          <entry key="HTML" value="5683" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="4200" />
+          <entry key="PLAIN_TEXT" value="4274" />
           <entry key="Python" value="21728" />
         </counts>
       </usages-collector>
@@ -116,11 +116,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="356" column="9" selection-start-line="356" selection-start-column="9" selection-end-line="356" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="293" column="66" selection-start-line="293" selection-start-column="66" selection-end-line="293" selection-end-column="66" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -169,11 +169,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1959">
-              <caret line="191" selection-start-line="191" selection-end-line="191" />
+            <state relative-caret-position="351">
+              <caret line="296" column="38" lean-forward="true" selection-start-line="296" selection-start-column="38" selection-end-line="296" selection-end-column="38" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
                 <marker date="1541293690321" expanded="true" signature="5447:5741" ph="..." />
@@ -227,7 +227,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my_timer</find>
       <find>is_gun</find>
       <find>iiServer</find>
       <find>status.</find>
@@ -257,6 +256,7 @@
       <find>speed</find>
       <find>ticker</find>
       <find>start</find>
+      <find>alert</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -295,10 +295,10 @@
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/website/styles/ticker.css" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
-        <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
+        <option value="$PROJECT_DIR$/website/setup.html" />
       </list>
     </option>
   </component>
@@ -511,20 +511,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00091" summary="print out exception">
-      <created>1541010074869</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1541010074869</updated>
-    </task>
-    <task id="LOCAL-00092" summary="print out exception">
-      <created>1541010191957</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1541010191957</updated>
     </task>
     <task id="LOCAL-00093" summary="204 returns empty string not None!!">
       <created>1541010246325</created>
@@ -855,7 +841,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541291374723</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="clean up code, 9.60 pylint score!">
+      <created>1541293703173</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1541293703174</updated>
+    </task>
+    <task id="LOCAL-00141" summary="comment out alert() box when scanning">
+      <created>1541346417160</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1541346417160</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -956,8 +956,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove alert box when homing" />
-    <MESSAGE value="add model rotation into the mix" />
     <MESSAGE value="added start/stop for scan data" />
     <MESSAGE value="fix JSON we are sending scan POST" />
     <MESSAGE value="catch some more exceptions on /scan json processing" />
@@ -981,7 +979,9 @@
     <MESSAGE value="fix int() typing" />
     <MESSAGE value="set start/stop proper (start is bottom, initially 100, stop is &quot;top&quot;, initially 0" />
     <MESSAGE value="fix calculation of steps!" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix calculation of steps!" />
+    <MESSAGE value="clean up code, 9.60 pylint score!" />
+    <MESSAGE value="comment out alert() box when scanning" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment out alert() box when scanning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1267,16 +1267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/setup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="356" column="9" selection-start-line="356" selection-start-column="9" selection-end-line="356" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Python/Python36-32/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -1311,11 +1301,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1959">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
+        <state relative-caret-position="351">
+          <caret line="296" column="38" lean-forward="true" selection-start-line="296" selection-start-column="38" selection-end-line="296" selection-end-column="38" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
             <marker date="1541293690321" expanded="true" signature="5447:5741" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="293" column="66" selection-start-line="293" selection-start-column="66" selection-end-line="293" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
