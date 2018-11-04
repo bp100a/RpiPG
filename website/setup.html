@@ -359,7 +359,7 @@
             let declination_values = $("#slider").roundSlider("getValue").split(',');
             let declination_start = declination_values[1];
             let declination_stop = declination_values[0];
-            alert("declination= " + declination_value + "\nrotation=" + rotation_value + "\nstart/stop =" + declination_start + ', ' + declination_stop);
+            // alert("declination= " + declination_value + "\nrotation=" + rotation_value + "\nstart/stop =" + declination_start + ', ' + declination_stop);
              $.ajax({
                  type: "POST",
                  dataType: "json",
