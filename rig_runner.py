@@ -129,24 +129,24 @@ def move_camera(step_dir: int, switch: limit_switch.LimitSwitch) -> int:
     return traveled_steps
 
 
-def ccw_camera_home() -> int:
+def ccw_camera_home(queue: beanstalk.Connection) -> int:
     """home the camera in the counter-clockwise direction"""
-    post_status(BEANSTALK, "CCW homing")
+    post_status(queue, "CCW homing")
     return move_camera(STEP_CAMERA_CCW, CCW_MAX_SWITCH)
 
 
-def cw_camera_home() -> int:
+def cw_camera_home(queue: beanstalk.Connection) -> int:
     """home the camera in the clockwise direction"""
-    post_status(BEANSTALK, "CW homing")
+    post_status(queue, "CW homing")
     return move_camera(STEP_CAMERA_CW, CW_MAX_SWITCH)
 
 
-def home_camera() -> int:
+def home_camera(queue: beanstalk.Connection) -> int:
     """home the camera. This will move the camera to the two
     extreme positions and return how many steps it took to
     span the extremes"""
-    ccw_camera_home()
-    return abs(cw_camera_home())
+    ccw_camera_home(queue)
+    return abs(cw_camera_home(queue))
 
 
 def post_status(queue: beanstalk.Connection, message: str) -> None:
@@ -156,9 +156,9 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
     queue.put(status_json)
 
 
-def take_picture(picture_number: int, num_pictures_taken: int) -> None:
+def take_picture(queue: beanstalk.Connection, picture_number: int, num_pictures_taken: int) -> None:
     """take the picture"""
-    post_status(BEANSTALK, "taking picture")
+    post_status(queue, "taking picture")
     print('   taking picture #{0}/{1}'.format(picture_number+1, num_pictures_taken))
     time.sleep(2)
 
@@ -207,7 +207,7 @@ def main():
     while True:
         job_dict = wait_for_work(BEANSTALK)
         if job_dict['task'] == 'home':
-            declination_travel_steps = home_camera()
+            declination_travel_steps = home_camera(queue= BEANSTALK)
             is_homed = True
             print("homing complete, travel steps = {0}".format(declination_travel_steps))
             continue
@@ -245,7 +245,7 @@ def main():
 
             if not is_homed:
                 print("homing system prior to scan...")
-                declination_travel_steps = home_camera()
+                declination_travel_steps = home_camera(queue=BEANSTALK)
                 is_homed = True
 
             # okay we have valid parameters, time to scan the object
@@ -286,15 +286,20 @@ def main():
                 post_status(BEANSTALK, "rotating model")
                 for r in range(0, rotation_divisions):
                     total_pictures_taken += 1
-                    take_picture(r, total_pictures_taken)
+                    take_picture(queue=BEANSTALK, picture_number=r, num_pictures_taken=total_pictures_taken)
                     if rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
                                            Raspi_MotorHAT.DOUBLE):
                         forced_exit = True
                         break # forced exit
 
+                if forced_exit:  # exit condition while stepping rotation
+                    break
+
+                # now position the camera
                 if camera_stepper.step(steps_per_declination, STEP_CAMERA_CCW,
                                        Raspi_MotorHAT.DOUBLE):
                     forced_exit = True
+                    print("...end stop hit!")
                     break  # forced exit
 
                 # the declination motion may not be perfect fit so don't overstep
@@ -302,6 +307,8 @@ def main():
                 if remaining_declination_steps < steps_per_declination:
                     steps_per_declination = remaining_declination_steps
 
+            # we are done taking pictures, release the motors so we don't
+            # overheat and remember we are no longer homed
             is_homed = False  # we just did a scan, we need to re-home
             turn_off_motors()  # so we don't overheat while idle
 
