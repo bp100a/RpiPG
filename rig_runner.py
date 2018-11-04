@@ -222,8 +222,8 @@ if __name__ == '__main__':
                 post_status(BEANSTALK, "scan command received!")
                 declination_divisions = int(job_dict['steps']['declination'])
                 rotation_divisions = int(job_dict['steps']['rotation'])
-                start = int(100 - job_dict['offsets']['start'])
-                stop = int(100 - job_dict['offsets']['stop'])
+                start = int(job_dict['offsets']['start'])
+                stop = int(job_dict['offsets']['stop'])
 
                 total_pictures_to_take = declination_divisions * rotation_divisions
                 if total_pictures_to_take > MAX_PICTURES:
