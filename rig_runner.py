@@ -9,10 +9,10 @@ Photogrammetry rig. Here we control:
 import atexit
 import time
 import json
+import beanstalkc as beanstalk
 from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
-import beanstalkc as beanstalk
 from util import calculate_steps
 
 
@@ -49,14 +49,6 @@ def clear_all_queues(queue: beanstalk.Connection) -> None:
                 break
 
 
-def post_status(queue: beanstalk.Connection, status: str) -> None:
-    """simple status string we send back"""
-    if queue:
-        json_status = json.dumps({'msg': status})
-        queue.use(STATUS_QUEUE)
-        queue.put(json_status)
-
-
 BREAK_EXIT_REASON = None
 
 
@@ -78,13 +70,12 @@ def yield_function(direction: int) -> bool:
             if cancel_job is not None:
                 body = cancel_job.body
                 cancel_job.delete()
-                print ('Cancel received: {0}'.format(body))
+                print('Cancel received: {0}'.format(body))
                 BREAK_EXIT_REASON = 'Cancel'
                 return True
 
     except beanstalk.CommandFailed:
         print("yield_function(): beanstalk CommandFail!")
-        pass
     except beanstalk.DeadlineSoon:
         # save to ignore since it just means there's something pending
         pass
@@ -172,14 +163,29 @@ def take_picture(picture_number: int, num_pictures_taken: int) -> None:
     time.sleep(2)
 
 
-if __name__ == '__main__':
+def wait_for_work(queue: beanstalk.Connection) -> str:
+    """wait for work, return json"""
+    while True:
+        queue.watch(TASK_QUEUE)
+        job = queue.reserve(timeout=0)
+        if job:
+            job_json = job.body
+            job.delete()  # remove from the queue
+            return json.loads(job_json)
+
+        time.sleep(0.001) # sleep for 1 ms to share the computer
+
+
+def main():
+    """This is the main entry point of the program, where all the magic happens"""
     # okay time to run things
-    CAMERA_STEPPER = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
-    CAMERA_STEPPER.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
+    camera_stepper = MOTOR_HAT.getStepper(CAMERA_STEPPER_MOTOR_NUM)
+    camera_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
 
-    ROTATE_STEPPER = MOTOR_HAT.getStepper(MODEL_STEPPER_MOTOR_NUM)
-    ROTATE_STEPPER.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
+    rotate_stepper = MOTOR_HAT.getStepper(MODEL_STEPPER_MOTOR_NUM)
+    rotate_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
 
+    global BEANSTALK
     BEANSTALK = configure_beanstalk()
     clear_all_queues(BEANSTALK)
 
@@ -199,26 +205,18 @@ if __name__ == '__main__':
     is_homed = False
     declination_travel_steps = 0 # number of steps between min/max endstops
     while True:
-        BEANSTALK.watch(TASK_QUEUE)
-        job = BEANSTALK.reserve(timeout=0)
-        if job is None:
-            time.sleep(0.001) # sleep for 1 ms to share the computer
-            continue
-
-        # We got a job!
-        job_dict = json.loads(job.body)
-        job.delete()
+        job_dict = wait_for_work(BEANSTALK)
         if job_dict['task'] == 'home':
             declination_travel_steps = home_camera()
             is_homed = True
             print("homing complete, travel steps = {0}".format(declination_travel_steps))
             continue
 
-        MAX_PICTURES = 200
+        max_pictures = 200
 
         if job_dict['task'] == 'scan':
             try:
-                print ('scan command received')
+                print('scan command received')
                 post_status(BEANSTALK, "scan command received!")
                 declination_divisions = int(job_dict['steps']['declination'])
                 rotation_divisions = int(job_dict['steps']['rotation'])
@@ -226,8 +224,8 @@ if __name__ == '__main__':
                 stop = int(job_dict['offsets']['stop'])
 
                 total_pictures_to_take = declination_divisions * rotation_divisions
-                if total_pictures_to_take > MAX_PICTURES:
-                    post_status(BEANSTALK, "too many pictures, exceeded {0}".format(MAX_PICTURES))
+                if total_pictures_to_take > max_pictures:
+                    post_status(BEANSTALK, "too many pictures, exceeded {0}".format(max_pictures))
                     continue
 
                 # okay here's what the inputs mean:
@@ -245,19 +243,27 @@ if __name__ == '__main__':
             print('...calculating steps for {0} pictures'.
                   format(total_pictures_to_take))
 
-            # okay we have valid parameters, time to scan the object
-            ROTATION_TRAVEL_STEPS = 200 # takes 200 steps to turn model 360 degrees
-            steps_per_declination,\
-            steps_per_rotation,\
-            declination_start = calculate_steps(declination_divisions,
-                                                rotation_divisions,
-                                                declination_travel_steps,
-                                                ROTATION_TRAVEL_STEPS,
-                                                start,
-                                                stop)
+            if not is_homed:
+                print("homing system prior to scan...")
+                declination_travel_steps = home_camera()
+                is_homed = True
 
-            print('declination_divisions={0}\nrotation_divisions={1}\ntravel={2}\nstart={3}\nstop={4}'.
-                  format(declination_divisions, rotation_divisions, declination_travel_steps, start, stop))
+            # okay we have valid parameters, time to scan the object
+            rotation_travel_steps = 200 # takes 200 steps to turn model 360 degrees
+            steps_per_declination,\
+                steps_per_rotation,\
+                declination_start = calculate_steps(declination_divisions,
+                                                    rotation_divisions,
+                                                    declination_travel_steps,
+                                                    rotation_travel_steps,
+                                                    start,
+                                                    stop)
+
+            print('declination_divisions={0}\nrotation_divisions={1}'
+                  '\ntravel={2}\nstart={3}\nstop={4}'.
+                  format(declination_divisions,
+                         rotation_divisions, declination_travel_steps,
+                         start, stop))
             print('... {0} declination, {1} rotation steps, declination start {2}'.
                   format(steps_per_declination,
                          steps_per_rotation,
@@ -265,34 +271,40 @@ if __name__ == '__main__':
 
             # the camera & model are 'homed', so now we need to go through the motions
             forced_exit = False
-            remaining_declination_steps = declination_travel_steps  # got this from homing the printer
+            remaining_declination_steps = declination_travel_steps
             total_pictures_taken = 0
 
             # move camera to starting position for pictures
             if declination_start > 0:
-                print('move to declination start {0}'.format(declination_start) )
-                if CAMERA_STEPPER.step(declination_start, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
+                print('move to declination start {0}'.format(declination_start))
+                if camera_stepper.step(declination_start, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
                     forced_exit = True
 
-            for d in range(0, declination_divisions):
+            for _ in range(0, declination_divisions):
                 if forced_exit:
                     break
                 post_status(BEANSTALK, "rotating model")
                 for r in range(0, rotation_divisions):
                     total_pictures_taken += 1
                     take_picture(r, total_pictures_taken)
-                    if ROTATE_STEPPER.step(steps_per_rotation, STEP_MODEL_CCW, Raspi_MotorHAT.DOUBLE):
+                    if rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
+                                           Raspi_MotorHAT.DOUBLE):
                         forced_exit = True
                         break # forced exit
 
-                if CAMERA_STEPPER.step(steps_per_declination, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
+                if camera_stepper.step(steps_per_declination, STEP_CAMERA_CCW,
+                                       Raspi_MotorHAT.DOUBLE):
                     forced_exit = True
                     break  # forced exit
 
                 # the declination motion may not be perfect fit so don't overstep
                 remaining_declination_steps -= steps_per_declination
                 if remaining_declination_steps < steps_per_declination:
-                    steps_per_declination = remaining_declination_steps;
+                    steps_per_declination = remaining_declination_steps
 
             is_homed = False  # we just did a scan, we need to re-home
             turn_off_motors()  # so we don't overheat while idle
+
+
+if __name__ == '__main__':
+    main()
