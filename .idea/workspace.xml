@@ -4,8 +4,6 @@
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,9 +84,9 @@
           <entry key="dummy" value="68" />
           <entry key="html" value="5687" />
           <entry key="js" value="2" />
-          <entry key="py" value="22293" />
+          <entry key="py" value="22521" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="4316" />
+          <entry key="txt" value="4390" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -98,8 +96,8 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="5687" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="4384" />
-          <entry key="Python" value="22293" />
+          <entry key="PLAIN_TEXT" value="4458" />
+          <entry key="Python" value="22521" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -135,11 +133,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-836">
-              <caret line="237" selection-start-line="237" selection-end-line="237" />
+            <state relative-caret-position="505">
+              <caret line="310" column="37" selection-start-line="310" selection-start-column="37" selection-end-line="310" selection-end-column="37" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1541430452729" expanded="true" signature="5555:5849" ph="..." />
+                <marker date="1541431652405" expanded="true" signature="5555:5849" ph="..." />
               </folding>
             </state>
           </provider>
@@ -250,9 +248,9 @@
         <option value="$PROJECT_DIR$/website/styles/ticker.css" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
         <option value="$PROJECT_DIR$/website/setup.html" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
   </component>
@@ -465,20 +463,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00096" summary="dummy it up">
-      <created>1541010545600</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1541010545600</updated>
-    </task>
-    <task id="LOCAL-00097" summary="move it">
-      <created>1541010663371</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1541010663371</updated>
     </task>
     <task id="LOCAL-00098" summary="move it">
       <created>1541010991173</created>
@@ -809,7 +793,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541429618272</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="picket fence issue with declination">
+      <created>1541430937619</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1541430937619</updated>
+    </task>
+    <task id="LOCAL-00146" summary="handle end-stop is last camera position">
+      <created>1541431400965</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1541431400965</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -910,8 +908,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change name of endpoint function home -&gt; home_rig()" />
-    <MESSAGE value="print out keyerror infor on scan" />
     <MESSAGE value="fix scan dictionary" />
     <MESSAGE value="fix dictionary we send" />
     <MESSAGE value="print out some stuff" />
@@ -935,7 +931,9 @@
     <MESSAGE value="adjust angle from 90-235 -&gt; 90-225" />
     <MESSAGE value="pass queue to various routines" />
     <MESSAGE value="adjust slider to start at -20 degrees" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust slider to start at -20 degrees" />
+    <MESSAGE value="picket fence issue with declination" />
+    <MESSAGE value="handle end-stop is last camera position" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle end-stop is last camera position" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1265,11 +1263,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-836">
-          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        <state relative-caret-position="505">
+          <caret line="310" column="37" selection-start-line="310" selection-start-column="37" selection-end-line="310" selection-end-column="37" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
-            <marker date="1541430452729" expanded="true" signature="5555:5849" ph="..." />
+            <marker date="1541431652405" expanded="true" signature="5555:5849" ph="..." />
           </folding>
         </state>
       </provider>

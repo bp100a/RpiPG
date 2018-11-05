@@ -306,7 +306,9 @@ def main():
                     # if this is the last postion, we expect to hit the end-stop
                     if remaining_declination_steps != steps_per_declination:
                         forced_exit = True
-                        print("...end stop hit!")
+                        print("...end stop hit! {0}/{1}".
+                              format(remaining_declination_steps,
+                                     steps_per_declination))
                         break  # forced exit
 
                 # the declination motion may not be perfect fit so don't overstep
