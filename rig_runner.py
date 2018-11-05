@@ -21,8 +21,8 @@ CAMERA_STEPPER_MOTOR_SPEED = 240  # rpm
 MODEL_STEPPER_MOTOR_NUM = 1
 MOTOR_HAT_I2C_ADDR = 0x6F
 MOTOR_HAT_I2C_FREQ = 1600
-CCW_MAX_SWITCH = limit_switch.LimitSwitch(18)  # furthest CCW rotation allowed
-CW_MAX_SWITCH = limit_switch.LimitSwitch(4)  # furthest CW rotation allowed
+CCW_MAX_SWITCH = limit_switch.LimitSwitch(18, 'CCW')  # furthest CCW rotation allowed
+CW_MAX_SWITCH = limit_switch.LimitSwitch(4, 'CW')  # furthest CW rotation allowed
 BEANSTALK = None
 CANCEL_QUEUE = 'cancel'
 STATUS_QUEUE = 'status'
@@ -52,7 +52,7 @@ def clear_all_queues(queue: beanstalk.Connection) -> None:
 BREAK_EXIT_REASON = None
 
 
-def yield_function(direction: int) -> bool:
+def yield_function(direction: int) -> dict:
     """Called in timing loops to perform checks
     to see if we need to breakout. We need the direction
     of travel since we may want to ignore a limit
@@ -71,8 +71,7 @@ def yield_function(direction: int) -> bool:
                 body = cancel_job.body
                 cancel_job.delete()
                 print('Cancel received: {0}'.format(body))
-                BREAK_EXIT_REASON = 'Cancel'
-                return True
+                return {'exit':'cancel'}
 
     except beanstalk.CommandFailed:
         print("yield_function(): beanstalk CommandFail!")
@@ -82,10 +81,13 @@ def yield_function(direction: int) -> bool:
 
     if direction == Raspi_MotorHAT.FORWARD:
         BREAK_EXIT_REASON = 'CCW'
-        return CCW_MAX_SWITCH.is_pressed()
+        if CCW_MAX_SWITCH.is_pressed():
+            return {'exit': 'ccw'}
+        return None
 
-    BREAK_EXIT_REASON = "CW"
-    return CW_MAX_SWITCH.is_pressed()
+    if CW_MAX_SWITCH.is_pressed():
+        return {'exit': 'cw'}
+    return None
 
 
 # Create our motor hat controller object, it'll house two
@@ -146,7 +148,9 @@ def home_camera(queue: beanstalk.Connection) -> int:
     extreme positions and return how many steps it took to
     span the extremes"""
     ccw_camera_home(queue)
-    return abs(cw_camera_home(queue))
+    travel = abs(cw_camera_home(queue))
+    print("homing complete, travel steps = {0}".format(travel))
+    return travel
 
 
 def post_status(queue: beanstalk.Connection, message: str) -> None:
@@ -176,6 +180,52 @@ def wait_for_work(queue: beanstalk.Connection) -> str:
         time.sleep(0.001) # sleep for 1 ms to share the computer
 
 
+def photograph_model(declination_divisions: int,
+                     rotation_divisions: int,
+                     remaining_declination_steps: int,
+                     steps_per_declination: int,
+                     steps_per_rotation: int,
+                     status_queue: beanstalk.Connection,
+                     rotate_stepper: Raspi_StepperMotor,
+                     camera_stepper: Raspi_StepperMotor):
+    """here's where we rotate the model, declinate the camera
+    and take pictures"""
+    total_pictures_taken = 0
+    for _ in range(0, declination_divisions):
+        post_status(status_queue, "rotating model")
+        for r in range(0, rotation_divisions):
+            total_pictures_taken += 1
+            take_picture(queue=status_queue, picture_number=r,
+                         num_pictures_taken=total_pictures_taken)
+            forced_exit = rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
+                                              Raspi_MotorHAT.DOUBLE)
+            if forced_exit and forced_exit['exit'] == 'cancel':
+                return  # forced exit
+
+        # if we hit an exit condition while rotating, or there are no more
+        # steps, then bale out
+        if steps_per_declination == 0:
+            return
+
+        # okay, we have work to do, position the camera
+        forced_exit = camera_stepper.step(steps_per_declination, STEP_CAMERA_CCW,
+                                          Raspi_MotorHAT.DOUBLE)
+        if forced_exit:
+            # if this is the last position, we expect to hit the end-stop
+            if remaining_declination_steps != steps_per_declination:
+                print("...end stop hit! {0}/{1}".
+                      format(remaining_declination_steps,
+                             steps_per_declination))
+                return
+            if forced_exit['exit'] != 'ccw':
+                return
+
+        # the declination motion may not be perfect fit so don't overstep
+        remaining_declination_steps -= steps_per_declination
+        if remaining_declination_steps < steps_per_declination:
+            steps_per_declination = remaining_declination_steps
+
+
 def main():
     """This is the main entry point of the program, where all the magic happens"""
     # okay time to run things
@@ -189,27 +239,21 @@ def main():
     BEANSTALK = configure_beanstalk()
     clear_all_queues(BEANSTALK)
 
-    if CCW_MAX_SWITCH.is_pressed():
-        print("CCW switch pressed!")
-    else:
-        print("CCW switch not pressed!")
-
-    if CW_MAX_SWITCH.is_pressed():
-        print("CW switch pressed!")
-    else:
-        print("CW switch not pressed!")
+    # print out status of end-stop switches
+    print(CCW_MAX_SWITCH.__str__())
+    print(CW_MAX_SWITCH.__str__())
 
     print("\n**********************")
     print("\n** waiting for jobs **")
     print("\n**********************\n")
     is_homed = False
     declination_travel_steps = 0 # number of steps between min/max endstops
+    forced_exit = None
     while True:
         job_dict = wait_for_work(BEANSTALK)
         if job_dict['task'] == 'home':
             declination_travel_steps = home_camera(queue=BEANSTALK)
             is_homed = True
-            print("homing complete, travel steps = {0}".format(declination_travel_steps))
             continue
 
         max_pictures = 200
@@ -249,7 +293,7 @@ def main():
                 is_homed = True
 
             # okay we have valid parameters, time to scan the object
-            rotation_travel_steps = 200 # takes 200 steps to turn model 360 degrees
+            rotation_travel_steps = 200  # takes 200 steps to turn model 360 degrees
             steps_per_declination,\
                 steps_per_rotation,\
                 declination_start = calculate_steps(declination_divisions,
@@ -270,52 +314,24 @@ def main():
                          declination_start))
 
             # the camera & model are 'homed', so now we need to go through the motions
-            forced_exit = False
             remaining_declination_steps = declination_travel_steps
-            total_pictures_taken = 0
 
             # move camera to starting position for pictures
             if declination_start > 0:
                 print('move to declination start {0}'.format(declination_start))
-                if camera_stepper.step(declination_start, STEP_CAMERA_CCW, Raspi_MotorHAT.DOUBLE):
-                    forced_exit = True
+                forced_exit = camera_stepper.step(declination_start,
+                                                  STEP_CAMERA_CCW,
+                                                  Raspi_MotorHAT.DOUBLE)
 
-            for _ in range(0, declination_divisions):
-                if forced_exit:
-                    break
-                post_status(BEANSTALK, "rotating model")
-                for r in range(0, rotation_divisions):
-                    total_pictures_taken += 1
-                    take_picture(queue=BEANSTALK, picture_number=r,
-                                 num_pictures_taken=total_pictures_taken)
-                    if rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
-                                           Raspi_MotorHAT.DOUBLE):
-                        if BREAK_EXIT_REASON == 'Cancel':  # ignore end-stops for rotation
-                            forced_exit = True
-                            break # forced exit
-
-                if forced_exit:  # exit condition while stepping rotation
-                    break
-
-                # if there's no more stepping, get out
-                if steps_per_declination == 0:
-                    break
-
-                # now position the camera
-                if camera_stepper.step(steps_per_declination, STEP_CAMERA_CCW,
-                                       Raspi_MotorHAT.DOUBLE):
-                    # if this is the last postion, we expect to hit the end-stop
-                    if remaining_declination_steps != steps_per_declination:
-                        forced_exit = True
-                        print("...end stop hit! {0}/{1}".
-                              format(remaining_declination_steps,
-                                     steps_per_declination))
-                        break  # forced exit
-
-                # the declination motion may not be perfect fit so don't overstep
-                remaining_declination_steps -= steps_per_declination
-                if remaining_declination_steps < steps_per_declination:
-                    steps_per_declination = remaining_declination_steps
+            if not forced_exit:
+                photograph_model(declination_divisions,
+                                 rotation_divisions,
+                                 remaining_declination_steps,
+                                 steps_per_declination,
+                                 steps_per_rotation,
+                                 BEANSTALK,
+                                 rotate_stepper,
+                                 camera_stepper)
 
             # we are done taking pictures, release the motors so we don't
             # overheat and remember we are no longer homed

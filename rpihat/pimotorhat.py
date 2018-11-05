@@ -117,7 +117,7 @@ class Raspi_StepperMotor(StepperInterface):
         else:
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive')
 
-    def my_timer(self, sleep_time: float, direction: int) -> bool:
+    def my_timer(self, sleep_time: float, direction: int) -> dict:
         """implement a sleep() timer but in a loop
         if the yield function exists and returns true,
         then we break out of the loop"""
@@ -134,12 +134,13 @@ class Raspi_StepperMotor(StepperInterface):
             # if we have a "yield function" we call this to process
             # external events
             if self.yield_function is not None:
-                if self.yield_function(direction):
-                    return True
+                exit_dict = self.yield_function(direction)
+                if exit_dict:
+                    return exit_dict
 
             time.sleep(0.0002) # yield some time to other processes (200 us)
             current_time_microseconds = time.time() * 10**6
-        return False
+        return None
 
     def setSpeed(self, rpm: int) -> None:
         """set speed of stepper"""
@@ -266,7 +267,7 @@ class Raspi_StepperMotor(StepperInterface):
         """use single step to hold current position"""
         self.oneStep(step_dir=Raspi_MotorHAT.FORWARD, style=Raspi_MotorHAT.SINGLE)
 
-    def step(self, steps: int, direction: int, step_style: int) -> bool:
+    def step(self, steps: int, direction: int, step_style: int) -> dict:
         """step the motor, returns True if interrupted"""
         s_per_s = self.sec_per_step
         latest_step = 0
@@ -291,18 +292,20 @@ class Raspi_StepperMotor(StepperInterface):
                     else:
                         self.stepping_counter -= 1
 
-                    if self.my_timer(s_per_s, direction):
-                        return True
+                    exit_dict = self.my_timer(s_per_s, direction)
+                    if exit_dict:
+                        return exit_dict
             else:
-                return True
+                return None
         except KeyboardInterrupt: # if someone types control-c we should exit
-            return True
+            return {'exit': 'KeyboardInterrupt'}
 
         if step_style == Raspi_MotorHAT.MICROSTEP:
             # this is an edge case, if we are in between full steps, lets just keep going
             # so we end on a full step
             while latest_step not in(0, self.MICROSTEPS):
                 latest_step = self.oneStep(direction, step_style)
-                if self.my_timer(s_per_s, direction):
-                    return True
-        return False
+                exit_dict = self.my_timer(s_per_s, direction)
+                if exit_dict:
+                    return exit_dict
+        return None
