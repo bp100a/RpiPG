@@ -264,7 +264,7 @@ def main():
                   format(declination_divisions,
                          rotation_divisions, declination_travel_steps,
                          start, stop))
-            print('... {0} declination, {1} rotation steps, declination start {2}'.
+            print('... {0} declination steps, {1} rotation steps, declination start {2}'.
                   format(steps_per_declination,
                          steps_per_rotation,
                          declination_start))
@@ -290,8 +290,9 @@ def main():
                                  num_pictures_taken=total_pictures_taken)
                     if rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
                                            Raspi_MotorHAT.DOUBLE):
-                        forced_exit = True
-                        break # forced exit
+                        if BREAK_EXIT_REASON == 'Cancel':  # ignore end-stops for rotation
+                            forced_exit = True
+                            break # forced exit
 
                 if forced_exit:  # exit condition while stepping rotation
                     break
