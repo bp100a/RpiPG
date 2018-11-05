@@ -14,7 +14,7 @@ class TestRigRunner(TestCase):
                                                      start_pos=100,
                                                      end_pos=0)
 
-        assert(steps_per_declination == int(2000/8) )
+        assert(steps_per_declination == int(2000/7) )
         assert(steps_per_rotation == int(200/7))
         assert(declination_start == 0)
 
@@ -29,7 +29,7 @@ class TestRigRunner(TestCase):
                                                      start_pos=100,
                                                      end_pos=0)
 
-        assert(steps_per_declination == int(3474/9) )
+        assert(steps_per_declination == int(3474/8) )
         assert(steps_per_rotation == int(200/8))
         assert(declination_start == 0)
 
@@ -44,7 +44,7 @@ class TestRigRunner(TestCase):
                                                      start_pos=100,
                                                      end_pos=50)
 
-        assert(steps_per_declination == int(1000/8) )
+        assert(steps_per_declination == int(1000/7) )
         assert(steps_per_rotation == int(200/7))
         assert(declination_start == 0)
 
@@ -59,7 +59,7 @@ class TestRigRunner(TestCase):
                                                      start_pos=50,
                                                      end_pos=0)
 
-        assert(steps_per_declination == int(1000/8))
+        assert(steps_per_declination == int(1000/7))
         assert(steps_per_rotation == int(200/7))
         assert(declination_start == 1000)
 
@@ -74,6 +74,6 @@ class TestRigRunner(TestCase):
                                                      start_pos=62,
                                                      end_pos=0)
 
-        assert(steps_per_declination == 254)
+        assert(steps_per_declination == 291)
         assert(steps_per_rotation == int(200/7))
         assert(declination_start == 1249)

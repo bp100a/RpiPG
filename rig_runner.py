@@ -207,7 +207,7 @@ def main():
     while True:
         job_dict = wait_for_work(BEANSTALK)
         if job_dict['task'] == 'home':
-            declination_travel_steps = home_camera(queue= BEANSTALK)
+            declination_travel_steps = home_camera(queue=BEANSTALK)
             is_homed = True
             print("homing complete, travel steps = {0}".format(declination_travel_steps))
             continue
@@ -286,7 +286,8 @@ def main():
                 post_status(BEANSTALK, "rotating model")
                 for r in range(0, rotation_divisions):
                     total_pictures_taken += 1
-                    take_picture(queue=BEANSTALK, picture_number=r, num_pictures_taken=total_pictures_taken)
+                    take_picture(queue=BEANSTALK, picture_number=r,
+                                 num_pictures_taken=total_pictures_taken)
                     if rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
                                            Raspi_MotorHAT.DOUBLE):
                         forced_exit = True
