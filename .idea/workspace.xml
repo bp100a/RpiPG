@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cameractrl/camera.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cameractrl/imageCapture.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameractrl/imageCapture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rig_runner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -85,11 +82,11 @@
           <entry key="conf" value="324" />
           <entry key="css" value="8" />
           <entry key="dummy" value="68" />
-          <entry key="html" value="5883" />
+          <entry key="html" value="5996" />
           <entry key="js" value="2" />
           <entry key="py" value="24483" />
           <entry key="sh" value="1848" />
-          <entry key="txt" value="4552" />
+          <entry key="txt" value="4612" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -97,9 +94,9 @@
           <entry key="Bash" value="1848" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="5883" />
+          <entry key="HTML" value="5996" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="4620" />
+          <entry key="PLAIN_TEXT" value="4680" />
           <entry key="Python" value="24483" />
         </counts>
       </usages-collector>
@@ -136,8 +133,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="272" selection-start-line="272" selection-end-line="272" />
+            <state relative-caret-position="408">
+              <caret line="272" column="58" selection-start-line="272" selection-start-column="58" selection-end-line="272" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -541,20 +538,6 @@
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
     </task>
-    <task id="LOCAL-00102" summary="make dict into string, not flask jsonify object!">
-      <created>1541020091345</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1541020091345</updated>
-    </task>
-    <task id="LOCAL-00103" summary="return job_id when things are queued/dequeued">
-      <created>1541024235808</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1541024235808</updated>
-    </task>
     <task id="LOCAL-00104" summary="put try/except around .reserve calls">
       <created>1541024809432</created>
       <option name="number" value="00104" />
@@ -884,7 +867,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541443967139</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="adding items to jquery ticker">
+      <created>1541453486218</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1541453486218</updated>
+    </task>
+    <task id="LOCAL-00152" summary="log status to console">
+      <created>1541454093521</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1541454093521</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -932,12 +929,12 @@
     <frame x="1394" y="497" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39568844" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39568844" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -985,8 +982,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="disambiguate job variable" />
-    <MESSAGE value="post_status() screwing up!" />
     <MESSAGE value=".use instead of .watch for queue inputs" />
     <MESSAGE value="create new step calculator that includes the offset" />
     <MESSAGE value="print out values" />
@@ -1010,7 +1005,9 @@
     <MESSAGE value="ignore switches when rotating for exit reasons" />
     <MESSAGE value="some restructuring of the code" />
     <MESSAGE value="round up!" />
-    <option name="LAST_COMMIT_MESSAGE" value="round up!" />
+    <MESSAGE value="adding items to jquery ticker" />
+    <MESSAGE value="log status to console" />
+    <option name="LAST_COMMIT_MESSAGE" value="log status to console" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1352,8 +1349,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="272" selection-start-line="272" selection-end-line="272" />
+        <state relative-caret-position="408">
+          <caret line="272" column="58" selection-start-line="272" selection-start-column="58" selection-end-line="272" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
