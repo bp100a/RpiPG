@@ -296,12 +296,18 @@ def main():
                 if forced_exit:  # exit condition while stepping rotation
                     break
 
+                # if there's no more stepping, get out
+                if steps_per_declination == 0:
+                    break
+
                 # now position the camera
                 if camera_stepper.step(steps_per_declination, STEP_CAMERA_CCW,
                                        Raspi_MotorHAT.DOUBLE):
-                    forced_exit = True
-                    print("...end stop hit!")
-                    break  # forced exit
+                    # if this is the last postion, we expect to hit the end-stop
+                    if remaining_declination_steps != steps_per_declination:
+                        forced_exit = True
+                        print("...end stop hit!")
+                        break  # forced exit
 
                 # the declination motion may not be perfect fit so don't overstep
                 remaining_declination_steps -= steps_per_declination
