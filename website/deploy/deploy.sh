@@ -32,3 +32,9 @@ python3 ~/RpiPG/rig_runner.py &
 sudo service nginx start
 ~/RpiPG/website/deploy/startup.sh
 
+# need NTFS filesystem for USB drives
+sudo apt-get install ntfs-3g
+# create the mount point
+mkdir /mnt/usb
+# now make sure our pi user can access it
+sudo mount  -o uid=pi,gid=pi /dev/sda1 /mnt/usb

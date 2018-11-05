@@ -27,7 +27,8 @@ class Raspi_MotorHAT(MotorHatInterface):
                                              yield_func, addr, freq, debug)
         self._i2caddr = addr        # default addr on HAT
         self._frequency = freq		# default @1600Hz PWM freq
-        self.steppers = [stepper_class(self, 1, steps=200, yield_function=yield_func), stepper_class(self, 2, steps=200, yield_function=yield_func)]
+        self.steppers = [stepper_class(self, 1, steps=200, yield_function=None), # rotation - no end stops
+                         stepper_class(self, 2, steps=200, yield_function=yield_func)]  # camera
         self._pwm = pwm_class(addr, debug)
         self._pwm.setPWMFreq(self._frequency)
 
