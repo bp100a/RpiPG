@@ -268,10 +268,8 @@
                 dataType: 'json',
                 type: 'get',
                 success: function(data) { // check if available
-                  status.text('Offline!');
-                  if ( data.live ) { // get and check data value
-                    status.text(data.info); // get and print data string
-                    clearInterval(pollInterval); // optional: stop poll function
+                  if ( data.msg ) { // get and check data value
+                      $('#ticker ol').append('<li>' + data.msg + '</li>'); // get and print data string
                   }
                 },
                 error: function() { // error logging

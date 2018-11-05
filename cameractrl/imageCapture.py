@@ -1,7 +1,7 @@
 from time import sleep
 import signal, os, subprocess
 from datetime import datetime
-from sh import gphoto2 as gp
+import gphoto2 as gp
 
 # Kill the gphoto process that starts
 # whenever we turn on the camera or

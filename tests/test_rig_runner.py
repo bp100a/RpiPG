@@ -14,8 +14,8 @@ class TestRigRunner(TestCase):
                                                      start_pos=100,
                                                      end_pos=0)
 
-        assert(steps_per_declination == int(2000/7) )
-        assert(steps_per_rotation == int(200/7))
+        assert(steps_per_declination == int(2000/7 + 0.5))
+        assert(steps_per_rotation == int(200/7 + 0.5))
         assert(declination_start == 0)
 
     def test_calculate_steps_no_offset(self):
@@ -44,8 +44,8 @@ class TestRigRunner(TestCase):
                                                      start_pos=100,
                                                      end_pos=50)
 
-        assert(steps_per_declination == int(1000/7) )
-        assert(steps_per_rotation == int(200/7))
+        assert(steps_per_declination == int(1000/7 + 0.5))
+        assert(steps_per_rotation == int(200/7 +0.5))
         assert(declination_start == 0)
 
     def test_calculate_steps_with_end_offsets(self):
@@ -59,8 +59,8 @@ class TestRigRunner(TestCase):
                                                      start_pos=50,
                                                      end_pos=0)
 
-        assert(steps_per_declination == int(1000/7))
-        assert(steps_per_rotation == int(200/7))
+        assert(steps_per_declination == int(1000/7 + 0.5))
+        assert(steps_per_rotation == int(200/7 + 0.5))
         assert(declination_start == 1000)
 
     def test_calculate_steps_with_start_offset(self):
@@ -75,5 +75,5 @@ class TestRigRunner(TestCase):
                                                      end_pos=0)
 
         assert(steps_per_declination == 291)
-        assert(steps_per_rotation == int(200/7))
+        assert(steps_per_rotation == int(200/7 + 0.5))
         assert(declination_start == 1249)
