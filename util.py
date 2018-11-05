@@ -19,7 +19,7 @@ def calculate_steps(declination: int,
 
     declination_start = int((declination_travel / 100) * (100 - start_pos))
     declination_end = int((declination_travel / 100) * end_pos)
-    steps_per_declination = int((declination_travel - declination_start - declination_end) / (declination-1) )
-    steps_per_rotation = int(rotation_travel / rotation)
+    steps_per_declination = int((declination_travel - declination_start - declination_end) / (declination-1)+0.5)
+    steps_per_rotation = int((rotation_travel / rotation) + 0.5)
     return steps_per_declination, steps_per_rotation, declination_start
 
