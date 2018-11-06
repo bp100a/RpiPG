@@ -14,7 +14,7 @@ from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 from util import calculate_steps
-
+from cameractrl import camera
 
 CAMERA_STEPPER_MOTOR_NUM = 2
 CAMERA_STEPPER_MOTOR_SPEED = 240  # rpm
@@ -160,11 +160,10 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
     queue.put(status_json)
 
 
-def take_picture(queue: beanstalk.Connection, picture_number: int, num_pictures_taken: int) -> None:
+def take_picture(my_camera: camera.gp.camera, queue: beanstalk.Connection, rotation: int, declination: int) -> None:
     """take the picture"""
     post_status(queue, "taking picture")
-    print('   taking picture #{0}/{1}'.format(picture_number+1, num_pictures_taken))
-    time.sleep(2)
+    camera.take_picture(my_camera, rotation, declination)
 
 
 def wait_for_work(queue: beanstalk.Connection) -> str:
@@ -187,16 +186,20 @@ def photograph_model(declination_divisions: int,
                      steps_per_rotation: int,
                      status_queue: beanstalk.Connection,
                      rotate_stepper: Raspi_StepperMotor,
-                     camera_stepper: Raspi_StepperMotor):
+                     camera_stepper: Raspi_StepperMotor) -> None:
     """here's where we rotate the model, declinate the camera
     and take pictures"""
-    total_pictures_taken = 0
-    for _ in range(0, declination_divisions):
+    rig_camera = camera.init_camera()
+    if not rig_camera:
+        print("Did not get camera object!!")
+        return
+
+    for declination in range(0, declination_divisions):
         post_status(status_queue, "rotating model")
-        for r in range(0, rotation_divisions):
-            total_pictures_taken += 1
-            take_picture(queue=status_queue, picture_number=r,
-                         num_pictures_taken=total_pictures_taken)
+        for rotation in range(0, rotation_divisions):
+            take_picture(my_camera=rig_camera,
+                         queue=status_queue,
+                         rotation=rotation, declination=declination)
             forced_exit = rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
                                               Raspi_MotorHAT.DOUBLE)
             if forced_exit and forced_exit['exit'] == 'cancel':

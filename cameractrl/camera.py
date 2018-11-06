@@ -16,17 +16,14 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-from __future__ import print_function
-
 import logging
 import os
-import subprocess
 import sys
 import gphoto2 as gp
 
 
 def init_camera() -> gp.camera:
+    """initialize the camera"""
     logging.basicConfig(
         format='%(levelname)s: %(name)s: %(message)s', level=logging.WARNING)
     gp.check_result(gp.use_python_logging())
@@ -36,6 +33,7 @@ def init_camera() -> gp.camera:
 
 
 def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> bool:
+    """take a picture and save it to the USB drive"""
     print('Capturing image')
     file_path = gp.check_result(gp.gp_camera_capture(
         camera, gp.GP_CAPTURE_IMAGE))

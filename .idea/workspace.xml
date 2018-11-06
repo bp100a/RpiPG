@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cameractrl/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameractrl/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameractrl/imageCapture.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,9 +86,9 @@
           <entry key="dummy" value="68" />
           <entry key="html" value="6073" />
           <entry key="js" value="2" />
-          <entry key="py" value="25262" />
+          <entry key="py" value="25790" />
           <entry key="sh" value="2410" />
-          <entry key="txt" value="4983" />
+          <entry key="txt" value="5101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -95,8 +98,8 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="6073" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="5051" />
-          <entry key="Python" value="25262" />
+          <entry key="PLAIN_TEXT" value="5169" />
+          <entry key="Python" value="25790" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -145,27 +148,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="94" column="20" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="26" />
+            <state relative-caret-position="747">
+              <caret line="234" selection-start-line="234" selection-end-line="234" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1541441179324" expanded="true" signature="6512:8132" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-                <marker date="1541450923440" expanded="true" signature="974:983" ph="..." />
+                <marker date="1541525170641" expanded="true" signature="6613:8244" ph="..." />
               </folding>
             </state>
           </provider>
@@ -180,15 +170,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="42" column="80" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
+            <state relative-caret-position="747">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
-                <element signature="e#829#866#0" expanded="true" />
-                <marker date="1541523878245" expanded="true" signature="976:1241" ph="..." />
-                <marker date="1541523878245" expanded="true" signature="1326:1924" ph="..." />
+                <element signature="e#830#844#0" expanded="true" />
+                <marker date="1541524553021" expanded="true" signature="950:1215" ph="..." />
+                <marker date="1541524553021" expanded="true" signature="1354:1978" ph="..." />
               </folding>
             </state>
           </provider>
@@ -250,7 +240,6 @@
       <find>.use</find>
       <find>calculate_</find>
       <find>calculate</find>
-      <find>take_picture</find>
       <find>take_p</find>
       <find>release</find>
       <find>rpm</find>
@@ -268,12 +257,13 @@
       <find>yield</find>
       <find>ticker</find>
       <find>y</find>
-      <find>yield_function</find>
       <find>142</find>
       <find>landing-footer</find>
       <find>/api/home</find>
       <find>my_timer</find>
       <find>is_y</find>
+      <find>yield_function</find>
+      <find>take_picture</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -308,7 +298,6 @@
         <option value="$PROJECT_DIR$/website/styles/ticker.css" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
         <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
@@ -317,6 +306,7 @@
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
         <option value="$PROJECT_DIR$/cameractrl/camera.py" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
   </component>
@@ -500,27 +490,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00115" summary="added start/stop for scan data">
-      <created>1541105975981</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1541105975981</updated>
-    </task>
-    <task id="LOCAL-00116" summary="fix JSON we are sending scan POST">
-      <created>1541106468130</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1541106468130</updated>
-    </task>
-    <task id="LOCAL-00117" summary="catch some more exceptions on /scan json processing">
-      <created>1541113780496</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1541113780496</updated>
     </task>
     <task id="LOCAL-00118" summary="catch some more exceptions on /scan json processing">
       <created>1541114149408</created>
@@ -844,7 +813,28 @@
       <option name="project" value="LOCAL" />
       <updated>1541523343813</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="create picture taking loop">
+      <created>1541523978146</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1541523978146</updated>
+    </task>
+    <task id="LOCAL-00165" summary="fix formatting of numbers for rotation &amp; declination">
+      <created>1541524090493</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1541524090493</updated>
+    </task>
+    <task id="LOCAL-00166" summary="still screwing up formatting of filepath">
+      <created>1541524205805</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1541524205805</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -892,12 +882,12 @@
     <frame x="1393" y="468" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39568844" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39568844" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -945,9 +935,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix calculation of steps!" />
-    <MESSAGE value="clean up code, 9.60 pylint score!" />
-    <MESSAGE value="comment out alert() box when scanning" />
     <MESSAGE value="adjust angle from 90-235 -&gt; 90-225" />
     <MESSAGE value="pass queue to various routines" />
     <MESSAGE value="adjust slider to start at -20 degrees" />
@@ -970,7 +957,10 @@
     <MESSAGE value="save to USB thumbdrive" />
     <MESSAGE value="fix spacing" />
     <MESSAGE value="fix usb path" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix usb path" />
+    <MESSAGE value="create picture taking loop" />
+    <MESSAGE value="fix formatting of numbers for rotation &amp; declination" />
+    <MESSAGE value="still screwing up formatting of filepath" />
+    <option name="LAST_COMMIT_MESSAGE" value="still screwing up formatting of filepath" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1255,7 +1245,6 @@
           <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
-            <marker date="1541450923440" expanded="true" signature="974:983" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1264,17 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="115" column="13" lean-forward="true" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="94" column="20" lean-forward="true" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="26" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-            <marker date="1541441179324" expanded="true" signature="6512:8132" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1316,12 +1294,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="42" column="80" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
+        <state relative-caret-position="747">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
           <folding>
-            <element signature="e#829#866#0" expanded="true" />
-            <marker date="1541523878245" expanded="true" signature="976:1241" ph="..." />
-            <marker date="1541523878245" expanded="true" signature="1326:1924" ph="..." />
+            <element signature="e#830#844#0" expanded="true" />
+            <marker date="1541524553021" expanded="true" signature="950:1215" ph="..." />
+            <marker date="1541524553021" expanded="true" signature="1354:1978" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+            <marker date="1541525170641" expanded="true" signature="6613:8244" ph="..." />
           </folding>
         </state>
       </provider>
