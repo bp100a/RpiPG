@@ -118,12 +118,12 @@ class Raspi_StepperMotor(StepperInterface):
         else:
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive')
 
-    def is_yielding(self) -> bool:
+    def is_yielding(self, direction: int) -> bool:
         """if we have yield function check to see if
         an exit condition has arisen"""
         if not self.yield_function:
             return False
-        return self.yield_function()
+        return self.yield_function(direction)
 
     def my_timer(self, sleep_time: float, direction: int) -> dict:
         """implement a sleep() timer but in a loop
@@ -290,7 +290,7 @@ class Raspi_StepperMotor(StepperInterface):
             # before we start stepping, for safety check the yield function
             # to see if there's a reason not to proceed (like we are at a limit
             # switch
-            if not self.is_yielding():
+            if not self.is_yielding(direction):
                 for _ in range(steps):
                     latest_step = self.oneStep(direction, step_style)
                     if direction == Raspi_MotorHAT.FORWARD:
@@ -304,7 +304,7 @@ class Raspi_StepperMotor(StepperInterface):
             else:
                 return None
         except KeyboardInterrupt: # if someone types control-c we should exit
-            return {'exit': 'KeyboardInterrupt'}
+            return {'exit': 'KeyboardKInterrupt'}
 
         if step_style == Raspi_MotorHAT.MICROSTEP:
             # this is an edge case, if we are in between full steps, lets just keep going
