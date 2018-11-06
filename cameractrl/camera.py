@@ -26,22 +26,35 @@ import sys
 import gphoto2 as gp
 
 
-def main():
+def init_camera() -> gp.camera:
     logging.basicConfig(
         format='%(levelname)s: %(name)s: %(message)s', level=logging.WARNING)
     gp.check_result(gp.use_python_logging())
     camera = gp.check_result(gp.gp_camera_new())
     gp.check_result(gp.gp_camera_init(camera))
+    return camera
+
+
+def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> bool:
     print('Capturing image')
     file_path = gp.check_result(gp.gp_camera_capture(
         camera, gp.GP_CAPTURE_IMAGE))
     print('Camera file path: {0}/{1}'.format(file_path.folder, file_path.name))
-    target = os.path.join('/mnt/usb', file_path.name)
+    target = os.path.join('/mnt/usb/P{num:02d}{num:02d}_'.format(declination_pos, rotation_pos), file_path.name)
     print('Copying image to', target)
     camera_file = gp.check_result(gp.gp_camera_file_get(
             camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
     gp.check_result(gp.gp_file_save(camera_file, target))
     gp.check_result(gp.gp_camera_exit(camera))
+    return True
+
+
+def main():
+    camera = init_camera()
+    for d in range(0, 3):
+        for r in range(0,2):
+            take_picture(camera, r, d)
+
     return 0
 
 
