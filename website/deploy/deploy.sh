@@ -12,6 +12,10 @@ make
 sudo make install
 cd ..
 
+# Please also check that PKG_CONFIG_PATH contains
+# ${libdir}/pkgconfig
+# before compiling any libgphoto2 frontend
+
 # now gphoto2 (v2.5.20)
 wget http://downloads.sourceforge.net/project/gphoto/gphoto/2.5.20/gphoto2-2.5.20.tar.bz2
 tar xjvf gphoto2–2.5.20.tar.bz2

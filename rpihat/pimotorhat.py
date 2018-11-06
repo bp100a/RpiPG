@@ -118,14 +118,19 @@ class Raspi_StepperMotor(StepperInterface):
         else:
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive')
 
+    def is_yielding(self) -> bool:
+        """if we have yield function check to see if
+        an exit condition has arisen"""
+        if not self.yield_function:
+            return False
+        return self.yield_function()
+
     def my_timer(self, sleep_time: float, direction: int) -> dict:
         """implement a sleep() timer but in a loop
         if the yield function exists and returns true,
         then we break out of the loop"""
-        sleep_time_microseconds = int(sleep_time * 10**6)
-        start_time_microseconds = time.time() * 10**6
         current_time_microseconds = time.time() * 10**6
-        end_time_microseconds = start_time_microseconds + sleep_time_microseconds
+        end_time_microseconds = current_time_microseconds + int(sleep_time * 10**6)
 
         # this is where we "wait" until it's time to process the
         # next step pulse. We will call the yield_function() to
@@ -133,13 +138,13 @@ class Raspi_StepperMotor(StepperInterface):
         while current_time_microseconds < end_time_microseconds:
 
             # if we have a "yield function" we call this to process
-            # external events
+            # external events we want to exit for
             if self.yield_function is not None:
                 exit_dict = self.yield_function(direction)
                 if exit_dict:
                     return exit_dict
 
-            time.sleep(0.0002) # yield some time to other processes (200 us)
+            time.sleep(sleep_time / 10)  # yield some time to other processes
             current_time_microseconds = time.time() * 10**6
         return None
 
@@ -285,7 +290,7 @@ class Raspi_StepperMotor(StepperInterface):
             # before we start stepping, for safety check the yield function
             # to see if there's a reason not to proceed (like we are at a limit
             # switch
-            if not self.yield_function(direction):
+            if not self.is_yielding():
                 for _ in range(steps):
                     latest_step = self.oneStep(direction, step_style)
                     if direction == Raspi_MotorHAT.FORWARD:
