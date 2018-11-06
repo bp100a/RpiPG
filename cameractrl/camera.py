@@ -41,7 +41,6 @@ def main():
     camera_file = gp.check_result(gp.gp_camera_file_get(
             camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
     gp.check_result(gp.gp_file_save(camera_file, target))
-    subprocess.call(['xdg-open', target])
     gp.check_result(gp.gp_camera_exit(camera))
     return 0
 

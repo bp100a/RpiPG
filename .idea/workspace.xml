@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/pimotorhat.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/pimotorhat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -85,20 +84,20 @@
           <entry key="dummy" value="68" />
           <entry key="html" value="6073" />
           <entry key="js" value="2" />
-          <entry key="py" value="24778" />
-          <entry key="sh" value="2360" />
-          <entry key="txt" value="4802" />
+          <entry key="py" value="24934" />
+          <entry key="sh" value="2410" />
+          <entry key="txt" value="4902" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="2360" />
+          <entry key="Bash" value="2410" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
           <entry key="HTML" value="6073" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="4870" />
-          <entry key="Python" value="24778" />
+          <entry key="PLAIN_TEXT" value="4970" />
+          <entry key="Python" value="24934" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -176,17 +175,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            <state relative-caret-position="423">
+              <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="330">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="e#829#866#0" expanded="true" />
               </folding>
@@ -216,15 +215,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="148" column="38" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
+            <state relative-caret-position="396">
+              <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
               <folding>
                 <element signature="e#48#58#0" expanded="true" />
-                <marker date="1541515805264" expanded="true" signature="3811:3915" ph="..." />
-                <marker date="1541515805264" expanded="true" signature="3977:5052" ph="..." />
+                <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
+                <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
               </folding>
             </state>
           </provider>
@@ -244,7 +243,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scan</find>
       <find>post_status</find>
       <find>scan c</find>
       <find>.watch</find>
@@ -274,6 +272,7 @@
       <find>landing-footer</find>
       <find>/api/home</find>
       <find>my_timer</find>
+      <find>is_y</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -315,8 +314,8 @@
         <option value="$PROJECT_DIR$/cameractrl/camera.py" />
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
-        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
+        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
       </list>
     </option>
   </component>
@@ -500,20 +499,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00109" summary="round slider">
-      <created>1541092755637</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1541092755637</updated>
-    </task>
-    <task id="LOCAL-00110" summary="angle selection has appropriate stops &amp; range">
-      <created>1541100879792</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1541100879792</updated>
     </task>
     <task id="LOCAL-00111" summary="enlarge the circle">
       <created>1541101294553</created>
@@ -844,7 +829,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541515080284</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="some code cleanup&#10;handle no yield_function properly">
+      <created>1541516000398</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1541516000398</updated>
+    </task>
+    <task id="LOCAL-00159" summary="oops! left direction out of is_yielding() call">
+      <created>1541521768868</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1541521768868</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -945,8 +944,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reverse stop switches" />
-    <MESSAGE value="fix declination starting offset&#10;rotate then declinate" />
     <MESSAGE value="remove old debug code" />
     <MESSAGE value="invert start/stop sense (100 - x)" />
     <MESSAGE value="fix int() typing" />
@@ -970,7 +967,9 @@
     <MESSAGE value="fix up some javscript warnings&#10;add build of gphoto2/libgphoto2 to deployment script" />
     <MESSAGE value="close &lt;input&gt;" />
     <MESSAGE value="close &lt;p&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="close &lt;p&gt;" />
+    <MESSAGE value="some code cleanup&#10;handle no yield_function properly" />
+    <MESSAGE value="oops! left direction out of is_yielding() call" />
+    <option name="LAST_COMMIT_MESSAGE" value="oops! left direction out of is_yielding() call" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1278,16 +1277,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#829#866#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -1305,21 +1294,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        <state relative-caret-position="396">
+          <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+            <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
+            <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="148" column="38" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
+        <state relative-caret-position="423">
+          <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
-            <element signature="e#48#58#0" expanded="true" />
-            <marker date="1541515805264" expanded="true" signature="3811:3915" ph="..." />
-            <marker date="1541515805264" expanded="true" signature="3977:5052" ph="..." />
+            <element signature="e#829#866#0" expanded="true" />
           </folding>
         </state>
       </provider>
