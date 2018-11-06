@@ -36,7 +36,7 @@ def main():
     file_path = gp.check_result(gp.gp_camera_capture(
         camera, gp.GP_CAPTURE_IMAGE))
     print('Camera file path: {0}/{1}'.format(file_path.folder, file_path.name))
-    target = os.path.join('/usb/mnt', file_path.name)
+    target = os.path.join('/mnt/usb', file_path.name)
     print('Copying image to', target)
     camera_file = gp.check_result(gp.gp_camera_file_get(
             camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
