@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameractrl/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameractrl/camera.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,9 +83,9 @@
           <entry key="dummy" value="68" />
           <entry key="html" value="6073" />
           <entry key="js" value="2" />
-          <entry key="py" value="24934" />
+          <entry key="py" value="25262" />
           <entry key="sh" value="2410" />
-          <entry key="txt" value="4902" />
+          <entry key="txt" value="4983" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -96,8 +95,8 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="6073" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="4970" />
-          <entry key="Python" value="24934" />
+          <entry key="PLAIN_TEXT" value="5051" />
+          <entry key="Python" value="25262" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -184,10 +183,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="351">
+              <caret line="42" column="80" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
               <folding>
                 <element signature="e#829#866#0" expanded="true" />
+                <marker date="1541523878245" expanded="true" signature="976:1241" ph="..." />
+                <marker date="1541523878245" expanded="true" signature="1326:1924" ph="..." />
               </folding>
             </state>
           </provider>
@@ -311,11 +312,11 @@
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
         <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
-        <option value="$PROJECT_DIR$/cameractrl/camera.py" />
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
+        <option value="$PROJECT_DIR$/cameractrl/camera.py" />
       </list>
     </option>
   </component>
@@ -499,34 +500,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00111" summary="enlarge the circle">
-      <created>1541101294553</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1541101294553</updated>
-    </task>
-    <task id="LOCAL-00112" summary="center the round slider">
-      <created>1541101538189</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1541101538190</updated>
-    </task>
-    <task id="LOCAL-00113" summary="remove alert box when homing">
-      <created>1541101700851</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1541101700851</updated>
-    </task>
-    <task id="LOCAL-00114" summary="add model rotation into the mix">
-      <created>1541103818938</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1541103818938</updated>
     </task>
     <task id="LOCAL-00115" summary="added start/stop for scan data">
       <created>1541105975981</created>
@@ -843,7 +816,35 @@
       <option name="project" value="LOCAL" />
       <updated>1541521768868</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="remove x window call to open photo">
+      <created>1541523220652</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1541523220652</updated>
+    </task>
+    <task id="LOCAL-00161" summary="save to USB thumbdrive">
+      <created>1541523271462</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1541523271462</updated>
+    </task>
+    <task id="LOCAL-00162" summary="fix spacing">
+      <created>1541523287916</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1541523287916</updated>
+    </task>
+    <task id="LOCAL-00163" summary="fix usb path">
+      <created>1541523343813</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1541523343813</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -944,10 +945,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove old debug code" />
-    <MESSAGE value="invert start/stop sense (100 - x)" />
-    <MESSAGE value="fix int() typing" />
-    <MESSAGE value="set start/stop proper (start is bottom, initially 100, stop is &quot;top&quot;, initially 0" />
     <MESSAGE value="fix calculation of steps!" />
     <MESSAGE value="clean up code, 9.60 pylint score!" />
     <MESSAGE value="comment out alert() box when scanning" />
@@ -969,7 +966,11 @@
     <MESSAGE value="close &lt;p&gt;" />
     <MESSAGE value="some code cleanup&#10;handle no yield_function properly" />
     <MESSAGE value="oops! left direction out of is_yielding() call" />
-    <option name="LAST_COMMIT_MESSAGE" value="oops! left direction out of is_yielding() call" />
+    <MESSAGE value="remove x window call to open photo" />
+    <MESSAGE value="save to USB thumbdrive" />
+    <MESSAGE value="fix spacing" />
+    <MESSAGE value="fix usb path" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix usb path" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1315,10 +1316,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="351">
+          <caret line="42" column="80" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
           <folding>
             <element signature="e#829#866#0" expanded="true" />
+            <marker date="1541523878245" expanded="true" signature="976:1241" ph="..." />
+            <marker date="1541523878245" expanded="true" signature="1326:1924" ph="..." />
           </folding>
         </state>
       </provider>

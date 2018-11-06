@@ -40,7 +40,7 @@ def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> 
     file_path = gp.check_result(gp.gp_camera_capture(
         camera, gp.GP_CAPTURE_IMAGE))
     print('Camera file path: {0}/{1}'.format(file_path.folder, file_path.name))
-    target = os.path.join('/mnt/usb/P{num:02d}{num:02d}_'.format(declination_pos, rotation_pos), file_path.name)
+    target = os.path.join('/mnt/usb/P{dec:02d}{rot:02d}_'.format(dec=declination_pos, rot=rotation_pos), file_path.name)
     print('Copying image to', target)
     camera_file = gp.check_result(gp.gp_camera_file_get(
             camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
