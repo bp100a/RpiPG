@@ -228,6 +228,8 @@ def photograph_model(declination_divisions: int,
         if remaining_declination_steps < steps_per_declination:
             steps_per_declination = remaining_declination_steps
 
+        # free up the camera now that we don't need it
+        camera.exit_camera(rig_camera)
 
 def main():
     """This is the main entry point of the program, where all the magic happens"""

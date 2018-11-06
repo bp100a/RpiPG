@@ -267,11 +267,13 @@
                 dataType: 'json',
                 type: 'get',
                 success: function(data) { // check if available
-                  console.log(JSON.parse(data));
-                  json = JSON.parse(data)
-                  if ( json.msg ) { // get and check data value
-                      $('#ticker ol').append('<li>' + json.msg + '</li>'); // get and print data string
-                  }
+                    if (this.hasContent()) {
+                        console.log(JSON.parse(data));
+                        json = JSON.parse(data)
+                        if (json.msg) { // get and check data value
+                            $('#ticker ol').append('<li>' + json.msg + '</li>'); // get and print data string
+                        }
+                    }
                 },
                 error: function() { // error logging
                   console.log('Error!');

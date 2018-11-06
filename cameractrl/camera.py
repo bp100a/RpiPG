@@ -43,8 +43,11 @@ def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> 
     camera_file = gp.check_result(gp.gp_camera_file_get(
             camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
     gp.check_result(gp.gp_file_save(camera_file, target))
-    gp.check_result(gp.gp_camera_exit(camera))
     return True
+
+
+def exit_camera(camera: gp.camera) -> None:
+    gp.check_result(gp.gp_camera_exit(camera))
 
 
 def main():
