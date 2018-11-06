@@ -267,7 +267,7 @@
                 dataType: 'json',
                 type: 'get',
                 success: function(data) { // check if available
-                    if (this.hasContent()) {
+                    if (this.hasContent) {
                         console.log(JSON.parse(data));
                         json = JSON.parse(data)
                         if (json.msg) { // get and check data value
