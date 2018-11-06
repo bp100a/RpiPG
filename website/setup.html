@@ -289,11 +289,11 @@
             return '*' + e.value;
         }
         $(document).ready(function () {
-            var start_angle = 90; // angles expressed CW
-            var end_angle = 200;  // ~ 20 degrees below horizontal
+            let start_angle = 90; // angles expressed CW
+            let end_angle = 200;  // ~ 20 degrees below horizontal
             // Range is always 0-100, so the steps
             // is (end-start) / 100
-            var steps = (end_angle - start_angle) / 100;
+            let steps = (end_angle - start_angle) / 100;
             $("#slider").roundSlider({
                 startAngle: start_angle,
                 endAngle: end_angle,
@@ -307,12 +307,12 @@
         });
     </script>
     <script type="text/javascript" charset="utf-8">
-        var declination_stops = document.querySelector('#camera_rotation');
-        var declination_value = document.querySelector('#camera_value');
-        var total_value = document.querySelector('#total_value');
-        var declination_label = 'declination steps';
-        var off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
-        var px =  ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
+        let declination_stops = document.querySelector('#camera_rotation');
+        let declination_value = document.querySelector('#camera_value');
+        let total_value = document.querySelector('#total_value');
+        let declination_label = 'declination steps';
+        let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
+        let px =  ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
 
         declination_value.parentElement.style.left = px + 'px';
         declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
@@ -324,16 +324,16 @@
             declination_value.parentElement.style.left = px + 'px';
 
             // Calculate total # of pictures
-            var total_pics = declination_stops.value * rotation_stops.value;
+            let total_pics = declination_stops.value * rotation_stops.value;
             total_value.innerHTML = ' ' + total_pics + ' pictures'
         };
     </script>
     <script type="text/javascript" charset="utf-8">
-        var rotation_stops = document.querySelector('#model_rotation');
-        var rotation_value = document.querySelector('#rotation_value');
-        var rotation_label = 'rotation steps';
-        var off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
-        var px =  ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
+        let rotation_stops = document.querySelector('#model_rotation');
+        let rotation_value = document.querySelector('#rotation_value');
+        let rotation_label = 'rotation steps';
+        let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
+        let px =  ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
 
         rotation_value.parentElement.style.left = px + 'px';
         rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
@@ -345,7 +345,7 @@
             rotation_value.parentElement.style.left = px + 'px';
 
             // Calculate total # of pictures
-            var total_pics = declination_stops.value * rotation_stops.value;
+            let total_pics = declination_stops.value * rotation_stops.value;
             total_value.innerHTML = ' ' + total_pics + ' pictures'
           };
 

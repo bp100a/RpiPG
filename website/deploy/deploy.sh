@@ -1,5 +1,26 @@
 #!/usr/bin/env bash
 
+# build & install needed libaries
+# libgphoto2 & gphoto2 used for camera control
+# need v 2.5.20 to avoid long timeout
+cd ~
+wget http://downloads.sourceforge.net/project/gphoto/gphoto/2.5.20/gphoto2-2.5.20.tar.bz2
+tar xjvf gphoto2–2.5.20.tar.bz2
+cd gphoto2–2.5.20/
+./configure
+make
+sudo make install
+cd ..
+
+# now gphoto2 (v2.5.20)
+wget http://downloads.sourceforge.net/project/gphoto/gphoto/2.5.20/gphoto2-2.5.20.tar.bz2
+tar xjvf gphoto2–2.5.20.tar.bz2
+cd gphoto2–2.5.20/
+./configure
+make
+sudo make install
+cd ..
+
 # install NGINX
 sudo apt-get install nginx
 
