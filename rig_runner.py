@@ -189,9 +189,13 @@ def photograph_model(declination_divisions: int,
                      camera_stepper: Raspi_StepperMotor) -> None:
     """here's where we rotate the model, declinate the camera
     and take pictures"""
-    rig_camera = camera.init_camera()
-    if not rig_camera:
-        print("Did not get camera object!!")
+    try:
+        rig_camera = camera.init_camera()
+        if not rig_camera:
+            print("Did not get camera object!!")
+            return
+    except camera.gp.GPhoto2Error:
+        post_status(status_queue, 'Camera is off!')
         return
 
     for declination in range(0, declination_divisions):
