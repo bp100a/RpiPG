@@ -44,5 +44,6 @@ def main():
     gp.check_result(gp.gp_camera_exit(camera))
     return 0
 
+
 if __name__ == "__main__":
     sys.exit(main())
