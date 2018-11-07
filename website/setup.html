@@ -96,7 +96,7 @@
             </div>
             <button id="scan" class="button button-rounded button-green">Scan</button>
             <div>
-                <ol id="sample" class="ticker">
+                <ol id="status_ticker" class="ticker">
                     <li>Please make certain the rig is homed prior to scanning</li>
                     <li>Ensure an USB thumbdrive is inserted for the pictures</li>
                     <li>Please clear out any obstructions that may interfere with the rotation</li>
@@ -271,7 +271,7 @@
                         console.log(JSON.parse(data));
                         json = JSON.parse(data)
                         if (json.msg) { // get and check data value
-                            $('#ticker ol').append('<li>' + json.msg + '</li>'); // get and print data string
+                            $('#status_ticker ol').append('<li>' + json.msg + '</li>'); // get and print data string
                         }
                     }
                 },
