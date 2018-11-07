@@ -85,7 +85,7 @@
                </form>
                <form class="range-slider">
                     <span style="position:absolute; color:red; min-width:100px;">
-                        <span id="rotation_value"></span>
+                        <span id="rotation_val"></span>
                     </span>
                   <input class="material-slider" type="range" id="model_rotation" value="10" min="4" max="25"/>
                </form>
@@ -310,17 +310,24 @@
     </script>
     <script type="text/javascript" charset="utf-8">
         var declination_stops = document.querySelector('#camera_rotation');
-        let declination_value = document.querySelector('#camera_value');
-        let total_value = document.querySelector('#total_value');
-        let declination_label = 'declination steps';
-        let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
-        let px =  ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
+        var rotation_stops = document.querySelector('#model_rotation');
+        var declination_value = document.querySelector('#camera_value');
+        var total_value = document.querySelector('#total_value');
+        var rotation_value = document.querySelector('#rotation_val');
+        var declination_label = 'declination steps';
+        var rotation_label = 'rotation steps';
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        {
+            let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
+            let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
 
-        declination_value.parentElement.style.left = px + 'px';
-        declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
-        declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
-
+            declination_value.parentElement.style.left = px + 'px';
+            declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
+            declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
+        }
         declination_stops.oninput =function(){
+            let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
             let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetWidth / 2);
             declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
             declination_value.parentElement.style.left = px + 'px';
@@ -331,17 +338,16 @@
         };
     </script>
     <script type="text/javascript" charset="utf-8">
-        var rotation_stops = document.querySelector('#model_rotation');
-        let rotation_value = document.querySelector('#rotation_value');
-        let rotation_label = 'rotation steps';
-        let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
-        let px =  ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
+        {
+            let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
+            let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
 
-        rotation_value.parentElement.style.left = px + 'px';
-        rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
-        rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
-
+            rotation_value.parentElement.style.left = px + 'px';
+            rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
+            rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
+        }
         rotation_stops.oninput =function(){
+            let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
             let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetWidth / 2);
             rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
             rotation_value.parentElement.style.left = px + 'px';
