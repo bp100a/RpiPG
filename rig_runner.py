@@ -27,6 +27,10 @@ BEANSTALK = None
 CANCEL_QUEUE = 'cancel'
 STATUS_QUEUE = 'status'
 TASK_QUEUE = 'work'
+STEP_CAMERA_CCW = Raspi_MotorHAT.FORWARD
+STEP_CAMERA_CW = Raspi_MotorHAT.BACKWARD
+STEP_MODEL_CCW = Raspi_MotorHAT.FORWARD
+STEP_MODEL_CW = Raspi_MotorHAT.BACKWARD
 
 
 def configure_beanstalk():
@@ -49,9 +53,6 @@ def clear_all_queues(queue: beanstalk.Connection) -> None:
                 break
 
 
-BREAK_EXIT_REASON = None
-
-
 def yield_function(direction: int) -> dict:
     """Called in timing loops to perform checks
     to see if we need to breakout. We need the direction
@@ -61,8 +62,6 @@ def yield_function(direction: int) -> dict:
     For now just checking limit switches, eventually
     we need to process other input like a cancel
     request from a web app"""
-    global BREAK_EXIT_REASON
-
     try:
         if BEANSTALK:  # if we have a queue, check for user cancel
             BEANSTALK.watch(CANCEL_QUEUE)
@@ -74,13 +73,12 @@ def yield_function(direction: int) -> dict:
                 return {'exit':'cancel'}
 
     except beanstalk.CommandFailed:
-        print("yield_function(): beanstalk CommandFail!")
+        pass
     except beanstalk.DeadlineSoon:
         # save to ignore since it just means there's something pending
         pass
 
     if direction == Raspi_MotorHAT.FORWARD:
-        BREAK_EXIT_REASON = 'CCW'
         if CCW_MAX_SWITCH.is_pressed():
             return {'exit': 'ccw'}
         return None
@@ -100,8 +98,6 @@ MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
                            debug=False)
 
 
-# if somehow we exit, try to make sure the motors are
-# turned off, otherwise they may heat up
 def turn_off_motors():
     """disable motors. This will be called 'at exit' so
     motors don't overheat when idle and energized"""
@@ -109,11 +105,6 @@ def turn_off_motors():
 
 
 atexit.register(turn_off_motors)
-
-STEP_CAMERA_CCW = Raspi_MotorHAT.FORWARD
-STEP_CAMERA_CW = Raspi_MotorHAT.BACKWARD
-STEP_MODEL_CCW = Raspi_MotorHAT.FORWARD
-STEP_MODEL_CW = Raspi_MotorHAT.BACKWARD
 
 
 def move_camera(step_dir: int, switch: limit_switch.LimitSwitch) -> int:
@@ -149,7 +140,7 @@ def home_camera(queue: beanstalk.Connection) -> int:
     span the extremes"""
     ccw_camera_home(queue)
     travel = abs(cw_camera_home(queue))
-    print("homing complete, travel steps = {0}".format(travel))
+    post_status(queue, 'homing complete, {0} steps'.format(travel))
     return travel
 
 
@@ -158,12 +149,15 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
     queue.use(STATUS_QUEUE)
     status_json = json.dumps({'msg': message})
     queue.put(status_json)
+    print(message)
 
 
 def take_picture(my_camera: camera.gp.camera, queue: beanstalk.Connection, rotation: int, declination: int) -> None:
     """take the picture"""
-    post_status(queue, "taking picture")
-    camera.take_picture(my_camera, rotation, declination)
+    post_status(queue, "taking picture R{0}:D{1}".
+                format(rotation, declination))
+    file_name = camera.take_picture(my_camera, rotation, declination)
+    post_status(queue, "Filename={0}".format(file_name))
 
 
 def wait_for_work(queue: beanstalk.Connection) -> str:
@@ -192,7 +186,7 @@ def photograph_model(declination_divisions: int,
     try:
         rig_camera = camera.init_camera()
         if not rig_camera:
-            print("Did not get camera object!!")
+            post_status(status_queue, "Did not get camera object!")
             return
     except camera.gp.GPhoto2Error:
         post_status(status_queue, 'Camera is off!')
@@ -235,6 +229,7 @@ def photograph_model(declination_divisions: int,
         # free up the camera now that we don't need it
         camera.exit_camera(rig_camera)
 
+
 def main():
     """This is the main entry point of the program, where all the magic happens"""
     # okay time to run things
@@ -269,7 +264,6 @@ def main():
 
         if job_dict['task'] == 'scan':
             try:
-                print('scan command received')
                 post_status(BEANSTALK, "scan command received!")
                 declination_divisions = int(job_dict['steps']['declination'])
                 rotation_divisions = int(job_dict['steps']['rotation'])
@@ -297,7 +291,7 @@ def main():
                   format(total_pictures_to_take))
 
             if not is_homed:
-                print("homing system prior to scan...")
+                post_status(BEANSTALK, 'homing system prior to scan...')
                 declination_travel_steps = home_camera(queue=BEANSTALK)
                 is_homed = True
 
@@ -327,7 +321,9 @@ def main():
 
             # move camera to starting position for pictures
             if declination_start > 0:
-                print('move to declination start {0}'.format(declination_start))
+                post_status(BEANSTALK,
+                            'move to declination start {0}'.
+                            format(declination_start))
                 forced_exit = camera_stepper.step(declination_start,
                                                   STEP_CAMERA_CCW,
                                                   Raspi_MotorHAT.DOUBLE)

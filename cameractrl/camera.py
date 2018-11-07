@@ -32,18 +32,15 @@ def init_camera() -> gp.camera:
     return camera
 
 
-def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> bool:
+def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> str:
     """take a picture and save it to the USB drive"""
-    print('Capturing image')
     file_path = gp.check_result(gp.gp_camera_capture(
         camera, gp.GP_CAPTURE_IMAGE))
-    print('Camera file path: {0}/{1}'.format(file_path.folder, file_path.name))
     target = os.path.join('/mnt/usb', 'P{dec:02d}{rot:02d}_'.format(dec=declination_pos, rot=rotation_pos) + file_path.name)
-    print('Copying image to', target)
     camera_file = gp.check_result(gp.gp_camera_file_get(
             camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
     gp.check_result(gp.gp_file_save(camera_file, target))
-    return True
+    return target
 
 
 def exit_camera(camera: gp.camera) -> None:
