@@ -53,9 +53,9 @@
                 clearTimeout(interval);
 
                 // Append copy of current item to bottom of list
-                $(copy)
-                    .css('display', 'none')
-                    .appendTo(list);
+//                $(copy)
+//                    .css('display', 'none')
+//                    .appendTo(list);
 
                 // Fade current item out, remove from DOM then animate the next item
                 item.fadeOut(opts.fadeOut, function()
