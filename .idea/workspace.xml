@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cameractrl/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameractrl/camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-    </list>
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/website/home-landing.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="467">
-              <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+              <caret line="54" column="44" lean-forward="true" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -136,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="273" column="17" lean-forward="true" selection-start-line="273" selection-start-column="17" selection-end-line="273" selection-end-column="17" />
+            <state relative-caret-position="69">
+              <caret line="258" column="9" selection-start-line="258" selection-start-column="9" selection-end-line="258" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -148,17 +144,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/scripts/ticker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="963">
-              <caret line="115" column="13" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="17" />
+            <state relative-caret-position="840">
+              <caret line="115" column="13" lean-forward="true" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="180" selection-start-line="180" selection-end-line="180" />
+            <state relative-caret-position="258">
+              <caret line="189" column="18" lean-forward="true" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -166,11 +162,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+            <state relative-caret-position="176">
+              <caret line="20" column="4" selection-start-line="2" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -178,8 +174,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="417">
+              <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+              <folding>
+                <element signature="e#830#844#0" expanded="true" />
+                <marker date="1541606453376" expanded="true" signature="950:1215" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_rig_runner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+                <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
+              <folding>
+                <element signature="e#48#58#0" expanded="true" />
+                <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
+                <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -280,11 +316,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="602" />
-    <option name="y" value="160" />
-    <option name="width" value="2023" />
-    <option name="height" value="1573" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="396" />
+    <option name="y" value="435" />
+    <option name="width" value="2021" />
+    <option name="height" value="1571" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -324,7 +360,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../genesis/venv/Lib/site-packages/pylint/lint.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.gitignore" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
@@ -843,10 +879,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="733" extended-state="6" />
-    <editor active="true" />
+    <frame x="1297" y="415" width="2021" height="1571" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.15303643" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -857,7 +892,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4994618" weight="0.32965165" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4994618" visible="true" weight="0.32962447" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
@@ -1101,29 +1136,29 @@
     <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py" />
     <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        <state relative-caret-position="176">
+          <caret line="20" column="4" selection-start-line="2" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/home-landing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+          <caret line="54" column="44" lean-forward="true" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/scripts/ticker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="963">
-          <caret line="115" column="13" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="17" />
+        <state relative-caret-position="840">
+          <caret line="115" column="13" lean-forward="true" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="273" column="17" lean-forward="true" selection-start-line="273" selection-start-column="17" selection-end-line="273" selection-end-column="17" />
+        <state relative-caret-position="69">
+          <caret line="258" column="9" selection-start-line="258" selection-start-column="9" selection-end-line="258" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -1132,9 +1167,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="396">
+          <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
+            <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
+            <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1145,28 +1183,33 @@
           <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
+            <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="46" lean-forward="true" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+        <state relative-caret-position="550">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="417">
+          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+          <folding>
+            <element signature="e#830#844#0" expanded="true" />
+            <marker date="1541606453376" expanded="true" signature="950:1215" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="180" selection-start-line="180" selection-end-line="180" />
+        <state relative-caret-position="258">
+          <caret line="189" column="18" lean-forward="true" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
           </folding>
