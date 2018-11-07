@@ -271,7 +271,7 @@
                         console.log(JSON.parse(data));
                         json = JSON.parse(data)
                         if (json.msg) { // get and check data value
-                            $('#status_ticker ol').append('<li>' + json.msg + '</li>'); // get and print data string
+                            $('.ticker').append('<li>' + json.msg + '</li>'); // get and print data string
                         }
                     }
                 },
