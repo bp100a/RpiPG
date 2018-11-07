@@ -309,7 +309,7 @@
         });
     </script>
     <script type="text/javascript" charset="utf-8">
-        let declination_stops = document.querySelector('#camera_rotation');
+        var declination_stops = document.querySelector('#camera_rotation');
         let declination_value = document.querySelector('#camera_value');
         let total_value = document.querySelector('#total_value');
         let declination_label = 'declination steps';
@@ -331,7 +331,7 @@
         };
     </script>
     <script type="text/javascript" charset="utf-8">
-        let rotation_stops = document.querySelector('#model_rotation');
+        var rotation_stops = document.querySelector('#model_rotation');
         let rotation_value = document.querySelector('#rotation_value');
         let rotation_label = 'rotation steps';
         let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
