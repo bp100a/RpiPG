@@ -91,11 +91,11 @@
           <entry key="css" value="8" />
           <entry key="dummy" value="68" />
           <entry key="gitignore" value="43" />
-          <entry key="html" value="6105" />
+          <entry key="html" value="6227" />
           <entry key="js" value="2" />
           <entry key="py" value="25995" />
           <entry key="sh" value="2410" />
-          <entry key="txt" value="5230" />
+          <entry key="txt" value="5324" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -103,9 +103,9 @@
           <entry key="Bash" value="2410" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="6105" />
+          <entry key="HTML" value="6227" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="5341" />
+          <entry key="PLAIN_TEXT" value="5435" />
           <entry key="Python" value="25995" />
         </counts>
       </usages-collector>
@@ -137,8 +137,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="328" column="37" lean-forward="true" selection-start-line="328" selection-start-column="37" selection-end-line="328" selection-end-column="37" />
+            <state relative-caret-position="370">
+              <caret line="274" column="25" lean-forward="true" selection-start-line="274" selection-start-column="25" selection-end-line="274" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -239,10 +239,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>calculate</find>
-      <find>release</find>
-      <find>rpm</find>
-      <find>speed</find>
       <find>start</find>
       <find>alert</find>
       <find>total_pic</find>
@@ -268,7 +264,11 @@
       <find>post_status</find>
       <find>print</find>
       <find>take_p</find>
+      <find>let</find>
       <find>rotation_stops</find>
+      <find>rotation_value</find>
+      <find>rotation_label</find>
+      <find>2000</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -323,8 +323,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="396" />
-    <option name="y" value="435" />
+    <option name="x" value="1598" />
+    <option name="y" value="470" />
     <option name="width" value="2021" />
     <option name="height" value="1571" />
   </component>
@@ -393,20 +393,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_rig_runner.py">
-    <configuration name="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="RpiPG" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_rig_runner.TestRigRunner.test_calculate_steps&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+  <component name="RunManager" selected="JavaScript Debug.setup.html">
+    <configuration name="setup.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/setup.html">
       <method v="2" />
     </configuration>
     <configuration name="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -473,16 +461,16 @@
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" />
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offset" />
       <item itemvalue="Python tests.Unittests in test_rig_runner.py" />
-      <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps" />
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offsets" />
+      <item itemvalue="JavaScript Debug.setup.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.setup.html" />
         <item itemvalue="Python tests.Unittests in test_rig_runner.py" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offsets" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offset" />
-        <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps" />
       </list>
     </recent_temporary>
   </component>
@@ -496,20 +484,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00122" summary="fix dictionary we send">
-      <created>1541115109008</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1541115109008</updated>
-    </task>
-    <task id="LOCAL-00123" summary="print out some stuff">
-      <created>1541115304909</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1541115304909</updated>
     </task>
     <task id="LOCAL-00124" summary="for cancel print out the body of the message">
       <created>1541115606811</created>
@@ -840,7 +814,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541606712013</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="error with let/var redeclaration">
+      <created>1541607344783</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1541607344783</updated>
+    </task>
+    <task id="LOCAL-00172" summary="fix variable scoping in javascript">
+      <created>1541609333333</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1541609333333</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -885,7 +873,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="396" y="435" width="2021" height="1571" extended-state="0" />
+    <frame x="1598" y="470" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
@@ -894,12 +882,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39568844" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.4994618" visible="true" weight="0.32962447" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4994618" weight="0.32962447" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
@@ -941,8 +929,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="handle end-stop is last camera position" />
-    <MESSAGE value="print out the remaining steps &amp; steps/declination when endstop hit" />
     <MESSAGE value="ignore switches when rotating for exit reasons" />
     <MESSAGE value="some restructuring of the code" />
     <MESSAGE value="round up!" />
@@ -966,7 +952,9 @@
     <MESSAGE value="for 204 (empty success), don't process the JSON object as there is none!" />
     <MESSAGE value="fix update of status ticker" />
     <MESSAGE value="ignore .idea files we shouldn't track" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore .idea files we shouldn't track" />
+    <MESSAGE value="error with let/var redeclaration" />
+    <MESSAGE value="fix variable scoping in javascript" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix variable scoping in javascript" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1222,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/setup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="328" column="37" lean-forward="true" selection-start-line="328" selection-start-column="37" selection-end-line="328" selection-end-column="37" />
+        <state relative-caret-position="370">
+          <caret line="274" column="25" lean-forward="true" selection-start-line="274" selection-start-column="25" selection-end-line="274" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

@@ -267,7 +267,7 @@
                 dataType: 'json',
                 type: 'get',
                 success: function(data) { // check if available
-                    if (this.hasContent) {
+                    if (data != null) {
                         console.log(JSON.parse(data));
                         json = JSON.parse(data)
                         if (json.msg) { // get and check data value
@@ -280,9 +280,9 @@
                 }
               });
             },
-            pollInterval = setInterval(function() { // run function every 2000 ms
+            pollInterval = setInterval(function() { // run function every 10 seconds
               poll();
-              }, 2000);
+              }, 10000);
             poll(); // also run function on init
         })();
     </script>
