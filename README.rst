@@ -35,7 +35,7 @@ The website is based on a template from the Envato_ market called Kolor_. The cr
 
 .. _Kolor: https://themeforest.net/item/kolor-mobile-mobile-template/22129337?s_rank=1
 
-.. roundSlider: http://roundsliderui.com/
+.. _roundSlider: http://roundsliderui.com/
 
 **The Camera**
 
