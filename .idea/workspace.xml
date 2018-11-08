@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="freshen up deployment, now modifies rc.local">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -66,20 +67,20 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="13" />
           <entry key="js" value="5" />
-          <entry key="png" value="1" />
+          <entry key="png" value="2" />
           <entry key="py" value="28" />
           <entry key="rst" value="2" />
-          <entry key="sh" value="8" />
+          <entry key="sh" value="11" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="8" />
+          <entry key="Bash" value="11" />
           <entry key="BuildoutCfg" value="3" />
           <entry key="CSS" value="9" />
           <entry key="HTML" value="13" />
-          <entry key="Image" value="1" />
+          <entry key="Image" value="2" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="28" />
@@ -95,22 +96,22 @@
           <entry key="html" value="6234" />
           <entry key="js" value="14" />
           <entry key="nginx" value="3" />
-          <entry key="py" value="26082" />
-          <entry key="rst" value="2661" />
-          <entry key="sh" value="2410" />
-          <entry key="txt" value="5680" />
+          <entry key="py" value="26146" />
+          <entry key="rst" value="3909" />
+          <entry key="sh" value="2918" />
+          <entry key="txt" value="5769" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="2410" />
+          <entry key="Bash" value="2918" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
           <entry key="HTML" value="6234" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="5791" />
-          <entry key="Python" value="26082" />
-          <entry key="ReST" value="2661" />
+          <entry key="PLAIN_TEXT" value="5880" />
+          <entry key="Python" value="26146" />
+          <entry key="ReST" value="3909" />
           <entry key="nginx file type" value="3" />
         </counts>
       </usages-collector>
@@ -133,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="265">
+              <caret line="288" selection-start-line="288" selection-end-line="288" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -145,8 +146,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+            <state relative-caret-position="799">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -218,8 +228,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>start</find>
-      <find>alert</find>
       <find>total_pic</find>
       <find>forced_exit</find>
       <find>step</find>
@@ -248,6 +256,8 @@
       <find>rotation_value</find>
       <find>rotation_label</find>
       <find>2000</find>
+      <find>exit</find>
+      <find>IPADDR</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -286,13 +296,13 @@
         <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
-        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
         <option value="$PROJECT_DIR$/cameractrl/camera.py" />
         <option value="$PROJECT_DIR$/website/deploy/conf.nginx" />
+        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/README.rst" />
       </list>
     </option>
@@ -325,11 +335,6 @@
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="cameractrl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -342,17 +347,6 @@
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="rpihat" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="deploy" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -363,7 +357,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/Users/Harry/Downloads/jticker-master/jticker-master/jquery.jticker.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../genesis/deploy/debian_iiserver.sh" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -481,34 +475,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00130" summary="don't initialize travel steps every pass in loop! need to persist after homing">
-      <created>1541165946568</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1541165946568</updated>
-    </task>
-    <task id="LOCAL-00131" summary="reverse start/stop">
-      <created>1541166267595</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1541166267595</updated>
-    </task>
-    <task id="LOCAL-00132" summary="reverse stop switches">
-      <created>1541269503236</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1541269503236</updated>
-    </task>
-    <task id="LOCAL-00133" summary="fix declination starting offset&#10;rotate then declinate">
-      <created>1541281311616</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1541281311616</updated>
     </task>
     <task id="LOCAL-00134" summary="fix declination starting offset&#10;rotate then declinate">
       <created>1541281403678</created>
@@ -825,7 +791,35 @@
       <option name="project" value="LOCAL" />
       <updated>1541698465318</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="fix markup issues">
+      <created>1541698715800</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1541698715800</updated>
+    </task>
+    <task id="LOCAL-00180" summary="typo">
+      <created>1541698780146</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1541698780146</updated>
+    </task>
+    <task id="LOCAL-00181" summary="freshen up deployment, now modifies rc.local">
+      <created>1541707588850</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1541707588850</updated>
+    </task>
+    <task id="LOCAL-00182" summary="add image to README">
+      <created>1541713281575</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1541713281575</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -926,10 +920,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="no yield_function for rotation stepper" />
-    <MESSAGE value="fix up some javscript warnings&#10;add build of gphoto2/libgphoto2 to deployment script" />
-    <MESSAGE value="close &lt;input&gt;" />
-    <MESSAGE value="close &lt;p&gt;" />
     <MESSAGE value="some code cleanup&#10;handle no yield_function properly" />
     <MESSAGE value="oops! left direction out of is_yielding() call" />
     <MESSAGE value="remove x window call to open photo" />
@@ -951,7 +941,11 @@
     <MESSAGE value="commenting out append disables display of new items ??" />
     <MESSAGE value="add a README file to detail what's been done" />
     <MESSAGE value="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi" />
+    <MESSAGE value="fix markup issues" />
+    <MESSAGE value="typo" />
+    <MESSAGE value="freshen up deployment, now modifies rc.local" />
+    <MESSAGE value="add image to README" />
+    <option name="LAST_COMMIT_MESSAGE" value="add image to README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1043,13 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/gphoto2_install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/update.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1091,13 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1198,16 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/rpi_conf.nginx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1218,12 +1188,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+    <entry file="file://$PROJECT_DIR$/website/deploy/gphoto2_install.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        <state relative-caret-position="594">
+          <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="288" selection-start-line="288" selection-end-line="288" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../genesis/deploy/debian_iiserver.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2178">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/scan_screenshot.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
