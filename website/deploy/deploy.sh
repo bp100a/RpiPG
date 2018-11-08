@@ -42,6 +42,10 @@ sudo apt-get install libiff-dev             # to build gphoto2-cffi
 pip3 install -r ~/RpiPG/requirements.txt
 pip3 install gunicorn
 
+# need NTFS filesystem for USB drives
+sudo apt-get install ntfs-3g
+# create the mount point
+
 # Time to startup the app. There are three pieces:
 #    1) rig_runner.py (controls the rig)
 #    2) beanstalk (communication queue)
@@ -55,12 +59,22 @@ python3 ~/RpiPG/rig_runner.py &
 
 # start the website & REST api
 # start up NGINX
+sudo cp -r ~/RpiPG/website/* /var/www/html
+sudo cp ~/RpiPG/website/deploy/conf.nginx /etc/nginx/nginx.conf
 sudo service nginx start
-~/RpiPG/website/deploy/startup.sh
+# start the gunicorn server
+./restapi/startup.sh
 
-# need NTFS filesystem for USB drives
-sudo apt-get install ntfs-3g
-# create the mount point
 mkdir /mnt/usb
 # now make sure our pi user can access it
 sudo mount  -o uid=pi,gid=pi /dev/sda1 /mnt/usb
+
+cd /etc
+sed -i "s/exit 0//g" rc.local
+echo -e "cd /home/pi/RpiPG\n" >> rc.local
+echo -e "beanstalkd -l 127.0.0.1 -p 14711 &\n" >> rc.local
+echo -e "sudo mount -o uid=pi,gid=pi /dev/sda1 /mnt/usb\n" >> rc.local
+echo -e "gunicorn --bind 127.0.0.1:8081 --name rig_control --workers=5 --timeout 120 --log-file /var/log/rig_control/error.log --access-logfile /var/log/rig_control/access.log rig_control:app --pid /var/run/rig_control.pid &\n" >> rc.local
+echo -e "python3 rig_running.py &\n" >> rc.local
+echo -e "sudo service nginx start\n" >> rc.local
+echo -e "\nexit 0\n" >> rc.local

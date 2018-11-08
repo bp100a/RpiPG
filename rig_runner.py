@@ -247,9 +247,10 @@ def main():
     print(CCW_MAX_SWITCH.__str__())
     print(CW_MAX_SWITCH.__str__())
 
-    print("\n**********************")
-    print("\n** waiting for jobs **")
-    print("\n**********************\n")
+    print("\n")
+    print("**********************\n")
+    print("** waiting for jobs **\n")
+    print("**********************\n")
     is_homed = False
     declination_travel_steps = 0 # number of steps between min/max endstops
     forced_exit = None
