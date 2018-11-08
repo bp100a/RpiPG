@@ -52,6 +52,9 @@ Finding a camera that would work with the gphoto2 software library (and wasn't a
 
 I tested about 5 cameras (several I had on hand, and two I purchased on eBay) before I found one that worked. The S3300 is compact and has good resolution, and best of all can be powered via the USB cable.
 
+.. image:: https://raw.githubusercontent.com/bp100a/RpiPG/master/docs/S3300.jpg
+   :height: 350
+   :align: center
 
 Regards,
 
