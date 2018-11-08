@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/S3300.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/S3300RM_EU(En)01.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,9 +97,9 @@
           <entry key="js" value="14" />
           <entry key="nginx" value="3" />
           <entry key="py" value="26146" />
-          <entry key="rst" value="3909" />
+          <entry key="rst" value="3944" />
           <entry key="sh" value="2918" />
-          <entry key="txt" value="5800" />
+          <entry key="txt" value="5831" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -110,9 +109,9 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="6234" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="5911" />
+          <entry key="PLAIN_TEXT" value="5942" />
           <entry key="Python" value="26146" />
-          <entry key="ReST" value="3909" />
+          <entry key="ReST" value="3944" />
           <entry key="nginx file type" value="3" />
         </counts>
       </usages-collector>
@@ -162,14 +161,9 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/S3300.jpg">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -481,20 +475,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00135" summary="remove old debug code">
-      <created>1541281573761</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1541281573761</updated>
-    </task>
-    <task id="LOCAL-00136" summary="invert start/stop sense (100 - x)">
-      <created>1541281938559</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1541281938559</updated>
     </task>
     <task id="LOCAL-00137" summary="fix int() typing">
       <created>1541282230590</created>
@@ -825,7 +805,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541714036921</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="S3300 references">
+      <created>1541714442814</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1541714442814</updated>
+    </task>
+    <task id="LOCAL-00185" summary="README updates">
+      <created>1541714679359</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1541714679359</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -871,6 +865,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1598" y="470" width="2021" height="1571" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
@@ -925,8 +920,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="oops! left direction out of is_yielding() call" />
-    <MESSAGE value="remove x window call to open photo" />
     <MESSAGE value="save to USB thumbdrive" />
     <MESSAGE value="fix spacing" />
     <MESSAGE value="fix usb path" />
@@ -950,7 +943,9 @@
     <MESSAGE value="freshen up deployment, now modifies rc.local" />
     <MESSAGE value="add image to README" />
     <MESSAGE value="updated README with pictures!" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated README with pictures!" />
+    <MESSAGE value="S3300 references" />
+    <MESSAGE value="README updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="README updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1234,11 +1229,11 @@
     <entry file="file://$PROJECT_DIR$/docs/scan_screenshot.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/S3300.jpg">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>
 </project>

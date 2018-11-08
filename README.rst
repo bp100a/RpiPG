@@ -36,7 +36,7 @@ Once again beanstalk is a pleasure to work with, much simpler and easier to impl
 The website is based on a template from the Envato_ market called Kolor_. The crown jewel of the website is the circular slider I found called roundSlider_. It's totally awesome and the structure of the Kolor templates makes it easy to integrate.
 
 .. image:: https://raw.githubusercontent.com/bp100a/RpiPG/master/docs/scan_screenshot.png
-   :height: 750
+   :height: 500
    :align: center
 
 I'm using jquery/ajax calls to read/write the REST APIs, for now you can "home" and initiate a "scan". There is a "status" API that I poll that basically displays internal status of the rig controlling software to a jquery Ticker (I need a new ticker, this one doesn't work quite how I want it to).
