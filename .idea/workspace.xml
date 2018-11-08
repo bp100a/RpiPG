@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="add a README file to detail what's been done">
+      <change afterPath="$PROJECT_DIR$/docs/pin_layout.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameractrl/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameractrl/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/deploy/nginx.conf" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,13 +64,14 @@
     <session id="1228776072">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="conf" value="1" />
+          <entry key="conf" value="3" />
           <entry key="css" value="9" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="13" />
           <entry key="js" value="5" />
           <entry key="png" value="1" />
           <entry key="py" value="28" />
+          <entry key="rst" value="1" />
           <entry key="sh" value="8" />
           <entry key="txt" value="5" />
         </counts>
@@ -75,13 +79,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="8" />
-          <entry key="BuildoutCfg" value="1" />
+          <entry key="BuildoutCfg" value="3" />
           <entry key="CSS" value="9" />
           <entry key="HTML" value="13" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="28" />
+          <entry key="ReST" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -91,10 +96,12 @@
           <entry key="dummy" value="68" />
           <entry key="gitignore" value="43" />
           <entry key="html" value="6234" />
-          <entry key="js" value="2" />
-          <entry key="py" value="25995" />
+          <entry key="js" value="14" />
+          <entry key="nginx" value="3" />
+          <entry key="py" value="26082" />
+          <entry key="rst" value="2658" />
           <entry key="sh" value="2410" />
-          <entry key="txt" value="5407" />
+          <entry key="txt" value="5553" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -103,9 +110,11 @@
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
           <entry key="HTML" value="6234" />
-          <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="5518" />
-          <entry key="Python" value="25995" />
+          <entry key="JavaScript" value="14" />
+          <entry key="PLAIN_TEXT" value="5664" />
+          <entry key="Python" value="26082" />
+          <entry key="ReST" value="2658" />
+          <entry key="nginx file type" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -125,31 +134,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/setup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1096">
-              <caret line="289" column="41" lean-forward="true" selection-start-line="289" selection-start-column="41" selection-end-line="289" selection-end-column="41" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/website/scripts/ticker.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="189" column="18" lean-forward="true" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
+            <state relative-caret-position="440">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
               </folding>
@@ -157,11 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+            <state relative-caret-position="601">
+              <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -169,11 +157,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+            <state>
               <folding>
                 <element signature="e#830#844#0" expanded="true" />
-                <marker date="1541606453376" expanded="true" signature="950:1215" ph="..." />
+                <marker date="1541698166915" expanded="true" signature="950:1215" ph="..." />
               </folding>
             </state>
           </provider>
@@ -183,7 +170,7 @@
         <entry file="file://$PROJECT_DIR$/util.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="550">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -191,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="506">
+              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
                 <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
@@ -204,7 +191,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="6534">
               <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
               <folding>
                 <element signature="e#48#58#0" expanded="true" />
@@ -291,7 +278,6 @@
         <option value="$PROJECT_DIR$/website/homerig.html" />
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/website/styles/ticker.css" />
-        <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
@@ -299,10 +285,13 @@
         <option value="$PROJECT_DIR$/website/home-landing.html" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
-        <option value="$PROJECT_DIR$/cameractrl/camera.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/website/setup.html" />
+        <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
+        <option value="$PROJECT_DIR$/README.rst" />
+        <option value="$PROJECT_DIR$/cameractrl/camera.py" />
+        <option value="$PROJECT_DIR$/website/deploy/conf.nginx" />
       </list>
     </option>
   </component>
@@ -339,12 +328,28 @@
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="restapi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="rpihat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="deploy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -358,7 +363,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="D:/Users/Harry/Downloads/jticker-master/jticker-master/jquery.jticker.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -474,27 +479,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00126" summary="post_status() screwing up!">
-      <created>1541115893154</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1541115893154</updated>
-    </task>
-    <task id="LOCAL-00127" summary=".use instead of .watch for queue inputs">
-      <created>1541116447922</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1541116447922</updated>
-    </task>
-    <task id="LOCAL-00128" summary="create new step calculator that includes the offset">
-      <created>1541165064434</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1541165064434</updated>
     </task>
     <task id="LOCAL-00129" summary="print out values">
       <created>1541165687736</created>
@@ -818,7 +802,28 @@
       <option name="project" value="LOCAL" />
       <updated>1541610616820</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="modified ticker so content isn't repeated">
+      <created>1541626628855</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1541626628856</updated>
+    </task>
+    <task id="LOCAL-00176" summary="commenting out append disables display of new items ??">
+      <created>1541626968884</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1541626968884</updated>
+    </task>
+    <task id="LOCAL-00177" summary="add a README file to detail what's been done">
+      <created>1541691791266</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1541691791266</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -866,13 +871,13 @@
     <frame x="1598" y="470" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39568844" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
@@ -919,9 +924,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="round up!" />
-    <MESSAGE value="adding items to jquery ticker" />
-    <MESSAGE value="log status to console" />
     <MESSAGE value="parse the JSON returned by status api" />
     <MESSAGE value="no yield_function for rotation stepper" />
     <MESSAGE value="fix up some javscript warnings&#10;add build of gphoto2/libgphoto2 to deployment script" />
@@ -944,7 +946,10 @@
     <MESSAGE value="fix variable scoping in javascript" />
     <MESSAGE value="check for data &quot;not null&quot; to determine if we display new status" />
     <MESSAGE value="add item to list" />
-    <option name="LAST_COMMIT_MESSAGE" value="add item to list" />
+    <MESSAGE value="modified ticker so content isn't repeated" />
+    <MESSAGE value="commenting out append disables display of new items ??" />
+    <MESSAGE value="add a README file to detail what's been done" />
+    <option name="LAST_COMMIT_MESSAGE" value="add a README file to detail what's been done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1050,13 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/__init__.py" />
     <entry file="file://$PROJECT_DIR$/website/homerig.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1126,78 +1124,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
-          <folding>
-            <element signature="e#48#58#0" expanded="true" />
-            <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
-            <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
-          <folding>
-            <element signature="e#830#844#0" expanded="true" />
-            <marker date="1541606453376" expanded="true" signature="950:1215" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="189" column="18" lean-forward="true" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/setup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1096">
-          <caret line="289" column="41" lean-forward="true" selection-start-line="289" selection-start-column="41" selection-end-line="289" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1209,10 +1139,90 @@
     <entry file="file://D:/Users/Harry/Downloads/jticker-master/jticker-master/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#830#844#0" expanded="true" />
+            <marker date="1541698166915" expanded="true" signature="950:1215" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6534">
+          <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+            <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
+            <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="289" column="41" selection-start-line="289" selection-start-column="41" selection-end-line="289" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/scripts/ticker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+        <state relative-caret-position="6">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/rpi_conf.nginx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/conf.nginx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
         </state>
       </provider>
     </entry>

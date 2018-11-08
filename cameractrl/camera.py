@@ -44,10 +44,12 @@ def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> 
 
 
 def exit_camera(camera: gp.camera) -> None:
+    """free up the camera resource"""
     gp.check_result(gp.gp_camera_exit(camera))
 
 
 def main():
+    """simple standalone testing, take some pictures"""
     camera = init_camera()
     for d in range(0, 3):
         for r in range(0,2):
