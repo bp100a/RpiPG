@@ -11,7 +11,7 @@ The physical rig is 3D printed from this Thingiverse model Photogrammetry_.
 
 .. _Photogrammetry: https://www.thingiverse.com/thing:2944570
 
-Just a note. This is a work in progress. What you see is a moving target both in terms of software and hardware. The 3D printed rig is unstable, I'm working on ways to improve it's rigidity. The software is an MVP, it works but there's no unit tests and it needs major refactoring. But it works, which is way better than a beautiful design that doesn't.
+Just a note. This is a work in progress. What you see is a moving target both in terms of software and hardware. The 3D printed rig is unstable, I'm working on ways to improve it's rigidity. The software is an MVP, it works but there're no unit tests and it needs major refactoring. But it works, which is way better than a beautiful design that doesn't.
 
 
 How it works

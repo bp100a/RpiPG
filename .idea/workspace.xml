@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="add a README file to detail what's been done">
-      <change afterPath="$PROJECT_DIR$/docs/pin_layout.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cameractrl/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameractrl/camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/deploy/nginx.conf" beforeDir="false" />
+    <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,7 +68,7 @@
           <entry key="js" value="5" />
           <entry key="png" value="1" />
           <entry key="py" value="28" />
-          <entry key="rst" value="1" />
+          <entry key="rst" value="2" />
           <entry key="sh" value="8" />
           <entry key="txt" value="5" />
         </counts>
@@ -86,7 +83,7 @@
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="28" />
-          <entry key="ReST" value="1" />
+          <entry key="ReST" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -99,9 +96,9 @@
           <entry key="js" value="14" />
           <entry key="nginx" value="3" />
           <entry key="py" value="26082" />
-          <entry key="rst" value="2658" />
+          <entry key="rst" value="2661" />
           <entry key="sh" value="2410" />
-          <entry key="txt" value="5553" />
+          <entry key="txt" value="5680" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -111,9 +108,9 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="6234" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="5664" />
+          <entry key="PLAIN_TEXT" value="5791" />
           <entry key="Python" value="26082" />
-          <entry key="ReST" value="2658" />
+          <entry key="ReST" value="2661" />
           <entry key="nginx file type" value="3" />
         </counts>
       </usages-collector>
@@ -145,13 +142,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+            <state relative-caret-position="689">
+              <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -289,9 +291,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
-        <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/cameractrl/camera.py" />
         <option value="$PROJECT_DIR$/website/deploy/conf.nginx" />
+        <option value="$PROJECT_DIR$/README.rst" />
       </list>
     </option>
   </component>
@@ -479,13 +481,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00129" summary="print out values">
-      <created>1541165687736</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1541165687736</updated>
     </task>
     <task id="LOCAL-00130" summary="don't initialize travel steps every pass in loop! need to persist after homing">
       <created>1541165946568</created>
@@ -823,7 +818,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541691791266</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi">
+      <created>1541698465317</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1541698465318</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -924,7 +926,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="parse the JSON returned by status api" />
     <MESSAGE value="no yield_function for rotation stepper" />
     <MESSAGE value="fix up some javscript warnings&#10;add build of gphoto2/libgphoto2 to deployment script" />
     <MESSAGE value="close &lt;input&gt;" />
@@ -949,7 +950,8 @@
     <MESSAGE value="modified ticker so content isn't repeated" />
     <MESSAGE value="commenting out append disables display of new items ??" />
     <MESSAGE value="add a README file to detail what's been done" />
-    <option name="LAST_COMMIT_MESSAGE" value="add a README file to detail what's been done" />
+    <MESSAGE value="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1139,9 +1141,6 @@
     <entry file="file://D:/Users/Harry/Downloads/jticker-master/jticker-master/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1221,10 +1220,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+        <state relative-caret-position="689">
+          <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>
 </project>
