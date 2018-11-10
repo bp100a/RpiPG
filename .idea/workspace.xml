@@ -96,13 +96,13 @@
           <entry key="css" value="8" />
           <entry key="dummy" value="68" />
           <entry key="gitignore" value="43" />
-          <entry key="html" value="6523" />
+          <entry key="html" value="6571" />
           <entry key="js" value="14" />
           <entry key="nginx" value="3" />
           <entry key="py" value="27484" />
           <entry key="rst" value="3950" />
           <entry key="sh" value="2979" />
-          <entry key="txt" value="5867" />
+          <entry key="txt" value="5890" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -110,9 +110,9 @@
           <entry key="Bash" value="2979" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="6523" />
+          <entry key="HTML" value="6571" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="5978" />
+          <entry key="PLAIN_TEXT" value="6001" />
           <entry key="Python" value="27484" />
           <entry key="ReST" value="3950" />
           <entry key="nginx file type" value="3" />
@@ -138,7 +138,7 @@
         <entry file="file://$PROJECT_DIR$/website/home-landing.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="577">
-              <caret line="52" column="196" selection-start-line="52" selection-start-column="196" selection-end-line="52" selection-end-column="196" />
+              <caret line="52" column="187" selection-start-line="52" selection-start-column="187" selection-end-line="52" selection-end-column="187" />
             </state>
           </provider>
         </entry>
@@ -199,7 +199,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="920">
               <caret line="349" selection-start-line="349" selection-end-line="349" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -485,20 +485,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00140" summary="clean up code, 9.60 pylint score!">
-      <created>1541293703173</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1541293703174</updated>
-    </task>
-    <task id="LOCAL-00141" summary="comment out alert() box when scanning">
-      <created>1541346417160</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1541346417160</updated>
     </task>
     <task id="LOCAL-00142" summary="adjust angle from 90-235 -&gt; 90-225">
       <created>1541346719572</created>
@@ -829,7 +815,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541813486149</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="harded URI address">
+      <created>1541813729836</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1541813729836</updated>
+    </task>
+    <task id="LOCAL-00190" summary="programmatic extraction">
+      <created>1541814118092</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1541814118092</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -930,7 +930,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix usb path" />
     <MESSAGE value="create picture taking loop" />
     <MESSAGE value="fix formatting of numbers for rotation &amp; declination" />
     <MESSAGE value="still screwing up formatting of filepath" />
@@ -955,7 +954,8 @@
     <MESSAGE value="README updates" />
     <MESSAGE value="google drive stuff" />
     <MESSAGE value="harded URI address" />
-    <option name="LAST_COMMIT_MESSAGE" value="harded URI address" />
+    <MESSAGE value="programmatic extraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="programmatic extraction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1214,17 +1214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="349" selection-start-line="349" selection-end-line="349" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1541784805462" expanded="true" signature="10691:11237" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="599">
@@ -1254,10 +1243,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="349" selection-start-line="349" selection-end-line="349" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1541784805462" expanded="true" signature="10691:11237" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/home-landing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
-          <caret line="52" column="196" selection-start-line="52" selection-start-column="196" selection-end-line="52" selection-end-column="196" />
+          <caret line="52" column="187" selection-start-line="52" selection-start-column="187" selection-end-line="52" selection-end-column="187" />
         </state>
       </provider>
     </entry>
