@@ -41,6 +41,7 @@ sudo apt-get install python-gphoto2cffi     # install Gphoto2 api
 sudo apt-get install libiff-dev             # to build gphoto2-cffi
 pip3 install -r ~/RpiPG/requirements.txt
 pip3 install gunicorn
+pip3 install --upgrade google-api-python-client oauth2client
 
 # need NTFS filesystem for USB drives
 sudo apt-get install ntfs-3g

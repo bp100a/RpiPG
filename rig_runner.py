@@ -152,11 +152,14 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
     print(message)
 
 
-def take_picture(my_camera: camera.gp.camera, queue: beanstalk.Connection, rotation: int, declination: int) -> None:
+def take_picture(my_camera: camera.gp.camera,
+                 queue: beanstalk.Connection,
+                 token: str,
+                 rotation: int, declination: int) -> None:
     """take the picture"""
     post_status(queue, "taking picture R{0}:D{1}".
                 format(rotation, declination))
-    file_name = camera.take_picture(my_camera, rotation, declination)
+    file_name = camera.take_picture(my_camera, token, rotation, declination)
     post_status(queue, "Filename={0}".format(file_name))
 
 
@@ -180,7 +183,8 @@ def photograph_model(declination_divisions: int,
                      steps_per_rotation: int,
                      status_queue: beanstalk.Connection,
                      rotate_stepper: Raspi_StepperMotor,
-                     camera_stepper: Raspi_StepperMotor) -> None:
+                     camera_stepper: Raspi_StepperMotor,
+                     access_token: str) -> None:
     """here's where we rotate the model, declinate the camera
     and take pictures"""
     try:
@@ -197,6 +201,7 @@ def photograph_model(declination_divisions: int,
         for rotation in range(0, rotation_divisions):
             take_picture(my_camera=rig_camera,
                          queue=status_queue,
+                         token= access_token,
                          rotation=rotation, declination=declination)
             forced_exit = rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
                                               Raspi_MotorHAT.DOUBLE)
@@ -254,16 +259,23 @@ def main():
     is_homed = False
     declination_travel_steps = 0 # number of steps between min/max endstops
     forced_exit = None
+    access_token = None  # our oAuth2 token to google drive
+
     while True:
         job_dict = wait_for_work(BEANSTALK)
-        if job_dict['task'] == 'home':
+        task = job_dict['task']
+        if task == 'home':
             declination_travel_steps = home_camera(queue=BEANSTALK)
             is_homed = True
             continue
 
         max_pictures = 200
 
-        if job_dict['task'] == 'scan':
+        if task == 'token':
+            code = job_dict['code']
+            scope = job_dict['scope']
+
+        if task == 'scan':
             try:
                 post_status(BEANSTALK, "scan command received!")
                 declination_divisions = int(job_dict['steps']['declination'])
@@ -337,7 +349,8 @@ def main():
                                  steps_per_rotation,
                                  BEANSTALK,
                                  rotate_stepper,
-                                 camera_stepper)
+                                 camera_stepper,
+                                 access_token)
 
             # we are done taking pictures, release the motors so we don't
             # overheat and remember we are no longer homed

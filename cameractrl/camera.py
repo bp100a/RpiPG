@@ -19,7 +19,9 @@
 import logging
 import os
 import sys
+import requests
 import gphoto2 as gp
+from googleapiclient.discovery import build
 
 
 def init_camera() -> gp.camera:
@@ -32,7 +34,8 @@ def init_camera() -> gp.camera:
     return camera
 
 
-def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> str:
+def take_picture(camera: gp.camera, token: str,
+                 rotation_pos: int, declination_pos: int) -> str:
     """take a picture and save it to the USB drive"""
     file_path = gp.check_result(gp.gp_camera_capture(
         camera, gp.GP_CAPTURE_IMAGE))
@@ -40,7 +43,29 @@ def take_picture(camera: gp.camera, rotation_pos: int, declination_pos: int) -> 
     camera_file = gp.check_result(gp.gp_camera_file_get(
             camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
     gp.check_result(gp.gp_file_save(camera_file, target))
+
+    if token:
+        write_file_google_drive(token, target)
+
     return target
+
+
+def write_file_google_drive(token:str, filename: str) -> bool:
+    headers = {"Authorization": "Bearer " + token}
+    para = {
+        "name": filename,
+        "parents": ["RpiPG"]
+    }
+    files = {
+        'data': {'metadata', json.dumps(para), 'applicaiton/json; charset=UTF-8'},
+        'file': {'image/jpeg', open(filename, "rb")}
+    }
+
+    r = requests.post(
+        "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
+        headers=headers,
+        files=files)
+    print(r.text)
 
 
 def exit_camera(camera: gp.camera) -> None:

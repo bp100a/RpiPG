@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameractrl/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/cameractrl/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restapi/rig_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/restapi/rig_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/home-landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/home-landing.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,29 +68,31 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="conf" value="3" />
-          <entry key="css" value="9" />
+          <entry key="css" value="10" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="13" />
+          <entry key="html" value="14" />
           <entry key="jpg" value="1" />
           <entry key="js" value="5" />
+          <entry key="nginx" value="1" />
           <entry key="png" value="2" />
-          <entry key="py" value="28" />
+          <entry key="py" value="30" />
           <entry key="rst" value="2" />
           <entry key="sh" value="11" />
-          <entry key="txt" value="5" />
+          <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="11" />
           <entry key="BuildoutCfg" value="3" />
-          <entry key="CSS" value="9" />
-          <entry key="HTML" value="13" />
+          <entry key="CSS" value="10" />
+          <entry key="HTML" value="14" />
           <entry key="Image" value="3" />
           <entry key="JavaScript" value="5" />
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="28" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="30" />
           <entry key="ReST" value="2" />
+          <entry key="nginx file type" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -93,25 +101,25 @@
           <entry key="css" value="8" />
           <entry key="dummy" value="68" />
           <entry key="gitignore" value="43" />
-          <entry key="html" value="6234" />
+          <entry key="html" value="6479" />
           <entry key="js" value="14" />
           <entry key="nginx" value="3" />
-          <entry key="py" value="26146" />
-          <entry key="rst" value="3944" />
-          <entry key="sh" value="2918" />
+          <entry key="py" value="27484" />
+          <entry key="rst" value="3950" />
+          <entry key="sh" value="2979" />
           <entry key="txt" value="5831" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="2918" />
+          <entry key="Bash" value="2979" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="6234" />
+          <entry key="HTML" value="6479" />
           <entry key="JavaScript" value="14" />
           <entry key="PLAIN_TEXT" value="5942" />
-          <entry key="Python" value="26146" />
-          <entry key="ReST" value="3944" />
+          <entry key="Python" value="27484" />
+          <entry key="ReST" value="3950" />
           <entry key="nginx file type" value="3" />
         </counts>
       </usages-collector>
@@ -132,12 +140,53 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/home-landing.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="577">
+              <caret line="52" column="197" selection-start-line="52" selection-start-column="197" selection-end-line="52" selection-end-column="197" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/deploy/conf.nginx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apikeys/oauth_client.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="44" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="288" selection-start-line="288" selection-end-line="288" />
+            <state relative-caret-position="599">
+              <caret line="161" column="29" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="35" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1272">
+              <caret line="70" selection-start-line="70" selection-end-line="70" />
+              <folding>
+                <element signature="e#828#842#0" expanded="true" />
+                <marker date="1541812091281" expanded="true" signature="1999:2452" ph="..." />
+                <marker date="1541812091281" expanded="true" signature="2495:2500" ph="..." />
               </folding>
             </state>
           </provider>
@@ -146,69 +195,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="464">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+        <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="595">
+              <caret line="349" selection-start-line="349" selection-end-line="349" />
               <folding>
-                <element signature="e#830#844#0" expanded="true" />
-                <marker date="1541698166915" expanded="true" signature="950:1215" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_rig_runner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-                <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6534">
-              <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
-              <folding>
-                <element signature="e#48#58#0" expanded="true" />
-                <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
-                <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
+                <element signature="e#0#15#0" expanded="true" />
+                <marker date="1541784805462" expanded="true" signature="10691:11237" ph="..." />
               </folding>
             </state>
           </provider>
@@ -228,8 +228,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>total_pic</find>
-      <find>forced_exit</find>
       <find>step</find>
       <find>.step</find>
       <find>home_camera</find>
@@ -258,6 +256,8 @@
       <find>2000</find>
       <find>exit</find>
       <find>IPADDR</find>
+      <find>post</find>
+      <find>photograph_model</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -288,22 +288,22 @@
         <option value="$PROJECT_DIR$/restapi/startup.sh" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/website/homerig.html" />
-        <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/website/styles/ticker.css" />
         <option value="$PROJECT_DIR$/rpihat/limit_switch.py" />
         <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/tests/test_rig_runner.py" />
         <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
-        <option value="$PROJECT_DIR$/website/home-landing.html" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
-        <option value="$PROJECT_DIR$/cameractrl/camera.py" />
         <option value="$PROJECT_DIR$/website/deploy/conf.nginx" />
-        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/README.rst" />
+        <option value="$PROJECT_DIR$/website/home-landing.html" />
+        <option value="$PROJECT_DIR$/restapi/rig_control.py" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
+        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
+        <option value="$PROJECT_DIR$/cameractrl/camera.py" />
       </list>
     </option>
   </component>
@@ -314,8 +314,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1598" />
-    <option name="y" value="470" />
+    <option name="x" value="1746" />
+    <option name="y" value="429" />
     <option name="width" value="2021" />
     <option name="height" value="1571" />
   </component>
@@ -335,6 +335,16 @@
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="apikeys" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="cameractrl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,6 +356,23 @@
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="rpihat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="deploy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -359,7 +386,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../genesis/deploy/debian_iiserver.sh" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -384,7 +411,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.setup.html">
+  <component name="RunManager" selected="JavaScript Debug.home-landing.html">
+    <configuration name="home-landing.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/home-landing.html">
+      <method v="2" />
+    </configuration>
     <configuration name="setup.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/setup.html">
       <method v="2" />
     </configuration>
@@ -400,21 +430,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offset" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="RpiPG" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offset&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -450,18 +465,18 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" />
-      <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offset" />
       <item itemvalue="Python tests.Unittests in test_rig_runner.py" />
       <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offsets" />
       <item itemvalue="JavaScript Debug.setup.html" />
+      <item itemvalue="JavaScript Debug.home-landing.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.home-landing.html" />
         <item itemvalue="JavaScript Debug.setup.html" />
         <item itemvalue="Python tests.Unittests in test_rig_runner.py" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offsets" />
         <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets" />
-        <item itemvalue="Python tests.Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offset" />
       </list>
     </recent_temporary>
   </component>
@@ -475,13 +490,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00137" summary="fix int() typing">
-      <created>1541282230590</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1541282230590</updated>
     </task>
     <task id="LOCAL-00138" summary="set start/stop proper (start is bottom, initially 100, stop is &quot;top&quot;, initially 0">
       <created>1541290136418</created>
@@ -819,7 +827,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541714679359</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="README updates">
+      <created>1541714735516</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1541714735516</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -864,7 +879,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1598" y="470" width="2021" height="1571" extended-state="0" />
+    <frame x="1746" y="429" width="2021" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
@@ -873,7 +888,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39568844" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
@@ -890,18 +905,18 @@
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.24426313" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39568844" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39568844" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4994618" weight="0.32965165" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4994618" weight="0.32962447" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
@@ -974,7 +989,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/StepperTest.py" />
     <entry file="file://$PROJECT_DIR$/tests/DualStepperTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1088,24 +1102,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="174" column="17" lean-forward="true" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py" />
-    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="54" column="44" lean-forward="true" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -1121,16 +1118,6 @@
     <entry file="file://D:/Users/Harry/Downloads/jticker-master/jticker-master/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#830#844#0" expanded="true" />
-            <marker date="1541698166915" expanded="true" signature="950:1215" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -1145,18 +1132,6 @@
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6534">
-          <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
-          <folding>
-            <element signature="e#48#58#0" expanded="true" />
-            <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
-            <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1181,27 +1156,10 @@
     <entry file="file://$PROJECT_DIR$/website/deploy/rpi_conf.nginx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/conf.nginx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/gphoto2_install.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="288" selection-start-line="288" selection-end-line="288" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,6 +1170,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/scan_screenshot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/S3300.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apikeys/oauth_client.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/fonts/css/fontawesome-all.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="4" column="16394" selection-start-line="4" selection-start-column="16394" selection-end-line="4" selection-end-column="16394" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/conf.nginx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="52" column="197" selection-start-line="52" selection-start-column="197" selection-end-line="52" selection-end-column="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6534">
+          <caret line="297" column="5" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+            <marker date="1541521754038" expanded="true" signature="3827:3940" ph="..." />
+            <marker date="1541521754038" expanded="true" signature="4002:4988" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1219,21 +1226,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="595">
+          <caret line="349" selection-start-line="349" selection-end-line="349" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1541784805462" expanded="true" signature="10691:11237" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/scan_screenshot.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="161" column="29" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="35" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/S3300.jpg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
+    <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#828#842#0" expanded="true" />
+            <marker date="1541812091281" expanded="true" signature="1999:2452" ph="..." />
+            <marker date="1541812091281" expanded="true" signature="2495:2500" ph="..." />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

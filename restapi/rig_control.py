@@ -76,6 +76,15 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
     return queue.put(task_body)
 
 
+def send_token(queue: beanstalk.Connection, code: str, scope: str) -> int:
+    """send the google token so we can save photos to a google drive"""
+    queue.use(TASK_QUEUE)
+    task_body = json.dumps({'task': 'token',
+                            'code': code,
+                            'scope': scope})
+    return queue.put(task_body)
+
+
 def clear_tube(queue: beanstalk.Connection, tube: str):
     """ flush all messages tubes to the rig"""
     queue.use(tube)
@@ -330,6 +339,21 @@ def scan():
         queue = configure_beanstalk()
         job_id = send_scan_command(queue, declination_steps, rotation_steps, start, stop)
         return make_response(jsonify({'msg': 'scan started #{0}'.format(job_id)}), status.HTTP_200_OK)
+    except Exception as e:
+        return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}),
+                             status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@app.route("/oauth", methods=['GET'])
+@cross_origin(origins='*')
+def google_oauth():
+    """This is the callback for google oauth2"""
+    try:
+        code = request.args.get('code', None)  # access token
+        scope = request.args.get('scope', None)  # permissions granted
+        queue = configure_beanstalk()
+        job_id = send_token(queue, code, scope)
+        return make_response(jsonify({'msg': 'token received'}), status.HTTP_200_OK)
     except Exception as e:
         return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}),
                              status.HTTP_500_INTERNAL_SERVER_ERROR)
