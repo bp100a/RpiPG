@@ -30,7 +30,7 @@ cd ..
 sudo apt-get install nginx
 
 # our queue between web & app
-sudo apt-get install beantstalkd
+sudo apt-get install beanstalkd
 
 # copy our nginx.conf file
 sudo cp ~/RpiPG/deploy/nginx.conf /etc/nginx

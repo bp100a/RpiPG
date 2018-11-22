@@ -24,4 +24,11 @@ Flask-API==1.0
 Flask-Swagger==0.2.13
 Flask-CORS==3.0.6
 gphoto2-cffi==0.4.2
+fernet==1.0.1
+google-api-python-client==1.7.4
+httplib2==0.11.3
+requests==2.9.1
+oauth2client==4.1.3
+
+
 

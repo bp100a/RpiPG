@@ -1,24 +1,36 @@
+"""Photogrammetry Rig Controller
+This is the REST API that the HTML/Javascript UI
+uses to communicate with the photogrammetry rig.
+"""
+import sys
 import datetime
+import json
+import uuid
+import base64
+import traceback
+import requests
+import fernet
 from flask import Flask, jsonify
 from flask import request, make_response
 from flask_api import status
 from flask_cors import CORS, cross_origin
 from flask_swagger import swagger
-from waitress import serve
 import beanstalkc as beanstalk
-import json
+from configuration import google_api  # non-tracked file stores client_id & secret
+from cloud_drive import google_drive
 
-app = Flask(__name__)
-app.debug = True
-app.config['SECRET_KEY'] = 'photogrammetry'
-CORS(app, resources=r'/*')
 
-__version__ = '0.0.1' #our version string PEP 440
+APP = Flask(__name__)
+APP.debug = True
+APP.config['SECRET_KEY'] = 'photogrammetry'
+CORS(APP, resources=r'/*')
+
+__version__ = '0.1.0'  # our version string PEP 440
 
 # define the beanstalk tube names (queues) we will use
-CANCEL_QUEUE = 'cancel' # special, just to cancel anything
-TASK_QUEUE = 'work' # JSON describes actual work to perform
-STATUS_QUEUE = 'status' # sent back with status messages, in JSON
+CANCEL_QUEUE = 'cancel'  # special, just to cancel anything
+TASK_QUEUE = 'work'  # JSON describes actual work to perform
+STATUS_QUEUE = 'status'  # sent back with status messages, in JSON
 
 
 def configure_beanstalk():
@@ -46,7 +58,6 @@ def get_status(queue: beanstalk.Connection) -> str:
         return None
 
 
-
 def send_cancel(queue: beanstalk.Connection) -> int:
     """send a cancel to the rig software to stop whatever is
     happening"""
@@ -64,7 +75,10 @@ def send_home_command(queue: beanstalk.Connection) -> int:
     return queue.put(task_body)
 
 
-def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotation_steps: int, start: int, stop: int) -> int:
+def send_scan_command(queue: beanstalk.Connection,
+                      declination_steps: int,
+                      rotation_steps: int,
+                      start: int, stop: int) -> int:
     """this is it - time to scan. send the # of steps for each axis
     and return"""
     queue.use(TASK_QUEUE)
@@ -76,13 +90,36 @@ def send_scan_command(queue: beanstalk.Connection, declination_steps: int, rotat
     return queue.put(task_body)
 
 
-def send_token(queue: beanstalk.Connection, code: str, scope: str) -> int:
+def test_write_file(queue: beanstalk.Connection) -> None:
+    """simple program to test out google drive file writing"""
+    queue.use(TASK_QUEUE)
+    queue.watch(TASK_QUEUE)
+    job = queue.reserve(timeout=2)
+    if job is None:
+        return None
+
+    job_json = json.loads(job.body)
+    if job_json['task'] != 'token':
+        return None
+
+    # we have a token, read it out
+    access_info = json.loads(job_json['value'])
+    drive_obj = google_drive.GoogleDrive(access_info)
+    drive_obj.find_root_folder('rpipg')
+
+    return None
+
+
+def send_token(queue: beanstalk.Connection, body_str: str) -> int:
     """send the google token so we can save photos to a google drive"""
     queue.use(TASK_QUEUE)
-    task_body = json.dumps({'task': 'token',
-                            'code': code,
-                            'scope': scope})
-    return queue.put(task_body)
+    job_body = json.dumps({'task':'token', 'value': body_str})
+    job_id = queue.put(job_body)
+
+    # **********************
+    # test_write_file(queue)
+    # **********************
+    return job_id
 
 
 def clear_tube(queue: beanstalk.Connection, tube: str):
@@ -106,6 +143,7 @@ def clear_status_queue(queue: beanstalk.Connection):
 
 
 def send_cancel_request(queue: beanstalk.Connection) -> int:
+    """send a cancel request to the rig controller"""
     clear_status_queue(queue)   # so we see what home command triggers
 
     queue.use(CANCEL_QUEUE)
@@ -113,7 +151,7 @@ def send_cancel_request(queue: beanstalk.Connection) -> int:
     return queue.put(task_body)
 
 
-@app.route("/spec/swagger.json")
+@APP.route("/spec/swagger.json")
 def spec():
     """
     Specification
@@ -132,7 +170,7 @@ def spec():
       500:
         description: "serious error dude"
     """
-    swag = swagger(app)
+    swag = swagger(APP)
     swag['info']['title'] = "Photogrammetry API"
     swag['info']['version'] = __version__
     swag['info']['description'] = "A simple API to enable browser control of the device."
@@ -150,7 +188,7 @@ def spec():
     return resp
 
 
-@app.route("/config")
+@APP.route("/config")
 def hello():
     """
     Configuration
@@ -172,14 +210,15 @@ def hello():
           $ref: '#/definitions/Error'
     """
     htmlbody = "<html>\n<body>\n"
-    dtNow = datetime.datetime.now()
-    htmlbody += "<h1>PhotoGram Hello World from Gunicorn & Nginx!</h1> last called {}".format(dtNow)
+    current_time = datetime.datetime.now()
+    htmlbody += "<h1>PhotoGram Hello World from Gunicorn & Nginx!</h1> last called {}".\
+                format(current_time)
     htmlbody += "<img src=\"/static/gunicorn_small.png\"/>"
 
     return htmlbody
 
 
-@app.route("/status", methods=['GET'])
+@APP.route("/status", methods=['GET'])
 @cross_origin(origins='*')
 def rig_status():
     """
@@ -204,13 +243,15 @@ def rig_status():
         status_json = get_status(queue)
         if status_json is None:
             return make_response("no status", status.HTTP_204_NO_CONTENT)
-        else:
-            return make_response(status_json, status.HTTP_200_OK)
-    except Exception as e:
-        return make_response("something really bad -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        return make_response(status_json, status.HTTP_200_OK)
+    except Exception as error:
+        return make_response("something really bad -> {0}".
+                             format(error.__str__()),
+                             status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@app.route("/home", methods=['POST', 'GET'])
+@APP.route("/home", methods=['POST', 'GET'])
 @cross_origin(origins='*')
 def home_rig():
     """
@@ -234,12 +275,14 @@ def home_rig():
     # okay home the rig and return
     try:
         job_id = send_home_command(configure_beanstalk())
-        return make_response(jsonify({'msg': 'home command forwarded to controller #{0}'.format(job_id)}), status.HTTP_200_OK)
-    except Exception as e:
-        return make_response("failed to home -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return make_response(jsonify({'msg': 'home command forwarded to controller #{0}'.
+                                             format(job_id)}), status.HTTP_200_OK)
+    except Exception as error:
+        return make_response("failed to home -> {0}".format(error.__str__()),
+                             status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@app.route("/cancel", methods=['POST', 'GET'])
+@APP.route("/cancel", methods=['POST', 'GET'])
 @cross_origin(origins='*')
 def home():
     """
@@ -263,12 +306,15 @@ def home():
     # okay home the rig and return
     try:
         job_id = send_cancel_request(configure_beanstalk())
-        return make_response(jsonify({'msg': 'cancel issued, queues cleared #{0}'.format(job_id)}), status.HTTP_200_OK)
-    except Exception as e:
-        return make_response("error processing cancel request -> {0}".format(e.__str__()), status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return make_response(jsonify({'msg': 'cancel issued, queues cleared #{0}'.
+                                             format(job_id)}), status.HTTP_200_OK)
+    except Exception as error:
+        return make_response("error processing cancel request -> {0}".
+                             format(error.__str__()),
+                             status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@app.route("/scan", methods=['POST'])
+@APP.route("/scan", methods=['POST'])
 @cross_origin(origins='*')
 def scan():
     """
@@ -315,52 +361,215 @@ def scan():
     """
 
     if not request.json:
-        return make_response(jsonify({'msg': 'No JSON'}), status.HTTP_400_BAD_REQUEST)
+        return make_response(jsonify({'msg': 'No JSON'}),
+                             status.HTTP_400_BAD_REQUEST)
 
     try:
         declination_steps = int(request.json['declination_steps'])
         rotation_steps = int(request.json['rotation_steps'])
         start = int(request.json['start'])
         stop = int(request.json['stop'])
-    except KeyError as e:
-        return make_response(jsonify({'msg': 'No JSON'}), status.HTTP_400_BAD_REQUEST)
-    except ValueError as ve:
-        return make_response(jsonify({'msg': 'ValueError {0}'.format(ve.__str__())}), status.HTTP_400_BAD_REQUEST)
+    except KeyError:
+        return make_response(jsonify({'msg': 'No JSON'}),
+                             status.HTTP_400_BAD_REQUEST)
+    except ValueError as value_error:
+        return make_response(jsonify({'msg': 'ValueError {0}'.
+                                             format(value_error.__str__())}),
+                             status.HTTP_400_BAD_REQUEST)
 
-    MAX_PICTURES = 200
+    max_pictures = 200
     # Calculate total picture count, cannot exceed 'MAX_PICTURES'
     total_picture_count = declination_steps * rotation_steps
-    if total_picture_count > MAX_PICTURES:
-        return make_response(jsonify({'msg': 'exceeded max pictures of {0}'.format(MAX_PICTURES)}),
+    if total_picture_count > max_pictures:
+        return make_response(jsonify({'msg': 'exceeded max pictures of {0}'.
+                                             format(max_pictures)}),
                              status.HTTP_400_BAD_REQUEST)
 
     try:
         # okay, kick off the scanning
         queue = configure_beanstalk()
         job_id = send_scan_command(queue, declination_steps, rotation_steps, start, stop)
-        return make_response(jsonify({'msg': 'scan started #{0}'.format(job_id)}), status.HTTP_200_OK)
-    except Exception as e:
-        return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}),
+        return make_response(jsonify({'msg': 'scan started #{0}'.
+                                             format(job_id)}), status.HTTP_200_OK)
+    except Exception as error:
+        return make_response(jsonify({'msg': 'exception = {0}'.
+                                             format(error.__str__())}),
                              status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-@app.route("/oauth", methods=['GET'])
-@cross_origin(origins='*')
-def google_oauth():
-    """This is the callback for google oauth2"""
-    try:
-        code = request.args.get('code', None)  # access token
-        scope = request.args.get('scope', None)  # permissions granted
+def machine_specific_key() -> bytes:
+    """give a hard-coded key we want to make it
+    machine-specific by incorporating a machine
+    serial #
+
+    We are going to 'add in' the serial # to the
+    pre-generated byte key to make a new, unique to
+    this machine, byte key for encryption/decryption"""
+
+    key = b'FnOu4MNWvJEJtuAh0SEJVd_2_Kre5cMsG6XSjXZpKgk='
+    serial_id = uuid.getnode()  # this is unique to machine we are running on
+    bits_in_int = sys.getsizeof(serial_id)
+
+    # Now combine then
+    new_key = bytearray()
+    shift = 0
+    for byte in key:
+        new_byte = (byte + ((serial_id >> shift) & 0xFF)) & 0xFF
+        new_key.append(new_byte)
+        shift += 8
+        if shift > (bits_in_int - 8):
+            shift = 0
+    machine_key = bytes(new_key[:32])
+    urlsafe_key = base64.urlsafe_b64encode(machine_key)
+    return urlsafe_key
+
+
+def decrypt_authorization(encrypted_cookie_data: str) -> dict:
+    """Decrypt a blob of data passed to us and return
+    it as a dictionary"""
+    key = machine_specific_key()
+    f_obj = fernet.Fernet(key)
+    dict_str = f_obj.decrypt(encrypted_cookie_data.encode()).decode("utf-8")
+    dict_oauth = json.loads(dict_str)
+    return dict_oauth
+
+
+def poll_google_token(device_code: str) -> bytes:
+    """this is where we actually talk to google
+    the Javascript pools us at the specified interval
+    and we query Google for our authorization token.
+    when we get it we send it to the process that will
+    run the photogrammetry rig"""
+
+    target_url = "https://www.googleapis.com/oauth2/v4/token"
+    grant_type = "http://oauth.net/grant_type/device/1.0"
+
+    arguments = "code=" + device_code + \
+                "&client_id=" + google_api.CLIENT_ID + \
+                "&client_secret=" + google_api.CLIENT_SECRET + \
+                "&grant_type=" + grant_type
+    rsp = requests.post(target_url,
+                        data=arguments,
+                        headers={'content-type': 'application/x-www-form-urlencoded'})
+    if rsp.status_code == status.HTTP_200_OK:
         queue = configure_beanstalk()
-        job_id = send_token(queue, code, scope)
-        return make_response(jsonify({'msg': 'token received'}), status.HTTP_200_OK)
-    except Exception as e:
-        return make_response(jsonify({'msg': 'exception = {0}'.format(e.__str__())}),
+        data_str = rsp.content.decode("utf-8")
+        send_token(queue, data_str)
+        key = machine_specific_key()
+        f_obj = fernet.Fernet(key)
+        token = f_obj.encrypt(data_str)
+        return token
+
+    return None
+
+
+def get_google_device_code() -> str:
+    """Call the Google API and get the device_code &
+    other information we'll need to complete the oAuth2
+    device flow"""
+
+    target_url = 'https://accounts.google.com/o/oauth2/device/code'
+    scope = 'https://www.googleapis.com/auth/drive.file'
+    arguments = "scope=" + scope + "&client_id=" + google_api.CLIENT_ID
+
+    rsp = requests.post(target_url,
+                        data=arguments,
+                        headers={'content-type': 'application/x-www-form-urlencoded'})
+    if rsp.status_code == status.HTTP_200_OK:
+        data_str = rsp.content.decode("utf-8")
+        return data_str
+
+    return None
+
+
+@APP.route("/oauth/getcode", methods=['GET'])
+@cross_origin(origins='*')
+def google_device_code():
+    """Get the device code we'll display to the user
+    from the Google oAuth server"""
+    try:
+        # we now need to poll google's oAuth server for the token
+        clear_response = get_google_device_code()
+        if clear_response:
+            return make_response(jsonify({'msg': 'device code received', 'data': clear_response}),
+                                 status.HTTP_200_OK)
+
+        return make_response(jsonify({'msg': 'no token yet'}),
+                             status.HTTP_404_NOT_FOUND)
+    except Exception as error:
+        return make_response(jsonify({'msg': 'exception = {0}'.format(error.__str__())}),
                              status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+
+@APP.route("/oauth/token", methods=['POST'])
+@cross_origin(origins='*')
+def post_token():
+    """Javascript is passing us the encrypted cookie contents
+    so we can pass along Google Drive authorization"""
+    try:
+        json_token = request.get_json()
+        encrypted_data = json_token['token']
+        authorization_dict = decrypt_authorization(encrypted_data)
+        if authorization_dict is None:
+            return make_response(jsonify({'msg': 'could not decrypt data'},
+                                         status.HTTP_400_BAD_REQUEST))
+
+        queue = configure_beanstalk()
+        job_id = send_token(queue, json.dumps(authorization_dict))
+        return make_response(jsonify({'msg': 'job_id #{0}'.format(job_id)}, status.HTTP_200_OK))
+
+    except Exception as error:
+        return make_response(jsonify({'msg': 'exception = {0}'.format(error.__str__())}),
+                             status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@APP.route("/oauth/token", methods=['GET'])
+@cross_origin(origins='*')
+def google_authorization():
+    """This is the callback for google oauth2
+    if we succeed we return the data after we have
+    encrypted it so Javascript doesn't know any of
+    the important data """
+    try:
+        device_code = request.args.get('code', None)  # device code
+        if device_code == '':
+            return make_response(jsonify({'msg': 'no device code specified!'}),
+                                 status.HTTP_400_BAD_REQUEST)
+
+        # we now need to poll google's oAuth server for the token
+        encrypted_response = poll_google_token(device_code)
+        if encrypted_response:
+            return make_response(jsonify({'msg': 'token received',
+                                          'data': encrypted_response.decode('utf-8')}),
+                                 status.HTTP_200_OK)
+
+        return make_response(jsonify({'msg': 'no token yet'}), status.HTTP_404_NOT_FOUND)
+
+    except Exception as error:
+        trace_info = traceback.format_exc()
+        return make_response(jsonify({'msg': 'exception = {0}, trace={1}'.
+                                             format(error.__str__(), trace_info)}),
+                             status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+# @app.route("/token", methods=['GET'])
+# @cross_origin(origins='*')
+# def google_token():
+#     json_data = request.get_json()
+#     try:
+#         access_token = json_data['access_token']
+#         token_type = json_data['token_type']
+#         expires_in = json_data['expires_in']
+#         refresh_token = json_data['refresh_token']
+#
+#         queue = configure_beanstalk()
+#         job_id = send_token(queue, json.dumps(json_data))
+#         return make_response('#{0}'.format(job_id), status.HTTP_200_OK)
+#     except KeyError as ke:
+#         return make_response('', status.HTTP_400_BAD_REQUEST)
+#
 
 # okay, if we are the main thing then start
 # listening for requests!
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081)
-    # serve(app, listen='*:8081') # waitress implementation
+    APP.run(host='0.0.0.0', port=8081) # gunicorn!!

@@ -9,12 +9,14 @@ Photogrammetry rig. Here we control:
 import atexit
 import time
 import json
+from multiprocessing import Process
 import beanstalkc as beanstalk
 from rpihat import limit_switch  # our limit switches
 from rpihat.Raspi_PWM_Servo_Driver import PWM
 from rpihat.pimotorhat import Raspi_StepperMotor, Raspi_MotorHAT
 from util import calculate_steps
 from cameractrl import camera
+from cloud_drive import google_drive
 
 CAMERA_STEPPER_MOTOR_NUM = 2
 CAMERA_STEPPER_MOTOR_SPEED = 240  # rpm
@@ -154,12 +156,11 @@ def post_status(queue: beanstalk.Connection, message: str) -> None:
 
 def take_picture(my_camera: camera.gp.camera,
                  queue: beanstalk.Connection,
-                 token: str,
                  rotation: int, declination: int) -> None:
     """take the picture"""
     post_status(queue, "taking picture R{0}:D{1}".
                 format(rotation, declination))
-    file_name = camera.take_picture(my_camera, token, rotation, declination)
+    file_name = camera.take_picture(my_camera, rotation, declination, queue)
     post_status(queue, "Filename={0}".format(file_name))
 
 
@@ -183,8 +184,7 @@ def photograph_model(declination_divisions: int,
                      steps_per_rotation: int,
                      status_queue: beanstalk.Connection,
                      rotate_stepper: Raspi_StepperMotor,
-                     camera_stepper: Raspi_StepperMotor,
-                     access_token: str) -> None:
+                     camera_stepper: Raspi_StepperMotor) -> None:
     """here's where we rotate the model, declinate the camera
     and take pictures"""
     try:
@@ -199,10 +199,12 @@ def photograph_model(declination_divisions: int,
     for declination in range(0, declination_divisions):
         post_status(status_queue, "rotating model")
         for rotation in range(0, rotation_divisions):
+
             take_picture(my_camera=rig_camera,
                          queue=status_queue,
-                         token= access_token,
-                         rotation=rotation, declination=declination)
+                         rotation=rotation,
+                         declination=declination)
+
             forced_exit = rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
                                               Raspi_MotorHAT.DOUBLE)
             if forced_exit and forced_exit['exit'] == 'cancel':
@@ -235,6 +237,20 @@ def photograph_model(declination_divisions: int,
         camera.exit_camera(rig_camera)
 
 
+def forward_authorization(queue: beanstalk.Connection, job: dict):
+    """Forward the Google Drive authentication credentials to our
+    Google Drive process"""
+    queue.use(google_drive.GDRIVE_QUEUE)
+    queue.put(json.dumps(job))
+
+
+def start_drive_process():
+    """Start the process that will upload photos to the
+    google drive"""
+    drive_process = Process(target=google_drive.process_photos, args=())
+    drive_process.start()
+
+
 def main():
     """This is the main entry point of the program, where all the magic happens"""
     # okay time to run things
@@ -256,10 +272,11 @@ def main():
     print("**********************\n")
     print("** waiting for jobs **\n")
     print("**********************\n")
+
     is_homed = False
-    declination_travel_steps = 0 # number of steps between min/max endstops
+    declination_travel_steps = 0  # number of steps between min/max endstops
     forced_exit = None
-    access_token = None  # our oAuth2 token to google drive
+    start_drive_process()  # startup the google drive process
 
     while True:
         job_dict = wait_for_work(BEANSTALK)
@@ -272,8 +289,8 @@ def main():
         max_pictures = 200
 
         if task == 'token':
-            code = job_dict['code']
-            scope = job_dict['scope']
+            forward_authorization(BEANSTALK, job_dict)
+            continue
 
         if task == 'scan':
             try:
@@ -349,8 +366,7 @@ def main():
                                  steps_per_rotation,
                                  BEANSTALK,
                                  rotate_stepper,
-                                 camera_stepper,
-                                 access_token)
+                                 camera_stepper)
 
             # we are done taking pictures, release the motors so we don't
             # overheat and remember we are no longer homed

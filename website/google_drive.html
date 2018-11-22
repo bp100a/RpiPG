@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google oAuth2 Device Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Kolor | HTML, CSS & JS Mobile Template | Epsilon X </title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/framework.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+
+<body>
+<div id="page-transitions" class="page-build">
+    <div class="page-bg gradient-body-1"></div>
+
+	<div class="header shadow-large header-light header-logo-app">
+        <a href="index.html" class="header-title">Google Drive Authorization&nbsp;<i class="fab fa-google-drive"></i></a>
+		<a href="#" class="back-button header-icon header-icon-1"><i class="fas fa-angle-left"></i></a>
+		<a data-menu="menu-contact" data-menu-type="menu-box-modal" href="#" class="header-icon header-icon-2"><i class="fas fa-envelope"></i></a>
+		<a data-menu="menu-1" data-menu-type="menu-sidebar-left-push" href="#" class="header-icon header-icon-3"><i class="fas fa-bars"></i></a>
+		<a data-menu="menu-settings" data-menu-type="menu-box-full" href="#" class="header-icon header-icon-4"><i class="fas fa-cog fa-spin font-12"></i></a>
+    </div>
+	<div id="menu-1" class="menu menu-sidebar-left menu-settings">
+        <div class="menu-bg gradient-body-1"></div>
+        <div class="menu-scroll">
+            <div class="menu-header">
+                <a class="menu-logo" href="index.html"></a>
+                <h1>Photogram</h1>
+                <p>Taking the life from your models</p>
+            </div>
+            <div class="menu-list icon-background-active">
+                <em class="menu-divider top-10">Navigation</em>
+                <a class="menu-item" href="index.html"><i class="fa gradient-red-light fa-star"></i>Welcome</a>
+                <a class="menu-item" href="homepages.html"><i class="fa gradient-green-light fa-home"></i>Homepages</a>
+                <a class="menu-item active-menu" href="components.html"><i class="fa gradient-sky-light fa-cog"></i>Components<span>HOT</span></a>
+                <a class="menu-item" href="interactive.html"><i class="fa gradient-mint-dark fa-hand-point-right"></i>Interactive<span>NEW</span></a>
+                <a data-submenu="submenu-1" class="menu-item" href="#"><i class="fa gradient-magenta-light fa-image"></i>Media<span></span></a>
+                <div id="submenu-1" class="submenu">
+                    <a href="galleries.html">Galleries</a>
+                    <a href="portfolios.html">Portfolios</a>
+                </div>
+                <a class="menu-item" href="pages.html"><i class="fa gradient-brown-light fa-file"></i>Site Pages</a>
+                <a class="menu-item" href="pageapp.html"><i class="fa gradient-blue-light fa-mobile-alt"></i>App Styled</a>
+                <a data-submenu="submenu-2" class="menu-item" href="#"><i class="fa gradient-mint-dark fa-shopping-bag"></i>Templates<span></span></a>
+                <div id="submenu-2" class="submenu">
+                    <a href="news.html">News</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <a class="menu-item" href="contact.html"><i class="fa gradient-sky-dark fa-envelope"></i>Contact Us</a>
+                <a class="menu-item close-menu" href="#"><i class="fa gradient-red-dark fa-times"></i>Close Menu</a>
+                <em class="menu-divider">Get in Touch</em>
+                <a class="menu-item" href="tel:+1 234 567 890"><i class="fa gradient-green-light fa-phone"></i>Call Us</a>
+                <a class="menu-item" href="sms:+1 234 567 890"><i class="fa gradient-mint-dark fa-comment"></i>SMS Us</a>
+                <a class="menu-item" href="mailto:name@domain.com"><i class="fa gradient-sky-dark fa-envelope"></i>Mail Us</a>
+                <em class="menu-divider">Let's get Social</em>
+                <a class="menu-item" href="https://www.facebook.com/enabled.labs/"><i class="fab facebook-bg fa-facebook-f"></i>Facebook</a>
+                <a class="menu-item" href="https://twitter.com/iEnabled"><i class="fab twitter-bg fa-twitter"></i>Twitter</a>
+                <a class="menu-item" href="https://plus.google.com/u/1/+EnabledLabs"><i class="fab google-bg fa-google-plus-g"></i>Google+</a>
+            </div>
+            <em class="menu-copyright">Copyright <span class="copyright-year"></span>, Enabled. All Rights Reserved</em>
+        </div>
+	</div>
+	<div class="page-content header-clear-larger">
+
+        <div class="content-box shadow-large bg-white">
+            <div class="top-25 bottom-15">
+               <h4>Authorization Code</h4>
+               <p>
+                <input value="xxxx-xxxx" id="usercode"/><button type="button" onclick="copyToClipboard()">&nbsp;<i class="fas fa-copy" aria-hidden="false"></i></button>
+                <p>Select the <i class="fas fa-copy" aria-hidden="false"></i> to copy the authorization code to the clipboard and open the Google Authorization dialog. You will then be able to paste the value and complete the authorization process. Once you have completed the authorization on the Google site, close the Google window to return to this page. When the application receives confirmation from Google, you will be returned to the home page.</p>
+            </div>
+        </div>
+
+        <div class="content-box shadow-large bg-white">
+        </div>
+    </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/utils.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    // Hit up the Google oAuth2 device API endpoint and
+    // get the device code we'll need to complete oAuth2
+    // device flow.
+    // The user enters this on the google site while we are
+    // "polling" Google to get the oAuth2 token
+    //
+    var verification_url = '';
+    var user_code = '';
+    var expires_in = 1800;
+    var interval = 5000;
+    var device_code = '';
+    var start_time_ms = Date.now();
+    var pollInterval;
+    let api_root = ":8081/oauth";
+    let five_minutes = 5 * 60 * 1000;
+    let polling_host = location.hostname;
+    if (polling_host == "") {polling_host = "localhost";}
+    if (is_nginx()) { api_root = "/api/oauth";} // Nginix -> Raspberry Pi
+    $.ajax({
+        url: "http://" + polling_host + api_root + "/getcode",
+        dataType: 'text',
+        type: "get",
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+            let json = JSON.parse(data);
+            // okay we have data for the user to see
+            createCookie('device', JSON.stringify(json), five_minutes);
+            json_data = JSON.parse(json.data)
+            verification_url = json_data.verification_url;
+            user_code = json_data.user_code;
+            expires_in = json_data.expires_in;
+            interval = json_data.interval;
+            device_code = json_data.device_code;
+            bt = document.getElementById("usercode");
+            bt.value = user_code;
+            console.log('Success! => ' + json.data)
+        }
+    })
+
+    // We need a user event to copy something to the clipboard
+    // as soon as the user does this we'll redirect them to the
+    // google page where they need to enter the code by just
+    // pasting it
+    //
+    // Since copying to the clipboard requires a user action
+    // (probably security related), this function is called
+    // when the copy is clicked, then we'll direct them
+    // to the Google site where they can just paste the
+    // value.
+    function copyToClipboard() {
+        const el = document.getElementById("usercode");
+        el.select();
+        let successful = document.execCommand('copy');
+        window.open(verification_url);
+    }
+
+    // define the polling function that will call Google and see
+    // if the user has entered the code. This process needs to
+    // start after the user has entered the code at the google
+    // site
+    (function() {
+        poll = function() {
+            polling_host = location.hostname;
+            if (polling_host == "") {polling_host = "localhost";}
+
+          $.ajax({
+            url: "http://" + polling_host + api_root + "/token",
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'text',
+            type: 'get',
+            data: "code=" + device_code,
+            success: function(data) { // check if available
+                if (data != null) {
+                    console.log(JSON.parse(data));
+                    let json = JSON.parse(data)
+                    let thirty_days = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
+                    createCookie('token', json.data, thirty_days);
+                    clearInterval(pollInterval); // no need to poll anymore
+                    eraseCookie('device');
+
+                    // go back from whence we came...
+                    window.location.replace('home-landing.html');
+                }
+            },
+            error: function() { // error logging
+              console.log('Error!');
+              // See if the time to poll has expired
+              let current_time_ms = Date.now();
+              let elapsed_time_ms = current_time_ms - start_time_ms;
+              let expires_in_ms = expires_in * 1000;
+              if (elapsed_time_ms >= expires_in_ms)  {
+                  console.log('...polling has expired')
+                  clearInterval(pollInterval);
+                  eraseCookie('device');
+              }
+            }
+          });
+        },
+        pollInterval = setInterval(function() { // run function every 10 seconds
+          poll();
+          }, interval);
+//        poll(); // also run function on init
+    })();
+</script>
+</body>
+</html>

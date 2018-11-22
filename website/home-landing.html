@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<title>Kolor | HTML, CSS & JS Mobile Template | Epsilon X </title>
+<title>Raspberry Pi Photogrammetry</title>
 <link rel="stylesheet" type="text/css" href="styles/style.css">
 <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/jquery.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
         <div class="cover-content-center">
             <div class="landing-page">
                 <div class="landing-header">
-                    <h1 class="center-text fa-4x text-shadow ultrabold color-white bottom-10">PHOTOGRAM</h1>
+                    <h1 class="center-text fa-4x text-shadow ultrabold color-white bottom-10">RpiPG</h1>
                     <!-- replace image if you want to use a logo <a href="#"><img src="images/logo-light.png" alt="img"></a> -->
                     <em class="font-11 color-white opacity-60">Creating 3D models, a hundred scans at a time</em>
                 </div>
@@ -50,14 +50,14 @@
                         <i class="gradient-green-dark shadow-icon-large fa fa-envelope"></i>
                         <em>Contact</em>
                     </a>
-                    <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=791006910655-j9lkn1r1l0j8maj0ed442f4p9e0u785e.apps.googleusercontent.com&redirect_uri=urn:ietf:wg:oauth:2.0:oob&response_type=code&scope=https://www.googleapis.com/auth/drive.appdata">
-                        <i class="gradient-green-dark shadow-icon-large fa fa-hdd"></i>
+                    <a href="google_drive.html">
+                        <i class="gradient-green-dark shadow-icon-large fab fa-google-drive"></i>
                         <em>Google Drive</em>
                     </a>
                     <div class="clear"></div>
                 </div>
                 <div class="landing-footer">
-                    <p class="center-text color-white opacity-40">Copyright<span class="copyright-year"></span> Enabled. All rights Reserved</span></p>
+                    <p class="center-text color-white opacity-40">Copyright<span class="copyright-year"></span> Enabled. All rights Reserved</p>
                 </div>
             </div>
         </div>
@@ -69,6 +69,7 @@
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/plugins.js"></script>
 <script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/utils.js"></script>
 <script>
     $('#home').click(function(){
          $.ajax({
@@ -79,6 +80,33 @@
              }
          });
     });
+
+    // Let's check the cookie and see if we have Google credentials
+    let token_info = readCookie("token");
+    console.log("token=" + token_info);
+    if (token_info != null) {
+        // okay we have token information
+        token_json = {'token': token_info};
+
+        // We need to pass the information to our REST API
+        let api_root = ":8081/oauth";
+        if (is_nginx()) { api_root = "/api/oauth";} // Nginix -> Raspberry Pi
+        $.ajax({
+           type: "POST",
+           contentType: 'application/json',
+           dataType: "json",
+           data: JSON.stringify(token_json),
+           url: "http://" + location.hostname + api_root + "/token",
+           success: function(data){
+                // okay, the rig controller has the information
+               console.log('Success!');
+           },
+           error: function() { // error logging
+              console.log('Error!');
+           }
+
+        });
+    }
 </script>
 
 </body>

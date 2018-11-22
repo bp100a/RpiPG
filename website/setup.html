@@ -3,13 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<title>Kolor | HTML, CSS & JS Mobile Template | Epsilon X </title>
+<title>Raspberry Pi Photogrammetry</title>
 <link rel="stylesheet" type="text/css" href="styles/style.css">
 <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles/ticker.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
+<link href="styles/roundslider.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <div class="page-bg gradient-body-1"></div>
 
 	<div class="header shadow-large header-light header-logo-app">
-		<a href="index.html" class="header-title">Scanning Parameters</a>
+		<a href="home-landing.html" class="header-title">Scanning Parameters</a>
 		<a href="#" class="back-button header-icon header-icon-1"><i class="fas fa-angle-left"></i></a>
 		<a data-menu="menu-contact" data-menu-type="menu-box-modal" href="#" class="header-icon header-icon-2"><i class="fas fa-envelope"></i></a>
 		<a data-menu="menu-1" data-menu-type="menu-sidebar-left-push" href="#" class="header-icon header-icon-3"><i class="fas fa-bars"></i></a>
@@ -28,13 +28,13 @@
         <div class="menu-bg gradient-body-1"></div>
         <div class="menu-scroll">
             <div class="menu-header">
-                <a class="menu-logo" href="index.html"></a>
+                <a class="menu-logo" href="home-landing.html"></a>
                 <h1>Photogram</h1>
                 <p>Taking the life from your models</p>
             </div>
             <div class="menu-list icon-background-active">
                 <em class="menu-divider top-10">Navigation</em>
-                <a class="menu-item" href="index.html"><i class="fa gradient-red-light fa-star"></i>Welcome</a>
+                <a class="menu-item" href="home-landing.html"><i class="fa gradient-red-light fa-star"></i>Welcome</a>
                 <a class="menu-item" href="homepages.html"><i class="fa gradient-green-light fa-home"></i>Homepages</a>
                 <a class="menu-item active-menu" href="components.html"><i class="fa gradient-sky-light fa-cog"></i>Components<span>HOT</span></a>
                 <a class="menu-item" href="interactive.html"><i class="fa gradient-mint-dark fa-hand-point-right"></i>Interactive<span>NEW</span></a>
@@ -258,7 +258,7 @@
     <script type="text/javascript" src="scripts/plugins.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <script type="text/javascript" src="scripts/ticker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"></script>
+    <script src="scripts/roundslider.min.js"></script>
     <script type="text/javascript" charset="utf-8">
         (function() {
             poll = function() {
@@ -314,43 +314,28 @@
         var declination_value = document.querySelector('#camera_value');
         var total_value = document.querySelector('#total_value');
         var rotation_value = document.querySelector('#rotation_val');
-        var declination_label = 'declination steps';
-        var rotation_label = 'rotation steps';
     </script>
     <script type="text/javascript" charset="utf-8">
-        {
-            let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
-            let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetParent.offsetWidth / 2);
-
-            declination_value.parentElement.style.left = px + 'px';
-            declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
-            declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
-        }
         declination_stops.oninput =function(){
             let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
             let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetWidth / 2);
-            declination_value.innerHTML = declination_stops.value + ' ' + declination_label;
+            declination_value.innerHTML = declination_stops.value + ' ' + 'declination steps';
             declination_value.parentElement.style.left = px + 'px';
+            declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
 
             // Calculate total # of pictures
             let total_pics = declination_stops.value * rotation_stops.value;
             total_value.innerHTML = ' ' + total_pics + ' pictures'
         };
+        declination_stops.oninput() // call to initialize the total picture count
     </script>
     <script type="text/javascript" charset="utf-8">
-        {
-            let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
-            let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetParent.offsetWidth / 2);
-
-            rotation_value.parentElement.style.left = px + 'px';
-            rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
-            rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
-        }
         rotation_stops.oninput =function(){
             let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
             let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetWidth / 2);
-            rotation_value.innerHTML = rotation_stops.value + ' ' + rotation_label;
+            rotation_value.innerHTML = rotation_stops.value + ' ' + 'rotation steps';
             rotation_value.parentElement.style.left = px + 'px';
+            rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
 
             // Calculate total # of pictures
             let total_pics = declination_stops.value * rotation_stops.value;

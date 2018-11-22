@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""Gphoto2 Camera Control"""
 
 # python-gphoto2 - Python interface to libgphoto2
 # http://github.com/jim-easterbrook/python-gphoto2
@@ -17,11 +18,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import logging
-import os
 import sys
-import requests
-import gphoto2 as gp
-from googleapiclient.discovery import build
+import io
+import json
+import base64
+import beanstalkc as beanstalk
+import gphoto2 as gp  #pylint: disable=E0401
+from cloud_drive import google_drive
 
 
 def init_camera() -> gp.camera:
@@ -34,38 +37,41 @@ def init_camera() -> gp.camera:
     return camera
 
 
-def take_picture(camera: gp.camera, token: str,
-                 rotation_pos: int, declination_pos: int) -> str:
-    """take a picture and save it to the USB drive"""
+def take_picture(camera: gp.camera,
+                 rotation_pos: int, declination_pos: int,
+                 queue: beanstalk.Connection) -> str:
+    """take a picture and save it to the USB drive
+    or the google drive, if specified"""
+
+    # take the picture
     file_path = gp.check_result(gp.gp_camera_capture(
         camera, gp.GP_CAPTURE_IMAGE))
-    target = os.path.join('/mnt/usb', 'P{dec:02d}{rot:02d}_'.format(dec=declination_pos, rot=rotation_pos) + file_path.name)
-    camera_file = gp.check_result(gp.gp_camera_file_get(
-            camera, file_path.folder, file_path.name, gp.GP_FILE_TYPE_NORMAL))
-    gp.check_result(gp.gp_file_save(camera_file, target))
+    file_name = 'P{dec:02d}{rot:02d}_'.\
+                    format(dec=declination_pos, rot=rotation_pos) + file_path.name
 
-    if token:
-        write_file_google_drive(token, target)
+    # read the photo from the camera
+    camera_file = gp.check_result(gp.gp_camera_file_get(camera,
+                                                        file_path.folder,
+                                                        file_path.name,
+                                                        gp.GP_FILE_TYPE_NORMAL))
 
-    return target
+    # if a google drive isn't specified, write to the local USB drive
+    # read the image from the camera into memory
+    # and upload it
+    file_data = gp.check_result(gp.gp_file_get_data_and_size(camera_file))
 
-
-def write_file_google_drive(token:str, filename: str) -> bool:
-    headers = {"Authorization": "Bearer " + token}
-    para = {
-        "name": filename,
-        "parents": ["RpiPG"]
-    }
-    files = {
-        'data': {'metadata', json.dumps(para), 'applicaiton/json; charset=UTF-8'},
-        'file': {'image/jpeg', open(filename, "rb")}
-    }
-
-    r = requests.post(
-        "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart",
-        headers=headers,
-        files=files)
-    print(r.text)
+    # okay, upload to the Google drive via a thread...
+    byte_stream = io.BytesIO(file_data)
+    camera_bytes = byte_stream.read(-1)
+    job = {'task': 'photo',
+           'filename': file_name,
+           'data': base64.encodebytes(camera_bytes).decode('ascii')}
+    # now send the photo to the Google Drive process
+    queue.use(google_drive.GDRIVE_QUEUE)
+    job_str = json.dumps(job)
+    print("photo job size is {0} bytes".format(len(job_str)))
+    queue.put(job_str)
+    return file_name
 
 
 def exit_camera(camera: gp.camera) -> None:
@@ -76,9 +82,9 @@ def exit_camera(camera: gp.camera) -> None:
 def main():
     """simple standalone testing, take some pictures"""
     camera = init_camera()
-    for d in range(0, 3):
-        for r in range(0,2):
-            take_picture(camera, r, d)
+    for declination in range(0, 3):
+        for rotation in range(0, 2):
+            take_picture(camera, None, rotation, declination)
 
     return 0
 
