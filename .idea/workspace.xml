@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/home-landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/home-landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/google_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/google_drive.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/scripts/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/scripts/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
@@ -70,7 +69,7 @@
           <entry key="conf" value="3" />
           <entry key="css" value="11" />
           <entry key="gitignore" value="5" />
-          <entry key="html" value="27" />
+          <entry key="html" value="28" />
           <entry key="jpg" value="1" />
           <entry key="js" value="12" />
           <entry key="json" value="3" />
@@ -87,7 +86,7 @@
           <entry key="Bash" value="15" />
           <entry key="BuildoutCfg" value="3" />
           <entry key="CSS" value="11" />
-          <entry key="HTML" value="27" />
+          <entry key="HTML" value="28" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="12" />
@@ -103,13 +102,13 @@
           <entry key="css" value="8" />
           <entry key="dummy" value="68" />
           <entry key="gitignore" value="83" />
-          <entry key="html" value="13830" />
-          <entry key="js" value="734" />
+          <entry key="html" value="13914" />
+          <entry key="js" value="738" />
           <entry key="nginx" value="3" />
           <entry key="py" value="44359" />
           <entry key="rst" value="3950" />
           <entry key="sh" value="2980" />
-          <entry key="txt" value="6383" />
+          <entry key="txt" value="6609" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -117,9 +116,9 @@
           <entry key="Bash" value="2980" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="13830" />
-          <entry key="JavaScript" value="734" />
-          <entry key="PLAIN_TEXT" value="6534" />
+          <entry key="HTML" value="13914" />
+          <entry key="JavaScript" value="738" />
+          <entry key="PLAIN_TEXT" value="6760" />
           <entry key="Python" value="44359" />
           <entry key="ReST" value="3950" />
           <entry key="nginx file type" value="3" />
@@ -154,8 +153,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/scripts/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="999">
+              <caret line="96" selection-start-line="96" selection-end-line="96" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -164,10 +163,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/google_drive.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="256" column="58" selection-start-line="256" selection-start-column="58" selection-end-line="256" selection-end-column="58" />
+              <caret line="259" column="64" selection-start-line="259" selection-start-column="64" selection-end-line="259" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -262,7 +270,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pool_google_token</find>
       <find>/oauth/token</find>
       <find>/home</find>
       <find>Google</find>
@@ -292,6 +299,7 @@
       <find>camera</find>
       <find>photograph_model</find>
       <find>post</find>
+      <find>index.</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -335,7 +343,6 @@
         <option value="$PROJECT_DIR$/configuration/google_api.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/website/google_device.html" />
-        <option value="$PROJECT_DIR$/website/google_drive.html" />
         <option value="$PROJECT_DIR$/restapi/__init__.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/cloud_drive/google_drive.py" />
@@ -346,8 +353,9 @@
         <option value="$PROJECT_DIR$/website/styles/roundslider.min.css" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
-        <option value="$PROJECT_DIR$/website/scripts/utils.js" />
         <option value="$PROJECT_DIR$/website/setup.html" />
+        <option value="$PROJECT_DIR$/website/scripts/utils.js" />
+        <option value="$PROJECT_DIR$/website/google_drive.html" />
       </list>
     </option>
   </component>
@@ -358,8 +366,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="846" />
-    <option name="y" value="214" />
+    <option name="x" value="1153" />
+    <option name="y" value="490" />
     <option name="width" value="2371" />
     <option name="height" value="1571" />
   </component>
@@ -516,13 +524,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00148" summary="ignore switches when rotating for exit reasons">
-      <created>1541432361069</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1541432361069</updated>
     </task>
     <task id="LOCAL-00149" summary="some restructuring of the code">
       <created>1541443541234</created>
@@ -860,7 +861,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542861345632</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="- using 'defer', control Javascript load/execution&#10;- create &quot;google_drive_cookie&quot; posting utility so we can post the google drive info during Scan&#10;- now if we exit out of taking pictures, make sure we clean up the camera object!">
+      <created>1542999371410</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1542999371410</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -905,7 +913,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="846" y="214" width="2371" height="1571" extended-state="0" />
+    <frame x="1153" y="490" width="2371" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.20943315" />
@@ -961,7 +969,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ignore .idea files we shouldn't track" />
     <MESSAGE value="error with let/var redeclaration" />
     <MESSAGE value="fix variable scoping in javascript" />
     <MESSAGE value="check for data &quot;not null&quot; to determine if we display new status" />
@@ -986,7 +993,8 @@
     <MESSAGE value="fix typo" />
     <MESSAGE value="remove auto" />
     <MESSAGE value="- now support Google Drive!&#10;- numerous fixes&#10;- using multiprocessing to interleave google drive upload with picture download&#10;- local .js packages&#10;- optimize javascript in web pages&#10;- remove references to index.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="- now support Google Drive!&#10;- numerous fixes&#10;- using multiprocessing to interleave google drive upload with picture download&#10;- local .js packages&#10;- optimize javascript in web pages&#10;- remove references to index.html" />
+    <MESSAGE value="- using 'defer', control Javascript load/execution&#10;- create &quot;google_drive_cookie&quot; posting utility so we can post the google drive info during Scan&#10;- now if we exit out of taking pictures, make sure we clean up the camera object!" />
+    <option name="LAST_COMMIT_MESSAGE" value="- using 'defer', control Javascript load/execution&#10;- create &quot;google_drive_cookie&quot; posting utility so we can post the google drive info during Scan&#10;- now if we exit out of taking pictures, make sure we clean up the camera object!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1285,13 +1293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/google_drive.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="103" selection-start-line="98" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1425,23 +1426,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/website/setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="259" column="64" selection-start-line="259" selection-start-column="64" selection-end-line="259" selection-end-column="64" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/scripts/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="999">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/setup.html">
+    <entry file="file://$PROJECT_DIR$/website/google_drive.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="256" column="58" selection-start-line="256" selection-start-column="58" selection-end-line="256" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="377">
+          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
         </state>
       </provider>
     </entry>

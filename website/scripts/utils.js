@@ -75,21 +75,23 @@ function upload_google_drive_info() {
 
         // We need to pass the information to our REST API
         let api_root = ":8081/oauth";
-        if (is_nginx()) { api_root = "/api/oauth";} // Nginix -> Raspberry Pi
+        if (is_nginx()) {
+            api_root = "/api/oauth";
+        } // Nginix -> Raspberry Pi
         $.ajax({
-           type: "POST",
-           contentType: 'application/json',
-           dataType: "json",
-           data: JSON.stringify(token_json),
-           url: "http://" + location.hostname + api_root + "/token",
-           success: function(data){
+            type: "POST",
+            contentType: 'application/json',
+            dataType: "json",
+            data: JSON.stringify(token_json),
+            url: "http://" + location.hostname + api_root + "/token",
+            success: function (data) {
                 // okay, the rig controller has the information
-               console.log('Success!');
-           },
-           error: function() { // error logging
-              console.log('Error!');
-           }
+                console.log('Success!');
+            },
+            error: function () { // error logging
+                console.log('Error!');
+            }
 
         });
-
+    }
 }
