@@ -196,44 +196,46 @@ def photograph_model(declination_divisions: int,
         post_status(status_queue, 'Camera is off!')
         return
 
-    for declination in range(0, declination_divisions):
-        post_status(status_queue, "rotating model")
-        for rotation in range(0, rotation_divisions):
+    try:
+        for declination in range(0, declination_divisions):
+            post_status(status_queue, "rotating model")
+            for rotation in range(0, rotation_divisions):
 
-            take_picture(my_camera=rig_camera,
-                         queue=status_queue,
-                         rotation=rotation,
-                         declination=declination)
+                take_picture(my_camera=rig_camera,
+                             queue=status_queue,
+                             rotation=rotation,
+                             declination=declination)
 
-            forced_exit = rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
+                forced_exit = rotate_stepper.step(steps_per_rotation, STEP_MODEL_CCW,
+                                                  Raspi_MotorHAT.DOUBLE)
+                if forced_exit and forced_exit['exit'] == 'cancel':
+                    return  # forced exit
+
+            # if we hit an exit condition while rotating, or there are no more
+            # steps, then bale out
+            if steps_per_declination == 0:
+                return
+
+            # okay, we have work to do, position the camera
+            forced_exit = camera_stepper.step(steps_per_declination, STEP_CAMERA_CCW,
                                               Raspi_MotorHAT.DOUBLE)
-            if forced_exit and forced_exit['exit'] == 'cancel':
-                return  # forced exit
+            if forced_exit:
+                # if this is the last position, we expect to hit the end-stop
+                if remaining_declination_steps != steps_per_declination:
+                    print("...end stop hit! {0}/{1}".
+                          format(remaining_declination_steps,
+                                 steps_per_declination))
+                    return
+                if forced_exit['exit'] != 'ccw':
+                    return
 
-        # if we hit an exit condition while rotating, or there are no more
-        # steps, then bale out
-        if steps_per_declination == 0:
-            return
+            # the declination motion may not be perfect fit so don't overstep
+            remaining_declination_steps -= steps_per_declination
+            if remaining_declination_steps < steps_per_declination:
+                steps_per_declination = remaining_declination_steps
 
-        # okay, we have work to do, position the camera
-        forced_exit = camera_stepper.step(steps_per_declination, STEP_CAMERA_CCW,
-                                          Raspi_MotorHAT.DOUBLE)
-        if forced_exit:
-            # if this is the last position, we expect to hit the end-stop
-            if remaining_declination_steps != steps_per_declination:
-                print("...end stop hit! {0}/{1}".
-                      format(remaining_declination_steps,
-                             steps_per_declination))
-                return
-            if forced_exit['exit'] != 'ccw':
-                return
-
-        # the declination motion may not be perfect fit so don't overstep
-        remaining_declination_steps -= steps_per_declination
-        if remaining_declination_steps < steps_per_declination:
-            steps_per_declination = remaining_declination_steps
-
-        # free up the camera now that we don't need it
+    finally:
+        # no matter how we exit, free up the camera!
         camera.exit_camera(rig_camera)
 
 

@@ -64,3 +64,32 @@ function is_nginx(headers = null) {
 
     return headers["server"].includes('nginx');
 }
+
+function upload_google_drive_info() {
+    // Let's check the cookie and see if we have Google credentials
+    let token_info = readCookie("token");
+    if (token_info != null) {
+        console.log("token=" + token_info);
+        // okay we have token information
+        token_json = {'token': token_info};
+
+        // We need to pass the information to our REST API
+        let api_root = ":8081/oauth";
+        if (is_nginx()) { api_root = "/api/oauth";} // Nginix -> Raspberry Pi
+        $.ajax({
+           type: "POST",
+           contentType: 'application/json',
+           dataType: "json",
+           data: JSON.stringify(token_json),
+           url: "http://" + location.hostname + api_root + "/token",
+           success: function(data){
+                // okay, the rig controller has the information
+               console.log('Success!');
+           },
+           error: function() { // error logging
+              console.log('Error!');
+           }
+
+        });
+
+}

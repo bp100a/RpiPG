@@ -255,11 +255,11 @@
 	<a href="#" class="back-to-top-badge back-to-top-small shadow-large bg-blue-dark"><i class="fa fa-angle-up"></i>Back to Top</a>
 </div>
     <script type="text/javascript" src="scripts/jquery.js"></script>
-    <script type="text/javascript" src="scripts/plugins.js"></script>
-    <script type="text/javascript" src="scripts/custom.js"></script>
-    <script type="text/javascript" src="scripts/ticker.js"></script>
-    <script src="scripts/roundslider.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" src="scripts/plugins.js" defer></script>
+    <script type="text/javascript" src="scripts/custom.js" defer></script>
+    <script type="text/javascript" src="scripts/ticker.js" defer></script>
+    <script src="scripts/roundslider.min.js" defer></script>
+    <script type="text/javascript" charset="utf-8" defer>
         (function() {
             poll = function() {
               $.ajax({
@@ -286,7 +286,7 @@
             poll(); // also run function on init
         })();
     </script>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" defer>
         window.formatter = function (e) {
             return '*' + e.value;
         }
@@ -308,14 +308,14 @@
             });
         });
     </script>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" defer>
         var declination_stops = document.querySelector('#camera_rotation');
         var rotation_stops = document.querySelector('#model_rotation');
         var declination_value = document.querySelector('#camera_value');
         var total_value = document.querySelector('#total_value');
         var rotation_value = document.querySelector('#rotation_val');
     </script>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" defer>
         declination_stops.oninput =function(){
             let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
             let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetWidth / 2);
@@ -329,7 +329,7 @@
         };
         declination_stops.oninput() // call to initialize the total picture count
     </script>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" defer>
         rotation_stops.oninput =function(){
             let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
             let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetWidth / 2);
@@ -344,8 +344,9 @@
 
         rotation_stops.oninput() // call to initialize the total picture count
     </script>
-    <script>
+    <script defer>
         $('#scan').click(function(){
+            upload_google_drive_info();
             let declination_value = document.querySelector("#camera_rotation").value;
             let rotation_value = document.querySelector("#model_rotation").value;
             let declination_values = $("#slider").roundSlider("getValue").split(',');
