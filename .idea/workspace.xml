@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/website/scripts/setup_pg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/google_drive.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/google_drive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/scripts/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/scripts/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/home-landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/home-landing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -69,29 +71,29 @@
           <entry key="conf" value="3" />
           <entry key="css" value="11" />
           <entry key="gitignore" value="5" />
-          <entry key="html" value="28" />
+          <entry key="html" value="29" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="12" />
+          <entry key="js" value="21" />
           <entry key="json" value="3" />
           <entry key="nginx" value="1" />
           <entry key="png" value="2" />
-          <entry key="py" value="57" />
+          <entry key="py" value="59" />
           <entry key="rst" value="2" />
-          <entry key="sh" value="15" />
+          <entry key="sh" value="16" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="15" />
+          <entry key="Bash" value="16" />
           <entry key="BuildoutCfg" value="3" />
           <entry key="CSS" value="11" />
-          <entry key="HTML" value="28" />
+          <entry key="HTML" value="29" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="12" />
+          <entry key="JavaScript" value="21" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="57" />
+          <entry key="Python" value="59" />
           <entry key="ReST" value="2" />
           <entry key="nginx file type" value="1" />
         </counts>
@@ -102,23 +104,23 @@
           <entry key="css" value="8" />
           <entry key="dummy" value="68" />
           <entry key="gitignore" value="83" />
-          <entry key="html" value="13914" />
-          <entry key="js" value="738" />
+          <entry key="html" value="14810" />
+          <entry key="js" value="850" />
           <entry key="nginx" value="3" />
           <entry key="py" value="44359" />
           <entry key="rst" value="3950" />
-          <entry key="sh" value="2980" />
-          <entry key="txt" value="6609" />
+          <entry key="sh" value="3132" />
+          <entry key="txt" value="6772" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="2980" />
+          <entry key="Bash" value="3132" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="13914" />
-          <entry key="JavaScript" value="738" />
-          <entry key="PLAIN_TEXT" value="6760" />
+          <entry key="HTML" value="14810" />
+          <entry key="JavaScript" value="850" />
+          <entry key="PLAIN_TEXT" value="6923" />
           <entry key="Python" value="44359" />
           <entry key="ReST" value="3950" />
           <entry key="nginx file type" value="3" />
@@ -144,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/home-landing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="886">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="911">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
             </state>
           </provider>
         </entry>
@@ -162,11 +164,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/google_drive.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+            <state relative-caret-position="462">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
@@ -174,8 +176,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="259" column="64" selection-start-line="259" selection-start-column="64" selection-end-line="259" selection-end-column="64" />
+            <state relative-caret-position="1461">
+              <caret line="258" selection-start-line="258" selection-end-line="258" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -184,23 +186,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
+        <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="247" selection-start-line="247" selection-end-line="247" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <marker date="1542824931904" expanded="true" signature="2915:3335" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="3401:3406" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="12488:12808" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="13191:13395" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="13444:13449" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="13689:14499" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="14665:15164" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="16913:16916" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="17014:18810" ph="..." />
-                <marker date="1542824931904" expanded="true" signature="18291:18810" ph="..." />
-              </folding>
+            <state relative-caret-position="-2640">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -208,7 +197,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="1738">
               <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
               <folding>
                 <element signature="e#20#31#0" expanded="true" />
@@ -220,16 +209,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/configuration/google_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
-              <folding>
-                <element signature="e#321#334#0" expanded="true" />
-                <marker date="1542996118994" expanded="true" signature="9024:9126" ph="..." />
-                <marker date="1542996118994" expanded="true" signature="9137:9142" ph="..." />
-              </folding>
+            <state relative-caret-position="44">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1914">
+              <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -244,14 +237,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
+        <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1566">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-              <folding>
-                <element signature="e#857#871#0" expanded="true" />
-                <marker date="1542823649624" expanded="true" signature="2928:2933" ph="..." />
-              </folding>
+            <state relative-caret-position="934">
+              <caret line="78" column="70" lean-forward="true" selection-start-line="78" selection-start-column="70" selection-end-line="78" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -263,17 +252,13 @@
       <list>
         <option value="HTML File" />
         <option value="Python Script" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/oauth/token</find>
-      <find>/home</find>
-      <find>Google</find>
-      <find>GoogleDrive</find>
       <find>google_drive</find>
       <find>google_di</find>
       <find>test_</find>
@@ -293,13 +278,17 @@
       <find>scanning a</find>
       <find>version</find>
       <find>index.html</find>
-      <find>jquery</find>
       <find>index</find>
       <find>process</find>
       <find>camera</find>
       <find>photograph_model</find>
-      <find>post</find>
       <find>index.</find>
+      <find>script</find>
+      <find>wp_enque</find>
+      <find>post</find>
+      <find>Carou</find>
+      <find>jquery</find>
+      <find>custom</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -338,7 +327,6 @@
         <option value="$PROJECT_DIR$/website/deploy/conf.nginx" />
         <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/website/google.html" />
-        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
         <option value="$PROJECT_DIR$/tests/test_restapi.py" />
         <option value="$PROJECT_DIR$/configuration/google_api.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -352,10 +340,12 @@
         <option value="$PROJECT_DIR$/website/scripts/jquery.min.js" />
         <option value="$PROJECT_DIR$/website/styles/roundslider.min.css" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
-        <option value="$PROJECT_DIR$/website/home-landing.html" />
-        <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/scripts/utils.js" />
         <option value="$PROJECT_DIR$/website/google_drive.html" />
+        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
+        <option value="$PROJECT_DIR$/website/home-landing.html" />
+        <option value="$PROJECT_DIR$/website/setup.html" />
+        <option value="$PROJECT_DIR$/website/scripts/setup_pg.js" />
       </list>
     </option>
   </component>
@@ -366,8 +356,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1153" />
-    <option name="y" value="490" />
+    <option name="x" value="980" />
+    <option name="y" value="228" />
     <option name="width" value="2371" />
     <option name="height" value="1571" />
   </component>
@@ -387,24 +377,12 @@
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="restapi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -524,13 +502,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00149" summary="some restructuring of the code">
-      <created>1541443541234</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1541443541234</updated>
     </task>
     <task id="LOCAL-00150" summary="round up!">
       <created>1541443967139</created>
@@ -868,7 +839,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542999371410</updated>
     </task>
-    <option name="localTasksCounter" value="198" />
+    <task id="LOCAL-00198" summary="- still working on Javascript loading issues&#10;- fix index.html references in Google Drive page&#10;- fix syntax error in reading cookie &amp; writing oAuth info to REST API">
+      <created>1543000617302</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1543000617302</updated>
+    </task>
+    <option name="localTasksCounter" value="199" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -913,7 +891,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1153" y="490" width="2371" height="1571" extended-state="0" />
+    <frame x="980" y="228" width="2371" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.20943315" />
@@ -969,7 +947,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="error with let/var redeclaration" />
     <MESSAGE value="fix variable scoping in javascript" />
     <MESSAGE value="check for data &quot;not null&quot; to determine if we display new status" />
     <MESSAGE value="add item to list" />
@@ -994,16 +971,12 @@
     <MESSAGE value="remove auto" />
     <MESSAGE value="- now support Google Drive!&#10;- numerous fixes&#10;- using multiprocessing to interleave google drive upload with picture download&#10;- local .js packages&#10;- optimize javascript in web pages&#10;- remove references to index.html" />
     <MESSAGE value="- using 'defer', control Javascript load/execution&#10;- create &quot;google_drive_cookie&quot; posting utility so we can post the google drive info during Scan&#10;- now if we exit out of taking pictures, make sure we clean up the camera object!" />
-    <option name="LAST_COMMIT_MESSAGE" value="- using 'defer', control Javascript load/execution&#10;- create &quot;google_drive_cookie&quot; posting utility so we can post the google drive info during Scan&#10;- now if we exit out of taking pictures, make sure we clean up the camera object!" />
+    <MESSAGE value="- still working on Javascript loading issues&#10;- fix index.html references in Google Drive page&#10;- fix syntax error in reading cookie &amp; writing oAuth info to REST API" />
+    <option name="LAST_COMMIT_MESSAGE" value="- still working on Javascript loading issues&#10;- fix index.html references in Google Drive page&#10;- fix syntax error in reading cookie &amp; writing oAuth info to REST API" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/website/homerig.html</url>
-          <line>12</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/test_rig_runner.py</url>
           <line>61</line>
@@ -1079,22 +1052,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rpihat/limit_switch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cameractrl/imageCapture.py" />
-    <entry file="file://D:/Users/Harry/Downloads/jticker-master/jticker-master/jquery.jticker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264" />
-      </provider>
-    </entry>
-    <entry file="file://D:/Users/Harry/Downloads/jticker-master/jticker-master/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -1149,13 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/ticker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1248,13 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configuration/google_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Python/Python36-32/Lib/uuid.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -1293,13 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="61" column="16" lean-forward="true" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -1330,29 +1266,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/roundslider.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="1" column="29603" selection-start-line="1" selection-start-column="29603" selection-end-line="1" selection-end-column="29603" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/google.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1376,19 +1293,6 @@
     <entry file="file://$PROJECT_DIR$/apikeys/RpiPhotogrammetry-38f3abb68f1b.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
-          <folding>
-            <element signature="e#20#31#0" expanded="true" />
-            <marker date="1542823579208" expanded="true" signature="321:326" ph="..." />
-            <marker date="1542823579208" expanded="true" signature="1941:2362" ph="..." />
-            <marker date="1542823579208" expanded="true" signature="4872:4877" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1566">
@@ -1397,13 +1301,6 @@
             <element signature="e#857#871#0" expanded="true" />
             <marker date="1542823649624" expanded="true" signature="2928:2933" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1419,23 +1316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/setup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="259" column="64" selection-start-line="259" selection-start-column="64" selection-end-line="259" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/scripts/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="999">
@@ -1446,10 +1326,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/website/homerig.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/roundslider.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3938">
+          <caret line="1" column="29603" selection-start-line="1" selection-start-column="29603" selection-end-line="1" selection-end-column="29603" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/ticker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1593">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/plugins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="12" column="6770" selection-start-line="12" selection-start-column="6770" selection-end-line="12" selection-end-column="6770" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="934">
+          <caret line="78" column="70" lean-forward="true" selection-start-line="78" selection-start-column="70" selection-end-line="78" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/google_drive.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+        <state relative-caret-position="462">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="911">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1461">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1914">
+          <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2640">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1738">
+          <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+          <folding>
+            <element signature="e#20#31#0" expanded="true" />
+            <marker date="1542823579208" expanded="true" signature="321:326" ph="..." />
+            <marker date="1542823579208" expanded="true" signature="1941:2362" ph="..." />
+            <marker date="1542823579208" expanded="true" signature="4872:4877" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configuration/google_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

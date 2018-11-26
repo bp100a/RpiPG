@@ -8,12 +8,13 @@
 <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
 <link rel="stylesheet" type="text/css" href="styles/framework.css">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<script src="scripts/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="styles/ticker.css">
 <link href="styles/roundslider.min.css" rel="stylesheet" />
 </head>
 
 <body>
-<div id="page-transitions" class="page-build">
+    <div id="page-transitions" class="page-build">
     <div class="page-bg gradient-body-1"></div>
 
 	<div class="header shadow-large header-light header-logo-app">
@@ -254,114 +255,10 @@
     </div>
 	<a href="#" class="back-to-top-badge back-to-top-small shadow-large bg-blue-dark"><i class="fa fa-angle-up"></i>Back to Top</a>
 </div>
-    <script type="text/javascript" src="scripts/jquery.js"></script>
+
     <script type="text/javascript" src="scripts/plugins.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <script type="text/javascript" src="scripts/ticker.js" defer></script>
-    <script src="scripts/roundslider.min.js" defer></script>
-    <script type="text/javascript" charset="utf-8" defer>
-        (function() {
-            poll = function() {
-              $.ajax({
-                url: "http://" + location.hostname + "/api/status",
-                dataType: 'json',
-                type: 'get',
-                success: function(data) { // check if available
-                    if (data != null) {
-                        console.log(JSON.parse(data));
-                        json = JSON.parse(data)
-                        if (json.msg) { // get and check data value
-                            $('.ticker').append('<li>' + json.msg + '</li>'); // get and print data string
-                        }
-                    }
-                },
-                error: function() { // error logging
-                  console.log('Error!');
-                }
-              });
-            },
-            pollInterval = setInterval(function() { // run function every 10 seconds
-              poll();
-              }, 10000);
-            poll(); // also run function on init
-        })();
-    </script>
-    <script type="text/javascript" charset="utf-8" defer>
-        window.formatter = function (e) {
-            return '*' + e.value;
-        }
-        $(document).ready(function () {
-            let start_angle = 90; // angles expressed CW
-            let end_angle = 200;  // ~ 20 degrees below horizontal
-            // Range is always 0-100, so the steps
-            // is (end-start) / 100
-            let steps = (end_angle - start_angle) / 100;
-            $("#slider").roundSlider({
-                startAngle: start_angle,
-                endAngle: end_angle,
-                value: "0, 100",
-                sliderType: "range",
-                radius: 130,
-                tooltipFormat: function (e) {
-                    return parseInt(90 - (e.value * steps)) + String.fromCharCode(176);
-                }
-            });
-        });
-    </script>
-    <script type="text/javascript" charset="utf-8" defer>
-        var declination_stops = document.querySelector('#camera_rotation');
-        var rotation_stops = document.querySelector('#model_rotation');
-        var declination_value = document.querySelector('#camera_value');
-        var total_value = document.querySelector('#total_value');
-        var rotation_value = document.querySelector('#rotation_val');
-    </script>
-    <script type="text/javascript" charset="utf-8" defer>
-        declination_stops.oninput =function(){
-            let off = declination_stops.offsetWidth / (parseInt(declination_stops.max) - parseInt(declination_stops.min));
-            let px = ((declination_stops.valueAsNumber - parseInt(declination_stops.min)) * off) - (declination_value.offsetWidth / 2);
-            declination_value.innerHTML = declination_stops.value + ' ' + 'declination steps';
-            declination_value.parentElement.style.left = px + 'px';
-            declination_value.parentElement.style.top = declination_stops.offsetHeight + 'px';
-
-            // Calculate total # of pictures
-            let total_pics = declination_stops.value * rotation_stops.value;
-            total_value.innerHTML = ' ' + total_pics + ' pictures'
-        };
-        declination_stops.oninput() // call to initialize the total picture count
-    </script>
-    <script type="text/javascript" charset="utf-8" defer>
-        rotation_stops.oninput =function(){
-            let off = rotation_stops.offsetWidth / (parseInt(rotation_stops.max) - parseInt(rotation_stops.min));
-            let px = ((rotation_stops.valueAsNumber - parseInt(rotation_stops.min)) * off) - (rotation_value.offsetWidth / 2);
-            rotation_value.innerHTML = rotation_stops.value + ' ' + 'rotation steps';
-            rotation_value.parentElement.style.left = px + 'px';
-            rotation_value.parentElement.style.top = rotation_stops.offsetHeight + 'px';
-
-            // Calculate total # of pictures
-            let total_pics = declination_stops.value * rotation_stops.value;
-            total_value.innerHTML = ' ' + total_pics + ' pictures'
-          };
-
-        rotation_stops.oninput() // call to initialize the total picture count
-    </script>
-    <script defer>
-        $('#scan').click(function(){
-            upload_google_drive_info();
-            let declination_value = document.querySelector("#camera_rotation").value;
-            let rotation_value = document.querySelector("#model_rotation").value;
-            let declination_values = $("#slider").roundSlider("getValue").split(',');
-            let declination_start = declination_values[1];
-            let declination_stop = declination_values[0];
-            // alert("declination= " + declination_value + "\nrotation=" + rotation_value + "\nstart/stop =" + declination_start + ', ' + declination_stop);
-             $.ajax({
-                 type: "POST",
-                 dataType: "json",
-                 contentType: "application/json; charset=utf-8",
-                 data: JSON.stringify({"declination_steps": declination_value, "rotation_steps": rotation_value, "start": declination_start, "stop": declination_stop}),
-                 url: "http://" + location.hostname + "/api/scan",
-                 success: function(data){
-                 }
-             });
-        });
-    </script>
+    <script type="text/javascript" src="scripts/roundslider.min.js"></script>
+    <script type="text/javascript" src="scripts/setup_pg.js" defer></script>
 </body>
