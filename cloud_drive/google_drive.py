@@ -9,56 +9,81 @@ from googleapiclient.http import MediaInMemoryUpload
 import beanstalkc as beanstalk
 from configuration import google_api  # our client id & secret
 
+GDRIVE_QUEUE = 'gdrive'  # "tube" for all Google Drive work
+STATUS_QUEUE = 'status'  # shared status tube
+
 
 class GoogleDrive:
     """here's where we do all our Google Drive work"""
 
-    access_token = None
-    refresh_token = None
-    expires_in = None
-    token_type = None
     drive_client = None
-    session_folder = None
     sub_folder_id = None
+    _queue = None
 
-    def __init__(self, access_info: dict) -> None:
+    @property
+    def queue(self) -> beanstalk.Connection:
+        """property for our beanstalk status queue"""
+        return self._queue
+
+    @queue.setter
+    def queue(self, value: beanstalk.Connection):
+        self._queue = value
+
+    def __init__(self, access_info: dict, queue: beanstalk.Connection) -> None:
         """initialize our google drive object
         with the device oAuth2 info"""
-        print('GoogleDrive.__init__(): access_info is type {0}'.format(type(access_info)))
+        self.post_status('GoogleDrive.__init__(): access_info is type {0}'.
+                         format(type(access_info)))
         try:
-            self.access_token = access_info['access_token']
-            self.refresh_token = access_info['refresh_token']
-            self.expires_in = access_info['expires_in']
-            self.token_type = access_info['token_type']
+            self.queue = queue
+            if self.queue:
+                self.queue.use(STATUS_QUEUE)
+
+            access_token = access_info['access_token']
+            refresh_token = access_info['refresh_token']
+            expires_in = access_info['expires_in']
+            token_type = access_info['token_type']  #pylint:disable-msg=unused-variable
+
+            credentials = client.GoogleCredentials(
+                access_token=access_token,
+                client_id=google_api.CLIENT_ID,
+                client_secret=google_api.CLIENT_SECRET,
+                refresh_token=refresh_token,
+                token_expiry=expires_in,
+                token_uri="https://www.googleapis.com/oauth2/v4/token",
+                user_agent='my-user-agent/1.0')
+
+            google_http = credentials.authorize(Http())
+            google_drive = discovery.build('drive', 'v3', http=google_http)
+            self.drive_client = google_drive.files()  # pylint: disable=E1101
         except KeyError as key_error:
-            print("Error with access info: {0}".format(key_error.__str__()))
+            self.post_status("Error with access info: {0}".format(key_error.__str__()))
 
-        credentials = client.GoogleCredentials(
-            access_token=self.access_token,
-            client_id=google_api.CLIENT_ID,
-            client_secret=google_api.CLIENT_SECRET,
-            refresh_token=self.refresh_token,
-            token_expiry=self.expires_in,
-            token_uri="https://www.googleapis.com/oauth2/v4/token",
-            user_agent='my-user-agent/1.0')
-
-        google_http = credentials.authorize(Http())
-        google_drive = discovery.build('drive', 'v3', http=google_http)
-        self.drive_client = google_drive.files()  #pylint: disable=E1101
-        self.session_folder = time.strftime("%Y%m%d%H%M%S_photos", time.gmtime())
+    def post_status(self, message: str) -> None:
+        """post a simple message to whomever is listening"""
+        if self.queue:
+            status_json = json.dumps({'msg': message})
+            self.queue.put(status_json)
+        print(message)
 
     def find_root_folder(self, root_name) -> str:
         """Search the google drive for a previously created
         root folder to write to. Return the parent id"""
-        folder_list = self.drive_client.list(q="trashed=false").execute()
-        for folder in folder_list['files']:
-            if folder['name'] == root_name and \
-               folder['mimeType'] == 'application/vnd.google-apps.folder':
-                return folder['id']
+        try:
+            folder_list = self.drive_client.list(q="trashed=false").execute()
+            for folder in folder_list['files']:
+                if folder['name'] == root_name and \
+                   folder['mimeType'] == 'application/vnd.google-apps.folder':
+                    return folder['id']
+        except client.HttpAccessTokenRefreshError as token_error:
+            self.post_status(message='Token is expired! {0}'.format(token_error.__str__()))
+
         return None
 
     def create_root_folder(self, root_folder: str) -> bool:
-        """Create the /rpipg folder to put all photos in"""
+        """Create the /rpipg folder if it does not already
+        exists. Below this will be our *session folder*
+        where all photos for this session will reside"""
         # format time into our session folder:
         # YYYYMMDDHHmmss_photos
         try:
@@ -75,9 +100,10 @@ class GoogleDrive:
                 root_id = response.get('id')  # this is the fileid
 
             # now create session folder
+            session_folder = time.strftime("%Y%m%d%H%M%S_photos", time.gmtime())
             sub_folder_kwargs = {
                 'body': {
-                    'name': self.session_folder,
+                    'name': session_folder,
                     'mimeType': 'application/vnd.google-apps.folder',
                     'parents': [root_id]
                 },
@@ -92,7 +118,9 @@ class GoogleDrive:
         return True
 
     def write_file_bytes(self, filename: str, data: bytes) -> dict:
-        """Write the file to the google drive"""
+        """Write the file to the google drive
+        These files are images, so they are big, about
+        4.5MB"""
 
         metadata = {'title': filename,
                     'name': filename,
@@ -104,9 +132,6 @@ class GoogleDrive:
             execute()
 
         return results
-
-
-GDRIVE_QUEUE = 'gdrive'
 
 
 def configure_drive_queue() -> beanstalk.Connection:
@@ -143,16 +168,18 @@ def process_photos():
         if task == 'token':
             access_info = json.loads(job_dict['value'])
             print("process_photos: access_info = {0}".format(access_info))
-            drive = GoogleDrive(access_info)
+            drive = GoogleDrive(access_info, queue)
             if drive:
                 drive.create_root_folder('rpipg')
-            continue
+        elif task == 'photo':
+            if drive:
+                drive.post_status(message="process_photos: .filename={0}".
+                                  format(job_dict['filename']))
+                drive.post_status(message="... type(.data)={0}".format(type(job_dict['data'])))
+                decoded_bytes = base64.decodebytes(job_dict['data'].encode('utf-8'))
+                drive.write_file_bytes(job_dict['filename'], decoded_bytes)
+            else:
+                print("Cannot save photo, no Google Drive authorized!")
 
-        if task == 'photo':
-            print("process_photos: .filename={0}".format(job_dict['filename']))
-            print("... type(.data)={0}".format(type(job_dict['data'])))
-            decoded_bytes = base64.decodebytes(job_dict['data'].encode('utf-8'))
-            drive.write_file_bytes(job_dict['filename'], decoded_bytes)
-
-    print("process_photos(): exitting...")
+    print("process_photos(): exiting...")
     exit()

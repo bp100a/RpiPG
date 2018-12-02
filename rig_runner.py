@@ -296,6 +296,7 @@ def process_scan_command(job_dict: dict,
                          declination_travel_steps: int):
     """Process the scan command"""
     try:
+        print("Scan command received")
         post_status(camera_controller.queue, "scan command received!")
         declination_divisions = int(job_dict['steps']['declination'])
         rotation_divisions = int(job_dict['steps']['rotation'])
