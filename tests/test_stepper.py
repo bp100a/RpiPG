@@ -4,7 +4,7 @@ import atexit
 import time
 from rpihat.pimotorhat import Raspi_MotorHAT
 from rpihat.Raspi_PWM_Servo_Driver import PWM
-from rpihat.pimotorhat import Raspi_StepperMotor
+from rpihat.pimotorhat import RaspiStepperMotor
 from rpihat import limit_switch  # our limit switches
 
 CAMERA_STEPPER_MOTOR_NUM = 1
@@ -21,7 +21,7 @@ def yield_function(stepper_direction: int) -> bool:
 CCW_MAX_SWITCH = limit_switch.LimitSwitch(4) # furthest CCW rotation allowed
 
 # create a default object, no changes to I2C address or frequency
-MOTOR_HAT = Raspi_MotorHAT(stepper_class=Raspi_StepperMotor,
+MOTOR_HAT = Raspi_MotorHAT(stepper_class=RaspiStepperMotor,
                            pwm_class=PWM,
                            yield_func=yield_function,
                            addr=MOTOR_HAT_I2C_ADDR,

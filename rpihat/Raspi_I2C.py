@@ -1,5 +1,5 @@
-"""Raspi I2C"""
 #!/usr/bin/python
+"""Raspi I2C"""
 import re
 import smbus2 as smbus
 
@@ -7,7 +7,7 @@ import smbus2 as smbus
 # Raspi_I2C Class
 # ===========================================================================
 
-#pylint:disable=C0103
+# pylint:disable=C0103
 
 
 class Raspi_I2C(object):

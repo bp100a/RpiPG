@@ -53,7 +53,7 @@ sudo apt-get install ntfs-3g
 #    3) rig_control REST API & website (includes NGINX & Gunicorn)
 
 # now start beanstalk queue
-sudo beanstalkd -l 127.0.0.1 -p 14711 &
+sudo beanstalkd -l 127.0.0.1 -p 14711 -z 10000000 &
 
 # start the rig runner app
 python3 ~/RpiPG/rig_runner.py &

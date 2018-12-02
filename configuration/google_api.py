@@ -1,2 +1,2 @@
-CLIENT_ID = "your client id"
-CLIENT_SECRET = "your client secret"
+CLIENT_ID = "<client id>"
+CLIENT_SECRET = "<client secret>"

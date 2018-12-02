@@ -33,7 +33,6 @@ class GoogleDrive:
         except KeyError as key_error:
             print("Error with access info: {0}".format(key_error.__str__()))
 
-#        credentials = AccessTokenCredentials(self.access_token, 'my-user-agent/1.0')
         credentials = client.GoogleCredentials(
             access_token=self.access_token,
             client_id=google_api.CLIENT_ID,
@@ -127,7 +126,7 @@ def wait_for_work(queue: beanstalk.Connection) -> str:
             job.delete()  # remove from the queue
             return json.loads(job_json)
 
-        time.sleep(0.001) # sleep for 1 ms to share the computer
+        time.sleep(0.01)  # sleep for 10 ms to share the computer
 
 
 def process_photos():
@@ -155,4 +154,5 @@ def process_photos():
             decoded_bytes = base64.decodebytes(job_dict['data'].encode('utf-8'))
             drive.write_file_bytes(job_dict['filename'], decoded_bytes)
 
+    print("process_photos(): exitting...")
     exit()

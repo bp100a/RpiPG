@@ -1,14 +1,14 @@
-""" Raspberry Pi Motor HAT"""
 #!/usr/bin/python
+""" Raspberry Pi Motor HAT"""
 import sys
 import time
 import traceback
-from rpihat.basis import MotorHatInterface, StepperInterface, PWMInterface
+from rpihat.basis import PWMInterface
 
 #pylint:disable=C0103
 
 
-class Raspi_MotorHAT(MotorHatInterface):
+class Raspi_MotorHAT:
     """our motor HAT"""
     FORWARD = 1
     BACKWARD = 2
@@ -19,39 +19,53 @@ class Raspi_MotorHAT(MotorHatInterface):
     DOUBLE = 2
     INTERLEAVE = 3
     MICROSTEP = 4
+    _pwm = None
 
-    def __init__(self, stepper_class: StepperInterface,
-                 pwm_class: PWMInterface,
-                 yield_func, addr, freq, debug=False):
-        super(Raspi_MotorHAT, self).__init__(stepper_class, pwm_class,
-                                             yield_func, addr, freq, debug)
-        self._i2caddr = addr        # default addr on HAT
+    @property
+    def pwm(self) -> PWMInterface:
+        """our internal PWM interface object"""
+        return self._pwm
+
+    @pwm.setter
+    def pwm(self, value):
+        self._pwm = value
+
+    def __init__(self, pwm_obj: PWMInterface,
+                 yield_func, freq, debug=False):
+        self._i2caddr = pwm_obj.address
         self._frequency = freq		# default @1600Hz PWM freq
-        self.steppers = [stepper_class(self, 1, steps=200, yield_function=None), # rotation - no end stops
-                         stepper_class(self, 2, steps=200, yield_function=yield_func)]  # camera
-        self._pwm = pwm_class(addr, debug)
-        self._pwm.setPWMFreq(self._frequency)
+
+        # Storing the stepper objects in an array:
+        #  1 -> Rotation Stepper
+        #  2 -> Declination(camera) stepper
+        self.steppers = [RaspiStepperMotor(self, 1, steps=200, yield_function=None),
+                         RaspiStepperMotor(self, 2, steps=200, yield_function=yield_func)]
+        self.pwm = pwm_obj
+        self.pwm.debug = debug
+        self.pwm.setPWMFreq(self._frequency)
 
     def setPin(self, pin: int, value: int) -> None:
         """set the pin"""
         if (pin < 0) or (pin > 15):
             raise NameError('PWM pin must be between 0 and 15 inclusive')
         if value == 0:
-            self._pwm.setPWM(pin, 0, 4096)
+            self.pwm.setPWM(pin, 0, 4096)
         elif value == 1:
-            self._pwm.setPWM(pin, 4096, 0)
+            self.pwm.setPWM(pin, 4096, 0)
         else:
             raise NameError('Pin value must be 0 or 1!')
 
     def getStepper(self, num: int):
-        """get Stepper"""
-        if not num in (1, 2):
+        """get Stepper using 1-based indices
+         1 -> rotation stepper
+         2 -> camera/declination stepper"""
+        if num not in (1, 2):
             raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive {0}'.
                             format(num))
         return self.steppers[num-1]
 
     def release_motor(self, motor_num: int) -> None:
-        """turns off coil energization of motors"""
+        """turns off coil energizing motors"""
         if motor_num == 1:
             in2 = 9
             in1 = 10
@@ -76,25 +90,44 @@ class Raspi_MotorHAT(MotorHatInterface):
             self.release_motor(motor_num)
 
 
-class Raspi_StepperMotor(StepperInterface):
+class RaspiStepperMotor:
     """control stepper motor stepping"""
     MICROSTEPS = 8
     MICROSTEP_CURVE = [0, 50, 98, 142, 180, 212, 236, 250, 255]
-
     # MICROSTEPS = 16
     # a sinusoidal curve NOT LINEAR!
     # MICROSTEP_CURVE = [0, 25, 50, 74, 98, 120, 141, 162, 180,\
     #                    197, 212, 225, 236, 244, 250, 253, 255]
 
-    def __init__(self, controller: MotorHatInterface,
+    _MC = None
+    _yield_func = None
+
+    @property
+    def motor_controller(self) -> Raspi_MotorHAT:
+        """The controller parent for this motor"""
+        return self._MC
+
+    @motor_controller.setter
+    def motor_controller(self, value: Raspi_MotorHAT):
+        """setting the controller parent for this motor"""
+        self._MC = value
+
+    @property
+    def yield_func(self):
+        """return the yield function if specified"""
+        return self._yield_func
+
+    @yield_func.setter
+    def yield_func(self, value):
+        """set our yield function"""
+        self._yield_func = value
+
+    def __init__(self, controller: Raspi_MotorHAT,
                  num: int, steps=200,
                  yield_function=None) -> None:
 
-        # initialize our base class
-        super(Raspi_StepperMotor, self).__init__(controller, num, steps, yield_function)
-
         self.yield_function = yield_function
-        self.MC = controller
+        self.motor_controller = controller
         self.revsteps = steps
         self.motor_num = num
         self.sec_per_step = 0.1
@@ -116,18 +149,18 @@ class Raspi_StepperMotor(StepperInterface):
             self.BIN2 = 6
             self.BIN1 = 5
         else:
-            raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive')
+            raise NameError('MotorHAT Stepper must be either 1 or 2')
 
-    def is_yielding(self, direction: int) -> bool:
+    def is_yielding(self, direction: int) -> dict:
         """if we have yield function check to see if
         an exit condition has arisen"""
         if not self.yield_function:
-            return False
+            return {}
         return self.yield_function(direction)
 
     def my_timer(self, sleep_time: float, direction: int) -> dict:
         """implement a sleep() timer but in a loop
-        if the yield function exists and returns true,
+        if the yield function exists and returns a dict,
         then we break out of the loop"""
         current_time_microseconds = time.time() * 10**6
         end_time_microseconds = current_time_microseconds + int(sleep_time * 10**6)
@@ -139,24 +172,66 @@ class Raspi_StepperMotor(StepperInterface):
 
             # if we have a "yield function" we call this to process
             # external events we want to exit for
-            if self.yield_function is not None:
+            if self.yield_function:
                 exit_dict = self.yield_function(direction)
                 if exit_dict:
                     return exit_dict
 
             time.sleep(sleep_time / 10)  # yield some time to other processes
             current_time_microseconds = time.time() * 10**6
-        return None
+        return {}
 
     def setSpeed(self, rpm: int) -> None:
         """set speed of stepper"""
         self.sec_per_step = 60.0 / (self.revsteps * rpm)
         self.stepping_counter = 0
 
-    def oneStep(self, step_dir: int, style: int) -> int:
-        """issue step"""
-        pwm_a = pwm_b = 255
+    def step_coils(self, style: int, pwm_a: int, pwm_b: int) -> int:
+        """now that we figured out the next step, let's
+        energize the coils to make the step occur"""
 
+        # only really used for microstepping, otherwise always on!
+        self.motor_controller.pwm.setPWM(self.PWMA, 0, pwm_a * 16)
+        self.motor_controller.pwm.setPWM(self.PWMB, 0, pwm_b * 16)
+
+        # set up coil energizing!
+        coils = [0, 0, 0, 0]
+
+        if style == Raspi_MotorHAT.MICROSTEP:
+            if (self.current_step >= 0) and \
+               (self.current_step < self.MICROSTEPS):
+                coils = [1, 1, 0, 0]
+            elif (self.current_step >= self.MICROSTEPS) and \
+                 (self.current_step < self.MICROSTEPS * 2):
+                coils = [0, 1, 1, 0]
+            elif (self.current_step >= self.MICROSTEPS * 2) and \
+                 (self.current_step < self.MICROSTEPS * 3):
+                coils = [0, 0, 1, 1]
+            elif (self.current_step >= self.MICROSTEPS * 3) and \
+                 (self.current_step < self.MICROSTEPS * 4):
+                coils = [1, 0, 0, 1]
+        else:
+            step2coils = [[1, 0, 0, 0],
+                          [1, 1, 0, 0],
+                          [0, 1, 0, 0],
+                          [0, 1, 1, 0],
+                          [0, 0, 1, 0],
+                          [0, 0, 1, 1],
+                          [0, 0, 0, 1],
+                          [1, 0, 0, 1]]
+
+            coils = step2coils[int(self.current_step / (self.MICROSTEPS / 2))]
+
+        # now energize the coils to perform the step
+        self.motor_controller.setPin(self.AIN2, coils[0])
+        self.motor_controller.setPin(self.BIN1, coils[1])
+        self.motor_controller.setPin(self.AIN1, coils[2])
+        self.motor_controller.setPin(self.BIN2, coils[3])
+
+        return self.current_step
+
+    def compute_step(self, step_dir: int, style: int):  #pylint: disable-msg=too-many-branches
+        """compute the our next step."""
         # first determine what sort of stepping procedure we're up to
         if style == Raspi_MotorHAT.SINGLE:
             if (self.current_step / (self.MICROSTEPS / 2)) % 2:
@@ -202,8 +277,12 @@ class Raspi_StepperMotor(StepperInterface):
         self.current_step += self.MICROSTEPS * 4
         self.current_step %= self.MICROSTEPS * 4
 
+    def one_step(self, step_dir: int, style: int) -> int:
+        """issue step"""
+        self.compute_step(step_dir, style)
+
+        pwm_a = pwm_b = 0
         try:
-            pwm_a = pwm_b = 0
             if (self.current_step >= 0) and (self.current_step < self.MICROSTEPS):
                 pwm_a = self.MICROSTEP_CURVE[int(self.MICROSTEPS - self.current_step)]
                 pwm_b = self.MICROSTEP_CURVE[int(self.current_step)]
@@ -229,52 +308,14 @@ class Raspi_StepperMotor(StepperInterface):
         self.current_step += self.MICROSTEPS * 4
         self.current_step %= self.MICROSTEPS * 4
 
-        # only really used for microstepping, otherwise always on!
-        self.MC._pwm.setPWM(self.PWMA, 0, pwm_a*16) # pylint:disable=W0212
-        self.MC._pwm.setPWM(self.PWMB, 0, pwm_b*16) # pylint:disable=W0212
-
-        # set up coil energizing!
-        coils = [0, 0, 0, 0]
-
-        if style == Raspi_MotorHAT.MICROSTEP:
-            if (self.current_step >= 0) and \
-               (self.current_step < self.MICROSTEPS):
-                coils = [1, 1, 0, 0]
-            elif (self.current_step >= self.MICROSTEPS) and \
-                 (self.current_step < self.MICROSTEPS * 2):
-                coils = [0, 1, 1, 0]
-            elif (self.current_step >= self.MICROSTEPS * 2) and \
-                 (self.current_step < self.MICROSTEPS * 3):
-                coils = [0, 0, 1, 1]
-            elif (self.current_step >= self.MICROSTEPS * 3) and \
-                 (self.current_step < self.MICROSTEPS * 4):
-                coils = [1, 0, 0, 1]
-        else:
-            step2coils = [[1, 0, 0, 0],
-                          [1, 1, 0, 0],
-                          [0, 1, 0, 0],
-                          [0, 1, 1, 0],
-                          [0, 0, 1, 0],
-                          [0, 0, 1, 1],
-                          [0, 0, 0, 1],
-                          [1, 0, 0, 1]]
-
-            coils = step2coils[int(self.current_step / (self.MICROSTEPS / 2))]
-
-        # print "coils state = " + str(coils)
-        self.MC.setPin(self.AIN2, coils[0])
-        self.MC.setPin(self.BIN1, coils[1])
-        self.MC.setPin(self.AIN1, coils[2])
-        self.MC.setPin(self.BIN2, coils[3])
-
-        return self.current_step
+        return self.step_coils(style, pwm_a, pwm_b)
 
     def hold(self) -> None:
         """use single step to hold current position"""
-        self.oneStep(step_dir=Raspi_MotorHAT.FORWARD, style=Raspi_MotorHAT.SINGLE)
+        self.one_step(step_dir=Raspi_MotorHAT.FORWARD, style=Raspi_MotorHAT.SINGLE)
 
     def step(self, steps: int, direction: int, step_style: int) -> dict:
-        """step the motor, returns True if interrupted"""
+        """step the motor, returns a dict if interrupted"""
         s_per_s = self.sec_per_step
         latest_step = 0
 
@@ -284,34 +325,35 @@ class Raspi_StepperMotor(StepperInterface):
             s_per_s /= self.MICROSTEPS
             steps *= self.MICROSTEPS
 
-        # print(s_per_s, " sec per step")
-
         try:
             # before we start stepping, for safety check the yield function
             # to see if there's a reason not to proceed (like we are at a limit
             # switch
-            if not self.is_yielding(direction):
-                for _ in range(steps):
-                    latest_step = self.oneStep(direction, step_style)
-                    if direction == Raspi_MotorHAT.FORWARD:
-                        self.stepping_counter += 1
-                    else:
-                        self.stepping_counter -= 1
+            yield_dict = self.is_yielding(direction)
+            if yield_dict:
+                return yield_dict
 
-                    exit_dict = self.my_timer(s_per_s, direction)
-                    if exit_dict:
-                        return exit_dict
-            else:
-                return None
+            # okay let's step the motor
+            for _ in range(steps):
+                latest_step = self.one_step(direction, step_style)
+                if direction == Raspi_MotorHAT.FORWARD:
+                    self.stepping_counter += 1
+                else:
+                    self.stepping_counter -= 1
+
+                # yield the CPU and check for exit conditions
+                exit_dict = self.my_timer(s_per_s, direction)
+                if exit_dict:
+                    return exit_dict
         except KeyboardInterrupt: # if someone types control-c we should exit
-            return {'exit': 'KeyboardKInterrupt'}
+            return {'exit': 'KeyboardInterrupt'}
 
         if step_style == Raspi_MotorHAT.MICROSTEP:
             # this is an edge case, if we are in between full steps, lets just keep going
             # so we end on a full step
             while latest_step not in(0, self.MICROSTEPS):
-                latest_step = self.oneStep(direction, step_style)
+                latest_step = self.one_step(direction, step_style)
                 exit_dict = self.my_timer(s_per_s, direction)
                 if exit_dict:
                     return exit_dict
-        return None
+        return {}
