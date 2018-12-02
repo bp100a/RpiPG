@@ -32,6 +32,14 @@ This is a Flask REST API that sends tasks to the rig_runner process via beantsta
 
 Once again beanstalk is a pleasure to work with, much simpler and easier to implement than other queues. For this implementation I was hoping to keep setup & deployment as simple as possible, beanstalk did it's best in supporting that goal.
 
+**google_drive.py:**
+This is a separate process that uses a beanstalk tube to receive authorization tokens and photos to post to the Google Drive.
+
+You must specify a google drive, the application will create a /rpipg folder in the root of your google drive. Under that, for each modeling session a folder with the date/time when the modeling session starts is created for all the photos.
+
+**beanstalk:**
+This is a simple, effective queue. On startup I set the job size limit to 10MB, which is atrocious but given this is a dedicated device & app forgivable. Since the photos are about 4.5MB (base64 encoded), if the queue backs up there'll be issues.
+
 **website:**
 The website is based on a template from the Envato_ market called Kolor_. The crown jewel of the website is the circular slider I found called roundSlider_. It's totally awesome and the structure of the Kolor templates makes it easy to integrate.
 
@@ -47,10 +55,12 @@ I'm using jquery/ajax calls to read/write the REST APIs, for now you can "home" 
 
 .. _roundSlider: http://roundsliderui.com/
 
-**camera:**
-Finding a camera that would work with the gphoto2 software library (and wasn't a $600 DSLR) was a challenge. I'm using the GPhoto2/LibGPhoto2 library interfacing a Nikon Coolpix S3300. I started with v2.5.17 but turns out there's a "read manifest" call that isn't supported by the S3300 so every picture encountered about 50 secs of timeouts. Upgrading to v2.5.20 fixed that, not pictures take about 16 secs each, which is tolerable.
+I'm using Nginx to host the website, which I find far easier to work with than Apache (as in easier to understand configuration).
 
-I tested about 5 cameras (several I had on hand, and two I purchased on eBay) before I found one that worked. The S3300 is compact and has good resolution, and best of all can be powered via the USB cable.
+**camera:**
+Finding a camera that would work with the gphoto2 software library (and wasn't a $600 DSLR) was a challenge. I'm using the GPhoto2/LibGPhoto2 library interfacing a Nikon Coolpix S3300. I started with v2.5.17 but turns out there's a "read manifest" call that isn't supported by the S3300 so every picture encountered about 50 secs of timeouts. Upgrading to v2.5.20 fixed that, now pictures take about 16 secs each, which is tolerable.
+
+I tested about 5 cameras (several I had on hand, and two I purchased on eBay) before I found one that worked. The S3300 is compact and has good resolution, and best of all can be powered via the USB cable. The downside of the S3300 is that while in PTP mode you can't use the viewfinder or any camera controls to "frame" the image being photographed.
 
 .. image:: https://raw.githubusercontent.com/bp100a/RpiPG/master/docs/S3300.jpg
    :height: 350
