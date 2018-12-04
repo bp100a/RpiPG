@@ -8,88 +8,6 @@ from rpihat.basis import PWMInterface
 #pylint:disable=C0103
 
 
-class Raspi_MotorHAT:
-    """our motor HAT"""
-    FORWARD = 1
-    BACKWARD = 2
-    BRAKE = 3
-    RELEASE = 4
-
-    SINGLE = 1
-    DOUBLE = 2
-    INTERLEAVE = 3
-    MICROSTEP = 4
-    _pwm = None
-
-    @property
-    def pwm(self) -> PWMInterface:
-        """our internal PWM interface object"""
-        return self._pwm
-
-    @pwm.setter
-    def pwm(self, value):
-        self._pwm = value
-
-    def __init__(self, pwm_obj: PWMInterface,
-                 yield_func, freq, debug=False):
-        self._i2caddr = pwm_obj.address
-        self._frequency = freq		# default @1600Hz PWM freq
-
-        # Storing the stepper objects in an array:
-        #  1 -> Rotation Stepper
-        #  2 -> Declination(camera) stepper
-        self.steppers = [RaspiStepperMotor(self, 1, steps=200, yield_function=None),
-                         RaspiStepperMotor(self, 2, steps=200, yield_function=yield_func)]
-        self.pwm = pwm_obj
-        self.pwm.debug = debug
-        self.pwm.setPWMFreq(self._frequency)
-
-    def setPin(self, pin: int, value: int) -> None:
-        """set the pin"""
-        if (pin < 0) or (pin > 15):
-            raise NameError('PWM pin must be between 0 and 15 inclusive')
-        if value == 0:
-            self.pwm.setPWM(pin, 0, 4096)
-        elif value == 1:
-            self.pwm.setPWM(pin, 4096, 0)
-        else:
-            raise NameError('Pin value must be 0 or 1!')
-
-    def getStepper(self, num: int):
-        """get Stepper using 1-based indices
-         1 -> rotation stepper
-         2 -> camera/declination stepper"""
-        if num not in (1, 2):
-            raise NameError('MotorHAT Stepper must be between 1 and 2 inclusive {0}'.
-                            format(num))
-        return self.steppers[num-1]
-
-    def release_motor(self, motor_num: int) -> None:
-        """turns off coil energizing motors"""
-        if motor_num == 1:
-            in2 = 9
-            in1 = 10
-        elif motor_num == 2:
-            in2 = 12
-            in1 = 11
-        elif motor_num == 3:
-            in2 = 3
-            in1 = 4
-        elif motor_num == 4:
-            in2 = 6
-            in1 = 5
-        else:
-            return
-
-        self.setPin(in1, 0)
-        self.setPin(in2, 0)
-
-    def release_motors(self) -> None:
-        """release all motors"""
-        for motor_num in range(1, 5):
-            self.release_motor(motor_num)
-
-
 class RaspiStepperMotor:
     """control stepper motor stepping"""
     MICROSTEPS = 8
@@ -99,18 +17,8 @@ class RaspiStepperMotor:
     # MICROSTEP_CURVE = [0, 25, 50, 74, 98, 120, 141, 162, 180,\
     #                    197, 212, 225, 236, 244, 250, 253, 255]
 
-    _MC = None
     _yield_func = None
-
-    @property
-    def motor_controller(self) -> Raspi_MotorHAT:
-        """The controller parent for this motor"""
-        return self._MC
-
-    @motor_controller.setter
-    def motor_controller(self, value: Raspi_MotorHAT):
-        """setting the controller parent for this motor"""
-        self._MC = value
+    _pwm = None
 
     @property
     def yield_func(self):
@@ -122,12 +30,21 @@ class RaspiStepperMotor:
         """set our yield function"""
         self._yield_func = value
 
-    def __init__(self, controller: Raspi_MotorHAT,
+    @property
+    def pwm(self) -> PWMInterface:
+        """how we set our pin values"""
+        return self._pwm
+
+    @pwm.setter
+    def pwm(self, value):
+        self._pwm = value
+
+    def __init__(self, pwm: PWMInterface,
                  num: int, steps=200,
                  yield_function=None) -> None:
 
         self.yield_function = yield_function
-        self.motor_controller = controller
+        self.pwm = pwm
         self.revsteps = steps
         self.motor_num = num
         self.sec_per_step = 0.1
@@ -191,8 +108,8 @@ class RaspiStepperMotor:
         energize the coils to make the step occur"""
 
         # only really used for microstepping, otherwise always on!
-        self.motor_controller.pwm.setPWM(self.PWMA, 0, pwm_a * 16)
-        self.motor_controller.pwm.setPWM(self.PWMB, 0, pwm_b * 16)
+        self.pwm.setPWM(self.PWMA, 0, pwm_a * 16)
+        self.pwm.setPWM(self.PWMB, 0, pwm_b * 16)
 
         # set up coil energizing!
         coils = [0, 0, 0, 0]
@@ -223,10 +140,10 @@ class RaspiStepperMotor:
             coils = step2coils[int(self.current_step / (self.MICROSTEPS / 2))]
 
         # now energize the coils to perform the step
-        self.motor_controller.setPin(self.AIN2, coils[0])
-        self.motor_controller.setPin(self.BIN1, coils[1])
-        self.motor_controller.setPin(self.AIN1, coils[2])
-        self.motor_controller.setPin(self.BIN2, coils[3])
+        self.pwm.set_pin(self.AIN2, coils[0])
+        self.pwm.set_pin(self.BIN1, coils[1])
+        self.pwm.set_pin(self.AIN1, coils[2])
+        self.pwm.set_pin(self.BIN2, coils[3])
 
         return self.current_step
 
@@ -357,3 +274,83 @@ class RaspiStepperMotor:
                 if exit_dict:
                     return exit_dict
         return {}
+
+
+class Raspi_MotorHAT:
+    """our motor HAT"""
+    FORWARD = 1
+    BACKWARD = 2
+    BRAKE = 3
+    RELEASE = 4
+
+    SINGLE = 1
+    DOUBLE = 2
+    INTERLEAVE = 3
+    MICROSTEP = 4
+    _pwm = None
+    _camera = None
+    _rotate = None
+
+    @property
+    def pwm(self) -> PWMInterface:
+        """our internal PWM interface object"""
+        return self._pwm
+
+    @pwm.setter
+    def pwm(self, value):
+        self._pwm = value
+
+    def __init__(self, pwm_obj: PWMInterface,
+                 yield_func, freq, debug=False):
+        self._i2caddr = pwm_obj.address
+        self._frequency = freq		# default @1600Hz PWM freq
+
+        # Storing the stepper objects in an array:
+        #  1 -> Rotation Stepper
+        #  2 -> Declination(camera) stepper
+        self.rotation_stepper = RaspiStepperMotor(pwm_obj, 1, steps=200, yield_function=None)
+        self.camera_stepper = RaspiStepperMotor(pwm_obj, 2, steps=200, yield_function=yield_func)
+        self.pwm = pwm_obj
+        self.pwm.debug = debug
+        self.pwm.setPWMFreq(self._frequency)
+
+    @property
+    def camera_stepper(self) -> RaspiStepperMotor:
+        return self._camera
+
+    @camera_stepper.setter
+    def camera_stepper(self, value: RaspiStepperMotor) -> None:
+        self._camera = value
+
+    @property
+    def rotation_stepper(self) -> RaspiStepperMotor:
+        return self._rotate
+
+    @rotation_stepper.setter
+    def rotation_stepper(self, value: RaspiStepperMotor) -> None:
+        self._rotate = value
+
+    def release_motor(self, motor_num: int) -> None:
+        """turns off coil energizing motors"""
+        if motor_num == 1:
+            in2 = 9
+            in1 = 10
+        elif motor_num == 2:
+            in2 = 12
+            in1 = 11
+        elif motor_num == 3:
+            in2 = 3
+            in1 = 4
+        elif motor_num == 4:
+            in2 = 6
+            in1 = 5
+        else:
+            return
+
+        self.pwm.set_pin(in1, 0)
+        self.pwm.set_pin(in2, 0)
+
+    def release_motors(self) -> None:
+        """release all motors"""
+        for motor_num in range(1, 5):
+            self.release_motor(motor_num)

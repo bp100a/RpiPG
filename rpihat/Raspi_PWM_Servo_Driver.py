@@ -95,3 +95,15 @@ class PWM(PWMInterface):
         self.i2c.write8(self.__ALL_LED_ON_H, on >> 8)
         self.i2c.write8(self.__ALL_LED_OFF_L, off & 0xFF)
         self.i2c.write8(self.__ALL_LED_OFF_H, off >> 8)
+
+    def set_pin(self, pin: int, value: int) -> None:
+        """set the pin"""
+        if (pin < 0) or (pin > 15):
+            raise NameError('PWM pin must be between 0 and 15 inclusive')
+        if value == 0:
+            self.setPWM(pin, 0, 4096)
+        elif value == 1:
+            self.setPWM(pin, 4096, 0)
+        else:
+            raise NameError('Pin value must be 0 or 1!')
+

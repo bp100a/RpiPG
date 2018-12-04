@@ -6,12 +6,9 @@
       <change beforePath="$PROJECT_DIR$/cloud_drive/google_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloud_drive/google_drive.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration/google_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/google_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/Raspi_I2C.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/Raspi_I2C.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpihat/basis.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/basis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpihat/pimotorhat.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/pimotorhat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_stepper.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_stepper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,16 +72,16 @@
           <entry key="conf" value="3" />
           <entry key="css" value="11" />
           <entry key="gitignore" value="5" />
-          <entry key="html" value="30" />
+          <entry key="html" value="31" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="21" />
+          <entry key="js" value="24" />
           <entry key="json" value="3" />
           <entry key="nginx" value="1" />
           <entry key="png" value="2" />
-          <entry key="py" value="71" />
-          <entry key="rst" value="2" />
+          <entry key="py" value="75" />
+          <entry key="rst" value="3" />
           <entry key="sh" value="18" />
-          <entry key="txt" value="10" />
+          <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -92,13 +89,13 @@
           <entry key="Bash" value="18" />
           <entry key="BuildoutCfg" value="3" />
           <entry key="CSS" value="11" />
-          <entry key="HTML" value="30" />
+          <entry key="HTML" value="31" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="21" />
-          <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="71" />
-          <entry key="ReST" value="2" />
+          <entry key="JavaScript" value="24" />
+          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="Python" value="75" />
+          <entry key="ReST" value="3" />
           <entry key="nginx file type" value="1" />
         </counts>
       </usages-collector>
@@ -108,13 +105,13 @@
           <entry key="css" value="8" />
           <entry key="dummy" value="92" />
           <entry key="gitignore" value="83" />
-          <entry key="html" value="14810" />
+          <entry key="html" value="14873" />
           <entry key="js" value="850" />
           <entry key="nginx" value="3" />
-          <entry key="py" value="50679" />
-          <entry key="rst" value="3950" />
+          <entry key="py" value="54002" />
+          <entry key="rst" value="4997" />
           <entry key="sh" value="3144" />
-          <entry key="txt" value="6824" />
+          <entry key="txt" value="7079" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -122,11 +119,11 @@
           <entry key="Bash" value="3144" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="14810" />
+          <entry key="HTML" value="14873" />
           <entry key="JavaScript" value="850" />
-          <entry key="PLAIN_TEXT" value="6999" />
-          <entry key="Python" value="50679" />
-          <entry key="ReST" value="3950" />
+          <entry key="PLAIN_TEXT" value="7254" />
+          <entry key="Python" value="54002" />
+          <entry key="ReST" value="4997" />
           <entry key="nginx file type" value="3" />
         </counts>
       </usages-collector>
@@ -156,15 +153,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/setup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="786">
+              <caret line="263" selection-start-line="263" selection-end-line="263" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3633">
-              <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+            <state relative-caret-position="343">
+              <caret line="338" column="20" selection-start-line="338" selection-start-column="20" selection-end-line="338" selection-end-column="20" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1543605410890" expanded="true" signature="4189:5034" ph="..." />
-                <marker date="1543605410890" expanded="true" signature="11055:14142" ph="..." />
+                <marker date="1543943368777" expanded="true" signature="4251:5074" ph="..." />
+                <marker date="1543943368777" expanded="true" signature="11339:11435" ph="..." />
+                <marker date="1543943368777" expanded="true" signature="11591:11596" ph="..." />
+                <marker date="1543943368777" expanded="true" signature="11804:15013" ph="..." />
               </folding>
             </state>
           </provider>
@@ -173,64 +193,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="632">
+              <caret line="181" column="28" lean-forward="true" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
               <folding>
                 <element signature="e#20#31#0" expanded="true" />
-                <marker date="1543597843073" expanded="true" signature="321:326" ph="..." />
-                <marker date="1543597843073" expanded="true" signature="1855:2276" ph="..." />
-                <marker date="1543597843073" expanded="true" signature="4787:4792" ph="..." />
+                <marker date="1543851580624" expanded="true" signature="428:433" ph="..." />
+                <marker date="1543851580624" expanded="true" signature="761:795" ph="..." />
+                <marker date="1543851580624" expanded="true" signature="2497:3110" ph="..." />
+                <marker date="1543851580624" expanded="true" signature="5852:5857" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2068">
-              <caret line="270" column="50" lean-forward="true" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
-              <folding>
-                <element signature="e#48#58#0" expanded="true" />
-                <marker date="1543606097343" expanded="true" signature="509:541" ph="..." />
-                <marker date="1543606097343" expanded="true" signature="3163:3194" ph="..." />
-                <marker date="1543606097343" expanded="true" signature="3408:3443" ph="..." />
-                <marker date="1543606097343" expanded="true" signature="7706:9553" ph="..." />
-              </folding>
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rst">
+          <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py">
+        <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
-              <folding>
-                <element signature="e#68#79#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-              <folding>
-                <element signature="e#857#871#0" expanded="true" />
-                <marker date="1542823649624" expanded="true" signature="2928:2933" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
+            <state relative-caret-position="-10340">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -249,36 +234,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yield</find>
-      <find>_pwm</find>
-      <find>MC.</find>
-      <find>step</find>
-      <find>.MC</find>
-      <find>pwm(</find>
-      <find>AIN2</find>
-      <find>release_m</find>
-      <find>yield_funct</find>
-      <find>motor_contro</find>
-      <find>turn_off</find>
-      <find>move_camera</find>
-      <find>ccw_camera_h</find>
-      <find>home_cam</find>
-      <find>MOTOR_HAT</find>
-      <find>ccw_</find>
-      <find>wait_for</find>
-      <find>configu</find>
-      <find>post_status</find>
-      <find>take_picture</find>
-      <find>cammer_stepper</find>
-      <find>camera_stepper</find>
-      <find>forced_exit</find>
-      <find>calcula</find>
-      <find>wait_for_work</find>
-      <find>308</find>
-      <find>send_scan</find>
-      <find>beanstal</find>
       <find>apple-touch</find>
       <find>photograph_model</find>
+      <find>process_scan</find>
+      <find>upload_google_drive_info</find>
+      <find>session_folder</find>
+      <find>print</find>
+      <find>self.drive_client</find>
+      <find>pylint</find>
+      <find>not p</find>
+      <find>scan</find>
+      <find>post_g</find>
+      <find>.Proc</find>
+      <find>GDRIVE_QUEUE</find>
+      <find>forward_authorization</find>
+      <find>post_status</find>
+      <find>forward</find>
+      <find>upload_google_drive</find>
+      <find>stepper.</find>
+      <find>self.motor_controller</find>
+      <find>motor</find>
+      <find>.motor</find>
+      <find>.motor_controller</find>
+      <find>setPWM</find>
+      <find>Raspi_MOTORHAT</find>
+      <find>setPin</find>
+      <find>cannot save photo</find>
+      <find>clear</find>
+      <find>clear_all_queues</find>
+      <find>_stepper</find>
+      <find>long idle</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -311,13 +296,11 @@
         <option value="$PROJECT_DIR$/cameractrl/imageCapture.py" />
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
         <option value="$PROJECT_DIR$/website/deploy/conf.nginx" />
-        <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/website/google.html" />
         <option value="$PROJECT_DIR$/tests/test_restapi.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/website/google_device.html" />
         <option value="$PROJECT_DIR$/restapi/__init__.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/cameractrl/camera.py" />
         <option value="$PROJECT_DIR$/restapi/rig_control.py" />
         <option value="$PROJECT_DIR$/website/scripts/roundslider.min.js" />
@@ -326,16 +309,18 @@
         <option value="$PROJECT_DIR$/website/scripts/utils.js" />
         <option value="$PROJECT_DIR$/website/google_drive.html" />
         <option value="$PROJECT_DIR$/website/home-landing.html" />
-        <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/website/scripts/setup_pg.js" />
         <option value="$PROJECT_DIR$/rpihat/Raspi_I2C.py" />
-        <option value="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" />
-        <option value="$PROJECT_DIR$/configuration/google_api.py" />
-        <option value="$PROJECT_DIR$/rpihat/basis.py" />
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
+        <option value="$PROJECT_DIR$/configuration/google_api.py" />
+        <option value="$PROJECT_DIR$/website/setup.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/cloud_drive/google_drive.py" />
-        <option value="$PROJECT_DIR$/rig_runner.py" />
+        <option value="$PROJECT_DIR$/rpihat/basis.py" />
+        <option value="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
+        <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
     </option>
   </component>
@@ -346,8 +331,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1492" />
-    <option name="y" value="392" />
+    <option name="x" value="604" />
+    <option name="y" value="598" />
     <option name="width" value="2371" />
     <option name="height" value="1571" />
   </component>
@@ -367,17 +352,18 @@
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="cloud_drive" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="restapi" type="462c0819:PsiDirectoryNode" />
+              <item name="rpihat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -497,34 +483,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00151" summary="adding items to jquery ticker">
-      <created>1541453486218</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1541453486218</updated>
-    </task>
-    <task id="LOCAL-00152" summary="log status to console">
-      <created>1541454093521</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1541454093521</updated>
-    </task>
-    <task id="LOCAL-00153" summary="parse the JSON returned by status api">
-      <created>1541454393663</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1541454393663</updated>
-    </task>
-    <task id="LOCAL-00154" summary="no yield_function for rotation stepper">
-      <created>1541458068852</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1541458068852</updated>
     </task>
     <task id="LOCAL-00155" summary="fix up some javscript warnings&#10;add build of gphoto2/libgphoto2 to deployment script">
       <created>1541514759864</created>
@@ -841,7 +799,35 @@
       <option name="project" value="LOCAL" />
       <updated>1543252528203</updated>
     </task>
-    <option name="localTasksCounter" value="200" />
+    <task id="LOCAL-00200" summary="- cleanup code&#10;- improve Pylint score">
+      <created>1543712177427</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1543712177427</updated>
+    </task>
+    <task id="LOCAL-00201" summary="google drive post_status messages&#10;cleanup Pylint some more&#10;catch (&amp; post) issues with authorization token">
+      <created>1543773756837</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1543773756837</updated>
+    </task>
+    <task id="LOCAL-00202" summary="update requirements for request security vulnerability">
+      <created>1543773863326</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1543773863326</updated>
+    </task>
+    <task id="LOCAL-00203" summary="update structure info and fix a typo">
+      <created>1543774386567</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1543774386567</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -886,7 +872,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1492" y="392" width="2371" height="1571" extended-state="0" />
+    <frame x="604" y="598" width="2371" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.20943315" />
@@ -942,10 +928,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="check for data &quot;not null&quot; to determine if we display new status" />
-    <MESSAGE value="add item to list" />
-    <MESSAGE value="modified ticker so content isn't repeated" />
-    <MESSAGE value="commenting out append disables display of new items ??" />
     <MESSAGE value="add a README file to detail what's been done" />
     <MESSAGE value="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi" />
     <MESSAGE value="fix markup issues" />
@@ -967,7 +949,11 @@
     <MESSAGE value="- using 'defer', control Javascript load/execution&#10;- create &quot;google_drive_cookie&quot; posting utility so we can post the google drive info during Scan&#10;- now if we exit out of taking pictures, make sure we clean up the camera object!" />
     <MESSAGE value="- still working on Javascript loading issues&#10;- fix index.html references in Google Drive page&#10;- fix syntax error in reading cookie &amp; writing oAuth info to REST API" />
     <MESSAGE value="- generic google api keys&#10;- clean up HTML/Javascript" />
-    <option name="LAST_COMMIT_MESSAGE" value="- generic google api keys&#10;- clean up HTML/Javascript" />
+    <MESSAGE value="- cleanup code&#10;- improve Pylint score" />
+    <MESSAGE value="google drive post_status messages&#10;cleanup Pylint some more&#10;catch (&amp; post) issues with authorization token" />
+    <MESSAGE value="update requirements for request security vulnerability" />
+    <MESSAGE value="update structure info and fix a typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="update structure info and fix a typo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1059,9 +1045,6 @@
           <caret line="4" column="16394" selection-start-line="4" selection-start-column="16394" selection-end-line="4" selection-end-column="16394" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.rst">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/conf.nginx">
       <provider selected="true" editor-type-id="text-editor">
@@ -1190,13 +1173,6 @@
     <entry file="file://$PROJECT_DIR$/restapi/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/google_device.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1233,16 +1209,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apikeys/RpiPhotogrammetry-38f3abb68f1b.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/homerig.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1287,30 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/setup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1461">
-          <caret line="258" selection-start-line="258" selection-end-line="258" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2640">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -1318,30 +1260,6 @@
           <folding>
             <element signature="e#34#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configuration/google_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
-          <folding>
-            <element signature="e#68#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/basis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -1380,10 +1298,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="944">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="263" selection-start-line="263" selection-end-line="263" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cameractrl/camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="63">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
           <folding>
             <element signature="e#857#871#0" expanded="true" />
             <marker date="1542823649624" expanded="true" signature="2928:2933" ph="..." />
@@ -1391,44 +1336,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
+    <entry file="file://$PROJECT_DIR$/configuration/google_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#20#31#0" expanded="true" />
-            <marker date="1543597843073" expanded="true" signature="321:326" ph="..." />
-            <marker date="1543597843073" expanded="true" signature="1855:2276" ph="..." />
-            <marker date="1543597843073" expanded="true" signature="4787:4792" ph="..." />
-          </folding>
+        <state relative-caret-position="44">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+    <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2068">
-          <caret line="270" column="50" lean-forward="true" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
+        <state relative-caret-position="-10340">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/basis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="181" column="28" lean-forward="true" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
           <folding>
-            <element signature="e#48#58#0" expanded="true" />
-            <marker date="1543606097343" expanded="true" signature="509:541" ph="..." />
-            <marker date="1543606097343" expanded="true" signature="3163:3194" ph="..." />
-            <marker date="1543606097343" expanded="true" signature="3408:3443" ph="..." />
-            <marker date="1543606097343" expanded="true" signature="7706:9553" ph="..." />
+            <element signature="e#20#31#0" expanded="true" />
+            <marker date="1543851580624" expanded="true" signature="428:433" ph="..." />
+            <marker date="1543851580624" expanded="true" signature="761:795" ph="..." />
+            <marker date="1543851580624" expanded="true" signature="2497:3110" ph="..." />
+            <marker date="1543851580624" expanded="true" signature="5852:5857" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3633">
-          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+        <state relative-caret-position="343">
+          <caret line="338" column="20" selection-start-line="338" selection-start-column="20" selection-end-line="338" selection-end-column="20" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
-            <marker date="1543605410890" expanded="true" signature="4189:5034" ph="..." />
-            <marker date="1543605410890" expanded="true" signature="11055:14142" ph="..." />
+            <marker date="1543943368777" expanded="true" signature="4251:5074" ph="..." />
+            <marker date="1543943368777" expanded="true" signature="11339:11435" ph="..." />
+            <marker date="1543943368777" expanded="true" signature="11591:11596" ph="..." />
+            <marker date="1543943368777" expanded="true" signature="11804:15013" ph="..." />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#68#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+            <marker date="1543943222792" expanded="true" signature="11129:11161" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
     </entry>
   </component>
 </project>

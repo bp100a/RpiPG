@@ -29,3 +29,7 @@ class PWMInterface(abc.ABC):
     @abc.abstractmethod
     def setAllPWM(self, on, off):
         pass
+
+    @abc.abstractmethod
+    def set_pin(self, pin: int, value: int) -> None:
+        pass

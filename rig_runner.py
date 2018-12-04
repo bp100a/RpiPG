@@ -47,7 +47,7 @@ def configure_beanstalk():
 
 def clear_all_queues(queue: beanstalk.Connection) -> None:
     """clear out all the currently known tubes"""
-    for tube in [CANCEL_QUEUE, STATUS_QUEUE, TASK_QUEUE]:
+    for tube in [CANCEL_QUEUE, STATUS_QUEUE, TASK_QUEUE, google_drive.GDRIVE_QUEUE]:
         queue.use(tube)
         while True:
             dummy = queue.reserve(timeout=0)
@@ -59,10 +59,11 @@ def clear_all_queues(queue: beanstalk.Connection) -> None:
 
 def post_status(queue: beanstalk.Connection, message: str) -> None:
     """post a simple message to whomever is listening"""
-    queue.use(STATUS_QUEUE)
-    status_json = json.dumps({'msg': message})
-    queue.put(status_json)
-    print(message)
+    print(message)  # echo message to stdout
+    if queue:
+        queue.use(STATUS_QUEUE)
+        status_json = json.dumps({'msg': message})
+        queue.put(status_json)
 
 
 def yield_function(direction: int) -> dict:
@@ -71,9 +72,9 @@ def yield_function(direction: int) -> dict:
     of travel since we may want to ignore a limit
     switch that has been triggered.
 
-    For now just checking limit switches, eventually
-    we need to process other input like a cancel
-    request from a web app"""
+    There are several reasons to exit:
+       - end stop switch hit
+       - user issues cancel (^C)"""
     try:
         if BEANSTALK:  # if we have a queue, check for user cancel
             BEANSTALK.watch(CANCEL_QUEUE)
@@ -87,7 +88,7 @@ def yield_function(direction: int) -> dict:
     except beanstalk.CommandFailed:
         pass
     except beanstalk.DeadlineSoon:
-        # save to ignore since it just means there's something pending
+        # safe to ignore since it just means there's something pending
         pass
 
     if direction == Raspi_MotorHAT.FORWARD:
@@ -101,8 +102,8 @@ def yield_function(direction: int) -> dict:
 
 
 def turn_off_motors(motor_controller: Raspi_MotorHAT):
-    """disable motors. This will be called 'at exit' so
-    motors don't overheat when idle and energized"""
+    """disable motors. Typically this will be called
+    'at exist' so motors don't overheat when idle and energized"""
     motor_controller.release_motors()
 
 
@@ -140,7 +141,7 @@ class CameraControl:
                     switch: limit_switch.LimitSwitch) -> int:
         """home the camera. This means moving in a direction and checking
         for that direction's limit switch"""
-        camera_stepper = self.motor_controller.getStepper(CAMERA_STEPPER_MOTOR_NUM)
+        camera_stepper = self.motor_controller.camera_stepper
         starting_stepper_pos = camera_stepper.stepping_counter
         while not switch.is_pressed():
             camera_stepper.step(1000, step_dir, Raspi_MotorHAT.DOUBLE)
@@ -260,6 +261,7 @@ class CameraControl:
 def wait_for_work(queue: beanstalk.Connection, motor_controller: Raspi_MotorHAT) -> dict:
     """wait for work, return json"""
     idle_start = time.time()
+    released = False
     while True:
         queue.watch(TASK_QUEUE)
         job = queue.reserve(timeout=0)
@@ -273,8 +275,10 @@ def wait_for_work(queue: beanstalk.Connection, motor_controller: Raspi_MotorHAT)
         # if we have been idle for too long
         # release the stepper motors so they
         # don't overheat
-        if (time.time() - idle_start) > 600:  # 10 minutes
+        if (time.time() - idle_start) > 600 and not released:  # 10 minutes
+            post_status(queue, "long idle, motors disabled")
             turn_off_motors(motor_controller)
+            released = True
 
 
 def forward_authorization(queue: beanstalk.Connection, job: dict):
@@ -286,18 +290,30 @@ def forward_authorization(queue: beanstalk.Connection, job: dict):
 
 def start_drive_process():
     """Start the process that will upload photos to the
-    google drive"""
+    google drive. This process will 'listen' to the
+    Google Drive tube for work"""
     drive_process = Process(target=google_drive.process_photos, args=())
     drive_process.start()
+
+
+def session_start(queue: beanstalk.Connection) -> None:
+    """before scanning, we need to start a 'session', which
+    basically means doing any pre-scanning work. So we will
+    shoot the drive process a message to kick off this activity"""
+    queue.use(google_drive.GDRIVE_QUEUE)
+    queue.put(json.dumps({'task':'session_start'}))
 
 
 def process_scan_command(job_dict: dict,
                          camera_controller: CameraControl,
                          declination_travel_steps: int):
-    """Process the scan command"""
+    """Process the scan command -> take a bunch of pictures
+    if we return 0, then the rig is no longer 'homed'. If there's
+    an error which doesn't affect homing, we will return the
+    input travel steps"""
     try:
-        print("Scan command received")
         post_status(camera_controller.queue, "scan command received!")
+        session_start(camera_controller.queue)  # start a scan session
         declination_divisions = int(job_dict['steps']['declination'])
         rotation_divisions = int(job_dict['steps']['rotation'])
         start = int(job_dict['offsets']['start'])
@@ -319,7 +335,8 @@ def process_scan_command(job_dict: dict,
         return declination_travel_steps  # leave homing intact since no work done
     except KeyError:
         post_status(camera_controller.queue, "error with input JSON")
-        print("/scan JSON failed! : {0}".format(json.dumps(job_dict)))
+        post_status(camera_controller.queue,
+                    "/scan JSON failed! : {0}".format(json.dumps(job_dict)))
         return declination_travel_steps  # leave homing intact since no work done
 
     print('...calculating steps for {0} pictures'.
@@ -380,11 +397,8 @@ def main():
                                       freq=MOTOR_HAT_I2C_FREQ,
                                       debug=False)
 
-    camera_stepper = motor_controller.getStepper(CAMERA_STEPPER_MOTOR_NUM)
-    camera_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
-
-    rotate_stepper = motor_controller.getStepper(MODEL_STEPPER_MOTOR_NUM)
-    rotate_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
+    motor_controller.camera_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
+    motor_controller.rotation_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
 
     # our main object to control camera/rig functions
     camera_controller = CameraControl(motor_controller, BEANSTALK)
