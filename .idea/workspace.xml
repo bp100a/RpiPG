@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/website/deploy/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloud_drive/google_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloud_drive/google_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/pimotorhat.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/pimotorhat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/scripts/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/scripts/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,17 +73,17 @@
           <entry key="jpg" value="1" />
           <entry key="js" value="25" />
           <entry key="json" value="3" />
-          <entry key="nginx" value="1" />
+          <entry key="nginx" value="2" />
           <entry key="png" value="2" />
           <entry key="py" value="76" />
           <entry key="rst" value="3" />
-          <entry key="sh" value="20" />
+          <entry key="sh" value="21" />
           <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="20" />
+          <entry key="Bash" value="21" />
           <entry key="BuildoutCfg" value="3" />
           <entry key="CSS" value="11" />
           <entry key="HTML" value="32" />
@@ -95,7 +93,7 @@
           <entry key="PLAIN_TEXT" value="16" />
           <entry key="Python" value="76" />
           <entry key="ReST" value="3" />
-          <entry key="nginx file type" value="1" />
+          <entry key="nginx file type" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -109,18 +107,18 @@
           <entry key="nginx" value="3" />
           <entry key="py" value="54427" />
           <entry key="rst" value="4997" />
-          <entry key="sh" value="3144" />
-          <entry key="txt" value="7147" />
+          <entry key="sh" value="3340" />
+          <entry key="txt" value="7229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="3144" />
+          <entry key="Bash" value="3340" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
           <entry key="HTML" value="14905" />
           <entry key="JavaScript" value="1038" />
-          <entry key="PLAIN_TEXT" value="7322" />
+          <entry key="PLAIN_TEXT" value="7404" />
           <entry key="Python" value="54427" />
           <entry key="ReST" value="4997" />
           <entry key="nginx file type" value="3" />
@@ -145,61 +143,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/setup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="189" column="29" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1299">
-              <caret line="110" lean-forward="true" selection-start-line="9" selection-end-line="110" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rig_runner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="274" column="35" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="43" />
-              <folding>
-                <element signature="e#321#334#0" expanded="true" />
-                <marker date="1544112643563" expanded="true" signature="4118:4946" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3806">
-              <caret line="181" column="28" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
-              <folding>
-                <element signature="e#20#31#0" expanded="true" />
-                <marker date="1543851580624" expanded="true" signature="428:433" ph="..." />
-                <marker date="1543851580624" expanded="true" signature="761:795" ph="..." />
-                <marker date="1543851580624" expanded="true" signature="2497:3110" ph="..." />
-                <marker date="1543851580624" expanded="true" signature="5852:5857" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.rst">
-          <provider selected="true" editor-type-id="restructured-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
@@ -209,19 +152,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
+        <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
-              <caret line="840" column="32" lean-forward="true" selection-start-line="840" selection-start-column="32" selection-end-line="840" selection-end-column="32" />
+            <state relative-caret-position="726">
+              <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+        <entry file="file://$PROJECT_DIR$/../genesis/deploy/deploy_iiserver.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="926">
-              <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+            <state relative-caret-position="660">
+              <caret line="30" selection-start-line="29" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -317,7 +269,6 @@
         <option value="$PROJECT_DIR$/website/home-landing.html" />
         <option value="$PROJECT_DIR$/website/scripts/setup_pg.js" />
         <option value="$PROJECT_DIR$/rpihat/Raspi_I2C.py" />
-        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
         <option value="$PROJECT_DIR$/configuration/google_api.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/README.rst" />
@@ -328,6 +279,7 @@
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
+        <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
       </list>
     </option>
   </component>
@@ -338,8 +290,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1723" />
-    <option name="y" value="238" />
+    <option name="x" value="1449" />
+    <option name="y" value="417" />
     <option name="width" value="2371" />
     <option name="height" value="1571" />
   </component>
@@ -372,12 +324,6 @@
               <item name="website" type="462c0819:PsiDirectoryNode" />
               <item name="deploy" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -388,7 +334,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../genesis/deploy/debian_iiserver.sh" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../genesis/deploy/deploy_iiserver.sh" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -496,13 +442,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00156" summary="close &lt;input&gt;">
-      <created>1541514897000</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1541514897001</updated>
     </task>
     <task id="LOCAL-00157" summary="close &lt;p&gt;">
       <created>1541515080284</created>
@@ -840,7 +779,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543943687092</updated>
     </task>
-    <option name="localTasksCounter" value="205" />
+    <task id="LOCAL-00205" summary="some more refactoring&#10;track motor release/engaged state&#10;clean up code">
+      <created>1544112695802</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1544112695803</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -885,15 +831,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1723" y="238" width="2371" height="1571" extended-state="0" />
-    <editor active="true" />
+    <frame x="1449" y="417" width="2371" height="1571" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.211164" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.211164" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962447" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29346314" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29346314" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -941,7 +886,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi" />
     <MESSAGE value="fix markup issues" />
     <MESSAGE value="typo" />
     <MESSAGE value="freshen up deployment, now modifies rc.local" />
@@ -966,7 +910,8 @@
     <MESSAGE value="update requirements for request security vulnerability" />
     <MESSAGE value="update structure info and fix a typo" />
     <MESSAGE value="lots of refactoring&#10;increase Pylint scores (a lot!)&#10;catch a few bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="lots of refactoring&#10;increase Pylint scores (a lot!)&#10;catch a few bugs" />
+    <MESSAGE value="some more refactoring&#10;track motor release/engaged state&#10;clean up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="some more refactoring&#10;track motor release/engaged state&#10;clean up code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1046,9 +991,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/scan_screenshot.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/S3300.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1056,13 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="4" column="16394" selection-start-line="4" selection-start-column="16394" selection-end-line="4" selection-end-column="16394" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/conf.nginx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1323,20 +1258,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="926">
-          <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/home-landing.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="925">
@@ -1381,6 +1302,34 @@
             <element signature="e#321#334#0" expanded="true" />
             <marker date="1544112643563" expanded="true" signature="4118:4946" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../genesis/deploy/deploy_iiserver.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="30" selection-start-line="29" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>

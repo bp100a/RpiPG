@@ -32,8 +32,15 @@ sudo apt-get install nginx
 # our queue between web & app
 sudo apt-get install beanstalkd
 
+# install Git
+sudo apt-get install git
+
+# pull down the code
+cd ~
+git clone https://github.com/bp100a/RpiPG.git
+
 # copy our nginx.conf file
-sudo cp ~/RpiPG/deploy/nginx.conf /etc/nginx
+sudo cp ~/RpiPG/website/deploy/conf.nginx /etc/nginx/nginx.conf
 
 # Now setup our python environment and install everything
 source ~/RpiPG/venv/Scripts/activate
@@ -77,7 +84,7 @@ echo -e "cd /home/pi/RpiPG\n" >> rc.local
 #       for sending image data which is about 4.5MB/pic
 echo -e "beanstalkd -l 127.0.0.1 -p 14711 -z 10000000 &\n" >> rc.local
 echo -e "sudo mount -o uid=pi,gid=pi /dev/sda1 /mnt/usb\n" >> rc.local
-echo -e "gunicorn --bind 127.0.0.1:8081 --name rig_control --workers=5 --timeout 120 --log-file /var/log/rig_control/error.log --access-logfile /var/log/rig_control/access.log rig_control:app --pid /var/run/rig_control.pid &\n" >> rc.local
+echo -e "gunicorn --bind 127.0.0.1:8081 --name rig_control --workers=2 --timeout 30 --log-file /var/log/rig_control/error.log --access-logfile /var/log/rig_control/access.log restapi.rig_control:APP --pid /var/run/rig_control.pid &\n" >> rc.local
 echo -e "python3 rig_running.py &\n" >> rc.local
 echo -e "sudo service nginx start\n" >> rc.local
 echo -e "\nexit 0\n" >> rc.local

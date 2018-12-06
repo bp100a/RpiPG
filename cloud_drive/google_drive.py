@@ -165,13 +165,13 @@ def process_photos():
         job_dict = wait_for_work(queue)
         task = job_dict['task']
 
-        if task == 'token':
+        if task == 'token':  # oAuth2 credentials
             access_info = json.loads(job_dict['value'])
             print("process_photos: access_info = {0}".format(access_info))
             drive = GoogleDrive(access_info, queue)
             if drive:
                 drive.create_root_folder('rpipg')
-        elif task == 'photo':
+        elif task == 'photo':  # photo to write to Google Drive
             if drive:
                 drive.post_status(message="process_photos: .filename={0}".
                                   format(job_dict['filename']))
@@ -180,6 +180,10 @@ def process_photos():
                 drive.write_file_bytes(job_dict['filename'], decoded_bytes)
             else:
                 print("Cannot save photo, no Google Drive authorized!")
+        elif task == 'session_start':  # start session, create subfolder
+            if drive:
+                drive.post_status(message="starting scan session, create subfolder")
+                drive.create_root_folder('rpipg')
 
     print("process_photos(): exiting...")
     exit()
