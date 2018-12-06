@@ -235,6 +235,7 @@ class RaspiStepperMotor:
         """step the motor, returns a dict if interrupted"""
         s_per_s = self.sec_per_step
         latest_step = 0
+        self._motor_active = True
 
         if step_style == Raspi_MotorHAT.INTERLEAVE:
             s_per_s = s_per_s / 2.0
@@ -290,6 +291,11 @@ class Raspi_MotorHAT:
     _pwm = None
     _camera = None
     _rotate = None
+    _motor_active = False
+
+    @property
+    def is_active(self) -> bool:
+        return self._motor_active
 
     @property
     def pwm(self) -> PWMInterface:
@@ -352,5 +358,6 @@ class Raspi_MotorHAT:
 
     def release_motors(self) -> None:
         """release all motors"""
+        self._motor_active = False
         for motor_num in range(1, 5):
             self.release_motor(motor_num)

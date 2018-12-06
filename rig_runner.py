@@ -20,21 +20,12 @@ from cloud_drive import google_drive
 import gphoto2 as gp  #pylint: disable=E0401
 
 
-CAMERA_STEPPER_MOTOR_NUM = 2
-CAMERA_STEPPER_MOTOR_SPEED = 240  # rpm
-MODEL_STEPPER_MOTOR_NUM = 1
-MOTOR_HAT_I2C_ADDR = 0x6F
-MOTOR_HAT_I2C_FREQ = 1600
 CCW_MAX_SWITCH = limit_switch.LimitSwitch(18, 'CCW')  # furthest CCW rotation allowed
 CW_MAX_SWITCH = limit_switch.LimitSwitch(4, 'CW')  # furthest CW rotation allowed
 BEANSTALK = None
 CANCEL_QUEUE = 'cancel'
 STATUS_QUEUE = 'status'
 TASK_QUEUE = 'work'
-STEP_CAMERA_CCW = Raspi_MotorHAT.FORWARD
-STEP_CAMERA_CW = Raspi_MotorHAT.BACKWARD
-STEP_MODEL_CCW = Raspi_MotorHAT.FORWARD
-STEP_MODEL_CW = Raspi_MotorHAT.BACKWARD
 
 
 def configure_beanstalk():
@@ -103,12 +94,17 @@ def yield_function(direction: int) -> dict:
 
 def turn_off_motors(motor_controller: Raspi_MotorHAT):
     """disable motors. Typically this will be called
-    'at exist' so motors don't overheat when idle and energized"""
+    'at exit' so motors don't overheat when idle and energized"""
     motor_controller.release_motors()
 
 
 class CameraControl:
     """Control the movement of the camera (declination)"""
+    STEP_CAMERA_CCW = Raspi_MotorHAT.FORWARD
+    STEP_CAMERA_CW = Raspi_MotorHAT.BACKWARD
+    STEP_MODEL_CCW = Raspi_MotorHAT.FORWARD
+    STEP_MODEL_CW = Raspi_MotorHAT.BACKWARD
+
     _controller = None
 
     @property
@@ -147,7 +143,7 @@ class CameraControl:
             camera_stepper.step(1000, step_dir, Raspi_MotorHAT.DOUBLE)
 
         traveled_steps = camera_stepper.stepping_counter - starting_stepper_pos
-        if step_dir == STEP_CAMERA_CCW:
+        if step_dir == self.STEP_CAMERA_CCW:
             camera_stepper.stepping_counter = 0
 
         return traveled_steps
@@ -155,12 +151,12 @@ class CameraControl:
     def ccw_camera_home(self) -> int:
         """home the camera in the counter-clockwise direction"""
         post_status(self.queue, "CCW homing")
-        return self.move_camera(STEP_CAMERA_CCW, CCW_MAX_SWITCH)
+        return self.move_camera(self.STEP_CAMERA_CCW, CCW_MAX_SWITCH)
 
     def cw_camera_home(self) -> int:
         """home the camera in the clockwise direction"""
         post_status(self.queue, "CW homing")
-        return self.move_camera(STEP_CAMERA_CW, CW_MAX_SWITCH)
+        return self.move_camera(self.STEP_CAMERA_CW, CW_MAX_SWITCH)
 
     def home_camera(self) -> int:
         """home the camera. This will move the camera to the two
@@ -178,9 +174,9 @@ class CameraControl:
         post_status(self.queue,
                     'move to declination start {0}'.
                     format(declination_start))
-        camera_stepper = self.motor_controller.getStepper(CAMERA_STEPPER_MOTOR_NUM)
+        camera_stepper = self.motor_controller.camera_stepper
         forced_exit = camera_stepper.step(declination_start,
-                                          STEP_CAMERA_CCW,
+                                          self.STEP_CAMERA_CCW,
                                           Raspi_MotorHAT.DOUBLE)
         return forced_exit
 
@@ -221,8 +217,8 @@ class CameraControl:
 
                     forced_exit = self.\
                         motor_controller.\
-                        getStepper(MODEL_STEPPER_MOTOR_NUM).\
-                        step(steps_per_rotation, STEP_MODEL_CCW,
+                        rotation_stepper.\
+                        step(steps_per_rotation, self.STEP_MODEL_CCW,
                              Raspi_MotorHAT.DOUBLE)
                     if forced_exit and forced_exit['exit'] == 'cancel':
                         return  # forced exit
@@ -235,8 +231,8 @@ class CameraControl:
                 # okay, we have work to do, position the camera
                 forced_exit = self.\
                     motor_controller.\
-                    getStepper(CAMERA_STEPPER_MOTOR_NUM).\
-                    step(steps_per_declination, STEP_CAMERA_CCW,
+                    camera_stepper.\
+                    step(steps_per_declination, self.STEP_CAMERA_CCW,
                          Raspi_MotorHAT.DOUBLE)
                 if forced_exit:
                     # if this is the last position, we expect to hit the end-stop
@@ -261,7 +257,6 @@ class CameraControl:
 def wait_for_work(queue: beanstalk.Connection, motor_controller: Raspi_MotorHAT) -> dict:
     """wait for work, return json"""
     idle_start = time.time()
-    released = False
     while True:
         queue.watch(TASK_QUEUE)
         job = queue.reserve(timeout=0)
@@ -275,10 +270,9 @@ def wait_for_work(queue: beanstalk.Connection, motor_controller: Raspi_MotorHAT)
         # if we have been idle for too long
         # release the stepper motors so they
         # don't overheat
-        if (time.time() - idle_start) > 600 and not released:  # 10 minutes
+        if (time.time() - idle_start) > 600 and motor_controller.is_active:  # 10 minutes
             post_status(queue, "long idle, motors disabled")
-            turn_off_motors(motor_controller)
-            released = True
+            motor_controller.release_motors()
 
 
 def forward_authorization(queue: beanstalk.Connection, job: dict):
@@ -306,7 +300,7 @@ def session_start(queue: beanstalk.Connection) -> None:
 
 def process_scan_command(job_dict: dict,
                          camera_controller: CameraControl,
-                         declination_travel_steps: int):
+                         declination_travel_steps: int) -> int:
     """Process the scan command -> take a bunch of pictures
     if we return 0, then the rig is no longer 'homed'. If there's
     an error which doesn't affect homing, we will return the
@@ -381,24 +375,29 @@ def process_scan_command(job_dict: dict,
 
 def main():
     """This is the main entry point of the program, where all the magic happens"""
-    # okay time to run things
+
+    # perform our setup & initialization
 
     # on exit, turn off stepper motors
     atexit.register(turn_off_motors)
 
-    # setup a queue to pass exchange messages
+    # setup a queue to exchange messages
     global BEANSTALK  # pylint:disable=W0603
     BEANSTALK = configure_beanstalk()
     clear_all_queues(BEANSTALK)
 
     # configure the motor controller Pi Hat
-    motor_controller = Raspi_MotorHAT(pwm_obj=PWM(MOTOR_HAT_I2C_ADDR),
+    motor_hat_i2_c_addr = 0x6F
+    motor_hat_i2c_freq = 1600
+    motor_controller = Raspi_MotorHAT(pwm_obj=PWM(motor_hat_i2_c_addr),
                                       yield_func=yield_function,
-                                      freq=MOTOR_HAT_I2C_FREQ,
+                                      freq=motor_hat_i2c_freq,
                                       debug=False)
 
-    motor_controller.camera_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
-    motor_controller.rotation_stepper.setSpeed(CAMERA_STEPPER_MOTOR_SPEED)
+    # set the stepper speed
+    camera_stepper_motor_speed = 240 # rpm
+    motor_controller.camera_stepper.setSpeed(camera_stepper_motor_speed)
+    motor_controller.rotation_stepper.setSpeed(camera_stepper_motor_speed)
 
     # our main object to control camera/rig functions
     camera_controller = CameraControl(motor_controller, BEANSTALK)
@@ -416,7 +415,7 @@ def main():
     print("** waiting for jobs **\n")
     print("**********************\n")
 
-    declination_travel_steps = 0  # number of steps between min/max endstops
+    declination_travel_steps = 0  # if non-zero, we are "homed"
     while True:
         job_dict = wait_for_work(camera_controller.queue, motor_controller)
         if job_dict['task'] == 'home' and declination_travel_steps == 0:

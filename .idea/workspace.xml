@@ -4,11 +4,10 @@
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloud_drive/google_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloud_drive/google_drive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/google_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/google_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rig_runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/rig_runner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpihat/basis.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/basis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpihat/pimotorhat.py" beforeDir="false" afterPath="$PROJECT_DIR$/rpihat/pimotorhat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/scripts/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/scripts/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/setup.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/setup.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,29 +71,29 @@
           <entry key="conf" value="3" />
           <entry key="css" value="11" />
           <entry key="gitignore" value="5" />
-          <entry key="html" value="31" />
+          <entry key="html" value="32" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="24" />
+          <entry key="js" value="25" />
           <entry key="json" value="3" />
           <entry key="nginx" value="1" />
           <entry key="png" value="2" />
-          <entry key="py" value="75" />
+          <entry key="py" value="76" />
           <entry key="rst" value="3" />
-          <entry key="sh" value="18" />
+          <entry key="sh" value="20" />
           <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="18" />
+          <entry key="Bash" value="20" />
           <entry key="BuildoutCfg" value="3" />
           <entry key="CSS" value="11" />
-          <entry key="HTML" value="31" />
+          <entry key="HTML" value="32" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="24" />
+          <entry key="JavaScript" value="25" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="75" />
+          <entry key="Python" value="76" />
           <entry key="ReST" value="3" />
           <entry key="nginx file type" value="1" />
         </counts>
@@ -105,13 +104,13 @@
           <entry key="css" value="8" />
           <entry key="dummy" value="92" />
           <entry key="gitignore" value="83" />
-          <entry key="html" value="14873" />
-          <entry key="js" value="850" />
+          <entry key="html" value="14905" />
+          <entry key="js" value="1038" />
           <entry key="nginx" value="3" />
-          <entry key="py" value="54002" />
+          <entry key="py" value="54427" />
           <entry key="rst" value="4997" />
           <entry key="sh" value="3144" />
-          <entry key="txt" value="7079" />
+          <entry key="txt" value="7147" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -119,10 +118,10 @@
           <entry key="Bash" value="3144" />
           <entry key="BuildoutCfg" value="324" />
           <entry key="CSS" value="8" />
-          <entry key="HTML" value="14873" />
-          <entry key="JavaScript" value="850" />
-          <entry key="PLAIN_TEXT" value="7254" />
-          <entry key="Python" value="54002" />
+          <entry key="HTML" value="14905" />
+          <entry key="JavaScript" value="1038" />
+          <entry key="PLAIN_TEXT" value="7322" />
+          <entry key="Python" value="54427" />
           <entry key="ReST" value="4997" />
           <entry key="nginx file type" value="3" />
         </counts>
@@ -130,9 +129,10 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -145,19 +145,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/home-landing.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/setup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="263" selection-start-line="263" selection-end-line="263" />
+            <state relative-caret-position="479">
+              <caret line="189" column="29" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -168,23 +159,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+            <state relative-caret-position="1299">
+              <caret line="110" lean-forward="true" selection-start-line="9" selection-end-line="110" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rig_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="338" column="20" selection-start-line="338" selection-start-column="20" selection-end-line="338" selection-end-column="20" />
+            <state relative-caret-position="321">
+              <caret line="274" column="35" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="43" />
               <folding>
                 <element signature="e#321#334#0" expanded="true" />
-                <marker date="1543943368777" expanded="true" signature="4251:5074" ph="..." />
-                <marker date="1543943368777" expanded="true" signature="11339:11435" ph="..." />
-                <marker date="1543943368777" expanded="true" signature="11591:11596" ph="..." />
-                <marker date="1543943368777" expanded="true" signature="11804:15013" ph="..." />
+                <marker date="1544112643563" expanded="true" signature="4118:4946" ph="..." />
               </folding>
             </state>
           </provider>
@@ -193,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="181" column="28" lean-forward="true" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
+            <state relative-caret-position="3806">
+              <caret line="181" column="28" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
               <folding>
                 <element signature="e#20#31#0" expanded="true" />
                 <marker date="1543851580624" expanded="true" signature="428:433" ph="..." />
@@ -206,16 +194,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.rst">
           <provider selected="true" editor-type-id="restructured-text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10340">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="1100">
+              <caret line="840" column="32" lean-forward="true" selection-start-line="840" selection-start-column="32" selection-end-line="840" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="926">
+              <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -234,24 +240,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>apple-touch</find>
-      <find>photograph_model</find>
-      <find>process_scan</find>
-      <find>upload_google_drive_info</find>
-      <find>session_folder</find>
-      <find>print</find>
-      <find>self.drive_client</find>
-      <find>pylint</find>
-      <find>not p</find>
-      <find>scan</find>
-      <find>post_g</find>
-      <find>.Proc</find>
-      <find>GDRIVE_QUEUE</find>
-      <find>forward_authorization</find>
-      <find>post_status</find>
-      <find>forward</find>
-      <find>upload_google_drive</find>
-      <find>stepper.</find>
       <find>self.motor_controller</find>
       <find>motor</find>
       <find>.motor</find>
@@ -264,6 +252,24 @@
       <find>clear_all_queues</find>
       <find>_stepper</find>
       <find>long idle</find>
+      <find>custom.</find>
+      <find>setup.html</find>
+      <find>def ste</find>
+      <find>release</find>
+      <find>long</find>
+      <find>CAMERA_STEPPER_MOTOR_NUM</find>
+      <find>CAMERA_STEPPER_MOTOR_SPEED</find>
+      <find>CCW_MAX_SWITCH</find>
+      <find>yield</find>
+      <find>yield_func</find>
+      <find>is_yielding</find>
+      <find>#pylint</find>
+      <find>pylint</find>
+      <find>process_scan</find>
+      <find>STEP_CAMERA_CCW</find>
+      <find>CCW</find>
+      <find>MOTOR_HAT_I2C_ADDR</find>
+      <find>turn_off_motors</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -313,12 +319,13 @@
         <option value="$PROJECT_DIR$/rpihat/Raspi_I2C.py" />
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
         <option value="$PROJECT_DIR$/configuration/google_api.py" />
-        <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/cloud_drive/google_drive.py" />
         <option value="$PROJECT_DIR$/rpihat/basis.py" />
         <option value="$PROJECT_DIR$/rpihat/Raspi_PWM_Servo_Driver.py" />
+        <option value="$PROJECT_DIR$/website/scripts/custom.js" />
+        <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
       </list>
@@ -331,8 +338,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="604" />
-    <option name="y" value="598" />
+    <option name="x" value="1723" />
+    <option name="y" value="238" />
     <option name="width" value="2371" />
     <option name="height" value="1571" />
   </component>
@@ -352,12 +359,18 @@
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="rpihat" type="462c0819:PsiDirectoryNode" />
+              <item name="restapi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="deploy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
@@ -483,13 +496,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00155" summary="fix up some javscript warnings&#10;add build of gphoto2/libgphoto2 to deployment script">
-      <created>1541514759864</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1541514759864</updated>
     </task>
     <task id="LOCAL-00156" summary="close &lt;input&gt;">
       <created>1541514897000</created>
@@ -827,7 +833,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543774386567</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="lots of refactoring&#10;increase Pylint scores (a lot!)&#10;catch a few bugs">
+      <created>1543943687092</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1543943687092</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -872,10 +885,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="604" y="598" width="2371" height="1571" extended-state="0" />
+    <frame x="1723" y="238" width="2371" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.20943315" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.211164" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -928,7 +941,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add a README file to detail what's been done" />
     <MESSAGE value="add some comments&#10;add pinout documentation&#10;nginx.conf -&gt; conf.nginx so plugin recognizes it. Also sync'd with nginx.conf on Rpi" />
     <MESSAGE value="fix markup issues" />
     <MESSAGE value="typo" />
@@ -953,7 +965,8 @@
     <MESSAGE value="google drive post_status messages&#10;cleanup Pylint some more&#10;catch (&amp; post) issues with authorization token" />
     <MESSAGE value="update requirements for request security vulnerability" />
     <MESSAGE value="update structure info and fix a typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="update structure info and fix a typo" />
+    <MESSAGE value="lots of refactoring&#10;increase Pylint scores (a lot!)&#10;catch a few bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of refactoring&#10;increase Pylint scores (a lot!)&#10;catch a few bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1089,11 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1542339241166" expanded="true" signature="94:96" ph="..." />
-            <marker date="1542339241166" expanded="true" signature="94:100" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1111,13 +1119,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apikeys/oauth_client.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="44" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/apikeys/oauth_client.txt" />
     <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/googleapiclient/discovery.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-585">
@@ -1163,33 +1165,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HV3F2KTK/googledrive_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="61" selection-start-line="54" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HV3F2KTK/googledrive_example.py" />
     <entry file="file://$PROJECT_DIR$/restapi/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/google_device.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="18" column="66" lean-forward="true" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
-          <folding>
-            <element signature="e#1069#1075#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/google.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/website/google_device.html" />
+    <entry file="file://$PROJECT_DIR$/website/google.html" />
     <entry file="file://$PROJECT_DIR$/website/scripts/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1060">
@@ -1210,9 +1191,7 @@
     <entry file="file://$PROJECT_DIR$/apikeys/RpiPhotogrammetry-38f3abb68f1b.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/homerig.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/website/homerig.html" />
     <entry file="file://$PROJECT_DIR$/website/scripts/roundslider.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3938">
@@ -1245,21 +1224,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/scripts/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="e#34#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,31 +1240,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1043">
           <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1304,16 +1253,6 @@
           <caret line="96" selection-start-line="96" selection-end-line="96" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/setup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="263" selection-start-line="263" selection-end-line="263" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1343,52 +1282,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10340">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rpihat/basis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="770">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="181" column="28" lean-forward="true" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
-          <folding>
-            <element signature="e#20#31#0" expanded="true" />
-            <marker date="1543851580624" expanded="true" signature="428:433" ph="..." />
-            <marker date="1543851580624" expanded="true" signature="761:795" ph="..." />
-            <marker date="1543851580624" expanded="true" signature="2497:3110" ph="..." />
-            <marker date="1543851580624" expanded="true" signature="5852:5857" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rig_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="338" column="20" selection-start-line="338" selection-start-column="20" selection-end-line="338" selection-end-column="20" />
-          <folding>
-            <element signature="e#321#334#0" expanded="true" />
-            <marker date="1543943368777" expanded="true" signature="4251:5074" ph="..." />
-            <marker date="1543943368777" expanded="true" signature="11339:11435" ph="..." />
-            <marker date="1543943368777" expanded="true" signature="11591:11596" ph="..." />
-            <marker date="1543943368777" expanded="true" signature="11804:15013" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1402,19 +1299,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+    <entry file="file://$PROJECT_DIR$/cloud_drive/google_drive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="356" selection-start-line="356" selection-end-line="356" />
+        <state relative-caret-position="3806">
+          <caret line="181" column="28" selection-start-line="181" selection-start-column="28" selection-end-line="181" selection-end-column="28" />
           <folding>
-            <element signature="e#48#58#0" expanded="true" />
-            <marker date="1543943222792" expanded="true" signature="11129:11161" ph="..." />
+            <element signature="e#20#31#0" expanded="true" />
+            <marker date="1543851580624" expanded="true" signature="428:433" ph="..." />
+            <marker date="1543851580624" expanded="true" signature="761:795" ph="..." />
+            <marker date="1543851580624" expanded="true" signature="2497:3110" ph="..." />
+            <marker date="1543851580624" expanded="true" signature="5852:5857" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rst">
       <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/setup_pg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1299">
+          <caret line="110" lean-forward="true" selection-start-line="9" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="926">
+          <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/home-landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/setup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="189" column="29" selection-start-line="189" selection-start-column="29" selection-end-line="189" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#p#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="840" column="32" lean-forward="true" selection-start-line="840" selection-start-column="32" selection-end-line="840" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/pimotorhat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="358" column="8" selection-start-line="358" selection-start-column="8" selection-end-line="358" selection-end-column="8" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+            <marker date="1544045860606" expanded="true" signature="11071:11111" ph="..." />
+            <marker date="1544045860606" expanded="true" signature="11271:11303" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rig_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="274" column="35" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="43" />
+          <folding>
+            <element signature="e#321#334#0" expanded="true" />
+            <marker date="1544112643563" expanded="true" signature="4118:4946" ph="..." />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
