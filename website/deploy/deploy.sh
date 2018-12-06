@@ -40,7 +40,7 @@ cd ~
 git clone https://github.com/bp100a/RpiPG.git
 
 # copy our nginx.conf file
-sudo cp ~/RpiPG/website/deploy/conf.nginx /etc/nginx/nginx.conf
+sudo cp ~/RpiPG/website/deploy/nginx.conf /etc/nginx/nginx.conf
 
 # Now setup our python environment and install everything
 source ~/RpiPG/venv/Scripts/activate
