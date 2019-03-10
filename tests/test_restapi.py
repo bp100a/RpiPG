@@ -6,4 +6,4 @@ class TestRigRunner(TestCase):
 
     def test_make_key(self):
         key = rig_control.machine_specific_key()
-        assert key is None
+        assert key is not None

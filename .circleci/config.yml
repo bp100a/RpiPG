@@ -1,0 +1,56 @@
+# Raspberry Pi CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.7.0
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: make folders
+          command: mkdir test-reports
+      - store_artifacts:
+          path: ~/repo
+      - run:
+          name: zip up generated Site
+          command: |
+             cd ~/repo
+             zip -r ../site.zip  *
+      - run:
+          name: stash zipfile as artifact
+          command: |
+            cd ~
+             mkdir zipfile
+             mv ~/site.zip zipfile/site.zip
+      - store_artifacts:
+          path: zipfile/
+
+      - add_ssh_keys:
+          fingerprints:
+            - "70:00:13:8f:b6:d8:e2:b1:d1:ad:c8:17:3d:93:dd:9e"
+      - run:
+          name: install SSH clients
+          command: sudo apt-get install openssh-client
+      - run:
+          name: Access Raspberry Pi
+          command: |
+            # add the remote Pi public key so SCP doesn't
+            # get hung up on permssions
+            sudo echo $PI_PUBKEY >> ~/.ssh/known_hosts
+            scp -rP $SCP_PORT ~/repo/* $PIUSER@$SCP_IP:/home/pi/RpiPG
+            ls -al
+
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build

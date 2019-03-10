@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045ac76e-0700-47c6-984a-aaeaa80a4385" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/website/deploy/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud_drive/google_drive.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloud_drive/google_drive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_restapi.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_restapi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/deploy/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/website/deploy/deploy.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
@@ -16,164 +18,46 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/RpiPG$rig_runner.coverage" NAME="rig_runner Coverage Results" MODIFIED="1540745332334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_offsets.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_offsets Coverage Results" MODIFIED="1541164550739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_restapi_TestRigRunner_test_make_key.coverage" NAME="Unittests for test_restapi.TestRigRunner.test_make_key Coverage Results" MODIFIED="1542340579696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_no_offset.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset Coverage Results" MODIFIED="1541165557232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_end_offsets.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets Coverage Results" MODIFIED="1541291285863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/RpiPG$rig_control.coverage" NAME="rig_control Coverage Results" MODIFIED="1542648017791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/restapi" />
+    <SUITE FILE_PATH="coverage/RpiPG$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1552248734742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps Coverage Results" MODIFIED="1541291071662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/RpiPG$camera.coverage" NAME="camera Coverage Results" MODIFIED="1542404510938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cameractrl" />
+    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_offsets.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_offsets Coverage Results" MODIFIED="1541164550739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_restapi_TestRigRunner_test_make_key.coverage" NAME="Unittests for test_restapi.TestRigRunner.test_make_key Coverage Results" MODIFIED="1552248723526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_end_offsets.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_end_offsets Coverage Results" MODIFIED="1541291285863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_no_offset.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_no_offset Coverage Results" MODIFIED="1541165557232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_start_offsets.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offsets Coverage Results" MODIFIED="1541291328208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/RpiPG$Unittests_in_test_rig_runner_py.coverage" NAME="Unittests in test_rig_runner.py Coverage Results" MODIFIED="1541444231781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/RpiPG$Unittests_for_test_rig_runner_TestRigRunner_test_calculate_steps_with_start_offset.coverage" NAME="Unittests for test_rig_runner.TestRigRunner.test_calculate_steps_with_start_offset Coverage Results" MODIFIED="1541291110294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1860124545">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Python" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="20" />
-          <entry key="py" value="908" />
-          <entry key="txt" value="27" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="20" />
-          <entry key="PLAIN_TEXT" value="27" />
-          <entry key="Python" value="908" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts" />
-      <usages-collector id="statistics.vcs.git.usages" />
-    </session>
-    <session id="1228776072">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="conf" value="3" />
-          <entry key="css" value="11" />
-          <entry key="gitignore" value="5" />
-          <entry key="html" value="32" />
-          <entry key="jpg" value="1" />
-          <entry key="js" value="25" />
-          <entry key="json" value="3" />
-          <entry key="nginx" value="2" />
-          <entry key="png" value="2" />
-          <entry key="py" value="76" />
-          <entry key="rst" value="3" />
-          <entry key="sh" value="21" />
-          <entry key="txt" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Bash" value="21" />
-          <entry key="BuildoutCfg" value="3" />
-          <entry key="CSS" value="11" />
-          <entry key="HTML" value="32" />
-          <entry key="Image" value="3" />
-          <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="25" />
-          <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="76" />
-          <entry key="ReST" value="3" />
-          <entry key="nginx file type" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="conf" value="324" />
-          <entry key="css" value="8" />
-          <entry key="dummy" value="92" />
-          <entry key="gitignore" value="83" />
-          <entry key="html" value="14905" />
-          <entry key="js" value="1038" />
-          <entry key="nginx" value="3" />
-          <entry key="py" value="54427" />
-          <entry key="rst" value="4997" />
-          <entry key="sh" value="3340" />
-          <entry key="txt" value="7229" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Bash" value="3340" />
-          <entry key="BuildoutCfg" value="324" />
-          <entry key="CSS" value="8" />
-          <entry key="HTML" value="14905" />
-          <entry key="JavaScript" value="1038" />
-          <entry key="PLAIN_TEXT" value="7404" />
-          <entry key="Python" value="54427" />
-          <entry key="ReST" value="4997" />
-          <entry key="nginx file type" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts" />
-      <usages-collector id="statistics.vcs.git.usages" />
-    </session>
+    <SUITE FILE_PATH="coverage/RpiPG$rig_control.coverage" NAME="rig_control Coverage Results" MODIFIED="1542648017791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/restapi" />
+    <SUITE FILE_PATH="coverage/RpiPG$camera.coverage" NAME="camera Coverage Results" MODIFIED="1542404510938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cameractrl" />
+    <SUITE FILE_PATH="coverage/RpiPG$Unittests_in_test_rig_runner_py.coverage" NAME="Unittests in test_rig_runner.py Coverage Results" MODIFIED="1541444231781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="RpiPG" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_stepper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-421">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../genesis/deploy/deploy_iiserver.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="30" selection-start-line="29" selection-end-line="30" />
+            <state relative-caret-position="484">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -192,7 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.motor_controller</find>
       <find>motor</find>
       <find>.motor</find>
       <find>.motor_controller</find>
@@ -222,6 +105,7 @@
       <find>CCW</find>
       <find>MOTOR_HAT_I2C_ADDR</find>
       <find>turn_off_motors</find>
+      <find>rsp.</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -255,7 +139,6 @@
         <option value="$PROJECT_DIR$/website/scripts/ticker.js" />
         <option value="$PROJECT_DIR$/website/deploy/conf.nginx" />
         <option value="$PROJECT_DIR$/website/google.html" />
-        <option value="$PROJECT_DIR$/tests/test_restapi.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/website/google_device.html" />
         <option value="$PROJECT_DIR$/restapi/__init__.py" />
@@ -270,7 +153,6 @@
         <option value="$PROJECT_DIR$/website/scripts/setup_pg.js" />
         <option value="$PROJECT_DIR$/rpihat/Raspi_I2C.py" />
         <option value="$PROJECT_DIR$/configuration/google_api.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/cloud_drive/google_drive.py" />
         <option value="$PROJECT_DIR$/rpihat/basis.py" />
@@ -279,21 +161,18 @@
         <option value="$PROJECT_DIR$/website/setup.html" />
         <option value="$PROJECT_DIR$/rpihat/pimotorhat.py" />
         <option value="$PROJECT_DIR$/rig_runner.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/website/deploy/deploy.sh" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/tests/test_restapi.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1449" />
-    <option name="y" value="417" />
-    <option name="width" value="2371" />
-    <option name="height" value="1571" />
+    <option name="x" value="1020" />
+    <option name="y" value="573" />
+    <option name="width" value="1848" />
+    <option name="height" value="1321" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -301,6 +180,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,42 +191,36 @@
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="restapi" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
               <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RpiPG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RpiPG" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="deploy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../genesis/deploy/deploy_iiserver.sh" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website\deploy" />
-      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\.circleci" />
       <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website" />
       <recent name="C:\Users\bp100\PycharmProjects\RpiPG\restapi" />
       <recent name="C:\Users\bp100\PycharmProjects\RpiPG" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website\deploy" />
+      <recent name="C:\Users\bp100\PycharmProjects\RpiPG\website" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -361,74 +235,60 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.home-landing.html">
-    <configuration name="google.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/google.html">
+  <component name="RunManager" selected="Python tests.Unittests in tests">
+    <configuration name="google.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/google.html">
       <method v="2" />
     </configuration>
-    <configuration name="home-landing.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/home-landing.html">
+    <configuration name="home-landing.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/home-landing.html">
       <method v="2" />
     </configuration>
-    <configuration name="setup.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/setup.html">
+    <configuration name="setup.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RpiPG/website/setup.html">
       <method v="2" />
     </configuration>
-    <configuration name="camera" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="RpiPG" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cameractrl" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cameractrl/camera.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_restapi.TestRigRunner.test_make_key&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="rig_control" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Unittests in tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="RpiPG" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/restapi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/restapi/rig_control.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.rig_control" />
-      <item itemvalue="Python.camera" />
       <item itemvalue="JavaScript Debug.home-landing.html" />
       <item itemvalue="JavaScript Debug.setup.html" />
       <item itemvalue="JavaScript Debug.google.html" />
+      <item itemvalue="Python tests.Unittests in tests" />
+      <item itemvalue="Python tests.Unittests for test_restapi.TestRigRunner.test_make_key" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in tests" />
+        <item itemvalue="Python tests.Unittests for test_restapi.TestRigRunner.test_make_key" />
         <item itemvalue="JavaScript Debug.home-landing.html" />
         <item itemvalue="JavaScript Debug.setup.html" />
         <item itemvalue="JavaScript Debug.google.html" />
-        <item itemvalue="Python.rig_control" />
-        <item itemvalue="Python.camera" />
       </list>
     </recent_temporary>
   </component>
@@ -442,20 +302,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540552011712</updated>
-    </task>
-    <task id="LOCAL-00157" summary="close &lt;p&gt;">
-      <created>1541515080284</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1541515080284</updated>
-    </task>
-    <task id="LOCAL-00158" summary="some code cleanup&#10;handle no yield_function properly">
-      <created>1541516000398</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1541516000398</updated>
+      <workItem from="1552248395951" duration="486000" />
     </task>
     <task id="LOCAL-00159" summary="oops! left direction out of is_yielding() call">
       <created>1541521768868</created>
@@ -786,22 +633,24 @@
       <option name="project" value="LOCAL" />
       <updated>1544112695803</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <task id="LOCAL-00206" summary="updating deployment scripts">
+      <created>1544116259828</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1544116259828</updated>
+    </task>
+    <task id="LOCAL-00207" summary="updating deployment scripts">
+      <created>1544116277952</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1544116277952</updated>
+    </task>
+    <option name="localTasksCounter" value="208" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2018.11.15 at 22h 35m 19s.xml">
-      <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2018.11.15 at 22h 39m 28s.xml">
-      <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2018.11.15 at 22h 39m 57s.xml">
-      <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2018.11.15 at 22h 40m 12s.xml">
-      <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2018.11.15 at 22h 40m 23s.xml">
       <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
     </history-entry>
@@ -820,6 +669,21 @@
     <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2018.11.15 at 22h 56m 59s.xml">
       <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_tests - 2019.03.10 at 16h 10m 13s.xml">
+      <configuration name="Unittests in tests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2019.03.10 at 16h 11m 52s.xml">
+      <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_restapi_TestRigRunner_test_make_key - 2019.03.10 at 16h 12m 04s.xml">
+      <configuration name="Unittests for test_restapi.TestRigRunner.test_make_key" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tests - 2019.03.10 at 16h 12m 15s.xml">
+      <configuration name="Unittests in tests" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="486000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -831,15 +695,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1449" y="417" width="2371" height="1571" extended-state="0" />
+    <frame x="1020" y="573" width="1848" height="1321" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.211164" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4995752" visible="true" weight="0.2751678" />
       <window_info id="Structure" order="1" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info id="Favorites" order="2" sideWeight="0.5004248" side_tool="true" weight="0.25511304" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962447" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29346314" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.27190542" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2929293" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2718855" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994618" weight="0.32965165" />
@@ -882,11 +747,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix markup issues" />
     <MESSAGE value="typo" />
     <MESSAGE value="freshen up deployment, now modifies rc.local" />
     <MESSAGE value="add image to README" />
@@ -911,7 +775,8 @@
     <MESSAGE value="update structure info and fix a typo" />
     <MESSAGE value="lots of refactoring&#10;increase Pylint scores (a lot!)&#10;catch a few bugs" />
     <MESSAGE value="some more refactoring&#10;track motor release/engaged state&#10;clean up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="some more refactoring&#10;track motor release/engaged state&#10;clean up code" />
+    <MESSAGE value="updating deployment scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating deployment scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -930,6 +795,11 @@
           <url>file://$PROJECT_DIR$/tests/test_rig_runner.py</url>
           <line>76</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_restapi.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -991,23 +861,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/S3300.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/fonts/css/fontawesome-all.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="4" column="16394" selection-start-line="4" selection-start-column="16394" selection-end-line="4" selection-end-column="16394" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Python/Python36-32/Lib/base64.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="107" column="44" selection-start-line="107" selection-start-column="44" selection-end-line="107" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../genesis/venv/Lib/site-packages/fernet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
@@ -1030,13 +883,6 @@
             <element signature="e#0#29#0" expanded="true" />
             <marker date="1541444231761" expanded="true" signature="73:79" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_restapi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -1071,13 +917,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/pip-selfcheck.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://D:/Python/Python36-32/Lib/uuid.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1161,24 +1000,10 @@
     <entry file="file://$PROJECT_DIR$/website/scripts/jquery.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="4" selection-start-column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1043">
-          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1189,13 +1014,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1294,10 +1112,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="2" selection-start-line="7" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="2" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rig_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="274" column="35" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="43" />
+        <state relative-caret-position="594">
+          <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
           <folding>
             <element signature="e#321#334#0" expanded="true" />
             <marker date="1544112643563" expanded="true" signature="4118:4946" ph="..." />
@@ -1305,31 +1151,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/startup.sh">
+    <entry file="file://$PROJECT_DIR$/restapi/rig_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        <state relative-caret-position="118">
+          <caret line="399" column="4" selection-start-line="399" selection-start-column="4" selection-end-line="399" selection-end-column="4" />
+          <folding>
+            <element signature="e#135#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_restapi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rpihat/Raspi_I2C.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="49" column="17" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="49" selection-end-column="17" />
+          <folding>
+            <element signature="e#34#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python/Python36-32/Lib/unittest/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_stepper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-421">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../genesis/deploy/deploy_iiserver.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" selection-start-line="29" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/deploy/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+        <state relative-caret-position="616">
+          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/deploy/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        <state relative-caret-position="484">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
         </state>
       </provider>
     </entry>

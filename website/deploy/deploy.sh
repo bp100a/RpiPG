@@ -37,18 +37,23 @@ sudo apt-get install git
 
 # pull down the code
 cd ~
+if [ -d "RpiPG" ]; then
+    sudo rm -rf RpiPG
+fi
+
 git clone https://github.com/bp100a/RpiPG.git
 
 # copy our nginx.conf file
-sudo cp ~/RpiPG/website/deploy/nginx.conf /etc/nginx/nginx.conf
+sudo cp ~/RpiPG/website/deploy/nginx.conf /etc/nginx
 
 # Now setup our python environment and install everything
 source ~/RpiPG/venv/Scripts/activate
+sudo apt-get install python3-pip
 sudo apt-get install python-gphoto2cffi     # install Gphoto2 api
 sudo apt-get install libiff-dev             # to build gphoto2-cffi
 pip3 install -r ~/RpiPG/requirements.txt
-pip3 install gunicorn
-pip3 install --upgrade google-api-python-client oauth2client
+sudo pip3 install gunicorn
+sudo pip3 install --upgrade google-api-python-client oauth2client
 
 # need NTFS filesystem for USB drives
 sudo apt-get install ntfs-3g
