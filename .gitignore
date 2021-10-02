@@ -2,9 +2,4 @@
 .idea/tasks.xml
 configuration/google_api.py
 apikeys
-venv
-
-
-
-
-
+venv*
